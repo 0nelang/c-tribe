@@ -15,6 +15,10 @@ class CreateHomePageTable extends Migration
     {
         Schema::create('home_page', function (Blueprint $table) {
             $table->id();
+            $table->string('vision');
+            $table->string('mission');
+            $table->string('tagline')->nullable();
+            $table->string('brand_name')->nullable();
             $table->timestamps();
         });
     }
