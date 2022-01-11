@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLandingPageTable extends Migration
+class CreateHomePageTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateLandingPageTable extends Migration
      */
     public function up()
     {
-        Schema::create('landing_page', function (Blueprint $table) {
+        Schema::create('home_page', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('date');
-            $table->text('content');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ class CreateLandingPageTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('landing_page');
+        Schema::dropIfExists('home_page');
     }
 }
