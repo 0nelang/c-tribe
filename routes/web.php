@@ -16,3 +16,27 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard.welcome');
 });
+
+Route::get('/admin/page', function () {
+    return view('dashboard.welcome');
+});
+
+Route::get('/admin/general', function () {
+    return view('dashboard.welcome');
+});
+
+Route::get('/admin/people', function () {
+    return view('dashboard.welcome');
+});
+
+Route::get('/admin/partners', function () {
+    return view('dashboard.welcome');
+});
+
+Route::get('/admin/service', function () {
+    return view('dashboard.welcome');
+});
+
+Route::get('/admin/project', function () {
+    return view('dashboard.welcome');
+});
