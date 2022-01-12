@@ -34,11 +34,12 @@
 </head>
 <body>
     <div class="page-container">
+
         <div class='loader'>
-            <div class='spinner-grow text-primary' role='status'>
-              <span class='sr-only'>Loading...</span>
-            </div>
+        <div class='spinner-grow text-primary' role='status'>
+            <span class='sr-only'>Loading...</span>
         </div>
+
         
         @include('partials.dashboard.page-header')
     
@@ -47,6 +48,10 @@
         @yield('main')
 
     </div>
+
+            
+
+    
     <!-- Javascripts -->
     <script src="/plugins/jquery/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
