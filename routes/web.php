@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GeneralController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeopleController;
 
@@ -26,11 +27,7 @@ Route::get('/admin/page', function () {
     ]);
 });
 
-Route::get('/admin/general', function () {
-    return view('dashboard.general',[
-        "page" => "general"
-    ]);
-});
+Route::get('/admin/general', [GeneralController::class, 'general']);
 
 Route::get('/admin/people', [PeopleController::class, 'index']);
 
