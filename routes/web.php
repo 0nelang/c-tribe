@@ -15,6 +15,9 @@ use App\Http\Controllers\PeopleController;
 |
 */
 
+Route::get('/admin/general', [GeneralController::class, 'general']);
+Route::put('/admin/general/{general:id}', [GeneralController::class,'update']);
+
 Route::get('/', function () {
     return view('dashboard.welcome',[
         "page" => "main"
@@ -26,8 +29,6 @@ Route::get('/admin/page', function () {
         "page" => "page"
     ]);
 });
-
-Route::get('/admin/general', [GeneralController::class, 'general']);
 
 Route::get('/admin/people', [PeopleController::class, 'index']);
 

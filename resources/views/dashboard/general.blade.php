@@ -12,10 +12,15 @@
                         <p class="card-description">Here’s a quick example to demonstrate Bootstrap’s form styles. Keep
                             reading
                             for documentation on required classes, form layout, and more.</p>
-                        <form action="" method="" enctype="multipart/form-data">
+                        <form action="/admin/general/{{ $general->id }}" method="POST" enctype="multipart/form-data">
+                            @method('put')
+                            @csrf
                             <div class="mb-3">
-                                <label for="formFile" class="form-label">Brand Image</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <label for="brand_image_n" class="form-label">Brand Image</label>
+                                <input class="form-control" type="file" id="brand_image_n" name="brand_image_n">
+                                @error('brand_image_n')
+                                <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="" class="form-label">Description</label>
@@ -35,12 +40,12 @@
                                     for documentation on required classes, form layout, and more.</p>
                                 <form action="" method="" enctype="multipart/form-data">
                                     <div class="mb-3">
-                                        <label for="formFile" class="form-label">Background Image</label>
-                                        <input class="form-control" type="file" id="formFile">
+                                        <label for="background_image" class="form-label">Background Image</label>
+                                        <input class="form-control" type="file" id="background_image" name="background_image">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="formFile" class="form-label">Brand Image</label>
-                                        <input class="form-control" type="file" id="formFile">
+                                        <label for="brand_images" class="form-label">Brand Image</label>
+                                        <input class="form-control" type="file" id="brand_images" name="brand_image">
                                     </div>
                                     <div class="mb-3">
                                         <label for="" class="form-label">Email</label>
