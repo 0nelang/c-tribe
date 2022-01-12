@@ -39,11 +39,12 @@
               <span class='sr-only'>Loading...</span>
             </div>
         </div>
-            @include('partials.dashboard.page-header')
         
-            @include('partials.dashboard.page-sidebar')
-        
-            @yield('main')
+        @include('partials.dashboard.page-header')
+    
+        @include('partials.dashboard.page-sidebar')
+    
+        @yield('main')
 
     </div>
     <!-- Javascripts -->
