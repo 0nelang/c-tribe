@@ -14,5 +14,43 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard.welcome',[
+        "page" => "main"
+    ]);
+});
+
+Route::get('/admin/page', function () {
+    return view('dashboard.welcome',[
+        "page" => "page"
+    ]);
+});
+
+Route::get('/admin/general', function () {
+    return view('dashboard.general',[
+        "page" => "general"
+    ]);
+});
+
+Route::get('/admin/people', function () {
+    return view('dashboard.welcome',[
+        "page" => "people"
+    ]);
+});
+
+Route::get('/admin/partners', function () {
+    return view('dashboard.welcome',[
+        "page" => "partners"
+    ]);
+});
+
+Route::get('/admin/service', function () {
+    return view('dashboard.welcome',[
+        "page" => "service"
+    ]);
+});
+
+Route::get('/admin/project', function () {
+    return view('dashboard.welcome',[
+        "page" => "project"
+    ]);
 });
