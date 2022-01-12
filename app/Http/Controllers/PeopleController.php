@@ -26,7 +26,9 @@ class PeopleController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.our-people.create-people', [
+            "page" => "people"
+        ]);
     }
 
     /**
