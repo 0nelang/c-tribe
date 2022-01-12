@@ -34,7 +34,11 @@
 </head>
 <body>
     <div class="page-container">
-        
+        <div class='loader'>
+            <div class='spinner-grow text-primary' role='status'>
+              <span class='sr-only'>Loading...</span>
+            </div>
+        </div>
             @include('partials.dashboard.page-header')
         
             @include('partials.dashboard.page-sidebar')
