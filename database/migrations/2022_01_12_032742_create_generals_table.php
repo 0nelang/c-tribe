@@ -15,6 +15,7 @@ class CreateGeneralsTable extends Migration
     {
         Schema::create('generals', function (Blueprint $table) {
             $table->id();
+            $table->string('hover_img');
             $table->string('brand_navbar');
             $table->string('description_navbar');
             $table->string('cursor_img');
