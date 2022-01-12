@@ -4,7 +4,7 @@
             Main
           </li>
           <li class="{{ ($page === 'main')? 'active-page' : ''  }}">
-            <a href="index.html"><i data-feather="home"></i>Dashboard</a>
+            <a href="/"><i data-feather="home"></i>Dashboard</a>
           </li>
           <li class="sidebar-title">
             Apps
