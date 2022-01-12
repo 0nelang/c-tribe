@@ -39,7 +39,15 @@ class PeopleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required',
+            'title' => 'required',
+            'photo' => 'image|file',
+            'description' => 'required'
+        ]);
+
+        People::create($validated);
+        return redirect()->back();
     }
 
     /**

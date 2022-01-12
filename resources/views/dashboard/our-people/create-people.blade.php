@@ -12,21 +12,41 @@
                             <form action="/admin/people" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
-                                  <label for="name" class="form-label">Name</label>
-                                  <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="our-people-name">
-                                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                  <label for="name" class="form-label is-invalid">Name</label>
+                                  <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="our-people-name">
+                                  @error('name')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                  @enderror
                                 </div>
                                 <div class="mb-3">
                                   <label for="title" class="form-label">Title</label>
-                                  <input type="text" name="title" class="form-control" id="title">
+                                  <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title">
+                                  @error('title')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                  @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="formFile" class="form-label">Default file input example</label>
-                                    <input class="form-control" type="file" name="photo" id="formFile">
+                                    <label for="filePhoto" class="form-label">Photo</label>
+                                    <img id="output" class="mb-3">
+                                    <input class="form-control @error('photo') is-invalid @enderror" name="photo" type="file" id="filePhoto">
+                                    @error('photo')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                  @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="description" class="form-label">Desc</label>
-                                    <textarea type="text" name="description" class="form-control" id="description" rows="5"></textarea>
+                                    <textarea type="text" name="description" class="form-control @error('description') is-invalid @enderror" id="description" rows="5"></textarea>
+                                    @error('description')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
@@ -37,5 +57,14 @@
 
     </div>
 
+    <script>
+        $(function(){
+        $("#filePhoto").change(function(event) {
+            var x = URL.createObjectURL (event.target.files[0]);
+            $("#output").attr("src",x);
+            console.log(event);
+        });
+        })
 
+    </script>
 @endsection
