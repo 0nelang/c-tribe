@@ -32,7 +32,7 @@ Route::get('/admin/general', function () {
     ]);
 });
 
-Route::get('/admin/people', [PeopleController::class, 'index']);
+Route::resource('admin/people', PeopleController::class);
 
 Route::get('/admin/partners', function () {
     return view('dashboard.welcome',[
