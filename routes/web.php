@@ -26,7 +26,7 @@ Route::get('/admin/page', function () {
 });
 
 Route::get('/admin/general', function () {
-    return view('dashboard.welcome',[
+    return view('dashboard.general',[
         "page" => "general"
     ]);
 });
