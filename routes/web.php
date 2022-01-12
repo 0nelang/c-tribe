@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard.welcome');
+    return view('dashboard.welcome',[
+        "page" => "main"
+    ]);
 });
 
 Route::get('/admin/page', function () {
@@ -37,7 +39,7 @@ Route::get('/admin/people', function () {
 
 Route::get('/admin/partners', function () {
     return view('dashboard.welcome',[
-        "page" => "partner"
+        "page" => "partners"
     ]);
 });
 
