@@ -24,6 +24,7 @@ class CreateGeneralsTable extends Migration
             $table->string('phone_footer');
             $table->string('sosial_footer');
             $table->string('addres_footer');
+            $table->string('backgournd_footer');
             $table->timestamps();
         });
     }
