@@ -18,25 +18,37 @@ Route::get('/', function () {
 });
 
 Route::get('/admin/page', function () {
-    return view('dashboard.welcome');
+    return view('dashboard.welcome',[
+        "page" => "page"
+    ]);
 });
 
 Route::get('/admin/general', function () {
-    return view('dashboard.welcome');
+    return view('dashboard.welcome',[
+        "page" => "general"
+    ]);
 });
 
 Route::get('/admin/people', function () {
-    return view('dashboard.welcome');
+    return view('dashboard.welcome',[
+        "page" => "people"
+    ]);
 });
 
 Route::get('/admin/partners', function () {
-    return view('dashboard.welcome');
+    return view('dashboard.welcome',[
+        "page" => "partner"
+    ]);
 });
 
 Route::get('/admin/service', function () {
-    return view('dashboard.welcome');
+    return view('dashboard.welcome',[
+        "page" => "service"
+    ]);
 });
 
 Route::get('/admin/project', function () {
-    return view('dashboard.welcome');
+    return view('dashboard.welcome',[
+        "page" => "project"
+    ]);
 });
