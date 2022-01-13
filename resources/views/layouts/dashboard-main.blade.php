@@ -18,6 +18,7 @@
     <link href="/plugins/font-awesome/css/all.min.css" rel="stylesheet">
     <link href="/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
     <link href="/plugins/apexcharts/apexcharts.css" rel="stylesheet">
+    <link href="/plugins/DataTables/datatables.min.css" rel="stylesheet">
 
 
     <!-- Theme Styles -->
@@ -61,5 +62,7 @@
     <script src="/plugins/apexcharts/apexcharts.min.js"></script>
     <script src="/js/main.min.js"></script>
     <script src="/js/pages/dashboard.js"></script>
+    <script src="/js/pages/datatables.js"></script>
+    <script src="/plugins/DataTables/datatables.min.js"></script>
 </body>
 </html>

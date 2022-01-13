@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\People;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class PeopleController extends Controller
 {
@@ -74,9 +76,13 @@ class PeopleController extends Controller
      * @param  \App\Models\People  $people
      * @return \Illuminate\Http\Response
      */
-    public function edit(People $people)
+    public function edit(People $person)
     {
-        //
+        dd($person);
+        return view('dashboard.our-people.index-people',[
+            "page" => "people",
+            "people" => People::all()
+        ]);
     }
 
     /**
@@ -97,8 +103,10 @@ class PeopleController extends Controller
      * @param  \App\Models\People  $people
      * @return \Illuminate\Http\Response
      */
-    public function destroy(People $people)
+    public function destroy(People $person)
     {
-        //
+        Storage::delete($person->photo);
+        People::destroy($person->id);
+        return redirect()->back();
     }
 }

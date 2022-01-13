@@ -13,7 +13,7 @@
             <a href="index.html"><i data-feather="tool"></i>Settings<i class="fas fa-chevron-right dropdown-icon"></i></a>
             <ul class="">
               <li><a href="/admin/page"><i class="far fa-circle"></i>page</a></li>
-              <li><a href="/admin/general/{{ $general->id }}"><i class="far fa-circle"></i>general</a></li>
+              <li><a href="/admin/general"><i class="far fa-circle"></i>general</a></li>
             </ul>
           </li>
           <li class="{{ ($page === 'people')? 'active-page' : ''  }}">
