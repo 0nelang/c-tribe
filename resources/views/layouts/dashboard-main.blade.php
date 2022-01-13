@@ -35,7 +35,7 @@
     <script src="/plugins/jquery/jquery-3.4.1.min.js"></script>
 </head>
 <body>
-
+    @include('sweetalert::alert')
     <div class="page-container">
         <div class='loader'>
             <div class='spinner-grow text-primary' role='status'>

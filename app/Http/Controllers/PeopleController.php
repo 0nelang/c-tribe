@@ -6,6 +6,8 @@ use App\Models\People;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PeopleController extends Controller
 {
@@ -42,6 +44,16 @@ class PeopleController extends Controller
      */
     public function store(Request $request)
     {
+        $img = Image::make($request->file('photo'));
+        $img->resize(500, null,  function ($constraint)
+        {
+            $constraint->aspectRatio();
+        });
+
+        $filename = time().'.'.$request->file('photo')->getClientOriginalExtension();
+        $img_path = 'people-photo/'.$filename;
+        Storage::put($img_path, $img->encode());
+
         $validated = $request->validate([
             'name' => 'required',
             'title' => 'required',
@@ -49,14 +61,11 @@ class PeopleController extends Controller
             'description' => 'required'
         ]);
 
-        $validated['photo'] = $request->file('photo')->store('people-photo',['disk' => 'public']);
+        $validated['photo'] = $img_path;
 
         People::create($validated);
 
-        return view('dashboard.our-people.index-people',[
-            "page" => "people",
-            "people" => People::all()
-        ]);
+        return redirect('/admin/people');
     }
 
     /**
@@ -78,10 +87,10 @@ class PeopleController extends Controller
      */
     public function edit(People $person)
     {
-        dd($person);
-        return view('dashboard.our-people.index-people',[
-            "page" => "people",
-            "people" => People::all()
+
+        return view('dashboard.our-people.edit-people',[
+            'page' => 'person',
+            'people' => $person
         ]);
     }
 
@@ -92,9 +101,33 @@ class PeopleController extends Controller
      * @param  \App\Models\People  $people
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, People $people)
+    public function update(Request $request, People $person)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required',
+            'title' => 'required',
+            'photo' => 'image|file',
+            'description' => 'required'
+        ]);
+
+        if ($request->hasFile('photo')) {
+            Storage::disk('public')->delete($person->photo);
+            $img = Image::make($request->file('photo'));
+            $img->resize(500, null,  function ($constraint)
+            {
+                $constraint->aspectRatio();
+            });
+
+            $filename = time().'.'.$request->file('photo')->getClientOriginalExtension();
+            $img_path = 'people-photo/'.$filename;
+            Storage::put($img_path, $img->encode());
+            $validated['photo'] = $img_path;
+        }
+
+        People::where('id', $person->id)
+        ->update($validated);
+
+        return redirect('/admin/people');
     }
 
     /**
@@ -105,8 +138,9 @@ class PeopleController extends Controller
      */
     public function destroy(People $person)
     {
+        Alert::question('Question Title', 'Question Message');
         Storage::delete($person->photo);
         People::destroy($person->id);
-        return redirect()->back();
+        return redirect('/admin/people');
     }
 }
