@@ -44,6 +44,12 @@ Route::get('/admin/service', function () {
     ]);
 });
 
+Route::get('/admin/inspiration', function () {
+    return view('dashboard.welcome',[
+        "page" => "inspiration"
+    ]);
+});
+
 Route::get('/admin/project', function () {
     return view('dashboard.welcome',[
         "page" => "project"
