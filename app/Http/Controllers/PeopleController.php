@@ -15,7 +15,8 @@ class PeopleController extends Controller
     public function index()
     {
         return view('dashboard.our-people.index-people',[
-            "page" => "people"
+            "page" => "people",
+            "people" => People::all()
         ]);
     }
 
@@ -42,12 +43,18 @@ class PeopleController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'title' => 'required',
-            'photo' => 'image|file',
+            'photo' => 'required|image|file',
             'description' => 'required'
         ]);
 
+        $validated['photo'] = $request->file('photo')->store('people-photo',['disk' => 'public']);
+
         People::create($validated);
-        return redirect()->back();
+
+        return view('dashboard.our-people.index-people',[
+            "page" => "people",
+            "people" => People::all()
+        ]);
     }
 
     /**

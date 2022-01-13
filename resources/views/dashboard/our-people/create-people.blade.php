@@ -31,8 +31,9 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="filePhoto" class="form-label">Photo</label>
+                                    <br>
                                     <img id="output" class="mb-3">
-                                    <input class="form-control @error('photo') is-invalid @enderror" name="photo" type="file" id="filePhoto">
+                                    <input class="form-control @error('photo') is-invalid @enderror" name="photo" type="file" id="filePhoto" accept="image/*">
                                     @error('photo')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -41,7 +42,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="description" class="form-label">Desc</label>
-                                    <textarea type="text" name="description" class="form-control @error('description') is-invalid @enderror" id="description" rows="5"></textarea>
+                                    <textarea type="text" name="description" class="form-control text-white @error('description') is-invalid @enderror" id="description" rows="5"></textarea>
                                     @error('description')
                                         <div class="invalid-feedback">
                                             {{ $message }}

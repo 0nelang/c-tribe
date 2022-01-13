@@ -23,7 +23,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($people as $pep)
 
+                                    <tr>
+                                        <th scope="row">{{ $pep->id }}</th>
+                                        <td>{{ $pep->photo }}</td>
+                                        <td>{{ $pep->name }}</td>
+                                        <td>{{ $pep->title }}</td>
+                                        <td>{{ $pep->description }}</td>
+                                    </tr>
+
+                                    @endforeach
                                 </tbody>
 
                             </table>
