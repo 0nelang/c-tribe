@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\GeneralController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeopleController;
+use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\PartnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,11 +33,11 @@ Route::get('/admin/page', function () {
 
 Route::get('/admin/people', [PeopleController::class, 'index']);
 
-Route::get('/admin/partners', function () {
-    return view('dashboard.welcome',[
-        "page" => "partners"
-    ]);
-});
+// Route::get('/admin/partners', function () {
+//     return view('dashboard.welcome',[
+//         "page" => "partners"
+//     ]);
+// });
 
 Route::get('/admin/service', function () {
     return view('dashboard.welcome',[
@@ -55,3 +56,5 @@ Route::get('/admin/project', function () {
         "page" => "project"
     ]);
 });
+
+Route::resource('/admin/partners', PartnerController::class);
