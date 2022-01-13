@@ -128,7 +128,7 @@ class GeneralController extends Controller
         //     'disk' => 'public'
         // ]) ;
 
-        General::where($id)->update($validated);
+        General::where('id', $id)->update($validated);
         
         return redirect('/admin/general');
     }
