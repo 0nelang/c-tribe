@@ -34,6 +34,7 @@
     <script src="/plugins/jquery/jquery-3.4.1.min.js"></script>
 </head>
 <body>
+
     <div class="page-container">
         <div class='loader'>
             <div class='spinner-grow text-primary' role='status'>
@@ -45,6 +46,7 @@
             @include('partials.dashboard.page-sidebar')
 
             @yield('main')
+
 
     </div>
 

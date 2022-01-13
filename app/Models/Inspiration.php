@@ -5,9 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class General extends Model
+class Inspiration extends Model
 {
     use HasFactory;
-    protected $table = 'generals';
-    protected $guarded = ['id'];
 }
