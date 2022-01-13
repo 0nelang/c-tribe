@@ -1,7 +1,7 @@
 @extends('layouts.dashboard-main')
 
 @section('main')
-
+{{-- @dd($general) --}}
 <div class="page-content">
     <div class="main-wrapper">
         <div class="row">
@@ -23,8 +23,8 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="" class="form-label">Description</label>
-                                <input type="email" class="form-control" id="" aria-describedby="emailHelp">
+                                <label for="description" class="form-label">Description</label>
+                                <input type="text" class="form-control" id="description" name="description">
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
