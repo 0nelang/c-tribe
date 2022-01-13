@@ -9,7 +9,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <a href="" class="btn btn-link btn-primary">
+                            <a href="/admin/people/create" class="btn btn-link btn-primary">
                                 <i class="user-plus"></i> add
                             </a>
                             <table class="table table-striped">

@@ -14,7 +14,7 @@ class PeopleController extends Controller
      */
     public function index()
     {
-        return view('dashboard.people',[
+        return view('dashboard.our-people.index-people',[
             "page" => "people"
         ]);
     }

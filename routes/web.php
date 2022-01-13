@@ -32,7 +32,6 @@ Route::get('/admin/page', function () {
 });
 
 Route::get('/admin/people', [PeopleController::class, 'index']);
-
 // Route::get('/admin/partners', function () {
 //     return view('dashboard.welcome',[
 //         "page" => "partners"
