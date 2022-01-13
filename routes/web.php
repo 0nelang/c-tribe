@@ -17,7 +17,7 @@ use App\Http\Controllers\PartnerController;
 */
 
 Route::get('/admin/general', [GeneralController::class, 'general']);
-Route::post('/admin/general/{general:id}', [GeneralController::class, 'update']);
+Route::put('/admin/general/{general:id}', [GeneralController::class, 'update']);
 
 Route::get('/', function () {
     return view('dashboard.welcome',[
