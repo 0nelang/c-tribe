@@ -44,24 +44,24 @@
                                         <input class="form-control" type="file" id="background_image" name="background_image">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="brand_images" class="form-label">Brand Image</label>
-                                        <input class="form-control" type="file" id="brand_images" name="brand_image">
+                                        <label for="brand_images_f" class="form-label">Brand Image</label>
+                                        <input class="form-control" type="file" id="brand_images_f" name="brand_image_f">
                                     </div>
                                     <div class="mb-3">
                                         <label for="" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="" aria-describedby="emailHelp">
+                                        <input type="email" class="form-control" id="" name="emailHelp">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="" class="form-label">Phone</label>
-                                        <input type="email" class="form-control" id="" aria-describedby="emailHelp">
+                                        <label for="phone" class="form-label">Phone</label>
+                                        <input type="text" class="form-control" id="phone" name="phone">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="" class="form-label">Social</label>
-                                        <input type="email" class="form-control" id="" aria-describedby="emailHelp">
+                                        <label for="social" class="form-label">Social</label>
+                                        <input type="text" class="form-control" id="social" name="social">
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="" class="form-label">Address</label>
-                                        <input type="email" class="form-control" id="" aria-describedby="emailHelp">
+                                    <div class="mb-3">  
+                                        <label for="addres" class="form-label">Address</label>
+                                        <input type="email" class="form-control" id="addres" name="addres">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
@@ -77,12 +77,12 @@
                                             for documentation on required classes, form layout, and more.</p>
                                         <form action="" method="" enctype="multipart/form-data">
                                             <div class="mb-3">
-                                                <label for="formFile" class="form-label">Cursor Image</label>
-                                                <input class="form-control" type="file" id="formFile">
+                                                <label for="cursor_image" class="form-label">Cursor Image</label>
+                                                <input class="form-control" type="file" id="cursor_image" name="cursor_image">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="formFile" class="form-label">Hover Image Menu</label>
-                                                <input class="form-control" type="file" id="formFile">
+                                                <label for="hover_image" class="form-label">Hover Image Menu</label>
+                                                <input class="form-control" type="file" id="hover_image" name="hover_image">
                                             </div>
                                             <button type="submit" class="btn btn-primary">Submit</button>
                                         </form>

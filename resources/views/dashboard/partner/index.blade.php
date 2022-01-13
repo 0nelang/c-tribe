@@ -26,7 +26,7 @@
                                     <th scope="row">1</th>
                                     <td><img src=".." alt=".."></td>
                                     <td>Otto</td>
-                                    <td>@mdo</td>
+                                    <td>@kaka</td>
                                 </tr>
                             </tbody>
                         </table>
