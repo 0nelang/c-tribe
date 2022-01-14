@@ -643,3 +643,7 @@ table.dataTable td, table.dataTable th {
 .profile-header .profile-header-menu ul li a.active, .profile-header .profile-header-menu ul li a:hover {
     color: rgba(225,235,245,.87);
 }}
+
+.dropdown-menu{
+    transform: translate3d(-90px, 50px, 0px) !important
+}

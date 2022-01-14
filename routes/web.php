@@ -30,13 +30,14 @@ Route::get('/admin/page', function () {
         "page" => "page"
     ]);
 });
+Route::resource('admin/people', PeopleController::class);
 
-Route::get('/admin/people', [PeopleController::class, 'index']);
-// Route::get('/admin/partners', function () {
-//     return view('dashboard.welcome',[
-//         "page" => "partners"
-//     ]);
-// });
+
+Route::get('/admin/partners', function () {
+    return view('dashboard.welcome',[
+        "page" => "partners"
+    ]);
+});
 
 Route::get('/admin/service', function () {
     return view('dashboard.welcome',[
@@ -55,5 +56,8 @@ Route::get('/admin/project', function () {
         "page" => "project"
     ]);
 });
+<<<<<<< HEAD
 
 Route::resource('/admin/partners', PartnerController::class);
+=======
+>>>>>>> 8874cad4149c327bd40f5fc3011b39bc2cafd903

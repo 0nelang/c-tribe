@@ -8,7 +8,7 @@
     <meta name="keywords" content="admin,dashboard">
     <meta name="author" content="stacks">
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    
+
     <!-- Title -->
     <title>C-tribe {{ $page }}</title>
 
@@ -18,8 +18,9 @@
     <link href="/plugins/font-awesome/css/all.min.css" rel="stylesheet">
     <link href="/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
     <link href="/plugins/apexcharts/apexcharts.css" rel="stylesheet">
+    <link href="/plugins/DataTables/datatables.min.css" rel="stylesheet">
 
-  
+
     <!-- Theme Styles -->
     <link href="/css/main.min.css" rel="stylesheet">
     <link href="/css/dark-theme.css" rel="stylesheet">
@@ -31,6 +32,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="/plugins/jquery/jquery-3.4.1.min.js"></script>
 </head>
 <body>
     {{-- <div class='loader'>
@@ -47,11 +49,7 @@
 
     </div>
 
-            
-
-    
     <!-- Javascripts -->
-    <script src="/plugins/jquery/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -59,5 +57,7 @@
     <script src="/plugins/apexcharts/apexcharts.min.js"></script>
     <script src="/js/main.min.js"></script>
     <script src="/js/pages/dashboard.js"></script>
+    <script src="/js/pages/datatables.js"></script>
+    <script src="/plugins/DataTables/datatables.min.js"></script>
 </body>
 </html>
