@@ -13,26 +13,26 @@
                             <table id="zero-conf" class="display" style="width:100%">
                                 <thead>
                                     <tr>
+                                        <th>No</th>
                                         <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
+                                        <th>Option</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($inspiration as $id => $pep)
 
                                     <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
+                                        <td>{{ $id + 1}}</td>
+                                        <td>{{ $pep->name }}</td>
                                         <td style="text-align: center">
-                                            <div class="dropdown dropstart">
+                                            <div class="dropdown">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </button>
                                                 <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
-                                                    <li><a class="dropdown-item text-dark" href="/admin/people/{{ $pep->id }}/edit">Edit</a></li>
+                                                    <li><a class="dropdown-item text-dark" href="{{ route('inspiration.edit', ['inspiration' => $pep->id]) }}">Show</a></li>
                                                     <li>
-                                                        <form id="form-delete{{ $id }}" action="{{ route('people.destroy',['person' => $pep->id]) }}" method="post" style="display: none">
+                                                        <form id="form-delete{{ $id }}" action="{{ route('inspiration.destroy',['inspiration' => $pep->id]) }}" method="post" style="display: none">
                                                             @method('delete')
                                                             @csrf
                                                         </form>

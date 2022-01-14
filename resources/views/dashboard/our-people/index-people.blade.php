@@ -30,7 +30,7 @@
                                         <td>{{ $pep->description }}</td>
                                         <td><img src="{{ asset('storage/' . $pep->photo ) }}" style="width: 100%"></td>
                                         <td style="text-align: center">
-                                            <div class="dropdown dropstart">
+                                            <div class="dropdown dropright">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </button>

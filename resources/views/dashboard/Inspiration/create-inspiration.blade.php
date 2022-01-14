@@ -21,20 +21,20 @@
                                   @enderror
                                 </div>
                                 <div class="mb-3">
-                                  <label for="title" class="form-label">Title</label>
-                                  <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title">
-                                  @error('title')
+                                  <label for="quote" class="form-label">Quote</label>
+                                  <input type="text" name="quote" class="form-control @error('quote') is-invalid @enderror" id="quote">
+                                  @error('quote')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
                                   @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="filePhoto" class="form-label">Photo</label>
+                                    <label for="image" class="form-label">Image Cover</label>
                                     <br>
                                     <img id="output" class="mb-3">
-                                    <input class="form-control @error('photo') is-invalid @enderror" name="photo" type="file" id="filePhoto" accept="image/*">
-                                    @error('photo')
+                                    <input class="form-control @error('image') is-invalid @enderror" name="image" type="file" id="image" accept="image/*">
+                                    @error('image')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -49,6 +49,17 @@
                                         </div>
                                     @enderror
                                 </div>
+                                <div class="mb-3">
+                                    <label for="video" class="form-label">video</label>
+                                    <br>
+                                    <img id="output" class="mb-3">
+                                    <input class="form-control @error('video') is-invalid @enderror" name="video" type="file" id="video" accept="video/*">
+                                    @error('video')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                  @enderror
+                                </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
@@ -60,7 +71,7 @@
 
     <script>
         $(function(){
-        $("#filePhoto").change(function(event) {
+        $("#fileimage").change(function(event) {
             var x = URL.createObjectURL (event.target.files[0]);
             $("#output").attr("src",x);
             console.log(event);
