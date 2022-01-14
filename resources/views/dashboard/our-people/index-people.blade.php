@@ -22,13 +22,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($people as $pep)
+                                    @foreach ($people as $id => $pep)
 
                                     <tr>
                                         <td>{{ $pep->name }}</td>
                                         <td>{{ $pep->title }}</td>
                                         <td>{{ $pep->description }}</td>
-                                        <td><img src="{{ asset('storage/' . $pep->photo ) }}" style="width: 210px"></td>
+                                        <td><img src="{{ asset('storage/' . $pep->photo ) }}" style="width: 100%"></td>
                                         <td style="text-align: center">
                                             <div class="dropdown dropstart">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -37,11 +37,11 @@
                                                 <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
                                                     <li><a class="dropdown-item text-dark" href="/admin/people/{{ $pep->id }}/edit">Edit</a></li>
                                                     <li>
-                                                        <form action="{{ route('people.destroy',['person' => $pep->id]) }}" method="post">
+                                                        <form id="form-delete{{ $id }}" action="{{ route('people.destroy',['person' => $pep->id]) }}" method="post" style="display: none">
                                                             @method('delete')
                                                             @csrf
-                                                            <button class="badge bg-danger border-0" onclick="confirm('delete post?')">delete</button>
                                                         </form>
+                                                        <a class="dropdown-item text-dark" href="#" onclick="what({{ $id }})">delete</a>
                                                     </li>
                                                 </ul>
                                             </div>
