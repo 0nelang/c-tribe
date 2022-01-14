@@ -6,6 +6,7 @@ use App\Models\General;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class GeneralController extends Controller
 {
@@ -128,7 +129,10 @@ class GeneralController extends Controller
         //     'disk' => 'public'
         // ]) ;
 
+        
         General::where('id', $id)->update($validated);
+        
+        Alert::success('Success', 'Data Updated Successfully');
         
         return redirect('/admin/general');
     }

@@ -61,6 +61,8 @@ class PeopleController extends Controller
             'description' => 'required'
         ]);
 
+        Alert::success('Success', 'Succesfully add new data');
+
         $validated['photo'] = $img_path;
 
         People::create($validated);
@@ -110,6 +112,8 @@ class PeopleController extends Controller
             'description' => 'required'
         ]);
 
+        Alert::success('Success', 'Update Data Succesfully');
+
         if ($request->hasFile('photo')) {
             Storage::disk('public')->delete($person->photo);
             $img = Image::make($request->file('photo'));
@@ -138,7 +142,6 @@ class PeopleController extends Controller
      */
     public function destroy(People $person)
     {
-        // Alert::question('Question Title', 'Question Message');
         Storage::delete($person->photo);
         People::destroy($person->id);
         return redirect('/admin/people');

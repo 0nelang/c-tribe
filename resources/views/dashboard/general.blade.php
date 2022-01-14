@@ -101,7 +101,7 @@
                                         <div class="mb-3">
                                             <label for="cursor_image" class="form-label">Cursor Image</label>
                                             <div class="mb-3">
-                                                <img src="{{ asset('storage/' . $general->cursor_image) }}" alt=".." id="view">
+                                                <img src="{{ asset('storage/' . $general->cursor_image) }}" alt="{{ $general->cursor_image }}" id="view">
                                             </div>
                                             <input class="form-control" @error('cursor_image') is-invalid @enderror" value="{{ $general->cursor_image }}" name="cursor_image" type="file" id="pre" accept="image/*""
                                                 name="cursor_image">
@@ -112,7 +112,7 @@
                                         <div class="mb-3">
                                             <label for="hover_image" class="form-label">Hover Image Menu</label>
                                             <div class="mb-3">
-                                                <img src="{{ asset('storage/' . $general->hover_image) }}" alt=".." id="views">
+                                                <img src="{{ asset('storage/' . $general->hover_image) }}" alt="{{ $general->hover_image }}" id="views">
                                             </div>
                                             {{-- <img src="{{ asset('storage/' . $general->hover_image) }}" alt=".."> --}}
                                             <input class="form-control" @error('hover_image') is-invalid @enderror" value="{{ $general->hover_image }}" name="hover_image" type="file" id="photo" accept="image/*">
