@@ -8,7 +8,7 @@
     <meta name="keywords" content="admin,dashboard">
     <meta name="author" content="stacks">
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    
+
     <!-- Title -->
     <title>C-tribe {{ $page }}</title>
 
@@ -18,8 +18,9 @@
     <link href="/plugins/font-awesome/css/all.min.css" rel="stylesheet">
     <link href="/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
     <link href="/plugins/apexcharts/apexcharts.css" rel="stylesheet">
+    <link href="/plugins/DataTables/datatables.min.css" rel="stylesheet">
 
-  
+
     <!-- Theme Styles -->
     <link href="/css/main.min.css" rel="stylesheet">
     <link href="/css/dark-theme.css" rel="stylesheet">
@@ -31,29 +32,54 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="/plugins/jquery/jquery-3.4.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
 </head>
 <body>
+    @include('sweetalert::alert')
     <div class="page-container">
-
         <div class='loader'>
-        <div class='spinner-grow text-primary' role='status'>
-            <span class='sr-only'>Loading...</span>
+            <div class='spinner-grow text-primary' role='status'>
+              <span class='sr-only'>Loading...</span>
+            </div>
         </div>
+            @include('partials.dashboard.page-header')
 
-        
-        @include('partials.dashboard.page-header')
-    
-        @include('partials.dashboard.page-sidebar')
-    
-        @yield('main')
+            @include('partials.dashboard.page-sidebar')
+
+            @yield('main')
+
 
     </div>
 
-            
 
-    
+
+    <script>
+        function what(id) {
+            Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $('#form-delete' + id).submit();
+                    Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                    )
+                }
+            })
+        }
+    </script>
+
     <!-- Javascripts -->
-    <script src="/plugins/jquery/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -61,5 +87,7 @@
     <script src="/plugins/apexcharts/apexcharts.min.js"></script>
     <script src="/js/main.min.js"></script>
     <script src="/js/pages/dashboard.js"></script>
+    <script src="/js/pages/datatables.js"></script>
+    <script src="/plugins/DataTables/datatables.min.js"></script>
 </body>
 </html>

@@ -17,7 +17,7 @@
             </ul>
             </div>
             <div class="logo">
-              <a class="navbar-brand" href="index.html"></a>
+              <a class="navbar-brand" href="#"></a>
             </div>
             <div class="" id="headerNav">
               <ul class="navbar-nav">
