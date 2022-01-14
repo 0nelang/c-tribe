@@ -38,22 +38,21 @@
     <link rel="stylesheet" href="sweetalert2.min.css">
 </head>
 <body>
-    @include('sweetalert::alert')
-    <div class="page-container">
-        <div class='loader'>
-            <div class='spinner-grow text-primary' role='status'>
-              <span class='sr-only'>Loading...</span>
-            </div>
-        </div>
-            @include('partials.dashboard.page-header')
-
-            @include('partials.dashboard.page-sidebar')
-
-            @yield('main')
-
+    {{-- <div class='loader'>
+    <div class='spinner-grow text-primary' role='status'>
+        <span class='sr-only'>Loading...</span>
+    </div>
+    </div> --}}
+    <div class="page-container">     
+        @include('partials.dashboard.page-header')
+    
+        @include('partials.dashboard.page-sidebar')
+    
+        @yield('main')
 
     </div>
 
+<<<<<<< HEAD
 
 
     <script>
@@ -79,6 +78,8 @@
         }
     </script>
 
+=======
+>>>>>>> d32d80a277e25611cd36dc4eed474085f48f8e1b
     <!-- Javascripts -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
