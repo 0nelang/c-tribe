@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\InspirationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,12 +46,6 @@ Route::get('/admin/service', function () {
     ]);
 });
 
-Route::get('/admin/inspiration', function () {
-    return view('dashboard.welcome',[
-        "page" => "inspiration"
-    ]);
-});
-
 Route::get('/admin/project', function () {
     return view('dashboard.welcome',[
         "page" => "project"
@@ -58,3 +53,4 @@ Route::get('/admin/project', function () {
 });
 
 Route::resource('/admin/partners', PartnerController::class);
+Route::resource('/admin/inspiration', InspirationController::class);
