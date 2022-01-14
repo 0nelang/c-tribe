@@ -14,7 +14,9 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="brand_navbar" class="form-label">Brand Image</label>
-                                <img src="{{ asset('storage/' . $general->brand_navbar) }}" alt="{{ $general->brand_navbar }}">
+                                <div class="mb-3">
+                                    <img src="{{ asset('storage/' . $general->brand_navbar) }}" alt="{{ $general->brand_navbar }}" id="output">
+                                </div>
                                 <input class="form-control" type="file" id="brand_navbar" name="brand_navbar"
                                     value="{{ $general->brand_navbar }}">
                                 @error('brand_navbar')
@@ -39,7 +41,9 @@
                                 <h5 class="card-title">Footer</h5>
                                 <div class="mb-3">
                                     <label for="background_footer" class="form-label">Background Image</label>
-                                    <img src="{{ asset('storage/' . $general->background_footer) }}" alt="..">
+                                    <div class="mb-3">
+                                        <img src="{{ asset('storage/' . $general->background_footer) }}" alt=".." id="output">
+                                    </div>
                                     <input class="form-control" type="file" id="background_footer"
                                         name="background_footer">
                                     @error('background_footer')
@@ -48,7 +52,9 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="brand_footer" class="form-label">Brand Image</label>
-                                    <img src="{{ asset('storage/' . $general->brand_footer) }}" alt="..">
+                                    <div class="mb-3">
+                                        <img src="{{ asset('storage/' . $general->brand_footer) }}" alt=".. id="output"">
+                                    </div>
                                     <input class="form-control" type="file" id="brand_footer" name="brand_footer">
                                     @error('brand_footer')
                                         <small class="text-danger">{{ $message }}</small>
@@ -96,7 +102,9 @@
                                         <h5 class="card-title">General</h5>
                                         <div class="mb-3">
                                             <label for="cursor_image" class="form-label">Cursor Image</label>
-                                            <img src="{{ asset('storage/' . $general->cursor_image) }}" alt="..">
+                                            <div class="mb-3">
+                                                <img src="{{ asset('storage/' . $general->cursor_image) }}" alt=".." id="output">
+                                            </div>
                                             <input class="form-control" type="file" id="cursor_image"
                                                 name="cursor_image">
                                             @error('cursor_image')
@@ -105,7 +113,10 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="hover_image" class="form-label">Hover Image Menu</label>
-                                            <img src="{{ asset('storage/' . $general->hover_image) }}" alt="..">
+                                            <div class="mb-3">
+                                                <img src="{{ asset('storage/' . $general->hover_image) }}" alt=".." id="output">
+                                            </div>
+                                            {{-- <img src="{{ asset('storage/' . $general->hover_image) }}" alt=".."> --}}
                                             <input class="form-control" type="file" id="hover_image" name="hover_image">
                                             @error('hover_image')
                                                 <small class="text-danger">{{ $message }}</small>
@@ -117,4 +128,15 @@
                                 </div>
                             </div>
                         </div>
+
+                        <script>
+                            $(function(){
+                            $("#filePhoto").change(function(event) {
+                                var x = URL.createObjectURL (event.target.files[0]);
+                                $("#output").attr("src",x);
+                                console.log(event);
+                            });
+                            });
+                    
+                        </script>
                         @endsection

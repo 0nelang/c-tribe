@@ -138,7 +138,7 @@ class PeopleController extends Controller
      */
     public function destroy(People $person)
     {
-        Alert::question('Question Title', 'Question Message');
+        // Alert::question('Question Title', 'Question Message');
         Storage::delete($person->photo);
         People::destroy($person->id);
         return redirect('/admin/people');
