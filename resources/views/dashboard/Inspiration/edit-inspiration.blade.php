@@ -9,7 +9,8 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('inspiration.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('inspiration.update',['inspiration' => $inspiration->id]) }}" method="POST" enctype="multipart/form-data">
+                                @method("put")
                                 @csrf
                                 <div class="mb-3">
                                   <label for="name" class="form-label is-invalid">Name</label>
@@ -32,8 +33,8 @@
                                 <div class="mb-3">
                                     <label for="image" class="form-label">Image Cover</label>
                                     <br>
-                                    <img id="output" class="mb-3" src="{{ asset('storage/' . $inspiration->image ) }}">
-                                    <input class="form-control @error('image') is-invalid @enderror" name="image" type="file" id="image" accept="image/*">
+                                    <img id="img-output" class="mb-3" src="{{ asset('storage/' . $inspiration->image ) }}">
+                                    <input class="form-control @error('image') is-invalid @enderror" name="image" type="file" id="imageFile" accept="image/*">
                                     @error('image')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -52,8 +53,8 @@
                                 <div class="mb-3">
                                     <label for="video" class="form-label">video</label>
                                     <br>
-                                    <video src="{{ asset('storage/' . $inspiration->video ) }}" controls></video>
-                                    <input class="form-control @error('video') is-invalid @enderror" name="video" type="file" id="video" accept="video/*">
+                                    <video id="vid-output" src="{{ asset('storage/' . $inspiration->video ) }}" controls></video>
+                                    <input class="form-control @error('video') is-invalid @enderror" name="video" type="file" id="videoFile" accept="video/*">
                                     @error('video')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -71,12 +72,21 @@
 
     <script>
         $(function(){
-        $("#fileimage").change(function(event) {
+        $("#imageFile").change(function(event) {
             var x = URL.createObjectURL (event.target.files[0]);
-            $("#output").attr("src",x);
+            $("#img-output").attr("src",x);
             console.log(event);
         });
-        })
+        });
+
+        $(function(){
+        $("#videoFile").change(function(event) {
+            var x = URL.createObjectURL (event.target.files[0]);
+            $("#vid-output").show();
+            $("#vid-output").attr("src",x);
+            console.log(event);
+        });
+        });
 
     </script>
 @endsection

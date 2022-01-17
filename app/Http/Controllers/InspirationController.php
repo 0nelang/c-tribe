@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Inspiration;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class InspirationController extends Controller
@@ -95,7 +96,27 @@ class InspirationController extends Controller
      */
     public function update(Request $request, Inspiration $inspiration)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required',
+            'quote' => 'required',
+            'description' => 'required',
+            'image' => 'image|file',
+            'video' => 'mimetypes:video/avi,video/mp4'
+        ]);
+
+        if ($request->hasFile('image')) {
+            Storage::disk('public')->delete($inspiration->image);
+            $validated['image'] = $request->file('image')->store('inspiration-images', ['disk' => 'public']);
+        }
+
+        if ($request->hasFile('video')) {
+            Storage::disk('public')->delete($inspiration->video);
+            $validated['video'] = $request->file('video')->store('inspire-video', ['disk' => 'public']);
+        }
+
+        Inspiration::where('id', $inspiration->id)->update($validated);
+
+        return redirect(route('inspiration.index'));
     }
 
     /**
@@ -106,6 +127,8 @@ class InspirationController extends Controller
      */
     public function destroy(Inspiration $inspiration)
     {
+        Storage::disk('public')->delete($inspiration->video);
+        Storage::disk('public')->delete($inspiration->image);
         Inspiration::destroy($inspiration->id);
         return redirect(route('inspiration.index'));
     }

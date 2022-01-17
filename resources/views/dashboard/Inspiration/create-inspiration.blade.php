@@ -30,10 +30,10 @@
                                   @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="image" class="form-label">Image Cover</label>
+                                    <label id="image" for="image" class="form-label">Image Cover</label>
                                     <br>
-                                    <img id="output" class="mb-3">
-                                    <input class="form-control @error('image') is-invalid @enderror" name="image" type="file" id="image" accept="image/*">
+                                    <img id="img-output" class="mb-3">
+                                    <input class="form-control @error('image') is-invalid @enderror" name="image" type="file" id="imageFile" accept="image/*">
                                     @error('image')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -52,8 +52,8 @@
                                 <div class="mb-3">
                                     <label for="video" class="form-label">video</label>
                                     <br>
-                                    <img id="output" class="mb-3">
-                                    <input class="form-control @error('video') is-invalid @enderror" name="video" type="file" id="video" accept="video/*">
+                                    <video id="vid-output" controls style="display: none"></video>
+                                    <input class="form-control @error('video') is-invalid @enderror" name="video" type="file" id="videoFile" accept="video/*">
                                     @error('video')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -71,12 +71,21 @@
 
     <script>
         $(function(){
-        $("#fileimage").change(function(event) {
+        $("#imageFile").change(function(event) {
             var x = URL.createObjectURL (event.target.files[0]);
-            $("#output").attr("src",x);
+            $("#img-output").attr("src",x);
             console.log(event);
         });
-        })
+        });
+
+        $(function(){
+        $("#videoFile").change(function(event) {
+            var x = URL.createObjectURL (event.target.files[0]);
+            $("#vid-output").show();
+            $("#vid-output").attr("src",x);
+            console.log(event);
+        });
+        });
 
     </script>
 @endsection
