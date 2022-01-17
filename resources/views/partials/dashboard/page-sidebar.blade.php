@@ -10,7 +10,7 @@
             Apps
           </li>
           <li>
-            <a href="index.html"><i data-feather="tool"></i>Settings<i class="fas fa-chevron-right dropdown-icon"></i></a>
+            <a href="#"><i data-feather="tool"></i>Settings<i class="fas fa-chevron-right dropdown-icon"></i></a>
             <ul class="">
               <li><a href="/admin/page"><i class="far fa-circle"></i>page</a></li>
               <li><a href="/admin/general"><i class="far fa-circle"></i>general</a></li>

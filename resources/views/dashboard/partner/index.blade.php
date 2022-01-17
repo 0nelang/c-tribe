@@ -9,33 +9,55 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <a href="" class="btn btn-link btn-primary">
-                            <i class="user-plus"></i> add
-                        </a>
-                        <table class="table table-striped">
+                        <a href="/admin/partners/create" class="btn btn-primary mb-3">Create</a>
+                        <table id="zero-conf" class="display" style="table-layout:fixed;
+                        width:100%;">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">logo</th>
-                                    <th scope="col">index</th>
-                                    <th scope="col">title</th>
+                                    <th>Position</th>
+                                    <th>Logo</th>
+                                    <th>Option</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($partner as $id => $part)
+
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td><img src=".." alt=".."></td>
-                                    <td>Otto</td>
-                                    <td>@kaka</td>
+                                    <td>{{ $part->index }}</td>
+                                    <td><img src="{{ asset('storage/' . $part->logo ) }}" alt="{{ $part->logo }}" style="width: 100%"></td>
+                                    <td style="">
+                                        <div class="dropdown dropstart">
+                                            <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v"></i>
+                                            </button>
+                                            <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
+                                                <li><a class="dropdown-item text-dark" href="/admin/people/{{ $part->id }}/edit">Edit</a></li>
+                                                <li>
+                                                    <form id="form-delete{{ $id }}" action="/admin/partners/delete" method="post" style="display: none">
+                                                        @method('delete')
+                                                        @csrf
+                                                    </form>
+                                                    <a class="dropdown-item text-dark" href="#" onclick="what({{ $id }})">delete</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
                                 </tr>
+
+                                @endforeach
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Position</th>
+                                    <th>Logo</th>
+                                    <th>Option</th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-
-    </div>
-
+</div>
 
     @endsection

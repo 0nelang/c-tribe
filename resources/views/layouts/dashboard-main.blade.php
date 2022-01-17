@@ -52,7 +52,6 @@
 
     </div>
 
-    
     <script>
         function what(id) {
             Swal.fire({

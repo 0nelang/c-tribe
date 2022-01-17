@@ -32,12 +32,13 @@ Route::get('/admin/page', function () {
 });
 Route::resource('admin/people', PeopleController::class);
 
+Route::resource('/admin/partners', PartnerController::class);
 
-Route::get('/admin/partners', function () {
-    return view('dashboard.welcome',[
-        "page" => "partners"
-    ]);
-});
+// Route::get('/admin/partners', function () {
+//     return view('dashboard.welcome',[
+//         "page" => "partners"
+//     ]);
+// });
 
 Route::get('/admin/service', function () {
     return view('dashboard.welcome',[
@@ -56,5 +57,3 @@ Route::get('/admin/project', function () {
         "page" => "project"
     ]);
 });
-
-Route::resource('/admin/partners', PartnerController::class);
