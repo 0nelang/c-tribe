@@ -1,6 +1,6 @@
 <header class="header header__black" id="header">
     <div class="header__wrap">
-      <div class="header__logo"><a href="homepage.html"><img class="logo-1" src="/images/logo-ctribe.svg"/><img class="logo-2" src="/images/logo-ctribe-white.svg"/></a></div>
+      <div class="header__logo"><a href="/frontend/homepage"><img class="logo-1" src="/images/logo-ctribe.svg"/><img class="logo-2" src="/images/logo-ctribe-white.svg"/></a></div>
       <div class="header__text"><span>WE ARE NOT YOUR AGENCY WE ARE SOMETHING BETTER</span></div>
       <div class="header__menu">
         <div class="menu-toggle"><span>MENU</span><span class="close">CLOSE</span></div>

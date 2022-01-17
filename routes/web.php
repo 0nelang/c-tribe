@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PartnerController;
 
 /*
@@ -40,37 +41,23 @@ Route::resource('/admin/partners', PartnerController::class);
 //     ]);
 // });
 
-Route::get('/frontend/flagship', function (){
-    return view('frontend.flagship');
-});
+Route::get('/frontend/flagship', [HomeController::class,'flagship']);
 
-Route::get('/frontend/homepage', function (){
-    return view('frontend.homepage');
-});
+Route::get('/frontend/homepage', [HomeController::class,'homepage']);
 
 Route::get('/frontend/index', function (){
     return view('frontend.index');
 });
 
-Route::get('/frontend/inspiration', function (){
-    return view('frontend.inspiration');
-});
+Route::get('/frontend/inspiration',[HomeController::class,'inspiration']);
 
-Route::get('/frontend/landing', function (){
-    return view('frontend.landing');
-});
+Route::get('/frontend/landing', [HomeController::class,'landing']);
 
-Route::get('/frontend/our-people', function (){
-    return view('frontend.our-people');
-});
+Route::get('/frontend/our-people', [HomeController::class,'our_people']);
 
-Route::get('/frontend/project', function (){
-    return view('frontend.project');
-});
+Route::get('/frontend/project', [HomeController::class,'project']);
 
-Route::get('/frontend/tribes', function (){
-    return view('frontend.tribes');
-});
+Route::get('/frontend/tribes',[HomeController::class,'tribes']);
 
 Route::get('/admin/service', function () {
     return view('dashboard.welcome',[

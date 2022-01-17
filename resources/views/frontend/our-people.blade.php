@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>CTRIBE</title>
-    <meta name="description" content=""/>
-    <meta name="theme-color" content=""/>
-    <link rel="shortcut icon" href="favicon.png"/>
-    <link rel="stylesheet" href="/plugins/lity/lity.css"/>
-    <link rel="stylesheet" href="/css/styles/main.css"/>
-  </head>
-  <body>
-    <div class="cursor"></div>
-    <!-- HEADER-->
-    @include('frontend.partial.head')
+@extends('frontend.partial.main')
+
+@section('content')
+    
     <main class="page-ourpeople">
       <section class="page-ourpeople__one cursor-img header-2">
         <div class="wrap">
@@ -81,11 +68,4 @@
         <div class="imgctribe"><img src="/images/big-ctribe.svg" alt="img"/></div>
       </section>
     </main>
-    <!-- FOOTER-->
-    <footer class="footer" id="footer"></footer>
-  </body>
-  <script src="/plugins/jquery/jquery-3.4.1.min.js"></script>
-  <script src="/plugins/lity/lity.js"></script>
-  <script src="/plugins/marquee/js/marquee.js"></script>
-  <script src="/js/scripts/main.js"></script>
-</html>
+    @endsection
