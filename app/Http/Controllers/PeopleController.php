@@ -61,12 +61,12 @@ class PeopleController extends Controller
             'description' => 'required'
         ]);
 
-        Alert::success('Success', 'Succesfully add new data');
 
         $validated['photo'] = $img_path;
 
         People::create($validated);
 
+        Alert::success('Success Title', 'Success Message');
         return redirect('/admin/people');
     }
 
