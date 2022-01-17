@@ -40,6 +40,38 @@ Route::resource('/admin/partners', PartnerController::class);
 //     ]);
 // });
 
+Route::get('/frontend/flagship', function (){
+    return view('frontend.flagship');
+});
+
+Route::get('/frontend/homepage', function (){
+    return view('frontend.homepage');
+});
+
+Route::get('/frontend/index', function (){
+    return view('frontend.index');
+});
+
+Route::get('/frontend/inspiration', function (){
+    return view('frontend.inspiration');
+});
+
+Route::get('/frontend/landing', function (){
+    return view('frontend.landing');
+});
+
+Route::get('/frontend/our-people', function (){
+    return view('frontend.our-people');
+});
+
+Route::get('/frontend/project', function (){
+    return view('frontend.project');
+});
+
+Route::get('/frontend/tribes', function (){
+    return view('frontend.tribes');
+});
+
 Route::get('/admin/service', function () {
     return view('dashboard.welcome',[
         "page" => "service"

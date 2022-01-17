@@ -8,15 +8,15 @@
     <meta name="description" content=""/>
     <meta name="theme-color" content=""/>
     <link rel="shortcut icon" href="favicon.png"/>
-    <link rel="stylesheet" href="plugins/lity/lity.css"/>
-    <link rel="stylesheet" href="styles/main.css"/>
+    <link rel="stylesheet" href="/plugins/lity/lity.css"/>
+    <link rel="stylesheet" href="/css/styles/main.css"/>
   </head>
   <body>
     <div class="cursor"></div>
     <!-- HEADER-->
     <header class="header header__black" id="header">
       <div class="header__wrap">
-        <div class="header__logo"><a href="homepage.html"><img class="logo-1" src="images/logo-ctribe.svg"/><img class="logo-2" src="images/logo-ctribe-white.svg"/></a></div>
+        <div class="header__logo"><a href="homepage.html"><img class="logo-1" src="/images/logo-ctribe.svg"/><img class="logo-2" src="/images/logo-ctribe-white.svg"/></a></div>
         <div class="header__text"><span>WE ARE NOT YOUR AGENCY WE ARE SOMETHING BETTER</span></div>
         <div class="header__menu">
           <div class="menu-toggle"><span>MENU</span><span class="close">CLOSE</span></div>
@@ -30,12 +30,12 @@
             <div class="bg-hover"></div><span></span>
           </div>
           <ul>
-            <li class="menu-item"><a class="menu-link" href="project.html" data-bg="images/img-bg-menu-inpsirtaion.jpg" data-text="PROJECT">PROJECT</a></li>
-            <li class="menu-item"><a class="menu-link" href="our-people.html" data-bg="images/img-bg-menu-inpsirtaion.jpg" data-text="PEOPLE">PEOPLE</a></li>
-            <li class="menu-item"><a class="menu-link" href="tribes.html" data-bg="images/img-bg-menu-inpsirtaion.jpg" data-text="TRIBES">TRIBES</a></li>
-            <li class="menu-item"><a class="menu-link" href="flagship.html" data-bg="images/img-bg-menu-inpsirtaion.jpg" data-text="FLAGSHIP">FLAGSHIP</a></li>
-            <li class="menu-item"><a class="menu-link" href="#" data-bg="images/img-bg-menu-inpsirtaion.jpg" data-text="SHOP">SHOP</a></li>
-            <li class="menu-item"><a class="menu-link" href="inspiration.html" data-bg="images/img-bg-menu-inpsirtaion.jpg" data-text="INSPIRATION">INSPIRATION</a></li>
+            <li class="menu-item"><a class="menu-link" href="project.html" data-bg="/images/img-bg-menu-inpsirtaion.jpg" data-text="PROJECT">PROJECT</a></li>
+            <li class="menu-item"><a class="menu-link" href="our-people.html" data-bg="/images/img-bg-menu-inpsirtaion.jpg" data-text="PEOPLE">PEOPLE</a></li>
+            <li class="menu-item"><a class="menu-link" href="tribes.html" data-bg="/images/img-bg-menu-inpsirtaion.jpg" data-text="TRIBES">TRIBES</a></li>
+            <li class="menu-item"><a class="menu-link" href="flagship.html" data-bg="/images/img-bg-menu-inpsirtaion.jpg" data-text="FLAGSHIP">FLAGSHIP</a></li>
+            <li class="menu-item"><a class="menu-link" href="#" data-bg="/images/img-bg-menu-inpsirtaion.jpg" data-text="SHOP">SHOP</a></li>
+            <li class="menu-item"><a class="menu-link" href="inspiration.html" data-bg="/images/img-bg-menu-inpsirtaion.jpg" data-text="INSPIRATION">INSPIRATION</a></li>
           </ul>
         </div>
       </div>
@@ -45,7 +45,7 @@
         <div class="wrap">
           <h1> <span>WE CREATES MULTI-DIMENSIONS OF CREATIVITY THROUGH THE CREATION, COLLABORATION AND COMMUNICATION OF URBAN LIFESTYLE CULTURE </span><small>We empower brand and connect consumers through creative marketing solution for a better market presence</small></h1>
         </div>
-        <div class="arrow"><a class="has-scroll" href="#sec2"> <img src="images/arrow-down.png" alt="arrow-down"/></a></div>
+        <div class="arrow"><a class="has-scroll" href="#sec2"> <img src="/images/arrow-down.png" alt="arrow-down"/></a></div>
       </section>
       <section class="page-home__two cursor-img header-1" id="sec2">
         <div class="wrap"><span class="huge-text">TRIBE</span><span class="small-text">We empower brand and connect consumers<br> through creative marketing solution<br> for a better market presence</span>
@@ -66,7 +66,7 @@
           <div class="col-right"><span class="date">15TH FEB 2022</span></div>
           <div class="col-main">
             <h2>FRASER COOKE <br>GATEKEEPER OF HYPE</h2>
-            <div class="img"><img src="images/img-home-four.png" alt="Image"/></div>
+            <div class="img"><img src="/images/img-home-four.png" alt="Image"/></div>
             <div class="desc">
               <p>Ctribe scores a coveted meeting with The brand's special projects senior director, <br>the man behind every fashionable nike collaboration From the past decade</p>
             </div><a class="rtf" href="#">READ THE FEATURE</a>
@@ -94,7 +94,7 @@
             <div class="tagline-marquee marquee">
               <h2>KENJI TAKIMI<span class="star">* </span>KENJI TAKIMI <span class="star">* </span></h2>
             </div>
-            <div class="img"><img src="images/img-home-06.jpg" alt="Image"/></div>
+            <div class="img"><img src="/images/img-home-06.jpg" alt="Image"/></div>
           </div>
           <div class="col-bot-l"><span class="oa">PARTNERS</span>
             <div class="desc">
@@ -113,14 +113,14 @@
           </div>
           <div class="right"><span>JKT, IND</span></div>
         </div>
-        <div class="imgctribe"><img src="images/big-ctribe.svg" alt="img"/></div>
+        <div class="imgctribe"><img src="/images/big-ctribe.svg" alt="img"/></div>
       </section>
     </main>
     <!-- FOOTER-->
     <footer class="footer" id="footer"></footer>
   </body>
-  <script src="plugins/jquery/jquery-3.4.1.min.js"></script>
-  <script src="plugins/lity/lity.js"></script>
-  <script src="plugins/marquee/js/marquee.js"></script>
-  <script src="scripts/main.js"></script>
+  <script src="/plugins/jquery/jquery-3.4.1.min.js"></script>
+  <script src="/plugins/lity/lity.js"></script>
+  <script src="/plugins/marquee/js/marquee.js"></script>
+  <script src="/js/scripts/main.js"></script>
 </html>
