@@ -6,6 +6,7 @@ use App\Models\Inspiration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class InspirationController extends Controller
 {
@@ -58,6 +59,7 @@ class InspirationController extends Controller
         }
 
         Inspiration::create($validated);
+        Alert::success('Success', 'Data create succesfully');
 
         return redirect(route('inspiration.index'));
     }
@@ -103,6 +105,7 @@ class InspirationController extends Controller
             'image' => 'image|file',
             'video' => 'mimetypes:video/avi,video/mp4'
         ]);
+        Alert::success('Success', 'Update Data Succesfully');
 
         if ($request->hasFile('image')) {
             Storage::disk('public')->delete($inspiration->image);

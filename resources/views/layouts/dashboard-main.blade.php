@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="sweetalert2.min.css">
 </head>
 <body>
+    @include('sweetalert::alert')
     {{-- <div class='loader'>
     <div class='spinner-grow text-primary' role='status'>
         <span class='sr-only'>Loading...</span>
