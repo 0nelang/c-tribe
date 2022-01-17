@@ -19,6 +19,7 @@
     <link href="/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
     <link href="/plugins/apexcharts/apexcharts.css" rel="stylesheet">
     <link href="/plugins/DataTables/datatables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.dataTables.min.css">
 
 
     <!-- Theme Styles -->
@@ -36,6 +37,8 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="sweetalert2.min.js"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
+
+    @yield('css')
 </head>
 <body>
     @include('sweetalert::alert')
@@ -76,11 +79,9 @@
             })
         }
     </script>
-<<<<<<< HEAD
-=======
 
->>>>>>> d313c928509f773829135b700a11d2caf586a032
     <!-- Javascripts -->
+    <script type="text/javascript" src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -90,5 +91,6 @@
     <script src="/js/pages/dashboard.js"></script>
     <script src="/js/pages/datatables.js"></script>
     <script src="/plugins/DataTables/datatables.min.js"></script>
+    @yield('js')
 </body>
 </html>

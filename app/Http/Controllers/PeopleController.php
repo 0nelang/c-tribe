@@ -45,6 +45,7 @@ class PeopleController extends Controller
     public function store(Request $request)
     {
         $img = Image::make($request->file('photo'));
+        dd($img);
         $img->resize(500, null,  function ($constraint)
         {
             $constraint->aspectRatio();
@@ -66,7 +67,7 @@ class PeopleController extends Controller
 
         People::create($validated);
 
-        Alert::success('Success Title', 'Success Message');
+        Alert::success('Success', 'Data create succesfully');
         return redirect('/admin/people');
     }
 

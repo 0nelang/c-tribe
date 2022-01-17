@@ -19,8 +19,8 @@ use App\Http\Controllers\InspirationController;
 
 Route::get('/admin/general', [GeneralController::class, 'general']);
 Route::put('/admin/general/{general:id}', [GeneralController::class, 'update']);
-Route::resource('admin/people', PeopleController::class);
-Route::resource('/admin/partners', PartnerController::class);
+Route::resource('/admin/people', PeopleController::class);
+Route::get('/admin/partners', [PartnerController::class, 'index']);
 Route::resource('/admin/inspiration', InspirationController::class);
 
 Route::get('/', function () {
