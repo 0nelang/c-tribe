@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\GeneralController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeopleController;
+use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\InspirationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +18,7 @@ use App\Http\Controllers\PeopleController;
 */
 
 Route::get('/admin/general', [GeneralController::class, 'general']);
-Route::post('/admin/general/{general:id}', [GeneralController::class, 'update']);
+Route::put('/admin/general/{general:id}', [GeneralController::class, 'update']);
 
 Route::get('/', function () {
     return view('dashboard.welcome',[
@@ -29,7 +31,6 @@ Route::get('/admin/page', function () {
         "page" => "page"
     ]);
 });
-
 Route::resource('admin/people', PeopleController::class);
 
 
@@ -50,3 +51,6 @@ Route::get('/admin/project', function () {
         "page" => "project"
     ]);
 });
+
+Route::resource('/admin/partners', PartnerController::class);
+Route::resource('/admin/inspiration', InspirationController::class);

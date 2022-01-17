@@ -15,16 +15,16 @@ class CreateGeneralsTable extends Migration
     {
         Schema::create('generals', function (Blueprint $table) {
             $table->id();
-            $table->string('hover_img');
-            $table->string('cursor_img');
-            $table->string('brand_navbar');
-            $table->string('description_navbar');
-            $table->string('brand_footer');
+            $table->string('hover_image')->nullable();
+            $table->string('cursor_image')->nullable();
+            $table->string('brand_navbar')->nullable();
+            $table->string('title');
+            $table->string('brand_footer')->nullable();
             $table->string('email_footer');
             $table->string('phone_footer');
             $table->string('social_footer');
             $table->string('addres_footer');
-            $table->string('background_footer');
+            $table->string('background_footer')->nullable();
             $table->timestamps();
         });
     }
