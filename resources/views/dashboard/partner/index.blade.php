@@ -42,12 +42,11 @@
                                                     </button>
                                                     <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
                                                         <li><a class="dropdown-item text-dark"
-                                                                href="/admin/people/{{ $part->id }}/edit">Edit</a></li>
+                                                                href="/admin/partners/{{ $part->id }}">Edit</a></li>
                                                         <li>
                                                             <form id="form-delete{{ $id }}"
-                                                                action="/admin/partners/delete" method="post"
+                                                                action="/admin/partners/delete/{{ $part->id }}" method="post"
                                                                 style="display: none">
-                                                                @method('delete')
                                                                 @csrf
                                                             </form>
                                                             <a class="dropdown-item text-dark" href="#"

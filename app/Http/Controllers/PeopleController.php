@@ -45,7 +45,6 @@ class PeopleController extends Controller
     public function store(Request $request)
     {
         $img = Image::make($request->file('photo'));
-        dd($img);
         $img->resize(500, null,  function ($constraint)
         {
             $constraint->aspectRatio();

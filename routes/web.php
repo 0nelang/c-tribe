@@ -21,10 +21,14 @@ Route::get('/admin/general', [GeneralController::class, 'general']);
 Route::put('/admin/general/{general:id}', [GeneralController::class, 'update']);
 Route::resource('/admin/people', PeopleController::class);
 Route::resource('/admin/inspiration', InspirationController::class);
+Route::resource('/admin/project', ProjectController::class);
 
 Route::get('/admin/partners', [PartnerController::class, 'index'])->name('partner.index');
 Route::get('/admin/partners/create', [PartnerController::class, 'create'])->name('partner.create');
 Route::post('/admin/partners', [PartnerController::class, 'store'])->name('partner.store');
+Route::get('/admin/partners/{partner:id}', [PartnerController::class, 'edit'])->name('partner.edit');
+Route::put('/admin/partners/update/{partner:id}', [PartnerController::class, 'update'])->name('partner.update');
+Route::post('/admin/partners/delete/{partner:id}', [PartnerController::class, 'destroy'])->name('partner.delete');
 Route::post('/admin/partners/position', [PartnerController::class, 'position'])->name('partner.position');
 
 Route::get('/', function () {
@@ -51,9 +55,4 @@ Route::get('/admin/service', function () {
     ]);
 });
 
-Route::get('/admin/project', function () {
-    return view('dashboard.welcome',[
-        "page" => "project"
-    ]);
-});
 
