@@ -3,7 +3,7 @@
           <li class="sidebar-title">
             Main
           </li>
-          <li class="{{ ($page === 'main')? 'active-page' : ''  }}">
+          <li>
             <a href="/"><i data-feather="home"></i>Dashboard</a>
           </li>
           <li class="sidebar-title">

@@ -67,7 +67,7 @@ class PeopleController extends Controller
 
         People::create($validated);
 
-        return redirect('/admin/people');
+        
     }
 
     /**
@@ -89,7 +89,6 @@ class PeopleController extends Controller
      */
     public function edit(People $person)
     {
-
         return view('dashboard.our-people.edit-people',[
             'page' => 'person',
             'people' => $person
@@ -108,7 +107,7 @@ class PeopleController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'title' => 'required',
-            'photo' => 'image|file',
+            'photo' => 'image|file',    
             'description' => 'required'
         ]);
 

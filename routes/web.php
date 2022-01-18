@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\PartnerController;
 
 /*
@@ -26,11 +27,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/admin/page', function () {
-    return view('dashboard.welcome',[
-        "page" => "page"
-    ]);
-});
+Route::resource('/admin/page', PageController::class);
+
 Route::resource('admin/people', PeopleController::class);
 
 Route::resource('/admin/partners', PartnerController::class);
