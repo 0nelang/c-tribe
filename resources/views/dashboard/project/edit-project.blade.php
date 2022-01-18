@@ -20,7 +20,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('project.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('project.update', ['project' => $project->id]) }}" method="POST" enctype="multipart/form-data">
                                 @method('put')
                                 @csrf
                                 <div class="row">
@@ -102,7 +102,7 @@
                                     <br>
                                     <img id="output" class="mb-3"
                                         src="{{ asset('storage/' . $project->mainImage) }}">
-                                    <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage[]"
+                                    <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage"
                                         type="file" required id="mainImage" accept="image/*">
                                     @error('mainImage')
                                         <div class="invalid-feedback">
@@ -115,7 +115,7 @@
                                     <label for="otherImage" class="form-label">Other Image</label>
                                     <br>
                                     <img id="output" class="mb-3">
-                                    <input class="form-control @error('otherImage') is-invalid @enderror" name="mainImage[]"
+                                    <input class="form-control @error('otherImage') is-invalid @enderror" name="otherImage[]"
                                         type="file" id="otherImage" accept="image/*" multiple="multiple">
                                     @error('otherImage')
                                         <div class="invalid-feedback">

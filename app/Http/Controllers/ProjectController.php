@@ -104,7 +104,33 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+        $validated = $request->validate([
+            'brand' => 'required',
+            'project' => 'required',
+            'date' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+            'body' => 'required',
+            'mainImage' => 'image|file',
+            'otherImage*' => 'image|file'
+        ]);
+
+        if ($request->hasFile('otherImage')) {
+            foreach ($request->otherImage as $value) {
+                $otherImage['otherImage'] = $value->store('project-image', ['disk' => 'public']);
+                $otherImage['project'] = $request->brand;
+                ProjectImage::create($otherImage);
+            }
+        }
+
+        Storage::delete($project->mainImage);
+        $validated['mainImage'] =  $request->file('mainImage')->store('project-images', ['disk' => 'public']);
+
+
+        Project::where('id', $project->id)->update($validated);
+        Alert::success('Success', 'Data update succesfully');
+
+        return redirect(route('project.index'));
     }
 
     /**
@@ -115,7 +141,17 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $otherImg = ProjectImage::where('project', $project->brand);
+        if ($otherImg != null) {
+            foreach ($otherImg as $value) {
+                storage::delete($value->otherImage);
+                ProjectImage::destroy($value->id);
+            }
+        }
+        storage::delete($project->mainImage);
+        Project::destroy($project->id);
+
+        return redirect()->back();
     }
 
     public function imgdel($id)
