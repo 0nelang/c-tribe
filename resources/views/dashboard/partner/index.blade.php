@@ -1,7 +1,10 @@
 @extends('layouts.dashboard-main')
 
 @section('css')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/rr-1.2.8/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.bootstrap4.min.css" />
+
 @endsection
 
 @section('main')
@@ -13,12 +16,12 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <a href="/admin/partners/create" class="btn btn-primary mb-3">Create</a>
-                            <table id="logo-table" class="display" style="table-layout:fixed;
-                                    width:100%;">
+                            <a href="{{ route('partner.create') }}" class="btn btn-primary mb-3">Create</a>
+                            <table id="logo-table" class="display" width="100%">
                                 <thead>
                                     <tr>
-                                        <th>Position</th>
+                                        <th>position</th>
+                                        <th>Id</th>
                                         <th>Logo</th>
                                         <th>Option</th>
                                     </tr>
@@ -28,9 +31,10 @@
 
                                         <tr>
                                             <td>{{ $part->index }}</td>
+                                            <td>{{ $part->id }}</td>
                                             <td><img src="{{ asset('storage/' . $part->logo) }}" alt="{{ $part->logo }}"
                                                     style="height: 89px"></td>
-                                            <td style="">
+                                            <td>
                                                 <div class="dropdown dropend">
                                                     <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
                                                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -56,13 +60,6 @@
 
                                     @endforeach
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Position</th>
-                                        <th>Logo</th>
-                                        <th>Option</th>
-                                    </tr>
-                                </tfoot>
                             </table>
                         </div>
                     </div>
@@ -71,25 +68,62 @@
         </div>
 
     @endsection
+
     @section('js')
-
-
-        <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.3/rr-1.2.8/datatables.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="{{ asset('js/reorder.js') }}">
+        </script>
 
         <script>
             var table = $('#logo-table').DataTable({
-                rowReorder: true
+                rowReorder: true,
             });
 
             table.on('row-reorder', function(e, diff, edit) {
-                console.log(edit);
                 var result = 'Reorder started on row: ' + edit.triggerRow.data()[1] + '<br>';
                 var newIndex, oldIndex;
                 for (var i = 0, ien = diff.length; i < ien; i++) {
+                    var rowData = table.row(diff[i].node).data();
+
                     newIndex = diff[i].newData;
                     oldIndex = diff[i].oldData;
                 }
 
+
             });
+            table.on('row-reordered', function(e, diff, edit) {
+                setTimeout(() => {
+                    var obj_id = table.column(1).data().toArray();
+                    console.log(obj_id);
+                    $.ajax({
+                        type: "post",
+                        url: "{{ url('') }}/admin/partners/position",
+                        dataType: "json",
+                        data: {
+                            id: obj_id,
+                            _token: '{{ csrf_token() }}'
+                        },
+                        success: function(response) {
+                            console.log(response);
+                        }
+                    });
+                }, 2000);
+            });
+
+
+            // table.on('row-reordered', function(e, diff, edit) {
+            //     var result = 'Reorder started on row: ' + edit.triggerRow.data()[1] + '<br>';
+            //     var newIndex, oldIndex;
+            //     for (var i = 0, ien = diff.length; i < ien; i++) {
+            //         var rowData = table.row(diff[i].node).data();
+
+            //         newIndex = diff[i].newData;
+            //         oldIndex = diff[i].oldData;
+            //     }
+            //     var id = edit.triggerRow.data()[1];
+
+            // });
         </script>
     @endsection

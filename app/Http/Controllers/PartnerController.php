@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Partner;
+use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
+use Intervention\Image\Facades\Image;
 class partnerController extends Controller
 {
     public function index()
@@ -12,5 +15,62 @@ class partnerController extends Controller
             'page' => 'partners',
             'partner' => Partner::all()
         ]);
+    }
+
+    public function create()
+    {
+        return view('dashboard.partner.create', [
+            'page' => 'partners'
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        $img = Image::make($request->file('logo'));
+        $img->resize(null, 89,  function ($constraint)
+        {
+            $constraint->aspectRatio();
+        });
+
+        $filename = time().'.'.$request->file('logo')->getClientOriginalExtension();
+        $img_path = 'logo/'.$filename;
+        Storage::put($img_path, $img->encode());
+
+        $rule = [
+            "logo" => "required|image|file"
+        ];
+
+        $validated = $request->validate($rule);
+
+
+        $validated['index'] = Partner::all()->count() + 1;
+        $validated['logo'] = $img_path;
+
+        Alert::success('Success', 'Succesfully add new data');
+
+        Partner::create($validated);
+
+        return redirect('/admin/partners');
+
+    }
+
+    public function edit(Partner $partner)
+    {
+
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function position(Request $request)
+    {
+        foreach ($request->id as $index => $id) {
+            Partner::find($id)->update(['index' => $index + 1]);
+        }
+
+        return response()->json('success');
+
     }
 }

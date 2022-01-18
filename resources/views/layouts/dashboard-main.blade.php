@@ -19,7 +19,6 @@
     <link href="/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
     <link href="/plugins/apexcharts/apexcharts.css" rel="stylesheet">
     <link href="/plugins/DataTables/datatables.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.dataTables.min.css">
 
 
     <!-- Theme Styles -->
@@ -81,7 +80,6 @@
     </script>
 
     <!-- Javascripts -->
-    <script type="text/javascript" src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
