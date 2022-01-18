@@ -38,11 +38,11 @@
     <link rel="stylesheet" href="sweetalert2.min.css">
 </head>
 <body>
-    <div class='loader'>
+    {{-- <div class='loader'>
     <div class='spinner-grow text-primary' role='status'>
         <span class='sr-only'>Loading...</span>
     </div>
-    </div>
+    </div> --}}
     <div class="page-container">     
         @include('partials.dashboard.page-header')
     
@@ -75,14 +75,18 @@
         }
     </script>
     <!-- Javascripts -->
+    {{-- ck-editor --}}
+    @yield('ck-editor')
     <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="{{ asset('/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+    <script src="{{ asset('/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('/plugins/perfectscroll/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('/plugins/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('/js/main.min.js') }}"></script>
     <script src="{{ asset('/js/pages/dashboard.js') }}"></script>
     <script src="{{ asset('/js/pages/datatables.js') }}"></script>
     <script src="{{ asset('/plugins/DataTables/datatables.min.js') }}"></script>
+
 </body>
 </html>
