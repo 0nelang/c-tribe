@@ -3,86 +3,109 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class PartnerController extends Controller
+use App\Models\Partner;
+use App\Models\People;
+use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
+use Intervention\Image\Facades\Image;
+class partnerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        return view('dashboard.partner.index',[
-            "page" => "partners"
+        return view('dashboard.partner.index', [
+            'page' => 'partners',
+            'partner' => Partner::all()
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return view('dashboard.partner.create',[
-            "page" => "partners"
+        return view('dashboard.partner.create', [
+            'page' => 'partners'
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $img = Image::make($request->file('logo'));
+        $img->resize(null, 89,  function ($constraint)
+        {
+            $constraint->aspectRatio();
+        });
+
+        $filename = time().'.'.$request->file('logo')->getClientOriginalExtension();
+        $img_path = 'logo/'.$filename;
+        Storage::put($img_path, $img->encode());
+
+        $rule = [
+            "logo" => "required|image|file"
+        ];
+
+        $validated = $request->validate($rule);
+
+
+        $validated['index'] = Partner::all()->count() + 1;
+        $validated['logo'] = $img_path;
+
+        Alert::success('Success', 'Succesfully add new data');
+
+        Partner::create($validated);
+
+        return redirect('/admin/partners');
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function edit(Partner $partner)
     {
-        //
+        return view('dashboard.partner.edit', [
+            'page' => 'partners',
+            'logo' => $partner->logo,
+            'id' => $partner->id
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function update(Request $request, Partner $partner)
     {
-        //
+        if ($request->hasFile('logo')) {
+
+            Storage::delete($partner->logo);
+
+            $img = Image::make($request->file('logo'));
+            $img->resize(null, 89,  function ($constraint)
+            {
+                $constraint->aspectRatio();
+            });
+
+            $filename = time().'.'.$request->file('logo')->getClientOriginalExtension();
+            $img_path = 'logo/'.$filename;
+            Storage::put($img_path, $img->encode());
+
+            $rule = [
+                "logo" => "image|file"
+            ];
+
+            $validated = $request->validate($rule);
+            $validated['logo'] = $img_path;
+
+            Partner::where('id', $partner->id)->update($validated);
+        }
+        return redirect('/admin/partners');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function destroy(Partner $partner)
     {
-        //
+        Storage::delete($partner->logo);
+        Partner::destroy($partner->id);
+        return redirect('admin/partners');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function position(Request $request)
     {
-        //
+        foreach ($request->id as $index => $id) {
+            Partner::find($id)->update(['index' => $index + 1]);
+        }
+
+        return response()->json('success');
+
     }
 }

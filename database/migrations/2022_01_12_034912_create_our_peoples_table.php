@@ -18,7 +18,7 @@ class CreateOurPeoplesTable extends Migration
             $table->string('photo');
             $table->string('name');
             $table->string('title');
-            $table->string('description');
+            $table->text('description');
             $table->timestamps();
         });
     }

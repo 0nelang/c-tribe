@@ -6,6 +6,7 @@ use App\Models\General;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class GeneralController extends Controller
 {
@@ -80,55 +81,9 @@ class GeneralController extends Controller
             ]);
         }
 
-        // if ($request->file('brand_footer')) {
-        //     Storage::delete($general->brand_footer);
-        //     $validated['brand_footer'] = $request->file('brand_footer')->store('general-image', [
-        //         'disk' => 'public'
-        //     ]) ;
-        // }
-
-        // if ($request->file('brand_navbar')) {
-        //     Storage::delete($general->brand_navbar);
-        //     $validated['brand_navbar'] = $request->file('brand_navbar')->store('general-image', [
-        //         'disk' => 'public'
-        //     ]) ;
-        // }
-
-        // if ($request->file('cursor_image')) {
-        //     Storage::delete($general->cursor_image);
-        //     $validated['cursor_image'] = $request->file('cursor_image')->store('general-image', [
-        //         'disk' => 'public'
-        //     ]) ;
-        // }
-
-        // if ($request->file('hover_image')) {
-        //     Storage::delete($general->hover_image);
-        //     $validated['hover_image'] = $request->file('hover_image')->store('general-image', [
-        //         'disk' => 'public'
-        //     ]) ;
-        // }
-
-        // if ($request->file('hover_image')) {
-        //     Storage::delete($general->background_footer);
-        //     $validated['background_footer'] = $request->file('background_footer')->store('general-image', [
-        //         'disk' => 'public'
-        //     ]) ;
-        // }
-
-        // $validated['brand_navbar'] =  $request->file('brand_navbar')->store('general-image', [
-        //     'disk' => 'public'
-        // ]) ;
-        // $validated['cursor_image'] =  $request->file('cursor_image')->store('general-image', [
-        //     'disk' => 'public'
-        // ]) ;
-        // $validated['hover_image'] =  $request->file('hover_image')->store('general-image', [
-        //     'disk' => 'public'
-        // ]) ;
-        // $validated['background_footer'] =  $request->file('background_footer')->store('general-image', [
-        //     'disk' => 'public'
-        // ]) ;
-
         General::where('id', $id)->update($validated);
+        
+        Alert::success('Success', 'Data Updated Successfully');
         
         return redirect('/admin/general');
     }
