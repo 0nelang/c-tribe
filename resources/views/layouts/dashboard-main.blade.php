@@ -14,17 +14,17 @@
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
-    <link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/plugins/font-awesome/css/all.min.css" rel="stylesheet">
-    <link href="/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
-    <link href="/plugins/apexcharts/apexcharts.css" rel="stylesheet">
-    <link href="/plugins/DataTables/datatables.min.css" rel="stylesheet">
+    <link href="{{ asset('/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/plugins/font-awesome/css/all.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/plugins/perfectscroll/perfect-scrollbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('/plugins/apexcharts/apexcharts.css') }}" rel="stylesheet">
+    <link href="{{ asset('/plugins/DataTables/datatables.min.css') }}" rel="stylesheet">
 
 
     <!-- Theme Styles -->
-    <link href="/css/main.min.css" rel="stylesheet">
-    <link href="/css/dark-theme.css" rel="stylesheet">
-    <link href="/css/custom.css" rel="stylesheet">
+    <link href="{{ asset('/css/main.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/dark-theme.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,17 +32,17 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="/plugins/jquery/jquery-3.4.1.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="sweetalert2.min.js"></script>
-    <link rel="stylesheet" href="sweetalert2.min.css">
+    <script src="{{ asset('/plugins/jquery/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ asset('/cdn.jsdelivr.net/npm/sweetalert2@11') }}"></script>
+    <script src="{{ asset('/sweetalert2.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('/sweetalert2.min.css') }}">
 </head>
 <body>
-    {{-- <div class='loader'>
+    <div class='loader'>
     <div class='spinner-grow text-primary' role='status'>
         <span class='sr-only'>Loading...</span>
     </div>
-    </div> --}}
+    </div>
     <div class="page-container">     
         @include('partials.dashboard.page-header')
     
@@ -76,13 +76,13 @@
     </script>
     <!-- Javascripts -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ asset('/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
-    <script src="/plugins/apexcharts/apexcharts.min.js"></script>
-    <script src="/js/main.min.js"></script>
-    <script src="/js/pages/dashboard.js"></script>
-    <script src="/js/pages/datatables.js"></script>
-    <script src="/plugins/DataTables/datatables.min.js"></script>
+    <script src="{{ asset('/plugins/perfectscroll/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('/plugins/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('/js/main.min.js') }}"></script>
+    <script src="{{ asset('/js/pages/dashboard.js') }}"></script>
+    <script src="{{ asset('/js/pages/datatables.js') }}"></script>
+    <script src="{{ asset('/plugins/DataTables/datatables.min.js') }}"></script>
 </body>
 </html>
