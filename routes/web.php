@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\InspirationController;
 
 /*

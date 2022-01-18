@@ -14,7 +14,10 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.project.index-project', [
+            'page' => 'project',
+            'project' => Project::all()
+        ]);
     }
 
     /**
