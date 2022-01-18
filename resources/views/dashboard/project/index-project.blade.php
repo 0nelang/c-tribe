@@ -31,9 +31,9 @@
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </button>
                                                 <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
-                                                    <li><a class="dropdown-item text-dark" href="/admin/people/{{ $p->id }}/edit">Edit</a></li>
+                                                    <li><a class="dropdown-item text-dark" href="{{ route('project.edit', ['project' => $p->id]) }}">Edit</a></li>
                                                     <li>
-                                                        <form id="form-delete{{ $id }}" action="{{ route('people.destroy',['person' => $p->id]) }}" method="post" style="display: none">
+                                                        <form id="form-delete{{ $id }}" action="{{ route('project.destroy',['project' => $p->id]) }}" method="post" style="display: none">
                                                             @method('delete')
                                                             @csrf
                                                         </form>

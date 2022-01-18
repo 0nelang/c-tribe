@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Models\ProjectImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ProjectController extends Controller
@@ -76,7 +77,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+
     }
 
     /**
@@ -87,7 +88,11 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('dashboard.project.edit-project', [
+            'page' => 'project',
+            'project' => $project,
+            'otherImage' => ProjectImage::where('project', $project->brand)->get()
+        ]);
     }
 
     /**
@@ -111,5 +116,14 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         //
+    }
+
+    public function imgdel($id)
+    {
+        $image = ProjectImage::find($id);
+
+        Storage::delete($image->otherImage);
+        ProjectImage::destroy($id);
+        return response()->json("success");
     }
 }
