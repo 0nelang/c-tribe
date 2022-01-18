@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\General;
+use App\Models\People;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -43,7 +44,8 @@ class HomeController extends Controller
     function our_people()
     {
         return view('frontend.our-people',[
-            "general" => $this->general
+            "general" => $this->general,
+            "people" => People::all()
         ]);
     }
 

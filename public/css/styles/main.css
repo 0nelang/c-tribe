@@ -94,7 +94,7 @@ html, body { font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont
 
 .cursor { display: block; width: 14px; height: 14px; border-radius: 7px; background: #fff; position: fixed; z-index: 201; pointer-events: none; -webkit-transform: translate(-5px, -5px); transform: translate(-5px, -5px); transition: width .3s ease, height .3s ease; }
 
-.cursor.hasimg { width: 30.208vw; height: 17.188vw; border-radius: 0; background: url("../../../images/our-people-s1.jpg"); background-size: contain; background-position: center; -webkit-transform: translate(0, 0); transform: translate(0, 0); }
+.cursor.hasimg { width: 30.208vw; height: 17.188vw; border-radius: 0; background-size: contain; background-position: center; -webkit-transform: translate(0, 0); transform: translate(0, 0); }
 
 @media (max-width: 991px) { .cursor { display: none; } }
 

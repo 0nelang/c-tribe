@@ -1,5 +1,13 @@
+
 @extends('frontend.partial.main')
 
+@section('css')
+    <style> 
+    .cursor.hasimg { 
+      background: url("{{ asset('storage/' . $general->cursor_image) }}");
+    }
+    </style>
+@endsection
 @section('content')
     
     <main class="page-ourpeople">
@@ -14,11 +22,21 @@
           <h2>OUR TEAM • OUR TEAM</h2>
         </div>
         <div class="wrap">
-          <div class="page-ourpeople__two-text">
+          {{-- <div class="page-ourpeople__two-text">
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-          </div>
+          </div> --}}
         </div>
         <div class="page-ourpeople__two-people">
+          @foreach ($people as $p)
+          <div class="people-item">
+            <div class="photo"><img src="{{ asset('storage/' . $p->photo ) }}" alt="$p->photo"/></div>
+            <div class="text">
+              <div class="name">{!! $p->name !!}</div>
+              <div class="position">{!! $p->title !!}</div>
+              <div class="quote">{!! $p->description !!}</div>
+            </div>
+          </div>
+          @endforeach
           <div class="people-item">
             <div class="photo"><img src="/images/ourpeople-1.jpg" alt="img"/></div>
             <div class="text">

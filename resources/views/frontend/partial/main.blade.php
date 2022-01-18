@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="favicon.png"/>
     <link rel="stylesheet" href="{{ asset('/plugins/lity/lity.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/css/styles/main.css') }}"/>
+    @yield('css')
   </head>
   <body>
     <div class="cursor"></div>
