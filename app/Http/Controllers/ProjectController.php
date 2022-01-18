@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\ProjectImage;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProjectController extends Controller
 {
@@ -27,7 +29,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.project.create-project', [
+            'page' => 'project',
+        ]);
     }
 
     /**
@@ -38,7 +42,30 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'brand' => 'required',
+            'project' => 'required',
+            'date' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+            'body' => 'required',
+            'mainImage*' => 'image|file'
+        ]);
+
+            foreach ($request->mainImage as $index => $value) {
+                if ($index == 0) {
+                    $validated['mainImage'] = $value->store('project-image', ['disk' => 'public']);
+                }else {
+                    $otherImage['otherImage'] = $value->store('project-image', ['disk' => 'public']);
+                    $otherImage['project'] = $request->brand;
+                    ProjectImage::create($otherImage);
+                }
+            }
+
+        Project::create($validated);
+        Alert::success('Success', 'Data create succesfully');
+
+        return redirect(route('project.index'));
     }
 
     /**

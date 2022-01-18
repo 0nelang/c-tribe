@@ -16,7 +16,7 @@ class CreateProjectImagesTable extends Migration
         Schema::create('project_images', function (Blueprint $table) {
             $table->id();
             $table->string('project');
-            $table->string('image');
+            $table->string('otherImage');
             $table->timestamps();
         });
     }

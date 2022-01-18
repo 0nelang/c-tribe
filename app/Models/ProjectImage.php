@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ProjectImage extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['id'];
 }
