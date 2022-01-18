@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PeopleController;
-use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PeopleController;
+use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\FlagshipController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,3 +75,5 @@ Route::get('/admin/project', function () {
         "page" => "project"
     ]);
 });
+
+Route::resource('/admin/flagship', FlagshipController::class);
