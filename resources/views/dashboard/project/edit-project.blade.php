@@ -21,7 +21,7 @@
                     <div class="card">
                         <div class="card-body">
                             <form action="{{ route('project.update', ['project' => $project->id]) }}" method="POST" enctype="multipart/form-data">
-                                @method('put')
+                                @method('patch')
                                 @csrf
                                 <div class="row">
                                     <div class="mb-3 col-lg-4">
