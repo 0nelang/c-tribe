@@ -165,7 +165,7 @@
                     if (result.isConfirmed) {
                         $.ajax({
                             type: "post",
-                            url: "{{ url('') }}/admin/project/image/" + id,
+                            url: "{{ url('') }}/admin/flagship/image/" + id,
                             data: {
                                 id: id,
                                 _token: '{{ csrf_token() }}'

@@ -31,7 +31,7 @@ Route::resource('/admin/project', ProjectController::class);
 Route::post('/admin/project/image/{id}', [ProjectController::class, 'imgdel']);
 
 Route::resource('/admin/flagship', FlagshipController::class);
-Route::post('/admin/project/image/{id}', [FlagshipController::class, 'imgdel']);
+Route::post('/admin/flagship/image/{id}', [FlagshipController::class, 'imgdel']);
 
 
 Route::get('/admin/partners', [PartnerController::class, 'index'])->name('partner.index');
