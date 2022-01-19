@@ -36,21 +36,25 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="sweetalert2.min.js"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
+
+    @yield('css')
 </head>
 <body>
+    @include('sweetalert::alert')
     {{-- <div class='loader'>
     <div class='spinner-grow text-primary' role='status'>
         <span class='sr-only'>Loading...</span>
     </div>
     </div> --}}
-    <div class="page-container">     
+    <div class="page-container">
         @include('partials.dashboard.page-header')
-    
+
         @include('partials.dashboard.page-sidebar')
-    
+
         @yield('main')
 
     </div>
+
 
     <script>
         function what(id) {
@@ -74,11 +78,13 @@
             })
         }
     </script>
+
     <!-- Javascripts -->
     {{-- ck-editor --}}
     @yield('ck-editor')
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+<<<<<<< HEAD
     <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
     <script src="{{ asset('/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('/plugins/perfectscroll/perfect-scrollbar.min.js') }}"></script>
@@ -88,5 +94,14 @@
     <script src="{{ asset('/js/pages/datatables.js') }}"></script>
     <script src="{{ asset('/plugins/DataTables/datatables.min.js') }}"></script>
 
+=======
+    <script src="/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+    <script src="/plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="/js/main.min.js"></script>
+    <script src="/js/pages/dashboard.js"></script>
+    <script src="/js/pages/datatables.js"></script>
+    <script src="/plugins/DataTables/datatables.min.js"></script>
+    @yield('js')
+>>>>>>> 24edea8c0484c36ae2248bc0c9bb178cb8230189
 </body>
 </html>

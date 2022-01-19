@@ -9,35 +9,30 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <a href="{{ route('people.create') }}" class="btn btn-primary mb-3">Create</a>
-                            <table id="zero-conf" class="display" style="table-layout:fixed;
-                            width:100%;">
+                            <a href="{{ route('inspiration.create') }}" class="btn btn-primary mb-3">Create</a>
+                            <table id="zero-conf" class="display" style="width:100%">
                                 <thead>
                                     <tr>
+                                        <th>No</th>
                                         <th>Name</th>
-                                        <th>Position</th>
-                                        <th>desc</th>
-                                        <th>photo</th>
-                                        <th>option</th>
+                                        <th>Option</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($people as $id => $pep)
+                                    @foreach ($inspiration as $id => $pep)
 
                                     <tr>
+                                        <td>{{ $id + 1}}</td>
                                         <td>{{ $pep->name }}</td>
-                                        <td>{{ $pep->title }}</td>
-                                        <td> {!! $pep->description !!}</td>
-                                        <td><img src="{{ asset('storage/' . $pep->photo ) }}" style="width: 100%"></td>
                                         <td style="text-align: center">
-                                            <div class="dropdown dropright">
+                                            <div class="dropdown">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </button>
                                                 <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
-                                                    <li><a class="dropdown-item text-dark" href="/admin/people/{{ $pep->id }}/edit">Edit</a></li>
+                                                    <li><a class="dropdown-item text-dark" href="{{ route('inspiration.edit', ['inspiration' => $pep->id]) }}">Show</a></li>
                                                     <li>
-                                                        <form id="form-delete{{ $id }}" action="{{ route('people.destroy',['person' => $pep->id]) }}" method="post" style="display: none">
+                                                        <form id="form-delete{{ $id }}" action="{{ route('inspiration.destroy',['inspiration' => $pep->id]) }}" method="post" style="display: none">
                                                             @method('delete')
                                                             @csrf
                                                         </form>
@@ -54,9 +49,7 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Position</th>
-                                        <th>desc</th>
-                                        <th>photo</th>
-                                        <th>option</th>
+                                        <th>Office</th>
                                     </tr>
                                 </tfoot>
                             </table>

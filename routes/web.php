@@ -6,6 +6,7 @@ use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\InspirationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,17 @@ use App\Http\Controllers\PartnerController;
 
 Route::get('/admin/general', [GeneralController::class, 'general']);
 Route::put('/admin/general/{general:id}', [GeneralController::class, 'update']);
+Route::resource('/admin/people', PeopleController::class);
+Route::resource('/admin/inspiration', InspirationController::class);
+Route::resource('/admin/project', ProjectController::class);
+
+Route::get('/admin/partners', [PartnerController::class, 'index'])->name('partner.index');
+Route::get('/admin/partners/create', [PartnerController::class, 'create'])->name('partner.create');
+Route::post('/admin/partners', [PartnerController::class, 'store'])->name('partner.store');
+Route::get('/admin/partners/{partner:id}', [PartnerController::class, 'edit'])->name('partner.edit');
+Route::put('/admin/partners/update/{partner:id}', [PartnerController::class, 'update'])->name('partner.update');
+Route::post('/admin/partners/delete/{partner:id}', [PartnerController::class, 'destroy'])->name('partner.delete');
+Route::post('/admin/partners/position', [PartnerController::class, 'position'])->name('partner.position');
 
 Route::get('/', function () {
     return view('dashboard.welcome',[
@@ -27,11 +39,19 @@ Route::get('/', function () {
     ]);
 });
 
+<<<<<<< HEAD
 Route::resource('/admin/page', PageController::class);
 
 Route::resource('admin/people', PeopleController::class);
 
 Route::resource('/admin/partners', PartnerController::class);
+=======
+Route::get('/admin/page', function () {
+    return view('dashboard.welcome',[
+        "page" => "page"
+    ]);
+});
+>>>>>>> 24edea8c0484c36ae2248bc0c9bb178cb8230189
 
 // Route::get('/admin/partners', function () {
 //     return view('dashboard.welcome',[
@@ -63,14 +83,4 @@ Route::get('/admin/service', function () {
     ]);
 });
 
-Route::get('/admin/inspiration', function () {
-    return view('dashboard.welcome',[
-        "page" => "inspiration"
-    ]);
-});
 
-Route::get('/admin/project', function () {
-    return view('dashboard.welcome',[
-        "page" => "project"
-    ]);
-});
