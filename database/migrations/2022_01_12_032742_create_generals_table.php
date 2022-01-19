@@ -25,6 +25,7 @@ class CreateGeneralsTable extends Migration
             $table->string('social_footer');
             $table->string('addres_footer');
             $table->string('background_footer')->nullable();
+            $table->string('video_background')->nullable();
             $table->timestamps();
         });
     }

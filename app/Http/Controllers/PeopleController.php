@@ -66,8 +66,12 @@ class PeopleController extends Controller
 
         People::create($validated);
 
+<<<<<<< HEAD
+        
+=======
         Alert::success('Success', 'Data create succesfully');
         return redirect('/admin/people');
+>>>>>>> 24edea8c0484c36ae2248bc0c9bb178cb8230189
     }
 
     /**
@@ -89,7 +93,6 @@ class PeopleController extends Controller
      */
     public function edit(People $person)
     {
-
         return view('dashboard.our-people.edit-people',[
             'page' => 'person',
             'people' => $person
@@ -108,7 +111,7 @@ class PeopleController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'title' => 'required',
-            'photo' => 'image|file',
+            'photo' => 'image|file',    
             'description' => 'required'
         ]);
 

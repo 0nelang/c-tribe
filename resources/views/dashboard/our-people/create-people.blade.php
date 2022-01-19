@@ -41,8 +41,8 @@
                                   @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="description" class="form-label">Desc</label>
-                                    <textarea type="text" name="description" class="form-control text-white @error('description') is-invalid @enderror" id="description" rows="5"></textarea>
+                                    <label for="editor" class="form-label">Desc</label>
+                                    <textarea type="name" name="description" class="form-control text-white @error('description') is-invalid @enderror" id="editor"></textarea>
                                     @error('description')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -57,7 +57,6 @@
             </div>
 
     </div>
-
     <script>
         $(function(){
         $("#filePhoto").change(function(event) {
@@ -68,4 +67,18 @@
         });
 
     </script>
-@endsection
+    
+    
+    @endsection
+    
+    @section('ck-editor')
+        <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+    @endsection

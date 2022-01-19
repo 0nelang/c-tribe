@@ -39,6 +39,48 @@
                             <div class="card-body">
                                 <h5 class="card-title">Footer</h5>
                                 <div class="mb-3">
+                                        <div class="row">
+                                          <div class="col">
+                                              <div class="mb-3">
+                                            <label for="email_footer" class="form-label">Email</label>
+                                            <input type="text" class="form-control" id="email_footer" name="email_footer"
+                                                value="{{ $general->email_footer }}">
+                                            @error('description')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                          <div class="col">
+                                            <div class="mb-3">
+                                                <label for="phone_footer" class="form-label">Phone</label>
+                                                <input type="text" class="form-control" id="phone_footer" name="phone_footer"
+                                                    value="{{ $general->phone_footer }}">
+                                                @error('phone_footer')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                          </div>
+                                          <div class="col">
+                                            <div class="mb-3">
+                                                <label for="social_footer" class="form-label">Social</label>
+                                                <input type="text" class="form-control" id="social_footer" name="social_footer"
+                                                    value="{{ $general->social_footer }}">
+                                                @error('social_footer')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                          </div>
+                                          <div class="col">
+                                            <div class="mb-3">
+                                                <label for="addres_footer" class="form-label">Addres</label>
+                                                <input type="text" class="form-control" id="addres_footer" name="addres_footer"
+                                                    value="{{ $general->addres_footer }}">
+                                                @error('addres_footer')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                          </div>
+                                        </div>  
                                     <label for="background_footer" class="form-label">Background Image</label>
                                     <div class="mb-3">
                                         <img src="{{ asset('storage/' . $general->background_footer) }}" alt="{{ $general->background_footer }}" id="out">
@@ -58,38 +100,10 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="mb-3">
-                                    <label for="email_footer" class="form-label">Email</label>
-                                    <input type="text" class="form-control" id="email_footer" name="email_footer"
-                                        value="{{ $general->email_footer }}">
-                                    @error('description')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
-                                </div>
-                                <div class="mb-3">
-                                    <label for="phone_footer" class="form-label">Phone</label>
-                                    <input type="text" class="form-control" id="phone_footer" name="phone_footer"
-                                        value="{{ $general->phone_footer }}">
-                                    @error('phone_footer')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
-                                </div>
-                                <div class="mb-3">
-                                    <label for="social_footer" class="form-label">Social</label>
-                                    <input type="text" class="form-control" id="social_footer" name="social_footer"
-                                        value="{{ $general->social_footer }}">
-                                    @error('social_footer')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
-                                </div>
-                                <div class="mb-3">
-                                    <label for="addres_footer" class="form-label">Addres</label>
-                                    <input type="text" class="form-control" id="addres_footer" name="addres_footer"
-                                        value="{{ $general->addres_footer }}">
-                                    @error('addres_footer')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
-                                </div>
+                                
+                               
+                                
+                                
                                 <button type="submit" class="btn btn-primary">Edit</button>
                             </div>
                         </div>

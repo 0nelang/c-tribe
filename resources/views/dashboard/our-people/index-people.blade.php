@@ -27,7 +27,7 @@
                                     <tr>
                                         <td>{{ $pep->name }}</td>
                                         <td>{{ $pep->title }}</td>
-                                        <td>{{ $pep->description }}</td>
+                                        <td> {!! $pep->description !!}</td>
                                         <td><img src="{{ asset('storage/' . $pep->photo ) }}" style="width: 100%"></td>
                                         <td style="text-align: center">
                                             <div class="dropdown dropright">
