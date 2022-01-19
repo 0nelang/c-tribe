@@ -1,14 +1,10 @@
 @extends('frontend.partial.main')
-
 @section('content')
     <main class="page-tribes header-1">
       <section class="page-tribes__one">
         <div class="wrap">
           <div class="tagline-marquee marquee">
             <h1>TRIBES • TRIBES</h1>
-          </div>
-          <div class="desc">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
           </div>
         </div>
       </section>

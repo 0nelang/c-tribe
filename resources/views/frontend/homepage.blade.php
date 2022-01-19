@@ -1,11 +1,17 @@
 @extends('frontend.partial.main')
+@section('css')
+<style>
+  .text-uppercase{ text-transform: uppercase;}
+  </style>
+@endsection
 @section('content')
+    
 <main class="page-home">
-  <section class="page-home__one cursor-img header-2">
+  <section class="page-home__one header-2">
     <div class="wrap">
-      <h1> <span>WE CREATES MULTI-DIMENSIONS OF CREATIVITY THROUGH THE CREATION, COLLABORATION AND COMMUNICATION OF URBAN LIFESTYLE CULTURE </span><small>We empower brand and connect consumers through creative marketing solution for a better market presence</small></h1>
+      <h1><span>WE CREATES MULTI-DIMENSIONS OF CREATIVITY THROUGH THE CREATION, COLLABORATION AND COMMUNICATION OF URBAN LIFESTYLE CULTURE</span><small>We empower brand and connect consumers through creative marketing solution for a better market presence</small></h1>
     </div>
-    <div class="arrow"><a class="has-scroll" href="#sec2"> <img src="/images/arrow-down.png" alt="arrow-down"/></a></div>
+    <div class="arrow"><a class="has-scroll" href="#sec2"><img src="/images/arrow-down.png" alt="arrow-down"/></a></div>
   </section>
   <section class="page-home__two cursor-img header-1" id="sec2">
     <div class="wrap"><span class="huge-text">TRIBE</span><span class="small-text">We empower brand and connect consumers<br> through creative marketing solution<br> for a better market presence</span>
@@ -14,7 +20,7 @@
   </section>
   <section class="page-home__three header-1">
     <div class="wrap">
-      <h2> <span class="oa">OUR ACTION</span><span class="date">15TH FEB 2022</span><span>PELARIAN X SANA STUDIO X DASH</span></h2>
+      <h2><span class="oa">OUR ACTION</span><span class="date">15TH FEB 2022</span><span>PELARIAN X SANA STUDIO X DASH</span></h2>
       <div class="desc">
         <p>We empower brand and connect consumers <br>through creative marketing solution for a better market presence</p>
       </div><a class="rtf" href="#">READ THE FEATURE</a>
@@ -52,7 +58,7 @@
       <div class="col-main">
         <div class="sm-only"><span class="oa">PARTNERS</span><span class="date">15TH FEB 2022</span></div>
         <div class="tagline-marquee marquee">
-          <h2>KENJI TAKIMI<span class="star">* </span>KENJI TAKIMI <span class="star">* </span></h2>
+          <h2>KENJI TAKIMI<span class="star">*</span>KENJI TAKIMI<span class="star">*</span></h2>
         </div>
         <div class="img"><img src="/images/img-home-06.jpg" alt="Image"/></div>
       </div>
@@ -67,13 +73,13 @@
   </section>
   <section class="page-home__footer">
     <div class="page-home__footer-top">
-      <div class="left"><a class="item email" href="mailto:GENERAL INQUIRIESHOLA@CTRIBEJKT.COM">GENERAL INQUIRIES <br>HOLA@CTRIBEJKT.COM</a>
-        <div class="item phone">Phone<br><a href="tel: +62812 197 19179">+62812 197 19179</a></div>
-        <div class="item ig">INSTAGRAM<br><a href="#">CTRIBEJKT.</a></div>
+      <div class="left"><a class="item email" href="mailto:GENERAL {{ $general->email_footer }}">GENERAL INQUIRIES <br>{{ $general->email_footer }}</a>
+        <div class="item phone">Phone<br><a href="tel: {{ $general->phone_footer }}">{{ $general->phone_footer }}</a></div>
+        <div class="item ig">INSTAGRAM<br><a target="_blank" href="https://www.instagram.com/{{ $general->social_footer }}" class="text-uppercase">{{ $general->social_footer }}.</a></div>
       </div>
-      <div class="right"><span>JKT, IND</span></div>
+      <div class="right"><span class="text-uppercase">{{ $general->addres_footer }}</span></div>
     </div>
-    <div class="imgctribe"><img src="/images/big-ctribe.svg" alt="img"/></div>
+    <div class="imgctribe"><img src="{{ asset('storage/' . $general->brand_footer) }}" alt="img"/></div>
   </section>
 </main>
 @endsection
