@@ -55,12 +55,6 @@ Route::resource('admin/people', PeopleController::class);
 Route::resource('/admin/partners', PartnerController::class);
 
 
-// Route::get('/admin/partners', function () {
-//     return view('dashboard.welcome',[
-//         "page" => "partners"
-//     ]);
-// });
-
 Route::get('/frontend/flagship', [HomeController::class,'flagship']);
 
 Route::get('/frontend/homepage', [HomeController::class,'homepage']);
