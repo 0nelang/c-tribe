@@ -66,12 +66,8 @@ class PeopleController extends Controller
 
         People::create($validated);
 
-<<<<<<< HEAD
-        
-=======
         Alert::success('Success', 'Data create succesfully');
         return redirect('/admin/people');
->>>>>>> fcd10f3f7b6afb9fefe6e4b239d72d0ec0823b5d
     }
 
     /**

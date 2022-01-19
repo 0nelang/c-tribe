@@ -31,14 +31,11 @@
                                         <td><img src="{{ asset('storage/' . $pep->photo ) }}"
                                                 style="width: 100%"></td>
                                         <td style="text-align: center">
-<<<<<<< HEAD
-                                            <div class="dropdown dropstart">
+                                            {{-- <div class="dropdown dropstart">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-=======
+                                                    data-bs-toggle="dropdown" aria-expanded="false"> --}}
                                             <div class="dropdown dropright">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
->>>>>>> fcd10f3f7b6afb9fefe6e4b239d72d0ec0823b5d
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </button>
                                                 <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">

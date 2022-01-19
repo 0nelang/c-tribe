@@ -6,12 +6,10 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\PartnerController;
-<<<<<<< HEAD
 use App\Http\Controllers\FlagshipController;
-=======
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\InspirationController;
->>>>>>> fcd10f3f7b6afb9fefe6e4b239d72d0ec0823b5d
+
 
 /*
 |--------------------------------------------------------------------------
@@ -46,19 +44,12 @@ Route::get('/', function () {
     ]);
 });
 
-<<<<<<< HEAD
 Route::resource('/admin/page', PageController::class);
 
 Route::resource('admin/people', PeopleController::class);
 
 Route::resource('/admin/partners', PartnerController::class);
-=======
-Route::get('/admin/page', function () {
-    return view('dashboard.welcome',[
-        "page" => "page"
-    ]);
-});
->>>>>>> fcd10f3f7b6afb9fefe6e4b239d72d0ec0823b5d
+
 
 // Route::get('/admin/partners', function () {
 //     return view('dashboard.welcome',[
@@ -90,14 +81,5 @@ Route::get('/admin/service', function () {
     ]);
 });
 
-
-<<<<<<< HEAD
-Route::get('/admin/project', function () {
-    return view('dashboard.welcome',[
-        "page" => "project"
-    ]);
-});
-
 Route::resource('/admin/flagship', FlagshipController::class);
-=======
->>>>>>> fcd10f3f7b6afb9fefe6e4b239d72d0ec0823b5d
+
