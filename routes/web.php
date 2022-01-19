@@ -29,8 +29,8 @@ Route::resource('/admin/project', ProjectController::class);
 Route::post('/admin/project/image/{id}', [ProjectController::class, 'imgdel']);
 
 Route::get('/admin/partners', [PartnerController::class, 'index'])->name('partner.index');
-Route::get('/admin/partners/create', [PartnerController::class, 'create'])->name('partner.create');
-Route::post('/admin/partners', [PartnerController::class, 'store'])->name('partner.store');
+Route::get('/admin/partners/create', [PartnerController::class, 'create'])->name('partners.create');
+Route::post('/admin/partners', [PartnerController::class, 'store'])->name('partners.store');
 Route::get('/admin/partners/{partner:id}', [PartnerController::class, 'edit'])->name('partner.edit');
 Route::put('/admin/partners/update/{partner:id}', [PartnerController::class, 'update'])->name('partner.update');
 Route::post('/admin/partners/delete/{partner:id}', [PartnerController::class, 'destroy'])->name('partner.delete');

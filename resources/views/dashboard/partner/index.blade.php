@@ -16,7 +16,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <a href="{{ route('partner.create') }}" class="btn btn-primary mb-3">Create</a>
+                            <a href="{{ route('partners.create') }}" class="btn btn-primary mb-3">Create</a>
                             <table id="logo-table" class="display" width="100%">
                                 <thead>
                                     <tr>
