@@ -33,6 +33,16 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
+                                    <label for="date" class="form-label is-invalid">Date</label>
+                                    <input type="text" date="date" class="form-control @error('date') is-invalid @enderror"
+                                        id="exampleInputEmail1" aria-describedby="our-people-date">
+                                    @error('date')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
                                     <label for="quote" class="form-label">Quote</label>
                                     <input type="text" name="quote"
                                         class="form-control @error('quote') is-invalid @enderror" id="quote">
