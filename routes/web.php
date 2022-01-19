@@ -42,19 +42,18 @@ Route::get('/', function () {
     ]);
 });
 
-<<<<<<< HEAD
 Route::resource('/admin/page', PageController::class);
 
 Route::resource('admin/people', PeopleController::class);
 
 Route::resource('/admin/partners', PartnerController::class);
-=======
+
 Route::get('/admin/page', function () {
     return view('dashboard.welcome',[
         "page" => "page"
     ]);
 });
->>>>>>> 24edea8c0484c36ae2248bc0c9bb178cb8230189
+
 
 // Route::get('/admin/partners', function () {
 //     return view('dashboard.welcome',[

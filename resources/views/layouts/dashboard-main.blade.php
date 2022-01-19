@@ -84,7 +84,6 @@
     @yield('ck-editor')
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-<<<<<<< HEAD
     <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
     <script src="{{ asset('/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('/plugins/perfectscroll/perfect-scrollbar.min.js') }}"></script>
@@ -94,14 +93,6 @@
     <script src="{{ asset('/js/pages/datatables.js') }}"></script>
     <script src="{{ asset('/plugins/DataTables/datatables.min.js') }}"></script>
 
-=======
-    <script src="/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
-    <script src="/plugins/apexcharts/apexcharts.min.js"></script>
-    <script src="/js/main.min.js"></script>
-    <script src="/js/pages/dashboard.js"></script>
-    <script src="/js/pages/datatables.js"></script>
-    <script src="/plugins/DataTables/datatables.min.js"></script>
     @yield('js')
->>>>>>> 24edea8c0484c36ae2248bc0c9bb178cb8230189
 </body>
 </html>
