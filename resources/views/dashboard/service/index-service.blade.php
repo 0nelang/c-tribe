@@ -16,7 +16,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <a href="{{ route('partners.create') }}" class="btn btn-primary mb-3">Create</a>
+                            <a href="{{ route('service.create') }}" class="btn btn-primary mb-3">Create</a>
                             <table id="logo-table" class="display" width="100%">
                                 <thead>
                                     <tr>
@@ -27,7 +27,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($partner as $id => $part)
+                                    @foreach ($service as $id => $part)
 
                                         <tr>
                                             <td>{{ $part->index }}</td>
@@ -42,11 +42,12 @@
                                                     </button>
                                                     <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
                                                         <li><a class="dropdown-item text-dark"
-                                                                href="/admin/partners/{{ $part->id }}">Edit</a></li>
+                                                                href="{{ route('service.edit', ['service' => $part->id]) }}">Edit</a></li>
                                                         <li>
                                                             <form id="form-delete{{ $id }}"
-                                                                action="/admin/partners/delete/{{ $part->id }}" method="post"
+                                                                action="{{ route('service.destroy', ['service' => $part->id]) }}" method="post"
                                                                 style="display: none">
+                                                                @method('delete')
                                                                 @csrf
                                                             </form>
                                                             <a class="dropdown-item text-dark" href="#"
@@ -98,7 +99,7 @@
                     console.log(obj_id);
                     $.ajax({
                         type: "post",
-                        url: "{{ url('') }}/admin/partners/position",
+                        url: "{{ url('') }}/admin/service/position",
                         dataType: "json",
                         data: {
                             id: obj_id,

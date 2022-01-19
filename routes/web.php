@@ -10,7 +10,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FlagshipController;
 use App\Http\Controllers\InspirationController;
-
+use App\Models\Service;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +32,7 @@ Route::resource('/admin/project', ProjectController::class);
 Route::post('/admin/project/image/{id}', [ProjectController::class, 'imgdel']);
 
 Route::resource('/admin/service', ServiceController::class);
+Route::post('/admin/service/position', [ServiceController::class, 'position']);
 
 Route::get('/admin/partners', [PartnerController::class, 'index'])->name('partner.index');
 Route::get('/admin/partners/create', [PartnerController::class, 'create'])->name('partners.create');
@@ -77,12 +78,6 @@ Route::get('/frontend/our-people', [HomeController::class,'our_people']);
 Route::get('/frontend/project', [HomeController::class,'project']);
 
 Route::get('/frontend/tribes',[HomeController::class,'tribes']);
-
-Route::get('/admin/service', function () {
-    return view('dashboard.welcome',[
-        "page" => "service"
-    ]);
-});
 
 Route::resource('/admin/flagship', FlagshipController::class);
 
