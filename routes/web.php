@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\Service;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PeopleController;
@@ -10,7 +13,6 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FlagshipController;
 use App\Http\Controllers\InspirationController;
-use App\Models\Service;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +25,18 @@ use App\Models\Service;
 |
 */
 
-Route::get('/admin/general', [GeneralController::class, 'general']);
+
+
+Route::get('/', function () {return view('frontend.index');});
+
+
+
+Auth::routes();
+Route::get('register', function () {return abort(500);});
+Route::get('/password/reset', function () {return abort(500);});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/general', [GeneralController::class, 'general']);
 Route::put('/admin/general/{general:id}', [GeneralController::class, 'update']);
 Route::resource('/admin/people', PeopleController::class);
 Route::resource('/admin/inspiration', InspirationController::class);
@@ -47,18 +60,11 @@ Route::put('/admin/partners/update/{partner:id}', [PartnerController::class, 'up
 Route::post('/admin/partners/delete/{partner:id}', [PartnerController::class, 'destroy'])->name('partner.delete');
 Route::post('/admin/partners/position', [PartnerController::class, 'position'])->name('partner.position');
 
-Route::get('/', function () {
-    return view('frontend.index',[
-
-    ]);
-});
-
 Route::resource('/admin/page', PageController::class);
 
 Route::resource('admin/people', PeopleController::class);
 
 Route::resource('/admin/partners', PartnerController::class);
-
 
 Route::get('/frontend/flagship', [HomeController::class,'flagship']);
 
@@ -78,5 +84,7 @@ Route::get('/frontend/project', [HomeController::class,'project']);
 
 Route::get('/frontend/tribes',[HomeController::class,'tribes']);
 
-
-
+Route::get('/admin/setting',[AuthController::class,'index']);
+Route::put('/admin/reset',[AuthController::class,'password']);
+});
+Route::get('/home', [App\Http\Controllers\GeneralController::class, 'general'])->name('home');

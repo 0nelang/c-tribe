@@ -32,7 +32,7 @@
       <div class="col-right"><span class="date">15TH FEB 2022</span></div>
       <div class="col-main">
         <h2>FRASER COOKE <br>GATEKEEPER OF HYPE</h2>
-        <div class="img"><img src="images/img-home-four.png" alt="Image"/></div>
+        <div class="img"><img src="/images/img-home-four.png" alt="Image"/></div>
         <div class="desc">
           <p>Ctribe scores a coveted meeting with The brand's special projects senior director, <br>the man behind every fashionable nike collaboration From the past decade</p>
         </div><a class="rtf" href="#">READ THE FEATURE</a>
@@ -60,7 +60,7 @@
         <div class="tagline-marquee marquee">
           <h2>KENJI TAKIMI<span class="star">*</span>KENJI TAKIMI<span class="star">*</span></h2>
         </div>
-        <div class="img"><img src="images/img-home-06.jpg" alt="Image"/></div>
+        <div class="img"><img src="/images/img-home-06.jpg" alt="Image"/></div>
       </div>
       <div class="col-bot-l"><span class="oa">PARTNERS</span>
         <div class="desc">

@@ -8,6 +8,7 @@
             <ul class="">
               <li><a href="/admin/page"><i class="far fa-circle"></i>page</a></li>
               <li><a href="/admin/general"><i class="far fa-circle"></i>general</a></li>
+              <li><a href="/admin/setting"><i class="far fa-circle"></i>Admin</a></li>
             </ul>
           </li>
           <li class="sidebar-title">

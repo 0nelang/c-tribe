@@ -101,9 +101,9 @@
                                     <label for="mainImage" class="form-label">Main Image</label>
                                     <br>
                                     <img id="output" class="mb-3"
-                                        src="{{ asset('storage/' . $project->mainImage) }}">
+                                        src="{{ asset('storage/' . $project->mainImage) }}" style="max-height: 200px; max-width: 200px;">
                                     <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage"
-                                        type="file" required id="mainImage" accept="image/*">
+                                        type="file" required id="filePhoto" accept="image/*">
                                     @error('mainImage')
                                         <div class="invalid-feedback">
                                             {{ $message }}
