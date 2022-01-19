@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Flagship;
 use App\Models\General;
+use App\Models\Inspiration;
 use App\Models\People;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,14 +26,17 @@ class HomeController extends Controller
     function flagship()
     {
         return view('frontend.flagship',[
-            "general" => $this->general
+            "general" => $this->general,
+            "flagship" => Flagship::all()
         ]);
     }
 
     function inspiration()
     {
+        
         return view('frontend.inspiration',[
-            "general" => $this->general
+            "general" => $this->general,
+            "inspiration" => Inspiration::all()
         ]);
     } 
 
@@ -52,7 +58,8 @@ class HomeController extends Controller
     function project()
     {
         return view('frontend.project',[
-            "general" => $this->general
+            "general" => $this->general,
+            "project" => Project::all()
         ]);
     }
 

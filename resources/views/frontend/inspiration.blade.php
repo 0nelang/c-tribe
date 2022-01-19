@@ -1,4 +1,4 @@
-@extends('frontend.partial.main')
+@extends('frontend.partial.second')
 @section('css')
 <style>
   .text-uppercase{ text-transform: uppercase;}
@@ -16,7 +16,34 @@
       </section>
       <section class="page-inspiration__two" id="sec2">
         <div class="wrap">
-          <div class="item item--lg anim">
+          @foreach ($inspiration as $index => $p)
+              @if ($index == 0 && count($inspiration) % 2 != 0)
+              <div class="item item--lg anim">
+                <div class="item__wrap">
+                  <div class="item__bg" style="background-image: url('..//images/img-inspiration-01.png')"></div>
+                  <div class="item__date-sm"><span>15TH FEB 2022</span></div>
+                  <div class="item__content">
+                    <h2 class="item__title">FAMED SNEAKER CUSTOMIZER SBTG</h2>
+                    <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
+                    <div class="item__date"><span>15TH FEB 2022</span></div>
+                  </div>
+                </div>
+              </div>
+              @else
+              <div class="item anim">
+                <div class="item__wrap">
+                  <div class="item__bg" style="background-image: url('..//images/img-inspiration-02.png')"></div>
+                  <div class="item__date-sm"><span>15TH FEB 2022</span></div>
+                  <div class="item__content">
+                    <h2 class="item__title">FRASER COOKE <br>GATEKEEPER OF HYPE</h2>
+                    <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
+                    <div class="item__date"><span>15TH FEB 2022</span></div>
+                  </div>
+                </div>
+              </div>
+               @endif
+          @endforeach
+          {{-- <div class="item item--lg anim">
             <div class="item__wrap">
               <div class="item__bg" style="background-image: url('..//images/img-inspiration-01.png')"></div>
               <div class="item__date-sm"><span>15TH FEB 2022</span></div>
@@ -26,8 +53,8 @@
                 <div class="item__date"><span>15TH FEB 2022</span></div>
               </div>
             </div>
-          </div>
-          <div class="item anim">
+          </div> --}}
+          {{-- <div class="item anim">
             <div class="item__wrap">
               <div class="item__bg" style="background-image: url('..//images/img-inspiration-02.png')"></div>
               <div class="item__date-sm"><span>15TH FEB 2022</span></div>
@@ -70,7 +97,7 @@
                 <div class="item__date"><span>15TH FEB 2022</span></div>
               </div>
             </div>
-          </div>
+          </div> --}}
         </div>
       </section>
       <section class="page-inspiration__footer">
