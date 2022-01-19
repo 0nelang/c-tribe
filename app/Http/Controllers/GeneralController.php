@@ -22,7 +22,8 @@ class GeneralController extends Controller
     public function update(Request $request, General $general)
     {
         $rules = [
-            "brand_navbar" => "image|file",
+            "brand_navbar1" => "image|file",
+            "brand_navbar2" => "image|file",
             "title" => "required",
             "background_footer" => "image|file",
             "brand_footer" => "image|file",
@@ -37,11 +38,20 @@ class GeneralController extends Controller
 
         $validated = $request->validate($rules);
 
-        if ($request->file('brand_navbar')) {
+        if ($request->file('brand_navbar1')) {
             if ($request->oldImage) {
                 Storage::delete($request->oldImage);
             }
-            $validated['brand_navbar'] = $request->file('brand_navbar')->store('general-images',[
+            $validated['brand_navbar1'] = $request->file('brand_navbar1')->store('general-images',[
+                'disk' => 'public'
+            ]);
+        }
+
+        if ($request->file('brand_navbar2')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validated['brand_navbar2'] = $request->file('brand_navbar2')->store('general-images',[
                 'disk' => 'public'
             ]);
         }
@@ -72,7 +82,7 @@ class GeneralController extends Controller
                 'disk' => 'public'
             ]);
         }
-        
+
         if ($request->file('hover_image')) {
             if ($request->oldImage) {
                 Storage::delete($request->oldImage);
@@ -88,9 +98,9 @@ class GeneralController extends Controller
         }
 
         General::where('id', $general->id)->update($validated);
-        
+
         Alert::success('Success', 'Data Updated Successfully');
-        
+
         return redirect('/admin/general');
     }
 }
