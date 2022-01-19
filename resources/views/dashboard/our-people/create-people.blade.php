@@ -63,6 +63,7 @@
 
     </div>
     <script>
+<<<<<<< HEAD
         $(function () {
             $("#filePhoto").change(function (event) {
                 var x = URL.createObjectURL(event.target.files[0]);
@@ -70,6 +71,15 @@
                 console.log(event);
             });
         })
+=======
+        $(function(){
+        $("#filePhoto").change(function(event) {
+            var x = URL.createObjectURL (event.target.files[0]);
+            $("#output").attr("src",x);
+            console.log(event);
+        });
+        });
+>>>>>>> fcd10f3f7b6afb9fefe6e4b239d72d0ec0823b5d
 
     </script>
 

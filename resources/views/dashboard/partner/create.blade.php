@@ -39,7 +39,7 @@
             $("#output").attr("src",x);
             console.log(event);
         });
-        })
+        });
 
     </script>
 @endsection
