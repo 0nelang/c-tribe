@@ -1,4 +1,4 @@
-@extends('frontend.partial.main')
+@extends('frontend.partial.second')
 @section('css')
 <style>
   .text-uppercase{ text-transform: uppercase;}
@@ -16,61 +16,32 @@
       </section>
       <section class="page-flagship__two" id="sec2">
         <div class="wrap">
-          <div class="item item--lg anim">
-            <div class="item__wrap">
-              <div class="item__bg" style="background-image: url('../images/img-flagship-01.jpg')"></div>
-              <div class="item__date-sm"><span>15TH FEB 2022</span></div>
-              <div class="item__content">
-                <h2 class="item__title">SUBCULTURE EVENT</h2>
-                <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
-                <div class="item__date"><span>15TH FEB 2022</span></div>
+          @foreach ($inspiration as $index => $p)
+              @if ($index == 0 && count($inspiration) % 2 != 0)
+              <div class="item item--lg anim">
+                <div class="item__wrap">
+                  <div class="item__bg" style="background-image: url('../images/img-flagship-01.jpg')"></div>
+                  <div class="item__date-sm"><span>15TH FEB 2022</span></div>
+                  <div class="item__content">
+                    <h2 class="item__title">SUBCULTURE EVENT</h2>
+                    <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
+                    <div class="item__date"><span>15TH FEB 2022</span></div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="item anim">
-            <div class="item__wrap">
-              <div class="item__bg" style="background-image: url('../images/img-flagship-02.jpg')"></div>
-              <div class="item__date-sm"><span>15TH FEB 2022</span></div>
-              <div class="item__content">
-                <h2 class="item__title">PELARIAN X <br>SANA STUDIO X DASH</h2>
-                <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
-                <div class="item__date"><span>15TH FEB 2022</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="item item--alt anim">
-            <div class="item__wrap">
-              <div class="item__bg"></div>
-              <div class="item__date-sm dark"><span>15TH FEB 2022</span></div>
-              <div class="item__content">
-                <h2 class="item__title">BAR HOPPING AREA <br>IN  SENOPATI</h2>
-                <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
-                <div class="item__date"><span>15TH FEB 2022</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="item anim">
-            <div class="item__wrap">
-              <div class="item__bg" style="background-image: url('../images/img-flagship-03.jpg')"></div>
-              <div class="item__date-sm"><span>15TH FEB 2022</span></div>
-              <div class="item__content">
-                <h2 class="item__title">NIKE DUNK EXHIBITION <br>AT PIK AVENUE</h2>
-                <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
-                <div class="item__date"><span>15TH FEB 2022</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="item anim">
-            <div class="item__wrap">
-              <div class="item__bg" style="background-image: url('../images/img-flagship-04.jpg')"></div>
-              <div class="item__date-sm"><span>15TH FEB 2022</span></div>
-              <div class="item__content">
-                <h2 class="item__title">TAKASHI MURAKAMI EXHIBITION <br>AT PLAZA INDONESIA LV</h2>
-                <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
-                <div class="item__date"><span>15TH FEB 2022</span></div>
-              </div>
-            </div>
-          </div>
+              @else
+            <div class="item anim">
+                        <div class="item__wrap">
+                          <div class="item__bg" style="background-image: url('../images/img-flagship-02.jpg')"></div>
+                          <div class="item__date-sm"><span>15TH FEB 2022</span></div>
+                          <div class="item__content">
+                            <h2 class="item__title">PELARIAN X <br>SANA STUDIO X DASH</h2>
+                            <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
+                            <div class="item__date"><span>15TH FEB 2022</span></div>
+                          </div>
+                        </div>
+                      </div>
+          @endforeach
         </div>
       </section>
       <section class="page-flagship__footer">

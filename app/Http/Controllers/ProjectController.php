@@ -123,8 +123,10 @@ class ProjectController extends Controller
             }
         }
 
-        Storage::delete($project->mainImage);
-        $validated['mainImage'] =  $request->file('mainImage')->store('project-image', ['disk' => 'public']);
+        if ($request->hasFile('mainImage')) {
+            Storage::delete($project->mainImage);
+            $validated['mainImage'] =  $request->file('mainImage')->store('project-image', ['disk' => 'public']);
+        }
 
 
         Project::where('id', $project->id)->update($validated);

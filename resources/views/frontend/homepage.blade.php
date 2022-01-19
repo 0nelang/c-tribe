@@ -1,9 +1,13 @@
 @extends('frontend.partial.main')
-@section('css')
 <style>
-  .text-uppercase{ text-transform: uppercase;}
-  </style>
-@endsection
+  /* .cursor.hasimg { 
+  background: url("{{ asset('storage/' . $general->cursor_image) }}");
+} */
+  /* .cursor.hasimg{background: url("../../../images/our-people-s1.jpg");} */
+  .text-uppercase {
+      text-transform: uppercase;
+  }
+</style>
 @section('content')
     
 <main class="page-home">

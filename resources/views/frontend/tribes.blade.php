@@ -1,4 +1,4 @@
-@extends('frontend.partial.main')
+@extends('frontend.partial.second')
 @section('content')
     <main class="page-tribes header-1">
       <section class="page-tribes__one">
