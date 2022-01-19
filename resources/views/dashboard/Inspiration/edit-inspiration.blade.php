@@ -2,12 +2,10 @@
 
 @section('css')
     <style>
-        .ck-content {
-            color: black
-        }
-
-        .ck-editor__editable_inline {
-            min-height: 100px;
+        .note-editable{
+            background: #2B3B52;
+            border-color: #2B3B52;
+            color: white;
         }
 
     </style>
@@ -56,7 +54,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="description" class="form-label">Desc</label>
-                                    <textarea type="text" name="description" class="form-control text-white @error('description') is-invalid @enderror" id="editor" rows="5">{{ $inspiration->description }}</textarea>
+                                    <textarea type="text" name="description" class="form-control text-white @error('description') is-invalid @enderror editable" id="editor" rows="5">{{ $inspiration->description }}</textarea>
                                     @error('description')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -106,10 +104,16 @@
 
 @section('js')
     <script>
-        ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
+        $(document).ready(function () {
+            var id;
+            $('.editable').each(function() {
+                id = $(this).attr('id');
+                if (id != '') {
+                    $('#' + id).summernote({
+                        height: 120,
+                    });
+                }
+            })
+            });
     </script>
 @endsection

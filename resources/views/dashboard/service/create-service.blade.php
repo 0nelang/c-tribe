@@ -2,12 +2,10 @@
 
 @section('css')
     <style>
-        .ck-content {
-            color: black
-        }
-
-        .ck-editor__editable_inline {
-            min-height: 100px;
+        .note-editable {
+            background: #2B3B52;
+            border-color: #2B3B52;
+            color: white;
         }
 
     </style>
@@ -75,7 +73,7 @@
                                 <div class="mb-3">
                                     <label for="fileImage" class="form-label">Image</label>
                                     <div class="mb-3">
-                                        <img id="output" class="mb-3">
+                                        <img id="output2" class="mb-3">
                                     </div>
                                     <input class="form-control @error('image') is-invalid @enderror" name="image"
                                         type="file" id="fileImage" accept="image/*">
@@ -103,22 +101,29 @@
                     console.log(event);
                 });
             });
+            $(function() {
+                $("#fileImage").change(function(event) {
+                    var x = URL.createObjectURL(event.target.files[0]);
+                    $("#output2").attr("src", x);
+                    console.log(event);
+                });
+            });
         </script>
     @endsection
 
     @section('js')
         <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
         <script>
-            $('.editable').each(function() {
+            $(document).ready(function() {
                 var id;
-                id = $(this).attr('id');
-                if (id != '') {
-                    ClassicEditor
-                        .create(document.querySelector('#' + id))
-                        .catch(error => {
-                            console.error('error');
-                        })
-                }
-            })
+                $('.editable').each(function() {
+                    id = $(this).attr('id');
+                    if (id != '') {
+                        $('#' + id).summernote({
+                            height: 120,
+                        });
+                    }
+                })
+            });
         </script>
     @endsection

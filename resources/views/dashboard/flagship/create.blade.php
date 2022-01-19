@@ -1,16 +1,13 @@
 @extends('layouts.dashboard-main')
 
 @section('css')
-<style>
-    .ck-content {
-        color: black
-    }
-
-    .ck-editor__editable_inline {
-        min-height: 100px;
-    }
-
-</style>
+    <style>
+        .note-editable{
+            background: #2B3B52;
+            border-color: #2B3B52;
+            color: white;
+        }
+    </style>
 @endsection
 
 @section('main')
@@ -145,19 +142,17 @@
 @endsection
 
 @section('js')
-<script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
 <script>
-    var id;
-    $('.editable').each(function () {
-        id = $(this).attr('id');
-        if (id != '') {
-            ClassicEditor
-                .create(document.querySelector('#' + id))
-                .catch(error => {
-                    console.error('error');
-                })
-        }
-    })
-
+    $(document).ready(function () {
+            var id;
+            $('.editable').each(function() {
+                id = $(this).attr('id');
+                if (id != '') {
+                    $('#' + id).summernote({
+                        height: 120,
+                    });
+                }
+            })
+            });
 </script>
 @endsection

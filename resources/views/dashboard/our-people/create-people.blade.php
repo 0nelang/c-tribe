@@ -2,12 +2,10 @@
 
 @section('css')
     <style>
-        .ck-content {
-            color: black
-        }
-
-        .ck-editor__editable_inline {
-            min-height: 100px;
+        .note-editable{
+            background: #2B3B52;
+            border-color: #2B3B52;
+            color: white;
         }
 
     </style>
@@ -59,7 +57,7 @@
                             <div class="mb-3">
                                 <label for="editor" class="form-label">Desc</label>
                                 <textarea type="name" name="description"
-                                    class="form-control text-white @error('description') is-invalid @enderror"
+                                    class="form-control text-white @error('description') is-invalid @enderror editable"
                                     id="editor"></textarea>
                                 @error('description')
                                     <div class="invalid-feedback">
@@ -92,10 +90,16 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
 
     <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .catch(error => {
-                console.error(error);
+        $(document).ready(function () {
+            var id;
+            $('.editable').each(function() {
+                id = $(this).attr('id');
+                if (id != '') {
+                    $('#' + id).summernote({
+                        height: 120,
+                    });
+                }
+            })
             });
 
     </script>
