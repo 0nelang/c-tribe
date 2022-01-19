@@ -15,11 +15,12 @@ class CreateFlagshipsTable extends Migration
     {
         Schema::create('flagships', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('title');
             $table->string('date');
-            $table->text('desc');
+            $table->text('description');
             $table->text('body');
-            $table->string('background_img');
+            $table->string('mainImage')->nullable();
+            $table->string('detailImage')->nullable();
             $table->timestamps();
         });
     }

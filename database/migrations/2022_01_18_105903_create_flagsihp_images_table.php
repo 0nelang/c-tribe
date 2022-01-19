@@ -13,10 +13,10 @@ class CreateFlagsipImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('flagsip_images', function (Blueprint $table) {
+        Schema::create('flagship_images', function (Blueprint $table) {
             $table->id();
-            $table->string('img');
             $table->string('flagship');
+            $table->string('otherImage');
             $table->timestamps();
         });
     }

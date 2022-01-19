@@ -141,14 +141,23 @@
                                                     <img src="{{ asset('storage/' . $general->hover_image) }}"
                                                         alt="{{ $general->hover_image }}" id="views">
                                                 </div>
-                                                {{-- <img src="{{ asset('storage/' . $general->hover_image) }}"
-                                                alt=".."> --}}
                                                 <input class="form-control" @error('hover_image') is-invalid @enderror"
                                                     value="{{ $general->hover_image }}" name="hover_image" type="file"
                                                     id="photo" accept="image/*">
                                                 @error('hover_image')
                                                     <small class="text-danger">{{ $message }}</small>
                                                 @enderror
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="video_background" class="form-label">Video Background</label>
+                                                <br>
+                                                <video id="vid-output" src="{{ asset('storage/' . $general->video_background ) }}" controls></video>
+                                                <input class="form-control @error('video_background') is-invalid @enderror" name="video_background" type="file" id="videoFile" accept="video/*">
+                                                @error('video_background')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                              @enderror
                                             </div>
                                             <button type="submit" class="btn btn-primary">Edit</button>
                                             </form>
@@ -202,6 +211,15 @@
                                     $("#photo").change(function (event) {
                                         var x = URL.createObjectURL(event.target.files[0]);
                                         $("#views").attr("src", x);
+                                        console.log(event);
+                                    });
+                                });
+
+                                $(function(){
+                                    $("#videoFile").change(function(event) {
+                                        var x = URL.createObjectURL (event.target.files[0]);
+                                        $("#vid-output").show();
+                                        $("#vid-output").attr("src",x);
                                         console.log(event);
                                     });
                                 });
