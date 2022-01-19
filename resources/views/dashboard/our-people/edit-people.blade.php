@@ -53,7 +53,7 @@
                                 <label for="filePhoto" class="form-label">Photo</label>
                                 <br>
                                 <img src="{{ asset('storage/' . $people->photo ) }}"
-                                    id="output" class="mb-3">
+                                    id="output" class="mb-3" style="max-height: 200px; max-width: 200px;">
                                 <input class="form-control @error('photo') is-invalid @enderror"
                                     value="{{ $people->photo }}" name="photo" type="file" id="filePhoto"
                                     accept="image/*">

@@ -47,7 +47,7 @@
                             <div class="mb-3">
                                 <label for="filePhoto" class="form-label">Photo</label>
                                 <br>
-                                <img id="output" class="mb-3">
+                                <img id="output" class="mb-3" style="max-height: 200px; max-width: 200px;">
                                 <input class="form-control @error('photo') is-invalid @enderror" name="photo"
                                     type="file" id="filePhoto" accept="image/*">
                                 @error('photo')
@@ -82,7 +82,7 @@
                 $("#output").attr("src", x);
                 console.log(event);
             });
-        })
+        });
     </script>
 
 

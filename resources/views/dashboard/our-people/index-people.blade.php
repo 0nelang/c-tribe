@@ -16,7 +16,6 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Position</th>
-                                    <th>desc</th>
                                     <th>photo</th>
                                     <th>option</th>
                                 </tr>
@@ -27,7 +26,6 @@
                                     <tr>
                                         <td>{{ $pep->name }}</td>
                                         <td>{{ $pep->title }}</td>
-                                        <td> {!! $pep->description !!}</td>
                                         <td><img src="{{ asset('storage/' . $pep->photo ) }}"
                                                 style="width: 100%"></td>
                                         <td style="text-align: center">
@@ -62,7 +60,6 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Position</th>
-                                    <th>desc</th>
                                     <th>photo</th>
                                     <th>option</th>
                                 </tr>

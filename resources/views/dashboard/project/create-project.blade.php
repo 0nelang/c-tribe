@@ -99,9 +99,9 @@
                                 <div class="mb-3">
                                     <label for="mainImage" class="form-label">Main Image</label>
                                     <br>
-                                    <img id="output" class="mb-3">
+                                    <img id="output" class="mb-3" style="max-height: 200px; max-width: 200px;">
                                     <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage[]"
-                                        type="file" id="mainImage" accept="image/*">
+                                        type="file" id="filePhoto" accept="image/*">
                                     @error('mainImage')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -112,7 +112,6 @@
                                 <div class="mb-3">
                                     <label for="otherImage" class="form-label">Other Image</label>
                                     <br>
-                                    <img id="output" class="mb-3">
                                     <input class="form-control @error('otherImage') is-invalid @enderror" name="mainImage[]"
                                         type="file" id="otherImage" accept="image/*" multiple="multiple">
                                     @error('otherImage')

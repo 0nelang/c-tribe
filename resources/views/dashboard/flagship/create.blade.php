@@ -78,7 +78,7 @@
                     <div class="mb-3">
                         <label for="mainImage" class="form-label">Main Image</label>
                         <br>
-                        <img id="out" class="mb-3">
+                        <img id="out" class="mb-3" style="max-height: 200px; max-width: 300px">
                         <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage[]"
                             type="file"  id="photo" accept="image/*">
                         @error('mainImage')
@@ -91,7 +91,7 @@
                     <div class="mb-3">
                         <label for="detailImage" class="form-label">Detail Image</label>
                         <br>
-                        <img id="output" class="mb-3">
+                        <img id="output" class="mb-3" style="max-height: 200px; max-width: 300px">
                         <input class="form-control @error('detailImage') is-invalid @enderror" name="detailImage"
                             type="file" id="filePhoto" accept="image/*">
                         @error('detailImage')

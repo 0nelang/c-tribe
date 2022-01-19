@@ -1,5 +1,18 @@
 @extends('layouts.dashboard-main')
 
+@section('css')
+    <style>
+        .ck-content {
+            color: black
+        }
+
+        .ck-editor__editable_inline {
+            min-height: 100px;
+        }
+
+    </style>
+@endsection
+
 @section('main')
 
     <div class="page-content">
@@ -33,7 +46,7 @@
                                 <div class="mb-3">
                                     <label for="image" class="form-label">Image Cover</label>
                                     <br>
-                                    <img id="img-output" class="mb-3" src="{{ asset('storage/' . $inspiration->image ) }}">
+                                    <img id="img-output" class="mb-3" src="{{ asset('storage/' . $inspiration->image ) }}" style="max-height: 200px; max-width:400px;">
                                     <input class="form-control @error('image') is-invalid @enderror" name="image" type="file" id="imageFile" accept="image/*">
                                     @error('image')
                                     <div class="invalid-feedback">
@@ -43,7 +56,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="description" class="form-label">Desc</label>
-                                    <textarea type="text" name="description" class="form-control text-white @error('description') is-invalid @enderror" id="description" rows="5">{{ $inspiration->description }}</textarea>
+                                    <textarea type="text" name="description" class="form-control text-white @error('description') is-invalid @enderror" id="editor" rows="5">{{ $inspiration->description }}</textarea>
                                     @error('description')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -53,7 +66,7 @@
                                 <div class="mb-3">
                                     <label for="video" class="form-label">video</label>
                                     <br>
-                                    <video id="vid-output" src="{{ asset('storage/' . $inspiration->video ) }}" controls></video>
+                                    <video id="vid-output" src="{{ asset('storage/' . $inspiration->video ) }}" controls style="max-height: 300px; max-width:600px;"></video>
                                     <input class="form-control @error('video') is-invalid @enderror" name="video" type="file" id="videoFile" accept="video/*">
                                     @error('video')
                                     <div class="invalid-feedback">
@@ -88,5 +101,15 @@
         });
         });
 
+    </script>
+@endsection
+
+@section('js')
+    <script>
+        ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
     </script>
 @endsection
