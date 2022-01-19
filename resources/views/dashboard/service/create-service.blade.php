@@ -26,7 +26,7 @@
                                 <div class="mb-3">
                                     <label for="filePhoto" class="form-label">Logo</label>
                                     <div class="mb-3">
-                                        <img id="output" class="mb-3">
+                                        <img id="output" class="mb-3" style="max-height: 200px; max-width: 200px;">
                                     </div>
                                     <input class="form-control @error('logo') is-invalid @enderror" name="logo" type="file"
                                         id="filePhoto" accept="image/*">
@@ -40,7 +40,7 @@
                                 <div class="mb-3">
                                     <label for="service" class="form-label">Service</label>
                                     <input class="form-control @error('service') is-invalid @enderror" name="service"
-                                        type="text" id="service">
+                                        type="text" id="service" value="{{ old('service') }}">
                                     @error('service')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -52,7 +52,7 @@
                                     <label for="description" class="form-label">Description</label>
                                     <textarea type="text" name="description"
                                         class="text-dark form-control @error('description') is-invalid @enderror editable"
-                                        id="ck1"></textarea> @error('description')
+                                        id="ck1" >{{ old('description') }}</textarea> @error('description')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -63,7 +63,7 @@
                                     <label for="body" class="form-label">Body</label>
                                     <textarea type="text" name="body"
                                         class="text-dark form-control @error('body') is-invalid @enderror editable"
-                                        id="ck2"></textarea> @error('body')
+                                        id="ck2">{{ old('body') }}</textarea> @error('body')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -73,7 +73,7 @@
                                 <div class="mb-3">
                                     <label for="fileImage" class="form-label">Image</label>
                                     <div class="mb-3">
-                                        <img id="output2" class="mb-3">
+                                        <img id="output2" class="mb-3" style="max-height: 200px; max-width: 200px;">
                                     </div>
                                     <input class="form-control @error('image') is-invalid @enderror" name="image"
                                         type="file" id="fileImage" accept="image/*">

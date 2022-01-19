@@ -22,25 +22,31 @@
                         <div class="card-body">
                             <form action="{{ route('inspiration.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <div class="mb-3">
-                                    <label for="name" class="form-label is-invalid">Name</label>
-                                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                                        id="exampleInputEmail1" aria-describedby="our-people-name">
-                                    @error('name')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label is-invalid">Name</label>
+                                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+                                                id="exampleInputEmail1" aria-describedby="our-people-name">
+                                            @error('name')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
-                                    @enderror
-                                </div>
-                                <div class="mb-3">
-                                    <label for="date" class="form-label is-invalid">Date</label>
-                                    <input type="text" date="date" class="form-control @error('date') is-invalid @enderror"
-                                        id="exampleInputEmail1" aria-describedby="our-people-date">
-                                    @error('date')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="date" class="form-label is-invalid">Date</label>
+                                            <input type="text" date="date" class="form-control @error('date') is-invalid @enderror"
+                                                id="exampleInputEmail1" aria-describedby="our-people-date">
+                                            @error('date')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
-                                    @enderror
+                                    </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="quote" class="form-label">Quote</label>

@@ -25,7 +25,7 @@
                                     <tr>
                                         <td>{{ $p->brand }}</td>
                                         <td>{{ $p->title }}</td>
-                                        <td style="text-align: center">
+                                        <td style="">
                                             <div class="dropdown dropright">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>

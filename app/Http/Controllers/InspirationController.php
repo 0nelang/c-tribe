@@ -48,11 +48,16 @@ class InspirationController extends Controller
             'name' => 'required',
             'quote' => 'required',
             'description' => 'required',
-            'image' => 'required|image|file',
-            'video' => 'mimetypes:video/avi,video/mp4'
+            'image' => '|image|file',
+            'video' => 'mimetypes:video/avi,video/mp4',
+            'date' => 'max:255'
         ]);
+
         $validated['date'] = $request->date;
-        $validated['image'] = $request->file('image')->store('inspiration-images', ['disk' => 'public']);
+        if ($request->hasFile('image')) {
+          $validated['image'] = $request->file('image')->store('inspiration-images', ['disk' => 'public']);
+        }
+        
 
         if ($request->file('video')) {
             $validated['video'] = $request->file('video')->store('inspire-video', ['disk' => 'public']);
@@ -103,7 +108,8 @@ class InspirationController extends Controller
             'quote' => 'required',
             'description' => 'required',
             'image' => 'image|file',
-            'video' => 'mimetypes:video/avi,video/mp4'
+            'video' => 'mimetypes:video/avi,video/mp4',
+            'date' => 'max:255'
         ]);
         $validated['date'] = $request->date;
         if ($request->hasFile('image')) {

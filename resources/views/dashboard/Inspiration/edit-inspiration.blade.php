@@ -23,7 +23,8 @@
                             <form action="{{ route('inspiration.update',['inspiration' => $inspiration->id]) }}" method="POST" enctype="multipart/form-data">
                                 @method("put")
                                 @csrf
-                                <div class="mb-3">
+                                <div class="row">
+                                    <div class="col-6"><div class="mb-3">
                                   <label for="name" class="form-label is-invalid">Name</label>
                                   <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="our-people-name" value="{{ $inspiration->name }}">
                                   @error('name')
@@ -31,16 +32,19 @@
                                         {{ $message }}
                                     </div>
                                   @enderror
-                                </div>
-                                <div class="mb-3">
+                                </div></div>
+                                    <div class="col-6"> <div class="mb-3">
                                   <label for="date" class="form-label is-invalid">Date</label>
-                                  <input type="text" date="date" class="form-control @error('date') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="our-people-date" value="{{ $inspiration->date }}">
+                                  <input type="text" name="date" class="form-control @error('date') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="our-people-date" value="{{ $inspiration->date }}">
                                   @error('date')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
                                   @enderror
-                                </div>
+                                </div></div>
+                                </div>                                  
+                                
+                               
                                 <div class="mb-3">
                                   <label for="quote" class="form-label">Quote</label>
                                   <input type="text" name="quote" class="form-control @error('quote') is-invalid @enderror" id="quote" value="{{ $inspiration->quote }}">

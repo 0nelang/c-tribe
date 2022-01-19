@@ -27,8 +27,8 @@
                                     <div class="mb-3">
                                         <label for="title" class="form-label is-invalid">Title</label>
                                         <input type="text" name="title"
-                                            class="form-control @error('title') is-invalid @enderror"
-                                            id="exampleInputEmail1" aria-describedby="title">
+                                            class="form-control @error('title') is-invalid @enderror" editable
+                                            id="ck1" aria-describedby="title">
                                         @error('title')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -51,7 +51,7 @@
                     <div class="mb-3">
                         <label for="description" class="form-label">Desc</label>
                         <textarea type="text" name="description"
-                            class="text-dark form-control @error('description') is-invalid @enderror editable" id="ck1">
+                            class="text-dark form-control @error('description') is-invalid @enderror editable" id="ck2">
                                             </textarea>
                         @error('description')
                             <div class="invalid-feedback">
@@ -63,7 +63,7 @@
                     <div class="mb-3">
                         <label for="body" class="form-label">Body</label>
                         <textarea type="text" name="body"
-                            class="form-control  @error('body') is-invalid @enderror editable" id="ck2"
+                            class="form-control  @error('body') is-invalid @enderror editable" id="ck3"
                             rows="5"></textarea>
                         @error('body')
                             <div class="invalid-feedback">

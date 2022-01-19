@@ -24,7 +24,7 @@
                                     <tr>
                                         <td>{{ $id + 1}}</td>
                                         <td>{{ $pep->name }}</td>
-                                        <td style="text-align: center">
+                                        <td style="">
                                             <div class="dropdown">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>

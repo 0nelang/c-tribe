@@ -16,31 +16,32 @@
       </section>
       <section class="page-flagship__two" id="sec2">
         <div class="wrap">
-          @foreach ($inspiration as $index => $p)
-              @if ($index == 0 && count($inspiration) % 2 != 0)
+          @foreach ($flagship as $index => $p)
+              @if ($index == 0 && count($flagship) % 2 != 0)
               <div class="item item--lg anim">
                 <div class="item__wrap">
-                  <div class="item__bg" style="background-image: url('../images/img-flagship-01.jpg')"></div>
-                  <div class="item__date-sm"><span>15TH FEB 2022</span></div>
+                  <div class="item__bg" style="background-image: url('{{ asset('storage/' . $p->mainImage) }}')"></div>
+                  <div class="item__date-sm"><span>{{ $p->date }}</span></div>
                   <div class="item__content">
-                    <h2 class="item__title">SUBCULTURE EVENT</h2>
+                    <h2 class="item__title text-uppercase">{{ $p->title }}</h2>
                     <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
-                    <div class="item__date"><span>15TH FEB 2022</span></div>
+                    <div class="item__date"><span class="text-uppercase">{{ $p->date }}</span></div>
                   </div>
                 </div>
               </div>
               @else
             <div class="item anim">
                         <div class="item__wrap">
-                          <div class="item__bg" style="background-image: url('../images/img-flagship-02.jpg')"></div>
-                          <div class="item__date-sm"><span>15TH FEB 2022</span></div>
+                          <div class="item__bg" style="background-image: url('{{ asset('storage/' . $p->mainImage) }}')"></div>
+                          <div class="item__date-sm"><span>{{ $p->date }}</span></div>
                           <div class="item__content">
-                            <h2 class="item__title">PELARIAN X <br>SANA STUDIO X DASH</h2>
+                            <h2 class="item__title text-uppercase">{{ $p->title }}</h2>
                             <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
-                            <div class="item__date"><span>15TH FEB 2022</span></div>
+                            <div class="item__date"><span class="text-uppercase">{{ $p->date }}</span></div>
                           </div>
                         </div>
                       </div>
+                      @endif
           @endforeach
         </div>
       </section>

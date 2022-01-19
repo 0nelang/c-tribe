@@ -47,7 +47,7 @@ class ServiceController extends Controller
             'service' => 'required',
             'description' => 'required',
             'body' => 'required',
-            'image' => 'image|file'
+            'image' => 'required|image|file'
         ]);
 
         $validated['logo'] = $request->file('logo')->store('service-image', ['disk' => 'public']);
