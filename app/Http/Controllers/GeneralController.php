@@ -19,7 +19,7 @@ class GeneralController extends Controller
         ]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, General $general)
     {
         $rules = [
             "brand_navbar" => "image|file",
@@ -32,6 +32,7 @@ class GeneralController extends Controller
             "addres_footer" => "required",
             "cursor_image" => "image|file",
             "hover_image" => "image|file",
+            "video_background" => "mimetypes:video/avi,video/mp4"
         ];
 
         $validated = $request->validate($rules);
@@ -81,7 +82,12 @@ class GeneralController extends Controller
             ]);
         }
 
-        General::where('id', $id)->update($validated);
+        if ($request->hasFile('video_background')) {
+            Storage::disk('public')->delete($general->video_background);
+            $validated['video_background'] = $request->file('video_background')->store('general-video', ['disk' => 'public']);
+        }
+
+        General::where('id', $general->id)->update($validated);
         
         Alert::success('Success', 'Data Updated Successfully');
         

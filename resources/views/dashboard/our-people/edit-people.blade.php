@@ -1,5 +1,18 @@
 @extends('layouts.dashboard-main')
 
+@section('css')
+    <style>
+        .ck-content {
+            color: black
+        }
+
+        .ck-editor__editable_inline {
+            min-height: 100px;
+        }
+
+    </style>
+@endsection
+
 @section('main')
 
 <div class="page-content">
