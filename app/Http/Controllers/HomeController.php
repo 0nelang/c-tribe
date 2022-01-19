@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Flagship;
-use App\Models\General;
-use App\Models\Inspiration;
 use App\Models\People;
+use App\Models\General;
 use App\Models\Project;
+use App\Models\Service;
+use App\Models\Flagship;
+use App\Models\Inspiration;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,7 +22,7 @@ class HomeController extends Controller
         return view('frontend.homepage',[
             "general" => $this->general
         ]);
-    }   
+    }
 
     function flagship()
     {
@@ -33,12 +34,12 @@ class HomeController extends Controller
 
     function inspiration()
     {
-        
+
         return view('frontend.inspiration',[
             "general" => $this->general,
             "inspiration" => Inspiration::all()
         ]);
-    } 
+    }
 
     function landing()
     {
@@ -66,7 +67,8 @@ class HomeController extends Controller
     function tribes()
     {
         return view('frontend.tribes',[
-            "general" => $this->general
+            "general" => $this->general,
+            "service" => Service::orderBy('index', 'desc')->get()
         ]);
     }
 
