@@ -96,6 +96,12 @@ class partnerController extends Controller
     {
         Storage::delete($partner->logo);
         Partner::destroy($partner->id);
+        $notdel = Partner::orderBy('index', 'desc')->get();
+        if ($notdel != null) {
+            foreach ($notdel as $key => $value) {
+                Partner::find($value->id)->update(['index' => $key + 1]);
+            }
+        }
         return redirect('admin/partners');
     }
 
