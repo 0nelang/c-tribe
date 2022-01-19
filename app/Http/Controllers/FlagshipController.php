@@ -48,15 +48,15 @@ class FlagshipController extends Controller
             'date' => 'required',
             'description' => 'required',
             'body' => 'required',
-            'mainImage*' => 'image|file'
+            'mainImage*' => 'image|file',
+            'detailImage' => 'image|file'
         ]);
 
-        if ($request->hasFile('mainImage')) 
+        if ($request->hasFile('mainImage'))
         {
             foreach ($request->mainImage as $index => $value) {
                 if ($index == 0) {
                     $validated['mainImage'] = $value->store('flagship-image', ['disk' => 'public']);
-                    $validated['detailImage'] = $value->store('flagship-image', ['disk' => 'public']);
                 } else {
                     $otherImage['otherImage'] = $value->store('flagship-image', ['disk' => 'public']);
                     $otherImage['flagship'] = $request->title;
@@ -64,7 +64,11 @@ class FlagshipController extends Controller
                 }
             }
         }
-        
+
+        if ($request->hasFile('detailImage')) {
+            $validated['detailImage'] = $request->file('detailImage')->store('flagship-image', ['disk' => 'public']);
+        }
+
 
         Flagship::create($validated);
         Alert::success('Success', 'Data create succesfully');
@@ -114,7 +118,9 @@ class FlagshipController extends Controller
             'title' => 'required',
             'description' => 'required',
             'body' => 'required',
-            'mainImage*' => 'image|file'
+            'mainImage' => 'image|file',
+            'detailImage' => 'image|file',
+            'otherImage*' => 'image|file'
         ]);
 
         if ($request->hasFile('otherImage')) {
@@ -134,7 +140,7 @@ class FlagshipController extends Controller
             Storage::delete($flagship->detailImage);
             $validated['detailImage'] =  $request->file('detailImage')->store('project-image', ['disk' => 'public']);
         }
-       
+
 
         Flagship::where('id', $flagship->id)->update($validated);
         Alert::success('Success', 'Data update succesfully');

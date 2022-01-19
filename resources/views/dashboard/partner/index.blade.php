@@ -33,7 +33,7 @@
                                             <td>{{ $part->index }}</td>
                                             <td>{{ $part->id }}</td>
                                             <td><img src="{{ asset('storage/' . $part->logo) }}" alt="{{ $part->logo }}"
-                                                    style="height: 89px"></td>
+                                                    style="max-height: 50px; max-width: 100px;"></td>
                                             <td>
                                                 <div class="dropdown dropend">
                                                     <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
