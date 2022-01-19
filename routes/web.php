@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\InspirationController;
 
 /*
@@ -21,7 +22,9 @@ Route::get('/admin/general', [GeneralController::class, 'general']);
 Route::put('/admin/general/{general:id}', [GeneralController::class, 'update']);
 Route::resource('/admin/people', PeopleController::class);
 Route::resource('/admin/inspiration', InspirationController::class);
+
 Route::resource('/admin/project', ProjectController::class);
+Route::post('/admin/project/image/{id}', [ProjectController::class, 'imgdel']);
 
 Route::get('/admin/partners', [PartnerController::class, 'index'])->name('partner.index');
 Route::get('/admin/partners/create', [PartnerController::class, 'create'])->name('partner.create');
