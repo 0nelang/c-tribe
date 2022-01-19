@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,17 +38,18 @@
     <script src="sweetalert2.min.js"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
 </head>
+
 <body>
     <div class='loader'>
-    <div class='spinner-grow text-primary' role='status'>
-        <span class='sr-only'>Loading...</span>
+        <div class='spinner-grow text-primary' role='status'>
+            <span class='sr-only'>Loading...</span>
+        </div>
     </div>
-    </div>
-    <div class="page-container">     
+    <div class="page-container">
         @include('partials.dashboard.page-header')
-    
+
         @include('partials.dashboard.page-sidebar')
-    
+
         @yield('main')
 
     </div>
@@ -55,24 +57,25 @@
     <script>
         function what(id) {
             Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
                     $('#form-delete' + id).submit();
                     Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
                     )
                 }
             })
         }
+
     </script>
     <!-- Javascripts -->
     {{-- ck-editor --}}
@@ -89,4 +92,5 @@
     <script src="{{ asset('/plugins/DataTables/datatables.min.js') }}"></script>
 
 </body>
+
 </html>
