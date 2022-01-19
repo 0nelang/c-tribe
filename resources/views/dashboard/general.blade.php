@@ -16,11 +16,11 @@
                                     <label for="brand_navbar1" class="form-label">Brand Image 1</label>
                                     <div class="mb-3">
                                         <img src="{{ asset('storage/' . $general->brand_navbar1) }}"
-                                            alt="{{ $general->brand_navbar1 }}" id="output">
+                                            alt="{{ $general->brand_navbar1 }}" id="output-img1" style="max-height: 200px; max-width: 200px;">
                                     </div>
-                                    <input class="form-control" @error('brand_navbar1') is-invalid @enderror"
-                                        value="{{ $general->brand_navbar1 }}" name="brand_navbar1" type="file"
-                                        id="filePhoto" accept="image/*">
+                                    <input class="form-control @error('brand_navbar1') is-invalid @enderror image-show"
+                                        value="{{ $general->brand_navbar1 }}" name="brand_navbar1" type="file" id="img1"
+                                        accept="image/*">
                                     @error('brand_navbar1')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
@@ -29,11 +29,11 @@
                                     <label for="brand_navbar2" class="form-label">Brand Image 2</label>
                                     <div class="mb-3">
                                         <img src="{{ asset('storage/' . $general->brand_navbar2) }}"
-                                            alt="{{ $general->brand_navbar2 }}" id="output">
+                                            alt="{{ $general->brand_navbar2 }}" id="output-img2" style="max-height: 200px; max-width: 200px;">
                                     </div>
-                                    <input class="form-control" @error('brand_navbar2') is-invalid @enderror"
-                                        value="{{ $general->brand_navbar2 }}" name="brand_navbar2" type="file"
-                                        id="filePhoto" accept="image/*">
+                                    <input class="form-control @error('brand_navbar2') is-invalid @enderror image-show"
+                                        value="{{ $general->brand_navbar2 }}" name="brand_navbar2" type="file" id="img2"
+                                        accept="image/*">
                                     @error('brand_navbar2')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
@@ -59,7 +59,7 @@
                                             <div class="col">
                                                 <div class="mb-3">
                                                     <label for="email_footer" class="form-label">Email</label>
-                                                    <input type="text" class="form-control" id="email_footer"
+                                                    <input type="email" class="form-control" id="email_footer"
                                                         name="email_footer" value="{{ $general->email_footer }}">
                                                     @error('description')
                                                         <small class="text-danger">{{ $message }}</small>
@@ -100,11 +100,11 @@
                                         <label for="background_footer" class="form-label">Background Image</label>
                                         <div class="mb-3">
                                             <img src="{{ asset('storage/' . $general->background_footer) }}"
-                                                alt="{{ $general->background_footer }}" id="out">
+                                                alt="{{ $general->background_footer }}" id="output-img3" style="max-height: 200px; max-width: 200px;">
                                         </div>
-                                        <input class="form-control" @error('background_footer') is-invalid @enderror"
+                                        <input class="form-control @error('background_footer') is-invalid @enderror image-show"
                                             value="{{ $general->background_footer }}" name="background_footer"
-                                            type="file" id="img" accept="image/*">
+                                            type="file" id="img3" accept="image/*">
                                         @error('background_footer')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
@@ -113,11 +113,11 @@
                                         <label for="brand_footer" class="form-label">Brand Image</label>
                                         <div class="mb-3">
                                             <img src="{{ asset('storage/' . $general->brand_footer) }}"
-                                                alt="{{ $general->brand_footer }}" id="show"">
-                                        </div>
-                                        <input class="  form-control" @error('brand_footer') is-invalid @enderror"
+                                                alt="{{ $general->brand_footer }}" id="output-img4" style="max-height: 200px; max-width: 200px;">
+                                            </div>
+                                            <input class="form-control @error('brand_footer') is-invalid @enderror image-show"
                                                 value="{{ $general->brand_footer }}" name="brand_footer" type="file"
-                                                id="file" accept="image/*">
+                                                id="img4" accept="image/*">
                                             @error('brand_footer')
                                                 <small class="text-danger">{{ $message }}</small>
                                             @enderror
@@ -138,12 +138,12 @@
                                                     <label for="cursor_image" class="form-label">Cursor Image</label>
                                                     <div class="mb-3">
                                                         <img src="{{ asset('storage/' . $general->cursor_image) }}"
-                                                            alt="{{ $general->cursor_image }}" id="view">
+                                                            alt="{{ $general->cursor_image }}" id="output-img5" style="max-height: 200px; max-width: 200px;">
                                                     </div>
-                                                    <input class="form-control" @error('cursor_image') is-invalid
-                                                        @enderror" value="{{ $general->cursor_image }}"
-                                                        name="cursor_image" type="file" id="pre" accept="image/*""
-                                                    name=" cursor_image">
+                                                    <input class="form-control @error('cursor_image') is-invalid
+                                                        @enderror image-show" value="{{ $general->cursor_image }}"
+                                                        name="cursor_image" type="file" id="img5" accept="image/*""
+                                                        name=" cursor_image">
                                                     @error('cursor_image')
                                                         <small class="text-danger">{{ $message }}</small>
                                                     @enderror
@@ -152,11 +152,11 @@
                                                     <label for="hover_image" class="form-label">Hover Image Menu</label>
                                                     <div class="mb-3">
                                                         <img src="{{ asset('storage/' . $general->hover_image) }}"
-                                                            alt="{{ $general->hover_image }}" id="views">
+                                                            alt="{{ $general->hover_image }}" id="output-img6" style="max-height: 200px; max-width: 200px;">
                                                     </div>
-                                                    <input class="form-control" @error('hover_image') is-invalid
-                                                        @enderror" value="{{ $general->hover_image }}" name="hover_image"
-                                                        type="file" id="photo" accept="image/*">
+                                                    <input class="form-control @error('hover_image') is-invalid
+                                                        @enderror image-show" value="{{ $general->hover_image }}" name="hover_image"
+                                                        type="file" id="img6" accept="image/*">
                                                     @error('hover_image')
                                                         <small class="text-danger">{{ $message }}</small>
                                                     @enderror
@@ -166,7 +166,7 @@
                                                         Background</label>
                                                     <br>
                                                     <video id="vid-output"
-                                                        src="{{ asset('storage/' . $general->video_background) }}"
+                                                        src="{{ asset('storage/' . $general->video_background) }}" style="max-height: 300px; max-width: 300px;"
                                                         controls></video>
                                                     <input
                                                         class="form-control @error('video_background') is-invalid @enderror"
@@ -185,61 +185,17 @@
                                 </div>
 
                                 <script>
-                                    $('.editable').each(function() {
+                                    $('.image-show').each(function() {
                                         var id;
                                         id = $(this).attr('id');
                                         if (id != '') {
-                                            ClassicEditor
-                                                .create(document.querySelector('#' + id))
-                                                .catch(error => {
-                                                    console.error('error');
-                                                })
+                                            $("#" + id).change(function(event) {
+                                                var x = URL.createObjectURL(event.target.files[0]);
+                                                $("#output-" + id).attr("src", x);
+                                                console.log(event);
+                                            });
                                         }
                                     })
-
-                                    $(function() {
-                                        $("#filePhoto").change(function(event) {
-                                            var x = URL.createObjectURL(event.target.files[0]);
-                                            $("#output").attr("src", x);
-                                            console.log(event);
-                                        });
-                                    });
-
-
-                                    $(function() {
-                                        $("#img").change(function(event) {
-                                            var x = URL.createObjectURL(event.target.files[0]);
-                                            $("#out").attr("src", x);
-                                            console.log(event);
-                                        });
-                                    });
-
-
-                                    $(function() {
-                                        $("#file").change(function(event) {
-                                            var x = URL.createObjectURL(event.target.files[0]);
-                                            $("#show").attr("src", x);
-                                            console.log(event);
-                                        });
-                                    });
-
-
-                                    $(function() {
-                                        $("#pre").change(function(event) {
-                                            var x = URL.createObjectURL(event.target.files[0]);
-                                            $("#view").attr("src", x);
-                                            console.log(event);
-                                        });
-                                    });
-
-
-                                    $(function() {
-                                        $("#photo").change(function(event) {
-                                            var x = URL.createObjectURL(event.target.files[0]);
-                                            $("#views").attr("src", x);
-                                            console.log(event);
-                                        });
-                                    });
 
                                     $(function() {
                                         $("#videoFile").change(function(event) {

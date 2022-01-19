@@ -48,8 +48,8 @@ Route::post('/admin/partners/delete/{partner:id}', [PartnerController::class, 'd
 Route::post('/admin/partners/position', [PartnerController::class, 'position'])->name('partner.position');
 
 Route::get('/', function () {
-    return view('dashboard.welcome',[
-        "page" => "main"
+    return view('frontend.index',[
+
     ]);
 });
 

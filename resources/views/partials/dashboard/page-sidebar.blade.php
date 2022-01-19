@@ -4,17 +4,14 @@
             Main
           </li>
           <li>
-            <a href="/"><i data-feather="home"></i>Dashboard</a>
-          </li>
-          <li class="sidebar-title">
-            Apps
-          </li>
-          <li>
             <a href="#"><i data-feather="tool"></i>Settings<i class="fas fa-chevron-right dropdown-icon"></i></a>
             <ul class="">
               <li><a href="/admin/page"><i class="far fa-circle"></i>page</a></li>
               <li><a href="/admin/general"><i class="far fa-circle"></i>general</a></li>
             </ul>
+          </li>
+          <li class="sidebar-title">
+            Apps
           </li>
           <li class="{{ ($page === 'people')? 'active-page' : ''  }}">
             <a href="/admin/people"><i data-feather="user"></i>our people</a>
