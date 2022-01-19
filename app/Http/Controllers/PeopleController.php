@@ -65,8 +65,6 @@ class PeopleController extends Controller
         $validated['photo'] = $img_path;
 
         People::create($validated);
-
-
         Alert::success('Success', 'Data create succesfully');
         return redirect('/admin/people');
     }

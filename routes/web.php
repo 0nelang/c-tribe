@@ -1,13 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PeopleController;
-use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PeopleController;
+use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\FlagshipController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\InspirationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,12 +50,6 @@ Route::resource('admin/people', PeopleController::class);
 
 Route::resource('/admin/partners', PartnerController::class);
 
-Route::get('/admin/page', function () {
-    return view('dashboard.welcome',[
-        "page" => "page"
-    ]);
-});
-
 
 // Route::get('/admin/partners', function () {
 //     return view('dashboard.welcome',[
@@ -85,4 +81,5 @@ Route::get('/admin/service', function () {
     ]);
 });
 
+Route::resource('/admin/flagship', FlagshipController::class);
 

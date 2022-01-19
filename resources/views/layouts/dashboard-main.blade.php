@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,6 +40,7 @@
 
     @yield('css')
 </head>
+
 <body>
     @include('sweetalert::alert')
     {{-- <div class='loader'>
@@ -59,24 +61,25 @@
     <script>
         function what(id) {
             Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
                     $('#form-delete' + id).submit();
                     Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
                     )
                 }
             })
         }
+
     </script>
 
     <!-- Javascripts -->
@@ -92,7 +95,7 @@
     <script src="{{ asset('/js/pages/dashboard.js') }}"></script>
     <script src="{{ asset('/js/pages/datatables.js') }}"></script>
     <script src="{{ asset('/plugins/DataTables/datatables.min.js') }}"></script>
-
     @yield('js')
 </body>
+
 </html>
