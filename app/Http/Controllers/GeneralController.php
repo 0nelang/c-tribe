@@ -24,7 +24,7 @@ class GeneralController extends Controller
         $rules = [
             "brand_navbar1" => "image|file",
             "brand_navbar2" => "image|file",
-            "title" => "required",
+            "title" => "max:255",
             "background_footer" => "image|file",
             "brand_footer" => "image|file",
             "email_footer" => "required",

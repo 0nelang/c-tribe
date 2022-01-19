@@ -1,18 +1,22 @@
-@extends('frontend.partial.main')
-
+@extends('frontend.partial.second')
+@section('css')
+<style> 
+  /* .cursor.hasimg { 
+    background: url("{{ asset('storage/' . $general->cursor_image) }}");
+  } */
+  /* .cursor.hasimg{background: url("../../../images/our-people-s1.jpg");} */
+  .text-uppercase{ text-transform: uppercase;}
+  </style>
+@endsection
 @section('content')
-    
     <main class="page-project">
       <section class="page-project__one">
         <div class="wrap">
           <div class="tagline-marquee marquee">
             <h1>PROJECT • PROJECT • PROJECT</h1>
           </div>
-          <div class="desc">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-          </div>
         </div>
-        <div class="arrow"><a class="has-scroll" href="#sec2"> <img src="/images/arrow-down-green.png" alt="arrow-down"/></a></div>
+        <div class="arrow"><a class="has-scroll" href="#sec2"><img src="/images/arrow-down-green.png" alt="arrow-down"/></a></div>
       </section>
       <section class="page-project__two" id="sec2">
         <div class="wrap"><a class="item" href="#" data-bg="/images/img-bg-project-01.jpg">
@@ -89,13 +93,13 @@
       </section>
       <section class="page-home__footer">
         <div class="page-home__footer-top">
-          <div class="left"><a class="item email" href="mailto:GENERAL INQUIRIESHOLA@CTRIBEJKT.COM">GENERAL INQUIRIES <br>HOLA@CTRIBEJKT.COM</a>
-            <div class="item phone">Phone<br><a href="tel: +62812 197 19179">+62812 197 19179</a></div>
-            <div class="item ig">INSTAGRAM<br><a href="#">CTRIBEJKT.</a></div>
+          <div class="left"><a class="item email" href="mailto:GENERAL {{ $general->email_footer }}">GENERAL INQUIRIES <br>{{ $general->email_footer }}</a>
+            <div class="item phone">Phone<br><a href="tel:  {{ $general->phone_footer }}"> {{ $general->phone_footer }}</a></div>
+            <div class="item ig">INSTAGRAM<br><a target="_blank" href="https://www.instagram.com/{{ $general->social_footer }}" class="text-uppercase">{{ $general->social_footer }}.</a></div>
           </div>
-          <div class="right"><span>JKT, IND</span></div>
+          <div class="right"><span class="text-uppercase">{{ $general->addres_footer }}</span></div>
         </div>
-        <div class="imgctribe"><img src="/images/big-ctribe.svg" alt="img"/></div>
+        <div class="imgctribe"><img src="{{ asset('storage/' . $general->brand_footer) }}" alt="img"/></div>
       </section>
     </main>
     @endsection
