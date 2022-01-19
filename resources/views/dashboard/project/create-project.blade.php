@@ -101,7 +101,7 @@
                                     <br>
                                     <img id="output" class="mb-3">
                                     <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage[]"
-                                        type="file" required id="mainImage" accept="image/*">
+                                        type="file" id="mainImage" accept="image/*">
                                     @error('mainImage')
                                         <div class="invalid-feedback">
                                             {{ $message }}

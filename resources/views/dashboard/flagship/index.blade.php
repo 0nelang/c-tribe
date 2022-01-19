@@ -8,12 +8,12 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <a href="" class="btn btn-primary mb-3">Create</a>
+                        <a href="{{ route('flagship.create') }}" class="btn btn-primary mb-3">Create</a>
                         <table id="zero-conf" class="display" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Name</th>
+                                    <th>Title</th>
                                     <th>Option</th>
                                 </tr>
                             </thead>
@@ -22,17 +22,17 @@
 
                                     <tr>
                                         <td>{{ $id + 1 }}</td>
-                                        <td>{{ $pep->name }}</td>
-                                        <td style="text-align: center">
+                                        <td>{{ $pep->title }}</td>
+                                        <td style="">
                                             <div class="dropdown">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
                                                     data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </button>
                                                 <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
-                                                    <li><a class="dropdown-item text-dark" href="">Show</a></li>
+                                                    <li><a class="dropdown-item text-dark" href="{{ route('flagship.edit',['flagship' => $pep->id]) }}">Edit</a></li>
                                                     <li>
-                                                        <form id="form-delete{{ $id }}" action="" method="post"
+                                                        <form id="form-delete{{ $id }}" action="{{ route('flagship.destroy',['flagship' => $pep->id]) }}" method="post"
                                                             style="display: none">
                                                             @method('delete')
                                                             @csrf
@@ -49,9 +49,9 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
+                                    <th>No</th>
+                                    <th>Title</th>
+                                    <th>option</th>
                                 </tr>
                             </tfoot>
                         </table>

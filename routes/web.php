@@ -30,6 +30,10 @@ Route::resource('/admin/inspiration', InspirationController::class);
 Route::resource('/admin/project', ProjectController::class);
 Route::post('/admin/project/image/{id}', [ProjectController::class, 'imgdel']);
 
+Route::resource('/admin/flagship', FlagshipController::class);
+Route::post('/admin/project/image/{id}', [FlagshipController::class, 'imgdel']);
+
+
 Route::get('/admin/partners', [PartnerController::class, 'index'])->name('partner.index');
 Route::get('/admin/partners/create', [PartnerController::class, 'create'])->name('partners.create');
 Route::post('/admin/partners', [PartnerController::class, 'store'])->name('partners.store');
@@ -81,5 +85,4 @@ Route::get('/admin/service', function () {
     ]);
 });
 
-Route::resource('/admin/flagship', FlagshipController::class);
 
