@@ -9,31 +9,16 @@
         </div>
       </section>
       <section class="page-tribes__two header-2">
-        <div class="wrap"><a class="item" href="#">
+        <div class="wrap">
+            @foreach ($service as $s)
+
+            <a class="item" href="#">
             <div class="item__wrap">
               <div class="item__logo"><img src="/images/img-logo-01.png" alt="Image"/></div>
               <div class="item__title"><span>Music Podcast</span></div>
-            </div></a><a class="item" href="#">
-            <div class="item__wrap">
-              <div class="item__logo"><img src="/images/img-logo-02.png" alt="Image"/></div>
-              <div class="item__title"><span>Concept Store</span></div>
-            </div></a><a class="item" href="#">
-            <div class="item__wrap">
-              <div class="item__logo"><img src="/images/img-logo-03.png" alt="Image"/></div>
-              <div class="item__title"><span>Bottleshop & Bar</span></div>
-            </div></a><a class="item" href="#">
-            <div class="item__wrap">
-              <div class="item__logo"><img src="/images/img-logo-04.png" alt="Image"/></div>
-              <div class="item__title"><span>Meeting Room</span></div>
-            </div></a><a class="item" href="#">
-            <div class="item__wrap">
-              <div class="item__logo"><img src="/images/img-logo-05.png" alt="Image"/></div>
-              <div class="item__title"><span>Meeting Room</span></div>
-            </div></a><a class="item" href="#">
-            <div class="item__wrap">
-              <div class="item__logo"><img src="/images/img-logo-06.png" alt="Image"/></div>
-              <div class="item__title"><span>Food and Beverage</span></div>
-            </div></a></div>
+            </div></a>
+
+            @endforeach
       </section>
       <section class="page-home__footer">
         <div class="page-home__footer-top">
