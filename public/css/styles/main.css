@@ -94,7 +94,7 @@ html, body { font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont
 
 .cursor { display: block; width: 14px; height: 14px; border-radius: 7px; background: #fff; position: fixed; z-index: 201; pointer-events: none; -webkit-transform: translate(-5px, -5px); transform: translate(-5px, -5px); transition: width .3s ease, height .3s ease; }
 
-.cursor.hasimg { width: 30.208vw; height: 17.188vw; border-radius: 0; background-size: contain; background-position: center; -webkit-transform: translate(0, 0); transform: translate(0, 0); }
+.cursor.hasimg { width: 30.208vw; height: 17.188vw; border-radius: 0; background: url("../../../images/our-people-s1.jpg"); background-size: contain; background-position: center; background-repeat: no-repeat; -webkit-transform: translate(0, 0); transform: translate(0, 0); }
 
 @media (max-width: 991px) { .cursor { display: none; } }
 
@@ -153,7 +153,7 @@ html, body { display: block; max-width: 100vw; overflow-x: hidden; }
 
 .main-menu { z-index: 1; position: fixed; height: 100vh; width: 100vw; left: 0; top: 0; display: none; }
 
-.main-menu__bg { z-index: 2; display: block; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: url("../../images/img-bg-menu.jpg") no-repeat center; background-size: cover; display: none; }
+.main-menu__bg { z-index: 2; display: block; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: url("../../../images/img-bg-menu.jpg") no-repeat center; background-size: cover; display: none; }
 
 .main-menu__bg .bg-hover { z-index: 1; display: none; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-size: cover; background-repeat: no-repeat; background-position: center; -webkit-transform: scale(1.2); transform: scale(1.2); transition: all .4s ease-in-out; }
 
@@ -181,7 +181,9 @@ html, body { display: block; max-width: 100vw; overflow-x: hidden; }
 
 .main-menu ul > li:last-child > a::after { display: none; }
 
-@media (max-width: 991px) { .main-menu__bg { background: url("../../images/img-bg-menu-sm.jpg") no-repeat; background-position: center -32px; background-size: contain; }
+.main-menu ul > li.disabled a { pointer-events: none; color: #FFF; }
+
+@media (max-width: 991px) { .main-menu__bg { background: url("../../../images/img-bg-menu-sm.jpg") no-repeat; background-position: center -32px; background-size: contain; }
   .main-menu ul { bottom: 64px; }
   .main-menu ul > li > a { font-size: 10vw; line-height: 1em; }
   .main-menu ul > li > a::after { font-size: 10vw; line-height: 1em; }
@@ -196,7 +198,7 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
 /* Footer */
 /* Contents */
 /* Page style */
-.page-landing { background: url("../../images/img-landing-bg.jpg") no-repeat center; background-size: cover; min-height: 100vh; color: #00FF00; padding: 175px 5vw 7vh; position: relative; }
+.page-landing { background: url("../../../images/img-landing-bg.jpg") no-repeat center; background-size: cover; min-height: 100vh; color: #00FF00; padding: 175px 5vw 7vh; position: relative; }
 
 .page-landing__title { color: #00FF00; font-size: 72px; line-height: 1em; text-align: center; margin: 0; }
 
@@ -232,9 +234,10 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
 
 .page-landing .bg-video video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
 
-.page-landing .wrap { max-width: 1450px; margin-left: auto; margin-right: auto; position: relative; z-index: 1; }
+.page-landing .wrap { max-width: 1450px; margin-left: auto; margin-right: auto; position: relative; z-index: 2; }
 
-@media (max-width: 991px) { .page-landing__title { font-size: 40px; line-height: 1em; }
+@media (max-width: 991px) { .page-landing:before { content: ""; width: 100%; height: 100%; -webkit-filter: blur(1px); filter: blur(1px); position: absolute; top: 0; left: 0; z-index: 0; background: #000; opacity: .5; }
+  .page-landing__title { font-size: 40px; line-height: 1em; }
   .page-landing__date { font-size: 54px; line-height: 1em; }
   .page-landing__date .ic { height: 30px; width: auto; }
   .page-landing__date span { display: block; margin: 0 20px; }
@@ -271,11 +274,11 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
 
 .page-ourpeople__two-people { padding: 0 8.333vw; padding-bottom: 8.333vw; }
 
-.page-ourpeople__two-people .people-item { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: top; -ms-flex-align: top; align-items: top; }
+.page-ourpeople__two-people .people-item { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: flex-start; -ms-flex-align: start; align-items: flex-start; margin-bottom: 64px; }
 
-.page-ourpeople__two-people .people-item:nth-last-child(odd) .photo { -webkit-order: 2; -ms-flex-order: 2; order: 2; margin-right: 0; margin-left: 95px; margin-top: -90px; }
+.page-ourpeople__two-people .people-item:nth-last-child(odd) .photo { -webkit-order: 2; -ms-flex-order: 2; order: 2; margin-right: 0; margin-left: 95px; }
 
-.page-ourpeople__two-people .people-item:nth-last-child(odd) .text { -webkit-order: 1; -ms-flex-order: 1; order: 1; margin-top: 90px; }
+.page-ourpeople__two-people .people-item:nth-last-child(odd) .text { -webkit-order: 1; -ms-flex-order: 1; order: 1; }
 
 .page-ourpeople__two-people .people-item:nth-last-child(odd) .name { text-align: right; }
 
@@ -295,7 +298,7 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
 
 .page-ourpeople__three-title { font-size: 30px; line-height: 40px; font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; text-align: center; color: #000; margin-bottom: 5.208vw; }
 
-.page-ourpeople__three-logos { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; margin-left: -1.823vw; margin-right: -1.823vw; }
+.page-ourpeople__three-logos { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; margin-left: -1.823vw; margin-right: -1.823vw; }
 
 .page-ourpeople__three-logos .logo { padding-left: 1.823vw; padding-right: 1.823vw; }
 
@@ -305,7 +308,7 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
 
 .page-ourpeople__three-logos:nth-child(3) .logo img { height: 5.292vw; }
 
-.page-ourpeople__four { background-image: url(../../images/bg-sfour-ourpeople.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
+.page-ourpeople__four { background-image: url(../../../images/bg-sfour-ourpeople.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
 
 .page-ourpeople__four-top { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-bottom: 72px; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
 
@@ -320,19 +323,26 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
 @media (max-width: 1280px) and (min-width: 992px) { .page-ourpeople__one h1 { font-size: 7.292vw; line-height: 1em; }
   .page-ourpeople__one h1 small { bottom: -40px; } }
 
-@media (max-width: 991px) { .page-ourpeople__one h1 { font-size: 15vw; line-height: .8em; }
+@media (max-width: 991px) { .page-ourpeople__one h1 { font-size: 18vw; line-height: .8em; }
   .page-ourpeople__one h1 br { display: none; }
   .page-ourpeople__one h1 img { width: 53.426vw; height: 30.370vw; bottom: 48.271vw; left: 33.229vw; }
-  .page-ourpeople__one h1 small { font-size: 2vw; bottom: 0; max-width: 30vw; }
+  .page-ourpeople__one h1 small { font-size: 3vw; bottom: 0; max-width: 45vw; }
   .page-ourpeople__two .tagline-marquee { margin-bottom: 0; }
   .page-ourpeople__two-text { margin-bottom: 60px; }
   .page-ourpeople__two-text p { font-size: 16px; }
-  .page-ourpeople__two-people .people-item { -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end; }
-  .page-ourpeople__two-people .people-item .quote { font-size: 12px; line-height: 1.2em; }
-  .page-ourpeople__two-people .people-item .name { margin-bottom: 10px; }
-  .page-ourpeople__two-people .people-item .position { font-size: 12px; line-height: 1.2em; margin-bottom: 10px; }
-  .page-ourpeople__two-people .people-item:nth-last-child(odd) .photo { margin-top: 0; margin-left: 20px; }
-  .page-ourpeople__three-title { font-size: 16px; line-height: 1em; } }
+  .page-ourpeople__two-people .people-item { -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
+  .page-ourpeople__two-people .people-item .photo { width: 100%; max-width: 100%; height: auto; margin-bottom: 24px; }
+  .page-ourpeople__two-people .people-item .quote { font-size: 12px; line-height: 1.2em; max-width: 100%; }
+  .page-ourpeople__two-people .people-item .name { margin-bottom: 10px; max-width: 100%; text-align: left; }
+  .page-ourpeople__two-people .people-item .position { font-size: 12px; line-height: 1.2em; margin-bottom: 10px; max-width: 100%; }
+  .page-ourpeople__two-people .people-item:nth-last-child(odd) .photo { margin-top: 0; margin-left: 0; -webkit-order: 1; -ms-flex-order: 1; order: 1; }
+  .page-ourpeople__two-people .people-item:nth-last-child(odd) .name { text-align: left; }
+  .page-ourpeople__three-title { font-size: 16px; line-height: 1em; }
+  .page-ourpeople__four-top { -webkit-align-items: flex-start; -ms-flex-align: start; align-items: flex-start; }
+  .page-ourpeople__four-top .left { margin-left: -10px; margin-right: -10px; font-size: 16px; line-height: 1em; -webkit-flex-wrap: 0 0 57%; -ms-flex-wrap: 0 0 57%; flex-wrap: 0 0 57%; max-width: 57%; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+  .page-ourpeople__four-top .left .item { padding-right: 10px; padding-left: 10px; }
+  .page-ourpeople__four-top .left .item.email { margin-bottom: 16px; }
+  .page-ourpeople__four-top .right { font-size: 16px; line-height: 1em; } }
 
 .page-home .rtf { color: #00FF00; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 76px; line-height: 1em; text-decoration: underline; opacity: 1; transition: all .3s ease; }
 
@@ -372,7 +382,7 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
   .page-home__two .wrap-buttons { text-align: center; margin-top: 40px; }
   .page-home__two .rtf { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 32px; line-height: 1em; color: #00FF00; text-decoration: underline; } }
 
-.page-home__three { min-height: 100vh; background-color: #000; background-image: url("../../images/img-bg-home-02.jpg"); background-repeat: no-repeat; background-size: cover; background-position: center; padding-top: 120px; padding-bottom: 80px; position: relative; overflow: hidden; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end; }
+.page-home__three { min-height: 100vh; background-color: #000; background-image: url("../../../images/img-bg-home-02.jpg"); background-repeat: no-repeat; background-size: cover; background-position: center; padding-top: 120px; padding-bottom: 80px; position: relative; overflow: hidden; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end; }
 
 .page-home__three .wrap { padding-left: 60px; padding-right: 60px; text-align: center; width: 100%; }
 
@@ -390,7 +400,7 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
 
 .page-home__three .rtf { color: #00FF00; }
 
-@media (max-width: 991px) { .page-home__three { background-image: url("/../../images/img-bg-home-02-sm.jpg"); -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+@media (max-width: 991px) { .page-home__three { background-image: url("../../../images/img-bg-home-02-sm.jpg"); -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
   .page-home__three .wrap { padding-left: 30px; padding-right: 30px; }
   .page-home__three h2 { font-size: 22vw; line-height: 1em; display: block; }
   .page-home__three h2 span { display: block; }
@@ -431,7 +441,7 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
   .page-home__four .img img { max-width: 60vw; }
   .page-home__four .desc p { font-size: 16px; line-height: 1.3em; } }
 
-.page-home__five { min-height: 100vh; background-color: #000; background-image: url("../../images/img-bg-home-05.png"); background-repeat: no-repeat; background-size: cover; background-position: center; padding-top: 120px; padding-bottom: 80px; position: relative; }
+.page-home__five { min-height: 100vh; background-color: #000; background-image: url("../../../images/img-bg-home-05.png"); background-repeat: no-repeat; background-size: cover; background-position: center; padding-top: 120px; padding-bottom: 80px; position: relative; }
 
 .page-home__five .wrap { min-height: calc(100vh - 200px); padding-left: 60px; padding-right: 60px; width: 100%; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
 
@@ -497,7 +507,7 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
   .page-home__six h2 { font-size: 40vw; line-height: 1em; }
   .page-home__six .meta { font-size: 24px; line-height: 1.2em; } }
 
-.page-home__footer { background-image: url(../images/bg-sfour-ourpeople.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
+.page-home__footer { background-image: url(../../../images/bg-sfour-ourpeople.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
 
 .page-home__footer-top { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-bottom: 72px; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
 
@@ -574,7 +584,7 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
   .page-inspiration__two .item .item__date-sm.dark span { color: #000; }
   .page-inspiration__two .item.item--lg .item__wrap { padding-top: 60%; } }
 
-.page-inspiration__footer { background-image: url(/../../images/bg-sfour-ourpeople.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
+.page-inspiration__footer { background-image: url(../../../images/bg-sfour-ourpeople.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
 
 .page-inspiration__footer-top { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-bottom: 72px; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
 
@@ -651,7 +661,7 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
   .page-flagship__two .item .item__date-sm.dark span { color: #000; }
   .page-flagship__two .item.item--lg .item__wrap { padding-top: 60%; } }
 
-.page-flagship__footer { background-image: url(../../images/bg-sfour-ourpeople.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
+.page-flagship__footer { background-image: url(../../../images/bg-sfour-ourpeople.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
 
 .page-flagship__footer-top { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-bottom: 72px; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
 

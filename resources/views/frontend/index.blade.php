@@ -20,19 +20,19 @@
       </div>
       <div class="card-body">
         <ul class="card-list">
-          <li class="card-item"><a href="/frontend/landing" target="_blank"><span>Landing</span></a></li>
-          <li class="card-item"><a href="/frontend/homepage" target="_blank"><span>Homepage</span></a></li>
-          <li class="card-item"><a href="/frontend/inspiration" target="_blank"><span>Inspiration</span></a></li>
-          <li class="card-item"><a href="/frontend/our-people" target="_blank"><span>Our People</span></a></li>
-          <li class="card-item"><a href="/frontend/flagship" target="_blank"><span>Flagship</span></a></li>
-          <li class="card-item"><a href="/frontend/project" target="_blank"><span>Project</span></a></li>
-          <li class="card-item"><a href="/frontend/tribes" target="_blank"><span>Tribes</span></a></li>
+          <li class="card-item"><a href="landing.html" target="_blank"><span>Landing</span></a></li>
+          <li class="card-item"><a href="homepage.html" target="_blank"><span>Homepage</span></a></li>
+          <li class="card-item"><a href="inspiration.html" target="_blank"><span>Inspiration</span></a></li>
+          <li class="card-item"><a href="our-people.html" target="_blank"><span>Our People</span></a></li>
+          <li class="card-item"><a href="flagship.html" target="_blank"><span>Flagship</span></a></li>
+          <li class="card-item"><a href="project.html" target="_blank"><span>Project</span></a></li>
+          <li class="card-item"><a href="tribes.html" target="_blank"><span>Tribes</span></a></li>
         </ul>
       </div>
     </div>
   </main>
 </body>
-<script src="plugins/jquery/jquery-3.4.1.min.js"></script>
+<script src="/plugins/jquery/jquery-3.4.1.min.js"></script>
 <script>
   $('.has-sub').each(function(){
     var el = $(this);
