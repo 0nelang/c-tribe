@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFlagsipImagesTable extends Migration
+class CreateFlagshipImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -28,6 +28,6 @@ class CreateFlagsipImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('flagsip_images');
+        Schema::dropIfExists('flagship_images');
     }
 }
