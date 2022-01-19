@@ -51,7 +51,7 @@ class InspirationController extends Controller
             'image' => 'required|image|file',
             'video' => 'mimetypes:video/avi,video/mp4'
         ]);
-
+        $validated['date'] = $request->date;
         $validated['image'] = $request->file('image')->store('inspiration-images', ['disk' => 'public']);
 
         if ($request->file('video')) {
@@ -105,8 +105,7 @@ class InspirationController extends Controller
             'image' => 'image|file',
             'video' => 'mimetypes:video/avi,video/mp4'
         ]);
-        Alert::success('Success', 'Update Data Succesfully');
-
+        $validated['date'] = $request->date;
         if ($request->hasFile('image')) {
             Storage::disk('public')->delete($inspiration->image);
             $validated['image'] = $request->file('image')->store('inspiration-images', ['disk' => 'public']);
@@ -118,6 +117,7 @@ class InspirationController extends Controller
         }
 
         Inspiration::where('id', $inspiration->id)->update($validated);
+        Alert::success('Success', 'Update Data Succesfully');
 
         return redirect(route('inspiration.index'));
     }

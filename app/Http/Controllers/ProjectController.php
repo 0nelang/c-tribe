@@ -53,13 +53,15 @@ class ProjectController extends Controller
             'mainImage*' => 'image|file'
         ]);
 
-            foreach ($request->mainImage as $index => $value) {
-                if ($index == 0) {
-                    $validated['mainImage'] = $value->store('project-image', ['disk' => 'public']);
-                }else {
-                    $otherImage['otherImage'] = $value->store('project-image', ['disk' => 'public']);
-                    $otherImage['project'] = $request->brand;
-                    ProjectImage::create($otherImage);
+            if ($request->hasfile('mainImage')) {
+                foreach ($request->mainImage as $index => $value) {
+                    if ($index == 0) {
+                        $validated['mainImage'] = $value->store('project-image', ['disk' => 'public']);
+                    }else {
+                        $otherImage['otherImage'] = $value->store('project-image', ['disk' => 'public']);
+                        $otherImage['project'] = $request->brand;
+                        ProjectImage::create($otherImage);
+                    }
                 }
             }
 

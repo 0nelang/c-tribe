@@ -1,14 +1,11 @@
 @extends('layouts.dashboard-main')
 @section('css')
     <style>
-        .ck-content {
-            color: black
+        .note-editable{
+            background: #2B3B52;
+            border-color: #2B3B52;
+            color: white;
         }
-
-        .ck-editor__editable_inline {
-            min-height: 100px;
-        }
-
     </style>
 @endsection
 @section('main')
@@ -185,16 +182,16 @@
                 })
             }
 
+            $(document).ready(function () {
+            var id;
             $('.editable').each(function() {
-                var id;
                 id = $(this).attr('id');
                 if (id != '') {
-                    ClassicEditor
-                        .create(document.querySelector('#' + id))
-                        .catch(error => {
-                            console.error('error');
-                        })
+                    $('#' + id).summernote({
+                        height: 120,
+                    });
                 }
             })
+            });
         </script>
     @endsection

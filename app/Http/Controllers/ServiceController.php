@@ -47,11 +47,14 @@ class ServiceController extends Controller
             'service' => 'required',
             'description' => 'required',
             'body' => 'required',
-            'image' => 'required|image|file'
+            'image' => 'image|file'
         ]);
 
         $validated['logo'] = $request->file('logo')->store('service-image', ['disk' => 'public']);
-        $validated['image'] = $request->file('image')->store('service-image', ['disk' => 'public']);
+        if ($request->hasFile('image')) {
+            # code...
+            $validated['image'] = $request->file('image')->store('service-image', ['disk' => 'public']);
+        }
         $validated['index'] = Service::all()->count() + 1;
         Service::create($validated);
         Alert::success('success', 'data successfuly created');

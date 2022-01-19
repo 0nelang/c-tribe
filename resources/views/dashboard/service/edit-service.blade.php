@@ -1,12 +1,10 @@
 @extends('layouts.dashboard-main')
 @section('css')
     <style>
-        .ck-content {
-            color: black
-        }
-
-        .ck-editor__editable_inline {
-            min-height: 100px;
+        .note-editable {
+            background: #2B3B52;
+            border-color: #2B3B52;
+            color: white;
         }
 
     </style>
@@ -20,13 +18,16 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('service.update', ['service' => $service->id]) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('service.update', ['service' => $service->id]) }}" method="POST"
+                                enctype="multipart/form-data">
                                 @method('put')
                                 @csrf
                                 <div class="mb-3">
                                     <label for="filePhoto" class="form-label">Logo</label>
                                     <div class="mb-3">
-                                        <img id="output" class="mb-3" src="{{ asset('storage/' . $service->logo) }}" style="max-height: 200px; max-width: 200px;">
+                                        <img id="output" class="mb-3"
+                                            src="{{ asset('storage/' . $service->logo) }}"
+                                            style="max-height: 200px; max-width: 200px;">
                                     </div>
                                     <input class="form-control @error('logo') is-invalid @enderror" name="logo" type="file"
                                         id="filePhoto" accept="image/*">
@@ -73,7 +74,9 @@
                                 <div class="mb-3">
                                     <label for="fileImage" class="form-label">Image</label>
                                     <div class="mb-3">
-                                        <img id="output" class="mb-3" src="{{ asset('storage/' . $service->image) }}" style="max-height: 200px; max-width: 200px;">
+                                        <img id="output" class="mb-3"
+                                            src="{{ asset('storage/' . $service->image) }}"
+                                            style="max-height: 200px; max-width: 200px;">
                                     </div>
                                     <input class="form-control @error('image') is-invalid @enderror" name="image"
                                         type="file" id="fileImage" accept="image/*">
@@ -107,17 +110,16 @@
     @section('js')
         <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
         <script>
-
-            $('.editable').each(function() {
+            $(document).ready(function() {
                 var id;
-                id = $(this).attr('id');
-                if (id != '') {
-                    ClassicEditor
-                        .create(document.querySelector('#' + id))
-                        .catch(error => {
-                            console.error('error');
-                        })
-                }
-            })
+                $('.editable').each(function() {
+                    id = $(this).attr('id');
+                    if (id != '') {
+                        $('#' + id).summernote({
+                            height: 120,
+                        });
+                    }
+                })
+            });
         </script>
     @endsection
