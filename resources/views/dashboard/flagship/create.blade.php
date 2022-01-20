@@ -26,14 +26,9 @@
                                 <div class="col-8">
                                     <div class="mb-3">
                                         <label for="title" class="form-label is-invalid">Title</label>
-                                        <input type="text" name="title"
-<<<<<<< HEAD
-                                            class="form-control @error('title') is-invalid @enderror" editable
-                                            id="ck1" aria-describedby="title">
-=======
-                                            class="form-control @error('title') is-invalid @enderror editable"
-                                            id="titleflag" aria-describedby="title">
->>>>>>> e3b1b6e8af6a26994681c6533aa3eb6ec19d0dbe
+                                        <textarea type="text" name="title"
+                                        class="form-control @error('title') is-invalid @enderror editable"
+                                        id="titlef" aria-describedby="title"></textarea>
                                         @error('title')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
