@@ -68,6 +68,7 @@ class InspirationController extends Controller
             $validated['featured'] = true;
         }
 
+        $validated['subTitle'] = $request->subTitle;
         Inspiration::create($validated);
         Alert::success('Success', 'Data create succesfully');
 
@@ -132,6 +133,7 @@ class InspirationController extends Controller
             $validated['featured'] = true;
         }
 
+        $validated['subTitle'] = $request->subTitle;
         Inspiration::where('id', $inspiration->id)->update($validated);
         Alert::success('Success', 'Update Data Succesfully');
 

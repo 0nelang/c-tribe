@@ -16,6 +16,7 @@ class CreateInspirationsTable extends Migration
         Schema::create('inspirations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->text('subTitle')->nullable();
             $table->boolean('featured')->nullable();
             $table->string('date')->nullable();
             $table->string('image')->nullable();

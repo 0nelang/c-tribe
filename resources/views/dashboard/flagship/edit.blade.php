@@ -56,6 +56,18 @@
                                 </div>
 
                                 <div class="mb-3">
+                                    <label for="subTitle" class="form-label">Sub Title</label>
+                                    <textarea type="text" name="subTitle"
+                                        class="form-control @error('subTitle') is-invalid @enderror editable"
+                                        id="subTitle">{{ $flagship->subTitle }}</textarea>
+                                    @error('subTitle')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
                                     <label for="description" class="form-label">Desc</label>
                                     <textarea type="text" name="description"
                                         class="text-dark form-control @error('description') is-invalid @enderror editable"
