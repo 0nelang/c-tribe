@@ -27,7 +27,7 @@
                                     <tr>
                                         <td>{{ $p->type }}</td>
                                         <td>{{ $p->featured }}</td>
-                                        <td>{{ $p->brand }}</td>
+                                        <td>{!! $p->brand !!}</td>
                                         <td><img src="{{ asset('storage/' . $p->mainImage) }}" style="max-height: 200px; max-width:200px;"></td>
                                         <td style="">
                                             <div class="dropdown dropright">

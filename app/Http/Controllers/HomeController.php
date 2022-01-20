@@ -25,9 +25,9 @@ class HomeController extends Controller
             "general" => $this->general,
             "home1" => Page::where('page','Home 1')->first(),
             "page" => "Home",
-            "flagship" => Flagship::inRandomOrder()->first(),
-            "inspiration" => Inspiration::inRandomOrder()->first(),
-            "project" => Project::inRandomOrder()->first(),
+            "flagship" => Flagship::where('featured', true)->first(),
+            "inspiration" => Inspiration::where('featured', true)->first(),
+            "project" => Project::where('featured', true)->first(),
             "partner" => Project::where('type', 'person')->first(),
         ]);
     }

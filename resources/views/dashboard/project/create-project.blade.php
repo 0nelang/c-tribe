@@ -26,8 +26,8 @@
                                     <div class="mb-3 col-lg-4">
                                         <label for="brand" class="form-label is-invalid">Brand</label>
                                         <input type="text" name="brand"
-                                            class="form-control @error('brand') is-invalid @enderror" id="exampleInputEmail1"
-                                            aria-describedby="project-brand">
+                                        class="form-control @error('brand') is-invalid @enderror" id="exampleInputEmail1"
+                                        aria-describedby="project-brand" value="{{ $project->brand }}">
                                         @error('brand')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -62,8 +62,9 @@
 
                                     <div class="mb-3 col-lg-8">
                                         <label for="title" class="form-label">Title</label>
-                                        <input type="text" name="title"
-                                            class="form-control @error('title') is-invalid @enderror" id="title">
+                                        <textarea type="text" name="title"
+                                        class="form-control @error('title') is-invalid @enderror editable" id="title"
+                                        ></textarea>
                                         @error('title')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -96,6 +97,18 @@
                                         </div>
                                     </div>
 
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="team" class="form-label">Team</label>
+                                    <textarea type="text" name="team"
+                                    class="form-control @error('team') is-invalid @enderror editable" id="team"
+                                    ></textarea>
+                                    @error('team')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
                                 <div class="mb-3">

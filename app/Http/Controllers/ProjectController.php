@@ -31,7 +31,7 @@ class ProjectController extends Controller
     public function create()
     {
         return view('dashboard.project.create-project', [
-            'page' => 'project'
+            'page' => 'Project',
         ]);
     }
 
@@ -64,6 +64,7 @@ class ProjectController extends Controller
             $validated['featured'] = true;
         }
 
+        $validated['team'] = $request->team;
         $project = Project::create($validated);
         if ($request->hasFile('otherImage')) {
             foreach ($request->otherImage as $value) {
@@ -142,7 +143,7 @@ class ProjectController extends Controller
             Project::where('featured', true)->update(['featured' => false]);
             $validated['featured'] = true;
         }
-
+        $validated['team'] = $request->team;
         Project::where('id', $project->id)->update($validated);
         Alert::success('Success', 'Data update succesfully');
 

@@ -26,6 +26,7 @@
     <link href="{{ asset('/css/main.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/dark-theme.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('/images/favicon.png') }}"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,11 +48,11 @@
 
 <body>
     @include('sweetalert::alert')
-    {{-- <div class='loader'>
+    <div class='loader'>
     <div class='spinner-grow text-primary' role='status'>
         <span class='sr-only'>Loading...</span>
     </div>
-    </div> --}}
+    </div>
     <div class="page-container">
         @include('partials.dashboard.page-header')
 
