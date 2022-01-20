@@ -41,7 +41,7 @@
                                             <label for="subTitle" class="form-label">Sub Title</label>
                                             <textarea type="text" name="subTitle"
                                                 class="form-control @error('subTitle') is-invalid @enderror editable"
-                                                id="subTitle">{{ $flagship->subTitle }}</textarea>
+                                                id="subTitle">{{ $inspiration->subTitle }}</textarea>
                                             @error('subTitle')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
