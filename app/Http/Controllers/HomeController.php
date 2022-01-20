@@ -67,7 +67,9 @@ class HomeController extends Controller
             "general" => $this->general,
             "people" => People::all(),
             "partner" => Partner::orderBy('index','desc')->get(),
-            "page" => "Our People"
+            "page" => "Our People",
+            "pege1" => Page::where('page', 'Our People 1')->first(),
+            "pege2" => Page::where('page', 'Our People 2')->first(),
         ]);
     }
 

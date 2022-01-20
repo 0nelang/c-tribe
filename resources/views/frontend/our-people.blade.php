@@ -28,9 +28,7 @@
 <main class="page-ourpeople">
     <section class="page-ourpeople__one cursor-img header-2">
         <div class="wrap">
-            <h1 class="page-ourpeople__title"><span>WE CREATES MULTI-DIMENSIONS OF CREATIVITY THROUGH THE CREATION,
-                    COLLABORATION AND COMMUNICATION OF URBAN LIFESTYLE CULTURE</span><small>We empower brand and connect
-                    consumers through creative marketing solution for a better market presence</small></h1>
+            {!! $pege1->title !!}
         </div>
         <div class="arrow"><a class="has-scroll" href="#sec2"><img src="/images/arrow-down.png" alt="arrow-down" /></a>
         </div>
