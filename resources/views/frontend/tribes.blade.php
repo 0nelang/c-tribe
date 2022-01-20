@@ -36,7 +36,7 @@
           </div>
           <div class="right"><span  class="text-uppercase">{{ $general->addres_footer }}</span></div>
         </div>
-        <div class="imgctribe"><img src="/images/big-ctribe.svg" alt="img"/></div>
+        <div class="imgctribe"><img src="{{ asset('storage/' . $general->brand_footer) }}"/></div>
       </section>
     </main>
     @endsection

@@ -56,20 +56,6 @@
                                         </div>
                                     @enderror
                                 </div>
-
-                                <div class="mb-3">
-                                    <label for="background_img" class="form-label">Image</label>
-                                    <div class="mb-3">
-                                        <img src="{{ asset('storage/' . $pafe->background_img) }}" alt="{{ $pafe->background_img }}" id="output"  style="max-height: 200px; max-width:400px;">
-                                    </div>
-                                    <input class="form-control" @error('background_img') is-invalid @enderror"
-                                        value="{{ $pafe->background_img }}" name="background_img" type="file"
-                                        id="filePhoto" accept="image/*">
-                                    @error('background_img')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
-                                </div>
-
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>

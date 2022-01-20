@@ -81,19 +81,9 @@ class PageController extends Controller
             "page" => "max:500",
             "title" => "required",
             "sub_title" => "min:0",
-            "background_img" => "image|file",
         ];
 
         $validated = $request->validate($rules);  
-        
-        if ($request->file('background_img')) {
-            if ($request->oldImage) {
-                Storage::delete($request->oldImage);
-            }
-            $validated['background_img'] = $request->file('background_img')->store('page-images',[
-                'disk' => 'public'
-            ]); 
-        }
         
         Alert::success('Success', 'Succesfully Update Data');
         Page::where('id', $id)->update($validated);

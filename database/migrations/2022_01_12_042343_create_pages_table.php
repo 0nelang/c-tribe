@@ -18,7 +18,6 @@ class CreatePagesTable extends Migration
             $table->string('page');
             $table->text('title');
             $table->text('sub_title')->nullable();
-            $table->string('background_img')->nullable();
             $table->timestamps();
         });
     }
