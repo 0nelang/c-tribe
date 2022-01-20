@@ -13,6 +13,7 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>Featured</th>
                                     <th>Title</th>
                                     <th>Option</th>
                                 </tr>
@@ -22,6 +23,7 @@
 
                                     <tr>
                                         <td>{{ $id + 1 }}</td>
+                                        <td>{{ $pep->featured }}</td>
                                         <td>{{ $pep->title }}</td>
                                         <td style="">
                                             <div class="dropdown">
@@ -50,6 +52,7 @@
                             <tfoot>
                                 <tr>
                                     <th>No</th>
+                                    <th>Featured</th>
                                     <th>Title</th>
                                     <th>option</th>
                                 </tr>

@@ -26,8 +26,8 @@
                                     <div class="mb-3 col-lg-4">
                                         <label for="brand" class="form-label is-invalid">Brand</label>
                                         <input type="text" name="brand"
-                                            class="form-control @error('brand') is-invalid @enderror" id="exampleInputEmail1"
-                                            aria-describedby="project-brand">
+                                        class="form-control @error('brand') is-invalid @enderror" id="exampleInputEmail1"
+                                        aria-describedby="project-brand" value="{{ $project->brand }}">
                                         @error('brand')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -62,15 +62,16 @@
 
                                     <div class="mb-3 col-lg-8">
                                         <label for="title" class="form-label">Title</label>
-                                        <input type="text" name="title"
-                                            class="form-control @error('title') is-invalid @enderror" id="title">
+                                        <textarea type="text" name="title"
+                                        class="form-control @error('title') is-invalid @enderror editable" id="title" 
+                                        >{{ $project->title }}</textarea>
                                         @error('title')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
                                         @enderror
                                     </div>
-                                    <div class="mb-3 col-lg-4 ps-3">
+                                    <div class="mb-3 col-lg-2 ps-3">
                                         <label class="form-label">type</label>
                                         <div class="d-flex pt-2 ">
                                             <div class="form-check">
@@ -85,6 +86,14 @@
                                                   person
                                                 </label>
                                             </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 col-lg-2">
+                                        <label class="form-label">featured</label>
+                                        <div class="form-check pt-2">
+                                            <input type="checkbox" class="form-check-input" id="featured" name="featured">
+                                            <label class="form-check-label" for="featured">featured</label>
                                         </div>
                                     </div>
 

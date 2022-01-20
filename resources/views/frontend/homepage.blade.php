@@ -36,9 +36,9 @@
   </section>
   <section class="page-home__three header-1">
     <div class="wrap">
-      <h2><span class="oa">OUR ACTION</span><span class="date">15TH FEB 2022</span><span>{{ $flagship->title }}</span></h2>
+      <h2><span class="oa">OUR ACTION</span><span class="date">{{ $flagship->date }}</span><span>{{ $flagship->title }}</span></h2>
       <div class="desc">
-        <p>We empower brand and connect consumers <br>through creative marketing solution for a better market presence</p>
+        {!! substr($flagship->description , 0, 80)  !!}
       </div><a class="rtf" href="#">READ THE FEATURE</a>
     </div>
   </section>
@@ -50,15 +50,15 @@
         <h2>{!! $inspiration->name !!}</h2>
         <div class="img"><img src="{{ asset('storage/' . $inspiration->image) }}" alt="Image"/></div>
         <div class="desc">
-          {!! $inspiration->quote !!}
+          {!! substr($inspiration->quote , 0, 200) !!}
         </div><a class="rtf" href="#">READ THE FEATURE</a>
       </div>
     </div>
   </section>
   <section class="page-home__five header-1">
     <div class="wrap">
-      <div class="col-left"><span class="oa">PROJECTS</span>
-        <h2>DRAKE AND NIKE <br>BRAND EXPRESSION</h2>
+      <div class="col-left text-uppercase"><span class="oa">PROJECTS</span>
+        <h2 class="text-uppercase">{!! $project->title !!}</h2>
         <div class="desc">
           <p>CREATIVE DIRECTOR ABANK / GROUP HEAD BEN / ACCOUNT MANAGER DON / ART DIRECTOR BIMA <br>COPYWRITER ANTI / GRAPHIC DESIGN EJA / GRAPHIC DESIGN DIRGA</p>
         </div>

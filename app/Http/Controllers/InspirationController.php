@@ -57,10 +57,15 @@ class InspirationController extends Controller
         if ($request->hasFile('image')) {
           $validated['image'] = $request->file('image')->store('inspiration-images', ['disk' => 'public']);
         }
-        
+
 
         if ($request->file('video')) {
             $validated['video'] = $request->file('video')->store('inspire-video', ['disk' => 'public']);
+        }
+
+        if ($request->featured == true) {
+            Inspiration::where('featured', true)->update(['featured' => false]);
+            $validated['featured'] = true;
         }
 
         Inspiration::create($validated);
@@ -120,6 +125,11 @@ class InspirationController extends Controller
         if ($request->hasFile('video')) {
             Storage::disk('public')->delete($inspiration->video);
             $validated['video'] = $request->file('video')->store('inspire-video', ['disk' => 'public']);
+        }
+
+        if ($request->featured == true) {
+            Inspiration::where('featured', true)->update(['featured' => false]);
+            $validated['featured'] = true;
         }
 
         Inspiration::where('id', $inspiration->id)->update($validated);

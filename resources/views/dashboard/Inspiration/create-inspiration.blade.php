@@ -24,18 +24,22 @@
                                 @csrf
                                 <div class="mb-3">
                                     <label for="name" class="form-label is-invalid">Name</label>
-                                    <textarea type="text" name="name" class="form-control @error('name') is-invalid @enderror editable"
-                                    id="insname" aria-describedby="our-people-name"></textarea>
+                                    <textarea type="text" name="name"
+                                        class="form-control @error('name') is-invalid @enderror editable" id="insname"
+                                        aria-describedby="our-people-name"></textarea>
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
-                                    </div>
-                                    <div class="col-6">
+                                    @enderror
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
                                         <div class="mb-3">
                                             <label for="date" class="form-label is-invalid">Date</label>
-                                            <input type="text" name="date" class="form-control @error('date') is-invalid @enderror"
-                                                id="exampleInputEmail1" aria-describedby="our-people-date">
+                                            <input type="text" name="date"
+                                                class="form-control @error('date') is-invalid @enderror" id="exampleInputEmail1"
+                                                aria-describedby="our-people-date">
                                             @error('date')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -43,11 +47,22 @@
                                             @enderror
                                         </div>
                                     </div>
+
+                                    <div class="mb-3 col-lg-2">
+                                        <label class="form-label">featured</label>
+                                        <div class="form-check pt-2">
+                                            <input type="checkbox" class="form-check-input" id="featured" name="featured">
+                                            <label class="form-check-label" for="featured">featured</label>
+                                        </div>
+                                    </div>
                                 </div>
+
+
                                 <div class="mb-3">
                                     <label for="quote" class="form-label">Quote</label>
                                     <textarea type="text" name="quote"
-                                    class="form-control @error('quote') is-invalid @enderror editable" id="quote"></textarea>
+                                        class="form-control @error('quote') is-invalid @enderror editable"
+                                        id="quote"></textarea>
                                     @error('quote')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -96,40 +111,41 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
-        <script>
-            $(function() {
-                $("#imageFile").change(function(event) {
-                    var x = URL.createObjectURL(event.target.files[0]);
-                    $("#img-output").attr("src", x);
-                    console.log(event);
-                });
-            });
+    </div>
 
-            $(function() {
-                $("#videoFile").change(function(event) {
-                    var x = URL.createObjectURL(event.target.files[0]);
-                    $("#vid-output").show();
-                    $("#vid-output").attr("src", x);
-                    console.log(event);
-                });
+    <script>
+        $(function() {
+            $("#imageFile").change(function(event) {
+                var x = URL.createObjectURL(event.target.files[0]);
+                $("#img-output").attr("src", x);
+                console.log(event);
             });
-        </script>
-    @endsection
-    @section('js')
-        <script>
-            $(document).ready(function() {
-                var id;
-                $('.editable').each(function() {
-                    id = $(this).attr('id');
-                    if (id != '') {
-                        $('#' + id).summernote({
-                            height: 120,
-                        });
-                    }
-                })
+        });
+
+        $(function() {
+            $("#videoFile").change(function(event) {
+                var x = URL.createObjectURL(event.target.files[0]);
+                $("#vid-output").show();
+                $("#vid-output").attr("src", x);
+                console.log(event);
             });
-        </script>
-    @endsection
+        });
+    </script>
+@endsection
+@section('js')
+    <script>
+        $(document).ready(function() {
+            var id;
+            $('.editable').each(function() {
+                id = $(this).attr('id');
+                if (id != '') {
+                    $('#' + id).summernote({
+                        height: 120,
+                    });
+                }
+            })
+        });
+    </script>
+@endsection
