@@ -18,7 +18,7 @@ class InspirationController extends Controller
     public function index()
     {
         return view('dashboard.Inspiration.index-inspiration', [
-            'page' => 'inspiration',
+            'page' => 'Inspiration',
             'inspiration' => Inspiration::all()
         ]);
     }
@@ -31,7 +31,7 @@ class InspirationController extends Controller
     public function create()
     {
         return view('dashboard.Inspiration.create-inspiration', [
-            'page' => 'inspiration',
+            'page' => 'Inspiration',
             'inspiration' => Inspiration::all()
         ]);
     }
@@ -89,7 +89,7 @@ class InspirationController extends Controller
     public function edit(Inspiration $inspiration)
     {
         return view('dashboard.Inspiration.edit-inspiration', [
-            'page' => 'inspiration',
+            'page' => 'Inspiration',
             'inspiration' => $inspiration
         ]);
     }

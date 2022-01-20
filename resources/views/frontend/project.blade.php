@@ -1,13 +1,10 @@
 @extends('frontend.partial.second')
 @section('css')
 <style>
-    /* .cursor.hasimg { 
-    background: url("{{ asset('storage/' . $general->cursor_image) }}");
-  } */
-    /* .cursor.hasimg{background: url("../../../images/our-people-s1.jpg");} */
     .text-uppercase {
         text-transform: uppercase;
     }
+    .page-home__footer {background-image: url({{ asset('storage/' . $general->background_footer) }});}
 
 </style>
 @endsection

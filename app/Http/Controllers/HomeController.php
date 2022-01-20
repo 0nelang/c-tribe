@@ -23,7 +23,8 @@ class HomeController extends Controller
     {
         return view('frontend.homepage',[
             "general" => $this->general,
-            "home1" => Page::where('page','Home 1')->first()
+            "home1" => Page::where('page','Home 1')->first(),
+            "page" => "Home"
         ]);
     }
 
@@ -31,7 +32,8 @@ class HomeController extends Controller
     {
         return view('frontend.flagship',[
             "general" => $this->general,
-            "flagship" => Flagship::all()
+            "flagship" => Flagship::all(),
+            "page" => "Flagship"
         ]);
     }
 
@@ -40,7 +42,8 @@ class HomeController extends Controller
 
         return view('frontend.inspiration',[
             "general" => $this->general,
-            "inspiration" => Inspiration::all()
+            "inspiration" => Inspiration::all(),
+            "page" => "Insipiration"
         ]);
     }
 
@@ -49,7 +52,8 @@ class HomeController extends Controller
         return view('frontend.landing',[
             "general" => $this->general,
             "landing1" => Page::where('page' , 'Landing 1')->first(),
-            "landing2" => Page::where('page','Landing 2')->first()
+            "landing2" => Page::where('page','Landing 2')->first(),
+            "page" => "Pelarian"
         ]);
     }
 
@@ -58,7 +62,8 @@ class HomeController extends Controller
         return view('frontend.our-people',[
             "general" => $this->general,
             "people" => People::all(),
-            "partner" => Partner::orderBy('index','desc')->get()
+            "partner" => Partner::orderBy('index','desc')->get(),
+            "page" => "Our People"
         ]);
     }
 
@@ -66,7 +71,8 @@ class HomeController extends Controller
     {
         return view('frontend.project',[
             "general" => $this->general,
-            "project" => Project::all()
+            "project" => Project::all(),
+            "page" => "Project"
         ]);
     }
 
@@ -74,7 +80,8 @@ class HomeController extends Controller
     {
         return view('frontend.tribes',[
             "general" => $this->general,
-            "service" => Service::orderBy('index', 'desc')->get()
+            "service" => Service::orderBy('index', 'desc')->get(),
+            "page" => "Tribes"
         ]);
     }
 

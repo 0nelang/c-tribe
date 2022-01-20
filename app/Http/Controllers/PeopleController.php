@@ -19,7 +19,7 @@ class PeopleController extends Controller
     public function index()
     {
         return view('dashboard.our-people.index-people',[
-            "page" => "people",
+            "page" => "People",
             "people" => People::all()
         ]);
     }
@@ -32,7 +32,7 @@ class PeopleController extends Controller
     public function create()
     {
         return view('dashboard.our-people.create-people', [
-            "page" => "people"
+            "page" => "People"
         ]);
     }
 
@@ -89,7 +89,7 @@ class PeopleController extends Controller
     public function edit(People $person)
     {
         return view('dashboard.our-people.edit-people',[
-            'page' => 'person',
+            'page' => 'Person',
             'people' => $person
         ]);
     }

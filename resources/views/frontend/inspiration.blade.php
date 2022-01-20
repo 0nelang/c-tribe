@@ -44,61 +44,6 @@
               </div>
                @endif
           @endforeach
-          {{-- <div class="item item--lg anim">
-            <div class="item__wrap">
-              <div class="item__bg" style="background-image: url('..//images/img-inspiration-01.png')"></div>
-              <div class="item__date-sm"><span>15TH FEB 2022</span></div>
-              <div class="item__content">
-                <h2 class="item__title">FAMED SNEAKER CUSTOMIZER SBTG</h2>
-                <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
-                <div class="item__date"><span>15TH FEB 2022</span></div>
-              </div>
-            </div>
-          </div> --}}
-          {{-- <div class="item anim">
-            <div class="item__wrap">
-              <div class="item__bg" style="background-image: url('..//images/img-inspiration-02.png')"></div>
-              <div class="item__date-sm"><span>15TH FEB 2022</span></div>
-              <div class="item__content">
-                <h2 class="item__title">FRASER COOKE <br>GATEKEEPER OF HYPE</h2>
-                <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
-                <div class="item__date"><span>15TH FEB 2022</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="item anim">
-            <div class="item__wrap">
-              <div class="item__bg" style="background-image: url('..//images/img-inspiration-03.png')"></div>
-              <div class="item__date-sm dark"><span>15TH FEB 2022</span></div>
-              <div class="item__content">
-                <h2 class="item__title">HOW TO BUILD <br>STREETWEAR BRAND WITH KIMS</h2>
-                <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
-                <div class="item__date"><span>15TH FEB 2022</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="item item--alt anim">
-            <div class="item__wrap">
-              <div class="item__bg"></div>
-              <div class="item__date-sm"><span>15TH FEB 2022</span></div>
-              <div class="item__content">
-                <h2 class="item__title">GALLERIES & <br>GRAFITY WITH DARBOTZ</h2>
-                <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
-                <div class="item__date"><span>15TH FEB 2022</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="item anim">
-            <div class="item__wrap">
-              <div class="item__bg" style="background-image: url('..//images/img-inspiration-04.png')"></div>
-              <div class="item__date-sm"><span>15TH FEB 2022</span></div>
-              <div class="item__content">
-                <h2 class="item__title">LUCA BENINI STARTED THE <br>HYPE 30 YEARS AGO</h2>
-                <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
-                <div class="item__date"><span>15TH FEB 2022</span></div>
-              </div>
-            </div>
-          </div> --}}
         </div>
       </section>
       <section class="page-inspiration__footer">

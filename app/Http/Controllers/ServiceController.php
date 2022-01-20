@@ -17,7 +17,7 @@ class ServiceController extends Controller
     public function index()
     {
         return view('dashboard.service.index-service', [
-            'page' => 'service',
+            'page' => 'Service',
             'service' => Service::all()
         ]);
     }
@@ -30,7 +30,7 @@ class ServiceController extends Controller
     public function create()
     {
         return view('dashboard.service.create-service', [
-            'page' => 'service'
+            'page' => 'Service'
         ]);
     }
 
@@ -82,7 +82,7 @@ class ServiceController extends Controller
     public function edit(Service $service)
     {
         return view('dashboard.service.edit-service', [
-            'page' => 'service',
+            'page' => 'Service',
             'service' => $service
         ]);
     }

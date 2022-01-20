@@ -18,7 +18,7 @@ class PageController extends Controller
     {
         return view('dashboard.page.index',[
             "pages" => Page::all(),
-            "page" => 'page'
+            "page" => 'Page'
         ]);
     }
 
@@ -64,7 +64,7 @@ class PageController extends Controller
     {
         return view('dashboard.page.edit',[
             "pafe" => $page,
-            "page" => 'page'
+            "page" => 'Page'
         ]);
     }
 

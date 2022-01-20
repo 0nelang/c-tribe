@@ -76,4 +76,4 @@ Route::get('/our-people', [HomeController::class,'our_people']);
 Route::get('/project', [HomeController::class,'project']);
 
 Route::get('/tribes',[HomeController::class,'tribes']);
-Route::get('/home', [App\Http\Controllers\GeneralController::class, 'general'])->name('home');
+// Route::get('/home', [App\Http\Controllers\GeneralController::class, 'general'])->name('home');
