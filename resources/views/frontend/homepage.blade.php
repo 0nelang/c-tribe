@@ -59,8 +59,8 @@
     <div class="wrap">
       <div class="col-left text-uppercase"><span class="oa">PROJECTS</span>
         <h2 class="text-uppercase">{!! $project->title !!}</h2>
-        <div class="desc">
-          <p>CREATIVE DIRECTOR ABANK / GROUP HEAD BEN / ACCOUNT MANAGER DON / ART DIRECTOR BIMA <br>COPYWRITER ANTI / GRAPHIC DESIGN EJA / GRAPHIC DESIGN DIRGA</p>
+        <div class="desc text-uppercase">
+          {!! $project->team !!}
         </div>
         <div class="desc sm-only">
           <p>We empower brand and connect consumers through creative marketing solution for a better market presence</p>
