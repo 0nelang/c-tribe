@@ -38,7 +38,7 @@
     <div class="wrap">
       <h2><span class="oa">OUR ACTION</span><span class="date">{{ $flagship->date }}</span><span>{{ $flagship->title }}</span></h2>
       <div class="desc">
-        {!! substr($flagship->description , 0, 100)  !!}
+        {!! $flagship->subTitle !!}
       </div><a class="rtf" href="#">READ THE FEATURE</a>
     </div>
   </section>
@@ -50,7 +50,7 @@
         <h2>{!! $inspiration->name !!}</h2>
         <div class="img"><img src="{{ asset('storage/' . $inspiration->image) }}" alt="Image"/></div>
         <div class="desc">
-          {!! substr($inspiration->quote , 0, 200) !!}
+          {!! $inspiration->subTitle !!}
         </div><a class="rtf" href="#">READ THE FEATURE</a>
       </div>
     </div>
