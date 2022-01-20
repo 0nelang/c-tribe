@@ -45,7 +45,7 @@ class PeopleController extends Controller
     public function store(Request $request)
     {
         $img = Image::make($request->file('photo'));
-        $img->resize(500, null,  function ($constraint)
+        $img->resize(521, null,  function ($constraint)
         {
             $constraint->aspectRatio();
         });
@@ -115,7 +115,7 @@ class PeopleController extends Controller
         if ($request->hasFile('photo')) {
             Storage::disk('public')->delete($person->photo);
             $img = Image::make($request->file('photo'));
-            $img->resize(500, null,  function ($constraint)
+            $img->resize(521, null,  function ($constraint)
             {
                 $constraint->aspectRatio();
             });
