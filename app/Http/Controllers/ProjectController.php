@@ -31,7 +31,7 @@ class ProjectController extends Controller
     public function create()
     {
         return view('dashboard.project.create-project', [
-            'page' => 'project',
+            'page' => 'project'
         ]);
     }
 

@@ -37,7 +37,7 @@
                                     </div>
                                   @enderror
                                 </div>
-                                <button class="btn btn-primary" onclick="change()">Submit</button>
+                                <a class="btn btn-primary" onclick="change({{ auth()->user()->id }})">Submit</a>
                             </form>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
 
     </div>
     <script>
-        function what(id) {
+        function change(id) {
             Swal.fire({
                 title: 'Are you sure?',
                 text: "You won't be able to revert this!",
@@ -54,7 +54,7 @@
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
+                confirmButtonText: 'Yes, change it!'
             }).then((result) => {
                 if (result.isConfirmed) {
                     $('#admin-pass').submit();
