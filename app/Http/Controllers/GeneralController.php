@@ -14,7 +14,7 @@ class GeneralController extends Controller
     {
 
         return view('dashboard.general',[
-        "page" => "general",
+        "page" => "General",
         "general" => General::first(),
         ]);
     }

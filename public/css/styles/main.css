@@ -382,7 +382,7 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
   .page-home__two .wrap-buttons { text-align: center; margin-top: 40px; }
   .page-home__two .rtf { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 32px; line-height: 1em; color: #00FF00; text-decoration: underline; } }
 
-.page-home__three { min-height: 100vh; background-color: #000; background-image: url("../../../images/img-bg-home-02.jpg"); background-repeat: no-repeat; background-size: cover; background-position: center; padding-top: 120px; padding-bottom: 80px; position: relative; overflow: hidden; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end; }
+.page-home__three { min-height: 100vh; background-color: #000; background-repeat: no-repeat; background-size: cover; background-position: center; padding-top: 120px; padding-bottom: 80px; position: relative; overflow: hidden; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end; }
 
 .page-home__three .wrap { padding-left: 60px; padding-right: 60px; text-align: center; width: 100%; }
 
@@ -441,7 +441,7 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
   .page-home__four .img img { max-width: 60vw; }
   .page-home__four .desc p { font-size: 16px; line-height: 1.3em; } }
 
-.page-home__five { min-height: 100vh; background-color: #000; background-image: url("../../../images/img-bg-home-05.png"); background-repeat: no-repeat; background-size: cover; background-position: center; padding-top: 120px; padding-bottom: 80px; position: relative; }
+.page-home__five { min-height: 100vh; background-color: #000;  background-repeat: no-repeat; background-size: cover; background-position: center; padding-top: 120px; padding-bottom: 80px; position: relative; }
 
 .page-home__five .wrap { min-height: calc(100vh - 200px); padding-left: 60px; padding-right: 60px; width: 100%; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
 

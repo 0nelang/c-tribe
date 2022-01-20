@@ -4,13 +4,13 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>CTRIBE</title>
+    <title>Creative Tribe | {{ $page }}</title>
     <meta name="description" content=""/>
-    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="{{ asset('/images/favicon.png') }}"/>
     <link rel="stylesheet" href="{{ asset('/css/styles/plugins.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/css/styles/preview.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('/plugins/lity/lity.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/styles/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('/plugins/lity/lity.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/css/styles/main.css') }}"/>
     @yield('css')
   </head>
 </html>

@@ -16,7 +16,6 @@
                                     <th>Page</th>
                                     <th>Title</th>
                                     <th>Sub-title</th>
-                                    <th>Extra</th>
                                     <th>Image</th>
                                     <th>option</th>
                                 </tr>
@@ -27,7 +26,6 @@
                                         <td>{!! $pag->page !!}</td>
                                         <td>{{  substr(strip_tags($pag->title) , 0, 40)  }}....</td>
                                         <td>{{  substr(strip_tags($pag->sub_title) , 0, 40)  }}....</td>
-                                        <td> {{  substr(strip_tags($pag->extra) , 0, 40)  }}...</td>
                                         <td><img src="{{ asset('storage/' . $pag->background_img ) }}"
                                                 style="width: 100%"></td>
                                         <td style="">
@@ -51,7 +49,6 @@
                                     <th>Page</th>
                                     <th>Title</th>
                                     <th>Sub-title</th>
-                                    <th>Extra</th>
                                     <th>Image</th>
                                     <th>option</th>
                                 </tr>

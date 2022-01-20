@@ -1,13 +1,10 @@
 @extends('frontend.partial.second')
 @section('css')
 <style>
-    /* .cursor.hasimg { 
-    background: url("{{ asset('storage/' . $general->cursor_image) }}");
-  } */
-    /* .cursor.hasimg{background: url("../../../images/our-people-s1.jpg");} */
     .text-uppercase {
         text-transform: uppercase;
     }
+    .page-home__footer {background-image: url({{ asset('storage/' . $general->background_footer) }});}
 
 </style>
 @endsection
@@ -27,7 +24,7 @@
           @foreach ($project as $p)
           <a class="item" href="#" data-bg="{{ asset('storage/' . $p->mainImage) }}">
                 <div class="item__wrap">
-                    <div class="item__title"><span>{{ $p->brand }}</span></div>
+                    <div class="item__title"><span class="text-uppercase">{{ $p->brand }}</span></div>
                     <div class="item__meta"><span>{{ $p->project }}</span></div>
                     <div class="item__date"><span>{{ $p->date }}</span></div>
                 </div>

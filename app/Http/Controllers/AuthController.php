@@ -10,7 +10,7 @@ class AuthController extends Controller
     public function index()
     {
         return view('dashboard.admin',[
-            "page" => "admin",
+            "page" => "Admin",
             ]);
     }
 

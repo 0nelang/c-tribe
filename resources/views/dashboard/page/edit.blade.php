@@ -58,18 +58,6 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="extra" class="form-label">Extra</label>
-                                    <textarea type="text" name="extra"
-                                        class="form-control  @error('extra') is-invalid @enderror editable" id="extra"
-                                        rows="5">{{ $pafe->extra }}</textarea>
-                                    @error('extra')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-3">
                                     <label for="background_img" class="form-label">Image</label>
                                     <div class="mb-3">
                                         <img src="{{ asset('storage/' . $pafe->background_img) }}" alt="{{ $pafe->background_img }}" id="output"  style="max-height: 200px; max-width:400px;">

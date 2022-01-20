@@ -18,7 +18,7 @@ class PageController extends Controller
     {
         return view('dashboard.page.index',[
             "pages" => Page::all(),
-            "page" => 'page'
+            "page" => 'Page'
         ]);
     }
 
@@ -64,7 +64,7 @@ class PageController extends Controller
     {
         return view('dashboard.page.edit',[
             "pafe" => $page,
-            "page" => 'page'
+            "page" => 'Page'
         ]);
     }
 
@@ -78,10 +78,9 @@ class PageController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
-            "page" => "max:450",
+            "page" => "max:500",
             "title" => "required",
-            "sub_title" => "max:450",
-            "extra" => "max:450",
+            "sub_title" => "min:0",
             "background_img" => "image|file",
         ];
 

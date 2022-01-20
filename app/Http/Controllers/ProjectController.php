@@ -18,7 +18,7 @@ class ProjectController extends Controller
     public function index()
     {
         return view('dashboard.project.index-project', [
-            'page' => 'project',
+            'page' => 'Project',
             'project' => Project::all()
         ]);
     }
@@ -98,7 +98,7 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         return view('dashboard.project.edit-project', [
-            'page' => 'project',
+            'page' => 'Project',
             'project' => $project,
             'otherImage' => ProjectImage::where('project', $project->id)->get()
         ]);

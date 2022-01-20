@@ -18,7 +18,7 @@ class FlagshipController extends Controller
     public function index()
     {
         return view('dashboard.flagship.index',[
-            "page" => 'flagship',
+            "page" => 'Flagship',
             "flag" => Flagship::all()
         ]);
     }
@@ -31,7 +31,7 @@ class FlagshipController extends Controller
     public function create()
     {
         return view('dashboard.flagship.create',[
-            "page" => 'flagship'
+            "page" => 'Flagship'
         ]);
     }
 
@@ -101,7 +101,7 @@ class FlagshipController extends Controller
     {
         // dd($flagship);
         return view('dashboard.flagship.edit', [
-            'page' => 'flagship',
+            'page' => 'Flagship',
             'flagship' => $flagship,
             'otherImage' => FlagshipImage::where('flagship', $flagship->title)->get()
         ]);

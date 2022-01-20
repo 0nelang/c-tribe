@@ -27,9 +27,7 @@ use App\Http\Controllers\InspirationController;
 
 
 
-Route::get('/', function () {return view('frontend.index');});
-
-
+Route::get('/', [HomeController::class, 'landing']);
 
 Auth::routes();
 Route::get('register', function () {return abort(500);});
@@ -66,25 +64,16 @@ Route::resource('admin/people', PeopleController::class);
 
 Route::resource('/admin/partners', PartnerController::class);
 
-Route::get('/frontend/flagship', [HomeController::class,'flagship']);
-
-Route::get('/frontend/homepage', [HomeController::class,'homepage']);
-
-Route::get('/frontend/index', function (){
-    return view('frontend.index');
-});
-
-Route::get('/frontend/inspiration',[HomeController::class,'inspiration']);
-
-Route::get('/frontend/landing', [HomeController::class,'landing']);
-
-Route::get('/frontend/our-people', [HomeController::class,'our_people']);
-
-Route::get('/frontend/project', [HomeController::class,'project']);
-
-Route::get('/frontend/tribes',[HomeController::class,'tribes']);
-
 Route::get('/admin/setting',[AuthController::class,'index']);
 Route::put('/admin/reset',[AuthController::class,'password']);
 });
-Route::get('/home', [App\Http\Controllers\GeneralController::class, 'general'])->name('home');
+Route::get('/flagship', [HomeController::class,'flagship']);
+
+Route::get('/homepage', [HomeController::class,'homepage']);
+Route::get('/inspiration',[HomeController::class,'inspiration']);
+Route::get('/our-people', [HomeController::class,'our_people']);
+
+Route::get('/project', [HomeController::class,'project']);
+
+Route::get('/tribes',[HomeController::class,'tribes']);
+// Route::get('/home', [App\Http\Controllers\GeneralController::class, 'general'])->name('home');

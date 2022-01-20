@@ -13,7 +13,7 @@ class partnerController extends Controller
     public function index()
     {
         return view('dashboard.partner.index', [
-            'page' => 'partners',
+            'page' => 'Partners',
             'partner' => Partner::all()
         ]);
     }
@@ -21,7 +21,7 @@ class partnerController extends Controller
     public function create()
     {
         return view('dashboard.partner.create', [
-            'page' => 'partners'
+            'page' => 'Partners'
         ]);
     }
 
@@ -58,7 +58,7 @@ class partnerController extends Controller
     public function edit(Partner $partner)
     {
         return view('dashboard.partner.edit', [
-            'page' => 'partners',
+            'page' => 'Partners',
             'logo' => $partner->logo,
             'id' => $partner->id
         ]);
