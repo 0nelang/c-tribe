@@ -21,7 +21,7 @@
 <main class="page-home">
   <section class="page-home__one header-2">
     <div class="wrap">
-      <h1><span>WE CREATES MULTI-DIMENSIONS OF CREATIVITY THROUGH THE CREATION, COLLABORATION AND COMMUNICATION OF URBAN LIFESTYLE CULTURE</span><small>We empower brand and connect consumers through creative marketing solution for a better market presence</small></h1>
+      {!! $home1->title !!}
     </div>
     <div class="arrow"><a class="has-scroll" href="#sec2"><img src="/images/arrow-down.png" alt="arrow-down"/></a></div>
   </section>

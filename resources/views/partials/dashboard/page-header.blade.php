@@ -6,12 +6,12 @@
                     <a class="nav-link" id="sidebar-toggle" href="#"><i data-feather="arrow-left"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/frontend/index">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
             </ul>
         </div>
         <div class="logo">
-            <a class="navbar-brand" href="/frontend/index"></a>
+            <a class="navbar-brand" href="/"></a>
         </div>
     </nav>
 </div>

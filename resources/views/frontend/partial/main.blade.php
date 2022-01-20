@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>CTRIBE</title>
     <meta name="description" content=""/>
-    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="{{ asset('/images/favicon.png') }}"/>
     <link rel="stylesheet" href="{{ asset('/css/styles/plugins.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/css/styles/preview.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/plugins/lity/lity.css') }}">

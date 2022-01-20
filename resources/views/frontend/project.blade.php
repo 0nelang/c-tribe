@@ -27,7 +27,7 @@
           @foreach ($project as $p)
           <a class="item" href="#" data-bg="{{ asset('storage/' . $p->mainImage) }}">
                 <div class="item__wrap">
-                    <div class="item__title"><span>{{ $p->brand }}</span></div>
+                    <div class="item__title"><span class="text-uppercase">{{ $p->brand }}</span></div>
                     <div class="item__meta"><span>{{ $p->project }}</span></div>
                     <div class="item__date"><span>{{ $p->date }}</span></div>
                 </div>

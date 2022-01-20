@@ -22,7 +22,8 @@ class HomeController extends Controller
     function homepage()
     {
         return view('frontend.homepage',[
-            "general" => $this->general
+            "general" => $this->general,
+            "home1" => Page::where('page','Home 1')->first()
         ]);
     }
 
@@ -48,8 +49,7 @@ class HomeController extends Controller
         return view('frontend.landing',[
             "general" => $this->general,
             "landing1" => Page::where('page' , 'Landing 1')->first(),
-            "landing2" => Page::where('page','Landing 2')->first(),
-            "landing3" => Page::where('page', 'Landing 3')->first(),
+            "landing2" => Page::where('page','Landing 2')->first()
         ]);
     }
 
