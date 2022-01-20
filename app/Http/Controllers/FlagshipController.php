@@ -74,6 +74,7 @@ class FlagshipController extends Controller
             $validated['featured'] = true;
         }
 
+        $validated['subTitle'] = $request->subTitle;
         Flagship::create($validated);
         Alert::success('Success', 'Data create succesfully');
 
@@ -150,6 +151,7 @@ class FlagshipController extends Controller
             $validated['featured'] = true;
         }
 
+        $validated['subTitle'] = $request->subTitle;
         Flagship::where('id', $flagship->id)->update($validated);
         Alert::success('Success', 'Data update succesfully');
 
