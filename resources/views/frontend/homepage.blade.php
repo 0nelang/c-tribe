@@ -38,7 +38,7 @@
     <div class="wrap">
       <h2><span class="oa">OUR ACTION</span><span class="date">{{ $flagship->date }}</span><span>{{ $flagship->title }}</span></h2>
       <div class="desc">
-        {!! substr($flagship->description , 0, 80)  !!}
+        {!! substr($flagship->description , 0, 100)  !!}
       </div><a class="rtf" href="#">READ THE FEATURE</a>
     </div>
   </section>
@@ -69,6 +69,7 @@
       <div class="col-right"><a class="rtf" href="#">READ THE FEATURE</a></div>
     </div>
   </section>
+  @isset($partner->brand)
   <section class="page-home__six header-1">
     <div class="wrap">
       <div class="col-main">
@@ -87,6 +88,7 @@
       <div class="col-bot-r"><span class="date">{{ $partner->date }}</span><span class="meta">{{ $partner->project }}</span></div>
     </div>
   </section>
+  @endisset
   <section class="page-home__footer">
     <div class="page-home__footer-top">
       <div class="left"><a class="item email" href="mailto:GENERAL {{ $general->email_footer }}">GENERAL INQUIRIES <br>{{ $general->email_footer }}</a>
