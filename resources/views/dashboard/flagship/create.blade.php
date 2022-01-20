@@ -27,8 +27,8 @@
                                     <div class="mb-3">
                                         <label for="title" class="form-label is-invalid">Title</label>
                                         <input type="text" name="title"
-                                            class="form-control @error('title') is-invalid @enderror"
-                                            id="exampleInputEmail1" aria-describedby="title">
+                                            class="form-control @error('title') is-invalid @enderror editable"
+                                            id="titleflag" aria-describedby="title">
                                         @error('title')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
