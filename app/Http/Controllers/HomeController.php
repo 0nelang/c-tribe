@@ -24,7 +24,11 @@ class HomeController extends Controller
         return view('frontend.homepage',[
             "general" => $this->general,
             "home1" => Page::where('page','Home 1')->first(),
-            "page" => "Home"
+            "page" => "Home",
+            "flagship" => Flagship::inRandomOrder()->first(),
+            "inspiration" => Inspiration::inRandomOrder()->first(),
+            "project" => Project::inRandomOrder()->first(),
+            "partner" => Project::where('type', 'person')->first(),
         ]);
     }
 
@@ -71,7 +75,7 @@ class HomeController extends Controller
     {
         return view('frontend.project',[
             "general" => $this->general,
-            "project" => Project::all(),
+            "project" => Project::all()->where('type' , 'project'),
             "page" => "Project"
         ]);
     }

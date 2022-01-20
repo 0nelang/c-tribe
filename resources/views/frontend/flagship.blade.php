@@ -26,7 +26,7 @@
                   <div class="item__bg" style="background-image: url('{{ asset('storage/' . $p->mainImage) }}')"></div>
                   <div class="item__date-sm"><span>{{ $p->date }}</span></div>
                   <div class="item__content">
-                    <h2 class="item__title text-uppercase">{{ $p->title }}</h2>
+                    <h2 class="item__title text-uppercase">{!! $p->title !!}</h2>
                     <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
                     <div class="item__date"><span class="text-uppercase">{{ $p->date }}</span></div>
                   </div>
@@ -38,7 +38,7 @@
                   <div class="item__bg"></div>
                   <div class="item__date-sm dark"><span>{{ $p->date }}</span></div>
                   <div class="item__content">
-                    <h2 class="item__title">{{ $p->title }}</h2>
+                    <h2 class="item__title">{!! $p->title !!}</h2>
                     <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
                     <div class="item__date"><span>{{ $p->date }}</span></div>
                   </div>
@@ -53,7 +53,7 @@
                             <div class="item__bg" style="background-image: url('{{ asset('storage/' . $p->mainImage) }}')"></div>
                             <div class="item__date-sm"><span>{{ $p->date }}</span></div>
                             <div class="item__content">
-                              <h2 class="item__title text-uppercase">{{ $p->title }}</h2>
+                              <h2 class="item__title text-uppercase">{!! $p->title !!}</h2>
                               <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
                               <div class="item__date"><span class="text-uppercase">{{ $p->date }}</span></div>
                             </div>
@@ -65,7 +65,7 @@
                       <div class="item__bg"></div>
                       <div class="item__date-sm dark"><span>{{ $p->date }}</span></div>
                       <div class="item__content">
-                        <h2 class="item__title">{{ $p->title }}</h2>
+                        <h2 class="item__title">{!! $p->title !!}</h2>
                         <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
                         <div class="item__date"><span>{{ $p->date }}</span></div>
                       </div>

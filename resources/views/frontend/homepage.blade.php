@@ -11,10 +11,14 @@
         -webkit-transform: translate(0, 0);
         transform: translate(0, 0);
     }
-  .page-home__footer {background-image: url({{ asset('storage/' . $general->background_footer) }});}
+  .page-home__footer {background-image: url("{{ asset('storage/' . $general->background_footer) }}");}
   .text-uppercase {
       text-transform: uppercase;
   }
+  .page-home__three{background-image: url("{{ asset('storage/' . $flagship->mainImage) }}");}
+
+  .page-home__five {background-image: url("{{ asset('storage/' . $project->mainImage) }}");}
+
 </style>
 @section('content')
 
@@ -32,7 +36,7 @@
   </section>
   <section class="page-home__three header-1">
     <div class="wrap">
-      <h2><span class="oa">OUR ACTION</span><span class="date">15TH FEB 2022</span><span>PELARIAN X SANA STUDIO X DASH</span></h2>
+      <h2><span class="oa">OUR ACTION</span><span class="date">15TH FEB 2022</span><span>{{ $flagship->title }}</span></h2>
       <div class="desc">
         <p>We empower brand and connect consumers <br>through creative marketing solution for a better market presence</p>
       </div><a class="rtf" href="#">READ THE FEATURE</a>
@@ -41,12 +45,12 @@
   <section class="page-home__four header-2">
     <div class="wrap">
       <div class="col-left"><span class="oa">INSPIRATION</span></div>
-      <div class="col-right"><span class="date">15TH FEB 2022</span></div>
+      <div class="col-right"><span class="date">{{ $inspiration->date }}</span></div>
       <div class="col-main">
-        <h2>FRASER COOKE <br>GATEKEEPER OF HYPE</h2>
-        <div class="img"><img src="/images/img-home-four.png" alt="Image"/></div>
+        <h2>{!! $inspiration->name !!}</h2>
+        <div class="img"><img src="{{ asset('storage/' . $inspiration->image) }}" alt="Image"/></div>
         <div class="desc">
-          <p>Ctribe scores a coveted meeting with The brand's special projects senior director, <br>the man behind every fashionable nike collaboration From the past decade</p>
+          {!! $inspiration->quote !!}
         </div><a class="rtf" href="#">READ THE FEATURE</a>
       </div>
     </div>
@@ -70,17 +74,17 @@
       <div class="col-main">
         <div class="sm-only"><span class="oa">PARTNERS</span><span class="date">15TH FEB 2022</span></div>
         <div class="tagline-marquee marquee">
-          <h2>KENJI TAKIMI<span class="star">*</span>KENJI TAKIMI<span class="star">*</span></h2>
+          <h2 class="text-uppercase">{{ $partner->brand }}<span class="star">*</span>{{ $partner->brand }}<span class="star">*</span></h2>
         </div>
-        <div class="img"><img src="/images/img-home-06.jpg" alt="Image"/></div>
+        <div class="img"><img src="{{ asset('storage/' . $partner->mainImage) }}" alt="{{ $partner->mainImage }}"/></div>
       </div>
       <div class="col-bot-l"><span class="oa">PARTNERS</span>
         <div class="desc">
-          <p>Kenji Takimi is a true pioneer of the Leftfield/Alternative Disco scene, <br>and his label Crue-l Records has been at the forefront of Japanese <br>alternative music since its inception 20 years ago. Kenji Takimi was <br>one of the first Japanese DJs to collaborat.</p>
+         {!! $partner->description !!}
         </div>
       </div>
       <div class="col-bot-c"><a class="rtf" href="#">READ THE FEATURE</a></div>
-      <div class="col-bot-r"><span class="date">15TH FEB 2022</span><span class="meta">ISLE MIXES WITH <br>KENJI TAKIMI FROM CRUE L RECORDS / JP TOKYO</span></div>
+      <div class="col-bot-r"><span class="date">{{ $partner->date }}</span><span class="meta">{{ $partner->project }}</span></div>
     </div>
   </section>
   <section class="page-home__footer">
