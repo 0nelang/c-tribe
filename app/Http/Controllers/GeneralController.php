@@ -38,55 +38,45 @@ class GeneralController extends Controller
 
         $validated = $request->validate($rules);
 
-        if ($request->file('brand_navbar1')) {
-            if ($request->oldImage) {
-                Storage::delete($request->oldImage);
-            }
+        if ($request->hasFile('brand_navbar1')) {
+            Storage::delete($general->brand_navbar1);
             $validated['brand_navbar1'] = $request->file('brand_navbar1')->store('general-images',[
                 'disk' => 'public'
             ]);
         }
 
-        if ($request->file('brand_navbar2')) {
-            if ($request->oldImage) {
-                Storage::delete($request->oldImage);
-            }
+        if ($request->hasFile('brand_navbar2')) {
+                Storage::delete($general->brand_navbar2);
+
             $validated['brand_navbar2'] = $request->file('brand_navbar2')->store('general-images',[
                 'disk' => 'public'
             ]);
         }
 
-        if ($request->file('brand_footer')) {
-            if ($request->oldImage) {
-                Storage::delete($request->oldImage);
-            }
+        if ($request->hasFile('brand_footer')) {
+                Storage::delete($general->brand_footer);
+
             $validated['brand_footer'] = $request->file('brand_footer')->store('general-images',[
                 'disk' => 'public'
             ]);
         }
 
-        if ($request->file('cursor_image')) {
-            if ($request->oldImage) {
-                Storage::delete($request->oldImage);
-            }
+        if ($request->hasFile('cursor_image')) {
+                Storage::delete($general->cursor_image);
             $validated['cursor_image'] = $request->file('cursor_image')->store('general-images',[
                 'disk' => 'public'
             ]);
         }
 
-        if ($request->file('background_footer')) {
-            if ($request->oldImage) {
-                Storage::delete($request->oldImage);
-            }
+        if ($request->hasFile('background_footer')) {
+                Storage::delete($general->background_footer);
             $validated['background_footer'] = $request->file('background_footer')->store('general-images',[
                 'disk' => 'public'
             ]);
         }
 
-        if ($request->file('hover_image')) {
-            if ($request->oldImage) {
-                Storage::delete($request->oldImage);
-            }
+        if ($request->hasFile('hover_image')) {
+                Storage::delete($general->hover_image);
             $validated['hover_image'] = $request->file('hover_image')->store('general-images',[
                 'disk' => 'public'
             ]);
