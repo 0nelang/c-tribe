@@ -8,6 +8,7 @@ use App\Models\Project;
 use App\Models\Service;
 use App\Models\Flagship;
 use App\Models\Inspiration;
+use App\Models\Page;
 use App\Models\Partner;
 use Illuminate\Http\Request;
 
@@ -45,7 +46,10 @@ class HomeController extends Controller
     function landing()
     {
         return view('frontend.landing',[
-            "general" => $this->general
+            "general" => $this->general,
+            "landing1" => Page::where('page' , 'Landing 1')->first(),
+            "landing2" => Page::where('page','Landing 2')->first(),
+            "landing3" => Page::where('page', 'Landing 3')->first(),
         ]);
     }
 

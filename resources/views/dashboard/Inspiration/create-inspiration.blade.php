@@ -22,6 +22,7 @@
                         <div class="card-body">
                             <form action="{{ route('inspiration.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+<<<<<<< HEAD
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="mb-3">
@@ -33,6 +34,15 @@
                                                     {{ $message }}
                                                 </div>
                                             @enderror
+=======
+                                <div class="mb-3">
+                                    <label for="name" class="form-label is-invalid">Name</label>
+                                    <textarea type="text" name="name" class="form-control @error('name') is-invalid @enderror editable"
+                                    id="insname" aria-describedby="our-people-name"></textarea>
+                                    @error('name')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+>>>>>>> e3b1b6e8af6a26994681c6533aa3eb6ec19d0dbe
                                         </div>
                                     </div>
                                     <div class="col-6">
@@ -50,8 +60,8 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="quote" class="form-label">Quote</label>
-                                    <input type="text" name="quote"
-                                        class="form-control @error('quote') is-invalid @enderror" id="quote">
+                                    <textarea type="text" name="quote"
+                                    class="form-control @error('quote') is-invalid @enderror editable" id="quote"></textarea>
                                     @error('quote')
                                         <div class="invalid-feedback">
                                             {{ $message }}

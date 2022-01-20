@@ -26,7 +26,8 @@
                                 <div class="row">
                                     <div class="col-6"><div class="mb-3">
                                   <label for="name" class="form-label is-invalid">Name</label>
-                                  <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="our-people-name" value="{{ $inspiration->name }}">
+                                  <textarea type="text" name="name" class="form-control @error('name') is-invalid @enderror editable"
+                                    id="insname" aria-describedby="our-people-name">{{ $inspiration->name }}</textarea>
                                   @error('name')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -47,7 +48,8 @@
                                
                                 <div class="mb-3">
                                   <label for="quote" class="form-label">Quote</label>
-                                  <input type="text" name="quote" class="form-control @error('quote') is-invalid @enderror" id="quote" value="{{ $inspiration->quote }}">
+                                  <textarea type="text" name="quote"
+                                    class="form-control @error('quote') is-invalid @enderror editable" id="quote">{{ $inspiration->quote }}</textarea>
                                   @error('quote')
                                     <div class="invalid-feedback">
                                         {{ $message }}

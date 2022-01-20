@@ -25,9 +25,9 @@
                                 @foreach($pages as $pag)
                                     <tr>
                                         <td>{!! $pag->page !!}</td>
-                                        <td>{!! $pag->title !!}</td>
-                                        <td>{!! $pag->sub_title !!}</td>
-                                        <td> {!! $pag->extra !!}</td>
+                                        <td>{{  substr(strip_tags($pag->title) , 0, 40)  }}....</td>
+                                        <td>{{  substr(strip_tags($pag->sub_title) , 0, 40)  }}....</td>
+                                        <td> {{  substr(strip_tags($pag->extra) , 0, 40)  }}...</td>
                                         <td><img src="{{ asset('storage/' . $pag->background_img ) }}"
                                                 style="width: 100%"></td>
                                         <td style="">

@@ -1,9 +1,16 @@
 @extends('frontend.partial.main')
 <style>
-  /* .cursor.hasimg { 
-  background: url("{{ asset('storage/' . $general->cursor_image) }}");
-} */
-  /* .cursor.hasimg{background: url("../../../images/our-people-s1.jpg");} */
+ .cursor.hasimg {
+        width: 30.208vw;
+        height: 17.188vw;
+        border-radius: 0;
+        background: url("{{ asset('storage/' . $general->cursor_image) }}");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
   .page-home__footer {background-image: url({{ asset('storage/' . $general->background_footer) }});}
   .text-uppercase {
       text-transform: uppercase;

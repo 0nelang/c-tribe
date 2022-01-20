@@ -1,14 +1,26 @@
 @extends('frontend.partial.main')
 @section('css')
 <style>
-    /* .cursor.hasimg { 
-    background: url("{{ asset('storage/' . $general->cursor_image) }}");
-  } */
-    /* .cursor.hasimg{background: url("../../../images/our-people-s1.jpg");} */
-    .page-ourpeople__four{background-image: url({{ asset('storage/' . $general->background_footer) }});}
-        .text-uppercase {
+    .cursor.hasimg {
+        width: 30.208vw;
+        height: 17.188vw;
+        border-radius: 0;
+        background: url("{{ asset('storage/' . $general->cursor_image) }}");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .text-uppercase {
         text-transform: uppercase;
     }
+
+    .page-ourpeople__four {
+        background-image: url({{ asset('storage/' . $general->background_footer) }});
+    }
+
 
 </style>
 @endsection
@@ -30,7 +42,8 @@
         <div class="page-ourpeople__two-people">
             @foreach($people as $p)
                 <div class="people-item">
-                    <div class="photo"><img src="{{ asset('storage/' . $p->photo ) }}" alt="img" /></div>
+                    <div class="photo"><img src="{{ asset('storage/' . $p->photo ) }}"
+                            alt="{{ $p->photo }}" /></div>
                     <div class="text">
                         <div class="name text-uppercase">{{ $p->name }}</div>
                         <div class="position text-uppercase">{{ $p->title }}</div>
@@ -45,20 +58,22 @@
     <section class="page-ourpeople__three header-2">
         <div class="wrap">
             <h2 class="page-ourpeople__three-title">OUR PARTNER</h2>
-            <div class="page-ourpeople__three-logos">
-                <div class="logo"><img src="/images/logo-1.png" alt="logo" /></div>
-                <div class="logo"><img src="/images/logo-2.png" alt="logo" /></div>
-                <div class="logo"><img src="/images/logo-3.png" alt="logo" /></div>
-                <div class="logo"><img src="/images/logo-4.png" alt="logo" /></div>
-                <div class="logo"><img src="/images/logo-5.png" alt="logo" /></div>
-            </div>
-            <div class="page-ourpeople__three-logos">
-                <div class="logo"><img src="/images/logo-8.png" alt="logo" /></div>
-                <div class="logo"><img src="/images/logo-6.png" alt="logo" /></div>
-                <div class="logo"><img src="/images/logo-10.png" alt="logo" style="height: 8.073vw;" /></div>
-                <div class="logo"><img src="/images/logo-11.png" alt="logo" /></div>
-                <div class="logo"><img src="/images/logo-7.png" alt="logo" /></div>
-            </div>
+            @foreach($partner as $index => $p)
+            @php
+                
+                $index = $index +1;
+            @endphp
+                @if($index % 5 == 1 || $index == 0)
+                    <div class="page-ourpeople__three-logos">
+                @endif
+                <div class="logo"><img src="{{ asset('storage/' . $p->logo) }}"
+                        alt="$p->logo" /></div>
+                @if($index % 5 == 0)
+
+        </div>
+
+        @endif
+        @endforeach
         </div>
     </section>
     <section class="page-ourpeople__four">
