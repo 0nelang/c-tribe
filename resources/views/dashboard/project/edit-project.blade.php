@@ -73,7 +73,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="mb-3 col-lg-4 ps-3">
+                                    <div class="mb-3 col-lg-2 ps-3">
                                         <label class="form-label">type</label>
                                         <div class="d-flex pt-2 ">
                                             <div class="form-check">
@@ -90,6 +90,15 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="mb-3 col-lg-2">
+                                        <label class="form-label">featured</label>
+                                        <div class="form-check pt-2">
+                                            <input type="checkbox" class="form-check-input" id="featured" name="featured">
+                                            <label class="form-check-label" for="featured">featured</label>
+                                        </div>
+                                    </div>
+
                                 </div>
 
                                 <div class="mb-3">

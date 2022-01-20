@@ -69,6 +69,10 @@ class FlagshipController extends Controller
             $validated['detailImage'] = $request->file('detailImage')->store('flagship-image', ['disk' => 'public']);
         }
 
+        if ($request->featured == true) {
+            Flagship::where('featured', true)->update(['featured' => false]);
+            $validated['featured'] = true;
+        }
 
         Flagship::create($validated);
         Alert::success('Success', 'Data create succesfully');
@@ -141,6 +145,10 @@ class FlagshipController extends Controller
             $validated['detailImage'] =  $request->file('detailImage')->store('project-image', ['disk' => 'public']);
         }
 
+        if ($request->featured == true) {
+            Flagship::where('featured', true)->update(['featured' => false]);
+            $validated['featured'] = true;
+        }
 
         Flagship::where('id', $flagship->id)->update($validated);
         Alert::success('Success', 'Data update succesfully');

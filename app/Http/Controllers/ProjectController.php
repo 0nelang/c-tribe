@@ -55,9 +55,14 @@ class ProjectController extends Controller
             'otherImage*' => 'image|file'
         ]);
 
-            if ($request->hasfile('mainImage')) {
-                    $validated['mainImage'] = $request->file('mainImage')->store('project-image', ['disk' => 'public']);
-            }
+        if ($request->hasfile('mainImage')) {
+                $validated['mainImage'] = $request->file('mainImage')->store('project-image', ['disk' => 'public']);
+        }
+
+        if ($request->featured == true) {
+            Project::where('featured', true)->update(['featured' => false]);
+            $validated['featured'] = true;
+        }
 
         $project = Project::create($validated);
         if ($request->hasFile('otherImage')) {
@@ -133,6 +138,10 @@ class ProjectController extends Controller
             $validated['mainImage'] =  $request->file('mainImage')->store('project-image', ['disk' => 'public']);
         }
 
+        if ($request->featured == true) {
+            Project::where('featured', true)->update(['featured' => false]);
+            $validated['featured'] = true;
+        }
 
         Project::where('id', $project->id)->update($validated);
         Alert::success('Success', 'Data update succesfully');

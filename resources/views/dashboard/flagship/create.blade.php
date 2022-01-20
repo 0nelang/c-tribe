@@ -36,15 +36,24 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="mb-3 col-lg-4">
-                                    <label for="date" class="form-label">Date</label>
-                                    <input type="text" name="date"
-                                        class="form-control @error('date') is-invalid @enderror" id="date">
-                                    @error('date')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label for="date" class="form-label">Date</label>
+                                        <input type="text" name="date"
+                                            class="form-control @error('date') is-invalid @enderror" id="date">
+                                        @error('date')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="mb-3 col-lg-2">
+                                        <label class="form-label">featured</label>
+                                        <div class="form-check pt-2">
+                                            <input type="checkbox" class="form-check-input" id="featured" name="featured">
+                                            <label class="form-check-label" for="featured">featured</label>
                                         </div>
-                                    @enderror
+                                    </div>
                                 </div>
                             </div>
 

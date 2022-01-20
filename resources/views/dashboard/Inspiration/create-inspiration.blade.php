@@ -33,19 +33,30 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-6">
-                                    <div class="mb-3">
-                                        <label for="date" class="form-label is-invalid">Date</label>
-                                        <input type="text" name="date"
-                                            class="form-control @error('date') is-invalid @enderror" id="exampleInputEmail1"
-                                            aria-describedby="our-people-date">
-                                        @error('date')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="date" class="form-label is-invalid">Date</label>
+                                            <input type="text" name="date"
+                                                class="form-control @error('date') is-invalid @enderror" id="exampleInputEmail1"
+                                                aria-describedby="our-people-date">
+                                            @error('date')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 col-lg-2">
+                                        <label class="form-label">featured</label>
+                                        <div class="form-check pt-2">
+                                            <input type="checkbox" class="form-check-input" id="featured" name="featured">
+                                            <label class="form-check-label" for="featured">featured</label>
+                                        </div>
                                     </div>
                                 </div>
+
 
                                 <div class="mb-3">
                                     <label for="quote" class="form-label">Quote</label>

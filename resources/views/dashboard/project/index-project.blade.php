@@ -15,8 +15,8 @@
                                 <thead>
                                     <tr>
                                         <th>Type</th>
+                                        <th>Featured</th>
                                         <th>Brand</th>
-                                        <th>Title</th>
                                         <th>Image</th>
                                         <th>option</th>
                                     </tr>
@@ -26,8 +26,8 @@
 
                                     <tr>
                                         <td>{{ $p->type }}</td>
+                                        <td>{{ $p->featured }}</td>
                                         <td>{{ $p->brand }}</td>
-                                        <td>{{ $p->title }}</td>
                                         <td><img src="{{ asset('storage/' . $p->mainImage) }}" style="max-height: 200px; max-width:200px;"></td>
                                         <td style="">
                                             <div class="dropdown dropright">
@@ -53,8 +53,8 @@
                                 <tfoot>
                                     <tr>
                                         <th>Type</th>
+                                        <th>Featured</th>
                                         <th>Brand</th>
-                                        <th>Title</th>
                                         <th>Image</th>
                                         <th>option</th>
                                     </tr>
