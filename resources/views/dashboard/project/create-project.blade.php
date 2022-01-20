@@ -58,15 +58,36 @@
                                     </div>
                                 </div>
 
-                                <div class="mb-3">
-                                    <label for="title" class="form-label">Title</label>
-                                    <input type="text" name="title"
-                                        class="form-control @error('title') is-invalid @enderror" id="title">
-                                    @error('title')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
+                                <div class="row">
+
+                                    <div class="mb-3 col-lg-8">
+                                        <label for="title" class="form-label">Title</label>
+                                        <input type="text" name="title"
+                                            class="form-control @error('title') is-invalid @enderror" id="title">
+                                        @error('title')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="mb-3 col-lg-4 ps-3">
+                                        <label class="form-label">type</label>
+                                        <div class="d-flex pt-2 ">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="type" id="type1" value="project" checked>
+                                                <label class="form-check-label" for="type1">
+                                                  project
+                                                </label>
+                                            </div>
+                                            <div class="form-check ps-5">
+                                                <input class="form-check-input" type="radio" name="type" id="type2" value="person">
+                                                <label class="form-check-label" for="type2">
+                                                  person
+                                                </label>
+                                            </div>
                                         </div>
-                                    @enderror
+                                    </div>
+
                                 </div>
 
                                 <div class="mb-3">
@@ -98,7 +119,7 @@
                                     <label for="mainImage" class="form-label">Main Image</label>
                                     <br>
                                     <img id="output" class="mb-3" style="max-height: 200px; max-width: 200px;">
-                                    <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage[]"
+                                    <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage"
                                         type="file" id="filePhoto" accept="image/*">
                                     @error('mainImage')
                                         <div class="invalid-feedback">
@@ -110,7 +131,7 @@
                                 <div class="mb-3">
                                     <label for="otherImage" class="form-label">Other Image</label>
                                     <br>
-                                    <input class="form-control @error('otherImage') is-invalid @enderror" name="mainImage[]"
+                                    <input class="form-control @error('otherImage') is-invalid @enderror" name="otherImage[]"
                                         type="file" id="otherImage" accept="image/*" multiple="multiple">
                                     @error('otherImage')
                                         <div class="invalid-feedback">

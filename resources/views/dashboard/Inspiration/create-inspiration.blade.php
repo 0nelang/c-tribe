@@ -22,19 +22,6 @@
                         <div class="card-body">
                             <form action="{{ route('inspiration.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-<<<<<<< HEAD
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="mb-3">
-                                            <label for="name" class="form-label is-invalid">Name</label>
-                                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                                                id="exampleInputEmail1" aria-describedby="our-people-name">
-                                            @error('name')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-=======
                                 <div class="mb-3">
                                     <label for="name" class="form-label is-invalid">Name</label>
                                     <textarea type="text" name="name" class="form-control @error('name') is-invalid @enderror editable"
@@ -42,7 +29,6 @@
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
->>>>>>> e3b1b6e8af6a26994681c6533aa3eb6ec19d0dbe
                                         </div>
                                     </div>
                                     <div class="col-6">

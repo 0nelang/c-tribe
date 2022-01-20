@@ -44,28 +44,30 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'type' => 'required',
             'brand' => 'required',
             'project' => 'required',
             'date' => 'required',
             'title' => 'required',
             'description' => 'required',
             'body' => 'required',
-            'mainImage*' => 'image|file'
+            'mainImage' => 'required|image|file',
+            'otherImage*' => 'image|file'
         ]);
 
             if ($request->hasfile('mainImage')) {
-                foreach ($request->mainImage as $index => $value) {
-                    if ($index == 0) {
-                        $validated['mainImage'] = $value->store('project-image', ['disk' => 'public']);
-                    }else {
-                        $otherImage['otherImage'] = $value->store('project-image', ['disk' => 'public']);
-                        $otherImage['project'] = $request->brand;
-                        ProjectImage::create($otherImage);
-                    }
-                }
+                    $validated['mainImage'] = $request->file('mainImage')->store('project-image', ['disk' => 'public']);
             }
 
-        Project::create($validated);
+        $project = Project::create($validated);
+        if ($request->hasFile('otherImage')) {
+            foreach ($request->otherImage as $value) {
+                # code...
+                $otherImage['otherImage'] = $value->store('project-image', ['disk' => 'public']);
+                $otherImage['project'] = $project->id;
+                ProjectImage::create($otherImage);
+            }
+        }
         Alert::success('Success', 'Data create succesfully');
 
         return redirect(route('project.index'));
@@ -93,7 +95,7 @@ class ProjectController extends Controller
         return view('dashboard.project.edit-project', [
             'page' => 'Project',
             'project' => $project,
-            'otherImage' => ProjectImage::where('project', $project->brand)->get()
+            'otherImage' => ProjectImage::where('project', $project->id)->get()
         ]);
     }
 
@@ -107,6 +109,7 @@ class ProjectController extends Controller
     public function update(Request $request, Project $project)
     {
         $validated = $request->validate([
+            'type' => 'required',
             'brand' => 'required',
             'project' => 'required',
             'date' => 'required',
@@ -120,7 +123,7 @@ class ProjectController extends Controller
         if ($request->hasFile('otherImage')) {
             foreach ($request->otherImage as $value) {
                 $otherImage['otherImage'] = $value->store('project-image', ['disk' => 'public']);
-                $otherImage['project'] = $request->brand;
+                $otherImage['project'] = $project->id;
                 ProjectImage::create($otherImage);
             }
         }
@@ -145,7 +148,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        $otherImg = ProjectImage::where('project', $project->brand);
+        $otherImg = ProjectImage::where('project', $project->id);
         if ($otherImg != null) {
             foreach ($otherImg as $value) {
                 storage::delete($value->otherImage);

@@ -17,7 +17,7 @@
   }
 </style>
 @section('content')
-    
+
 <main class="page-home">
   <section class="page-home__one header-2">
     <div class="wrap">
