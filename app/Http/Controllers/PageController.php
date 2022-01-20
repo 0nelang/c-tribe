@@ -78,10 +78,10 @@ class PageController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
-            "page" => "required",
+            "page" => "max:450",
             "title" => "required",
-            "sub_title" => "required",
-            "extra" => "required",
+            "sub_title" => "max:450",
+            "extra" => "max:450",
             "background_img" => "image|file",
         ];
 

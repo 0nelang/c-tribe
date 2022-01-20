@@ -38,7 +38,7 @@
                                     <div class="col-6">
                                         <div class="mb-3">
                                             <label for="date" class="form-label is-invalid">Date</label>
-                                            <input type="text" date="date" class="form-control @error('date') is-invalid @enderror"
+                                            <input type="text" name="date" class="form-control @error('date') is-invalid @enderror"
                                                 id="exampleInputEmail1" aria-describedby="our-people-date">
                                             @error('date')
                                                 <div class="invalid-feedback">

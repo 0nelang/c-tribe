@@ -8,6 +8,7 @@ use App\Models\Project;
 use App\Models\Service;
 use App\Models\Flagship;
 use App\Models\Inspiration;
+use App\Models\Partner;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -52,7 +53,8 @@ class HomeController extends Controller
     {
         return view('frontend.our-people',[
             "general" => $this->general,
-            "people" => People::all()
+            "people" => People::all(),
+            "partner" => Partner::orderBy('index','desc')->get()
         ]);
     }
 

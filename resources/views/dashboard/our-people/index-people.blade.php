@@ -17,7 +17,7 @@
                                     <th>Name</th>
                                     <th>Position</th>
                                     <th>photo</th>
-                                    <th>option</th>
+                                    <th style="text-align: center">option</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,7 +61,7 @@
                                     <th>Name</th>
                                     <th>Position</th>
                                     <th>photo</th>
-                                    <th>option</th>
+                                    <th style="text-align: center">option</th>
                                 </tr>
                             </tfoot>
                         </table>

@@ -2,6 +2,7 @@
 @section('css')
 <style>
   .text-uppercase{ text-transform: uppercase;}
+  .page-inspiration__footer {background-image: url({{ asset('storage/' . $general->background_footer) }});}
   </style>
 @endsection
 @section('content')

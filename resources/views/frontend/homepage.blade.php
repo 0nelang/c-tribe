@@ -4,6 +4,7 @@
   background: url("{{ asset('storage/' . $general->cursor_image) }}");
 } */
   /* .cursor.hasimg{background: url("../../../images/our-people-s1.jpg");} */
+  .page-home__footer {background-image: url({{ asset('storage/' . $general->background_footer) }});}
   .text-uppercase {
       text-transform: uppercase;
   }

@@ -1,4 +1,9 @@
 @extends('frontend.partial.second')
+@section('css')
+<style>
+.page-home__footer {background-image: url({{ asset('storage/' . $general->background_footer) }});}
+</style>   
+@endsection
 @section('content')
     <main class="page-tribes header-1">
       <section class="page-tribes__one">
@@ -14,8 +19,8 @@
 
             <a class="item" href="#">
             <div class="item__wrap">
-              <div class="item__logo"><img src="/images/img-logo-01.png" alt="Image"/></div>
-              <div class="item__title"><span>Music Podcast</span></div>
+              <div class="item__logo"><img src="{{ asset('storage/' . $s->logo) }}" alt="{{ $s->logo }}"/></div>
+              <div class="item__title"><span>{{ $s->service }}</span></div>
             </div></a>
 
             @endforeach

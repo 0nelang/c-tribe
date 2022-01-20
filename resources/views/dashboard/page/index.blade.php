@@ -30,7 +30,7 @@
                                         <td> {!! $pag->extra !!}</td>
                                         <td><img src="{{ asset('storage/' . $pag->background_img ) }}"
                                                 style="width: 100%"></td>
-                                        <td style="text-align: center">
+                                        <td style="">
                                             <div class="dropdown dropstart">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
                                                     data-bs-toggle="dropdown" aria-expanded="false">

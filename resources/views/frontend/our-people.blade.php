@@ -5,7 +5,8 @@
     background: url("{{ asset('storage/' . $general->cursor_image) }}");
   } */
     /* .cursor.hasimg{background: url("../../../images/our-people-s1.jpg");} */
-    .text-uppercase {
+    .page-ourpeople__four{background-image: url({{ asset('storage/' . $general->background_footer) }});}
+        .text-uppercase {
         text-transform: uppercase;
     }
 
@@ -31,8 +32,8 @@
                 <div class="people-item">
                     <div class="photo"><img src="{{ asset('storage/' . $p->photo ) }}" alt="img" /></div>
                     <div class="text">
-                        <div class="name">{{ $p->name }}</div>
-                        <div class="position">{{ $p->title }}</div>
+                        <div class="name text-uppercase">{{ $p->name }}</div>
+                        <div class="position text-uppercase">{{ $p->title }}</div>
                         <div class="quote">
                             {!! $p->description !!}
                         </div>
