@@ -12,10 +12,10 @@
                         <table id="logo-table" class="display" style="width:100%">
                             <thead>
                                 <tr>
+                                    <th>Title</th>
                                     <th>Idex</th>
                                     <th>Id</th>
                                     <th>Featured</th>
-                                    <th>Title</th>
                                     <th>Option</th>
                                 </tr>
                             </thead>
@@ -23,10 +23,10 @@
                                 @foreach($flag as $id => $pep)
 
                                     <tr>
+                                        <td>{{ $pep->title }}</td>
                                         <td>{{ $pep->index }}</td>
                                         <td>{{ $pep->id }}</td>
                                         <td>{{ $pep->featured }}</td>
-                                        <td>{{ $pep->title }}</td>
                                         <td style="">
                                             <div class="dropdown">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
@@ -53,10 +53,10 @@
                             </tbody>
                             <tfoot>
                                 <tr>
+                                    <th>Title</th>
                                     <th>Idex</th>
                                     <th>Id</th>
                                     <th>Featured</th>
-                                    <th>Title</th>
                                     <th>option</th>
                                 </tr>
                             </tfoot>
@@ -80,7 +80,7 @@
 
             table.on('row-reordered', function(e, diff, edit) {
                 setTimeout(() => {
-                    var obj_id = table.column(1).data().toArray();
+                    var obj_id = table.column(2).data().toArray();
                     console.log(obj_id);
                     $.ajax({
                         type: "post",
