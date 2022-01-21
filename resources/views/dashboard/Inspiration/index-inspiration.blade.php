@@ -27,7 +27,7 @@
                                         <td>{{ $pep->index }}</td>
                                         <td>{{ $pep->id }}</td>
                                         <td>{{ $pep->featured }}</td>
-                                        <td>{{ $pep->name }}</td>
+                                        <td>{!! $pep->name !!}</td>
                                         <td style="">
                                             <div class="dropdown">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
