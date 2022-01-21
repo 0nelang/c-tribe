@@ -16,8 +16,8 @@ class Controller extends BaseController
 
     public function saveUser()
     {
-        $agent = Visitor::select('user_agent');
-        $ip = Visitor::select('ip_address');
+        $agent = Visitor::select('user_agent')->toArray();
+        $ip = Visitor::select('ip_address')->toArray();
         if (!in_array($_SERVER['HTTP_USER_AGENT'], $agent) && !in_array($_SERVER['SERVER_ADDR'], $ip) ) {
             return 'lol';
         }
