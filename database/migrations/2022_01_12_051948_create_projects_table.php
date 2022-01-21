@@ -21,7 +21,8 @@ class CreateProjectsTable extends Migration
             $table->boolean('featured')->nullable();
             $table->string('brand');
             $table->string('project');
-            $table->string('title');
+            $table->text('title');
+            $table->text('subTitle');
             $table->string('date');
             $table->string('mainImage')->nullable();
             $table->text('description');

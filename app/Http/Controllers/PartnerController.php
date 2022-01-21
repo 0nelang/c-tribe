@@ -14,7 +14,7 @@ class partnerController extends Controller
     {
         return view('dashboard.partner.index', [
             'page' => 'Partners',
-            'partner' => Partner::orderBy('index', 'asc')
+            'partner' => Partner::orderBy('index', 'asc')->get()
         ]);
     }
 
