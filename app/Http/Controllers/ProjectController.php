@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use Illuminate\Support\Str;
 use App\Models\ProjectImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -54,6 +55,8 @@ class ProjectController extends Controller
             'mainImage' => 'required|image|file',
             'otherImage*' => 'image|file'
         ]);
+
+        $validated['project']= Str::title($request->project);
 
         if ($request->hasfile('mainImage')) {
                 $validated['mainImage'] = $request->file('mainImage')->store('project-image', ['disk' => 'public']);
@@ -125,6 +128,8 @@ class ProjectController extends Controller
             'mainImage' => 'image|file',
             'otherImage*' => 'image|file'
         ]);
+
+        $validated['project']= Str::title($request->project);
 
         if ($request->hasFile('otherImage')) {
             foreach ($request->otherImage as $value) {
