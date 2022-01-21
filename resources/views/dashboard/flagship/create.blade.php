@@ -59,6 +59,19 @@
                                 </div>
 
                                 <div class="mb-3">
+                                    <label for="mainImage" class="form-label">Main Image</label>
+                                    <br>
+                                    <img id="out" class="mb-3" style="max-height: 200px; max-width: 300px">
+                                    <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage[]"
+                                        type="file" id="photo" accept="image/*">
+                                    @error('mainImage')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
                                     <label for="subTitle" class="form-label">Sub Title</label>
                                     <textarea type="text" name="subTitle"
                                         class="form-control @error('subTitle') is-invalid @enderror editable"
@@ -89,19 +102,6 @@
                                         class="form-control  @error('body') is-invalid @enderror editable" id="ck3"
                                         rows="5"></textarea>
                                     @error('body')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="mainImage" class="form-label">Main Image</label>
-                                    <br>
-                                    <img id="out" class="mb-3" style="max-height: 200px; max-width: 300px">
-                                    <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage[]"
-                                        type="file" id="photo" accept="image/*">
-                                    @error('mainImage')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>

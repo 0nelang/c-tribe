@@ -25,7 +25,7 @@
 
                                 <div class="mb-3">
                                     <label for="filePhoto" class="form-label">Logo</label>
-                                    <div class="mb-3">
+                                    <div>
                                         <img id="output" class="mb-3" style="max-height: 200px; max-width: 200px;">
                                     </div>
                                     <input class="form-control @error('logo') is-invalid @enderror" name="logo" type="file"
@@ -52,7 +52,7 @@
                                     <label for="description" class="form-label">Description</label>
                                     <textarea type="text" name="description"
                                         class="text-dark form-control @error('description') is-invalid @enderror editable"
-                                        id="ck1" >{{ old('description') }}</textarea> @error('description')
+                                        id="ck1">{{ old('description') }}</textarea> @error('description')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -72,8 +72,9 @@
 
                                 <div class="mb-3">
                                     <label for="fileImage" class="form-label">Image</label>
-                                    <div class="mb-3">
-                                        <img id="output2" class="mb-3" style="max-height: 200px; max-width: 200px;">
+                                    <div>
+                                        <img id="output2" class="mb-3"
+                                            style="max-height: 200px; max-width: 200px;">
                                     </div>
                                     <input class="form-control @error('image') is-invalid @enderror" name="image"
                                         type="file" id="fileImage" accept="image/*">

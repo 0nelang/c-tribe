@@ -26,6 +26,8 @@ class GeneralController extends Controller
             "brand_navbar2" => "image|file",
             "title" => "max:255",
             "background_footer" => "image|file",
+            "background_menu" => "image|file",
+            "background_menu_sm" => "image|file",
             "brand_footer" => "image|file",
             "email_footer" => "required",
             "phone_footer" => "required",
@@ -71,6 +73,20 @@ class GeneralController extends Controller
         if ($request->hasFile('background_footer')) {
                 Storage::delete($general->background_footer);
             $validated['background_footer'] = $request->file('background_footer')->store('general-images',[
+                'disk' => 'public'
+            ]);
+        }
+
+        if ($request->hasFile('background_menu')) {
+                Storage::delete($general->background_menu);
+            $validated['background_menu'] = $request->file('background_menu')->store('general-images',[
+                'disk' => 'public'
+            ]);
+        }
+
+        if ($request->hasFile('background_menu_sm')) {
+                Storage::delete($general->background_menu_sm);
+            $validated['background_menu_sm'] = $request->file('background_menu_sm')->store('general-images',[
                 'disk' => 'public'
             ]);
         }
