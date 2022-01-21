@@ -68,6 +68,7 @@ class InspirationController extends Controller
             $validated['featured'] = true;
         }
 
+        $validated['index'] = Inspiration::all()->count() + 1;
         $validated['subTitle'] = $request->subTitle;
         Inspiration::create($validated);
         Alert::success('Success', 'Data create succesfully');
@@ -151,6 +152,20 @@ class InspirationController extends Controller
         Storage::disk('public')->delete($inspiration->video);
         Storage::disk('public')->delete($inspiration->image);
         Inspiration::destroy($inspiration->id);
+        $notdel = Inspiration::all();
+        foreach ($notdel as $key => $value) {
+            $value->update(['index' => $key + 1]);
+        }
         return redirect(route('inspiration.index'));
+    }
+
+    public function position(Request $request)
+    {
+        foreach ($request->id as $index => $id) {
+            Inspiration::find($id)->update(['index' => $index + 1]);
+        }
+
+        return response()->json('success');
+
     }
 }

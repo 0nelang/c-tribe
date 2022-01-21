@@ -45,8 +45,8 @@
                                                                 href="/admin/partners/{{ $part->id }}/edit">Edit</a></li>
                                                         <li>
                                                             <form id="form-delete{{ $id }}"
-                                                                action="/admin/partners/delete/{{ $part->id }}" method="post"
-                                                                style="display: none">
+                                                                action="/admin/partners/delete/{{ $part->id }}"
+                                                                method="post" style="display: none">
                                                                 @csrf
                                                             </form>
                                                             <a class="dropdown-item text-dark" href="#"
@@ -80,18 +80,18 @@
                 rowReorder: true,
             });
 
-            table.on('row-reorder', function(e, diff, edit) {
-                var result = 'Reorder started on row: ' + edit.triggerRow.data()[1] + '<br>';
-                var newIndex, oldIndex;
-                for (var i = 0, ien = diff.length; i < ien; i++) {
-                    var rowData = table.row(diff[i].node).data();
+            // table.on('row-reorder', function(e, diff, edit) {
+            //     var result = 'Reorder started on row: ' + edit.triggerRow.data()[1] + '<br>';
+            //     var newIndex, oldIndex;
+            //     for (var i = 0, ien = diff.length; i < ien; i++) {
+            //         var rowData = table.row(diff[i].node).data();
 
-                    newIndex = diff[i].newData;
-                    oldIndex = diff[i].oldData;
-                }
+            //         newIndex = diff[i].newData;
+            //         oldIndex = diff[i].oldData;
+            //     }
 
 
-            });
+            // });
             table.on('row-reordered', function(e, diff, edit) {
                 setTimeout(() => {
                     var obj_id = table.column(1).data().toArray();
