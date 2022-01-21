@@ -36,6 +36,7 @@ Route::get('register', function () {return abort(500);});
 Route::get('/password/reset', function () {return abort(500);});
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/admin', [AuthController::class, 'visitor']);
     Route::get('/admin/general', [GeneralController::class, 'general']);
 Route::put('/admin/general/{general:id}', [GeneralController::class, 'update']);
 

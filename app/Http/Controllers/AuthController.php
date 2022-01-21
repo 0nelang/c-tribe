@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Visitor;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -23,5 +25,14 @@ class AuthController extends Controller
         $validated['password'] = bcrypt($validated['password']);
         User::find($request->id)->update($validated);
         return redirect()->back();
+    }
+
+    public function visitor()
+    {
+        return view('dashboard.visitor', [
+            "page" => "Visitor",
+            "today" => Visitor::whereDate('created_at', Carbon::today()),
+            "all_visitor" => Visitor::all()->count()
+        ]);
     }
 }
