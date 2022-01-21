@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\visitor;
+use App\Models\Visitor;
 use Jenssegers\Agent\Agent;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -16,10 +16,13 @@ class Controller extends BaseController
 
     public function saveUser()
     {
-        $agent = Visitor::select('user_agent')->toArray();
-        $ip = Visitor::select('ip_address')->toArray();
+        $agent = Visitor::select('user_agent')->get()->toArray();
+        $ip = Visitor::select('ip_address')->get()->toArray();
         if (!in_array($_SERVER['HTTP_USER_AGENT'], $agent) && !in_array($_SERVER['SERVER_ADDR'], $ip) ) {
-            return 'lol';
+            Visitor::create([
+                'user_agent' => $_SERVER['HTTP_USER_AGENT'],
+                'ip_address' => $_SERVER['SERVER_ADDR']
+            ]);
         }
         // $agent = new Agent();
         // // dd($agent);
