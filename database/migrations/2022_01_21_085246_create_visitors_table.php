@@ -15,7 +15,8 @@ class CreateVisitorsTable extends Migration
     {
         Schema::create('visitors', function (Blueprint $table) {
             $table->id();
-            $table->string('agent');
+            $table->string('ip_address');
+            $table->string('user_agent');
             $table->timestamps();
         });
     }
