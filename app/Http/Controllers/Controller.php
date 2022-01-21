@@ -15,8 +15,19 @@ class Controller extends BaseController
 
     public function saveUser()
     {
-        if ($_SERVER ) {
-            # code...
-        }
+
+        dd($_SERVER);
+        // $agent = new Agent();
+        // // dd($agent);
+
+        // echo $_SERVER['HTTP_USER_AGENT'];
+        // // print_r($agent);
+
+        // exit;
+        // $browser = $agent->platform();
+        // dd($browser);
+        // dd(get_browser(request()->header('User-Agent'), true));
+        // dd(URL::current());
+        // dd(request()->ip());
     }
 }
