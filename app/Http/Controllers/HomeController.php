@@ -37,7 +37,7 @@ class HomeController extends Controller
     {
         return view('frontend.flagship',[
             "general" => $this->general,
-            "flagship" => Flagship::all(),
+            "flagship" => Flagship::orderBy('index','asc')->get(),
             "page" => "Flagship"
         ]);
     }
@@ -46,7 +46,7 @@ class HomeController extends Controller
     {
         return view('frontend.inspiration',[
             "general" => $this->general,
-            "inspiration" => Inspiration::all(),
+            "inspiration" => Inspiration::orderBy('index','asc')->get(),
             "page" => "Insipiration"
         ]);
     }
