@@ -19,7 +19,7 @@ class ProjectController extends Controller
     {
         return view('dashboard.project.index-project', [
             'page' => 'Project',
-            'project' => Project::orderBy('index')->get()
+            'project' => Project::orderBy('index', 'asc')->get()
         ]);
     }
 

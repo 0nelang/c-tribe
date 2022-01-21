@@ -66,7 +66,7 @@ class HomeController extends Controller
         return view('frontend.our-people',[
             "general" => $this->general,
             "people" => People::all(),
-            "partner" => Partner::orderBy('index','desc')->get(),
+            "partner" => Partner::orderBy('index','asc')->get(),
             "page" => "Our People",
             "pege1" => Page::where('page', 'Our People 1')->first(),
             "pege2" => Page::where('page', 'Our People 2')->first(),
@@ -86,7 +86,7 @@ class HomeController extends Controller
     {
         return view('frontend.tribes',[
             "general" => $this->general,
-            "service" => Service::orderBy('index', 'desc')->get(),
+            "service" => Service::orderBy('index', 'asc')->get(),
             "page" => "Tribes"
         ]);
     }

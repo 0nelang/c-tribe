@@ -19,7 +19,7 @@ class InspirationController extends Controller
     {
         return view('dashboard.Inspiration.index-inspiration', [
             'page' => 'Inspiration',
-            'inspiration' => Inspiration::all()
+            'inspiration' => Inspiration::orderBy('index', 'asc')
         ]);
     }
 

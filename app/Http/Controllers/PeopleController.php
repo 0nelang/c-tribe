@@ -20,7 +20,7 @@ class PeopleController extends Controller
     {
         return view('dashboard.our-people.index-people',[
             "page" => "People",
-            "people" => People::orderBy('index')->get()
+            "people" => People::orderBy('index', 'asc')->get()
         ]);
     }
 
