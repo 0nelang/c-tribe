@@ -21,6 +21,7 @@ class HomeController extends Controller
 
     function homepage()
     {
+        $this->saveUser();
         return view('frontend.homepage',[
             "general" => $this->general,
             "home1" => Page::where('page','Home 1')->first(),
