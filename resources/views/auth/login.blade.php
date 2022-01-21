@@ -10,19 +10,21 @@
         <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
         <!-- Title -->
-        <title>Circl - Responsive Admin Dashboard Template</title>
+        <title>Creative Tribe | Login</title>
 
         <!-- Styles -->
         <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
-        <link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/plugins/font-awesome/css/all.min.css" rel="stylesheet">
-        <link href="/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+        <link href="{{ asset('/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('/plugins/font-awesome/css/all.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('/plugins/perfectscroll/perfect-scrollbar.css') }}" rel="stylesheet">
+        <link rel="shortcut icon" href="{{ asset('/images/favicon.png') }}" />
+
 
 
         <!-- Theme Styles -->
-        <link href="/css/main.min.css" rel="stylesheet">
-        <link href="/css/dark-theme.css" rel="stylesheet">
-        <link href="/css/custom.css" rel="stylesheet">
+        <link href="{{ asset('/css/main.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/dark-theme.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -82,12 +84,12 @@
 
 
         <!-- Javascripts -->
-        <script src="/plugins/jquery/jquery-3.4.1.min.js"></script>
+        <script src="{{ asset('/plugins/jquery/jquery-3.4.1.min.js') }}"></script>
         <script src="https://unpkg.com/@popperjs/core@2"></script>
-        <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="{{ asset('/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
         <script src="https://unpkg.com/feather-icons"></script>
-        <script src="/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
-        <script src="/js/main.min.js"></script>
+        <script src="{{ asset('/plugins/perfectscroll/perfect-scrollbar.min.js') }}"></script>
+        <script src="{{ asset('/js/main.min.js') }}"></script>
     </body>
 </html>
 

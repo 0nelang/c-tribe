@@ -78,7 +78,7 @@ class HomeController extends Controller
     {
         return view('frontend.project',[
             "general" => $this->general,
-            "project" => Project::all()->where('type' , 'project'),
+            "project" => Project::where('type' , 'project')->orderBy('index','asc')->get(),
             "page" => "Project"
         ]);
     }

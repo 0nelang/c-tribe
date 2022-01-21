@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="{{ asset('/css/styles/preview.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/plugins/lity/lity.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/styles/main.css') }}">
+    <style>
+      .main-menu__bg { background: url("{{ asset('storage/' . $general->background_menu) }}") no-repeat center; }
+    </style>
     @yield('css')
   </head>
 </html>

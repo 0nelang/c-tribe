@@ -28,7 +28,7 @@ class partnerController extends Controller
     public function store(Request $request)
     {
         $img = Image::make($request->file('logo'));
-        $img->resize(null, 89,  function ($constraint)
+        $img->resize(null, 200,  function ($constraint)
         {
             $constraint->aspectRatio();
         });
@@ -71,7 +71,7 @@ class partnerController extends Controller
             Storage::delete($partner->logo);
 
             $img = Image::make($request->file('logo'));
-            $img->resize(null, 89,  function ($constraint)
+            $img->resize(null, 200,  function ($constraint)
             {
                 $constraint->aspectRatio();
             });
