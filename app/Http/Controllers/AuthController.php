@@ -12,7 +12,7 @@ class AuthController extends Controller
     public function index()
     {
         return view('dashboard.admin',[
-            "page" => "Admin",
+            "page" => "Setting",
             ]);
     }
 
@@ -30,7 +30,7 @@ class AuthController extends Controller
     public function visitor()
     {
         return view('dashboard.visitor', [
-            "page" => "Visitor",
+            "page" => "Admin",
             "today" => Visitor::whereDate('created_at', Carbon::today()),
             "all_visitor" => Visitor::all()->count()
         ]);
