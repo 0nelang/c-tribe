@@ -19,7 +19,7 @@ class FlagshipController extends Controller
     {
         return view('dashboard.flagship.index',[
             "page" => 'Flagship',
-            "flag" => Flagship::all()
+            "flag" => Flagship::orderBy('index', 'asc')
         ]);
     }
 

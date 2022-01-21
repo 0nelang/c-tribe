@@ -18,7 +18,7 @@ class ServiceController extends Controller
     {
         return view('dashboard.service.index-service', [
             'page' => 'Service',
-            'service' => Service::all()
+            'service' => Service::orderBy('index', 'asc')
         ]);
     }
 
