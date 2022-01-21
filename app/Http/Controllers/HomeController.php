@@ -44,7 +44,6 @@ class HomeController extends Controller
 
     function inspiration()
     {
-
         return view('frontend.inspiration',[
             "general" => $this->general,
             "inspiration" => Inspiration::all(),
@@ -54,6 +53,7 @@ class HomeController extends Controller
 
     function landing()
     {
+        $this->saveUser();
         return view('frontend.landing',[
             "general" => $this->general,
             "landing1" => Page::where('page' , 'Landing 1')->first(),
