@@ -76,7 +76,7 @@
     </section>
     <section class="page-ourpeople__four">
         <div class="page-ourpeople__four-top">
-            <div class="left"><a class="item email" href="mailto:GENERAL {{ $general->email_footer }}">GENERAL
+            <div class="left"><a class="item email" href="mailto:{{ $general->email_footer }}">GENERAL
                     INQUIRIES <br>{{ $general->email_footer }}</a>
                 <div class="item phone">Phone<br><a
                         href="tel: {{ $general->phone_footer }}">{{ $general->phone_footer }}</a></div>

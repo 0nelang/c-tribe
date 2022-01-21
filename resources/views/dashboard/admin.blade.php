@@ -15,9 +15,6 @@
                                 <input type="hidden" value="{{ auth()->user()->id }}" name="id">
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <div class="mb-3">
-                                    <img id="output" class="mb-3">
-                                    </div>
                                     <input class="form-control @error('email') is-invalid @enderror" name="email" type="text" id="email" value="{{ auth()->user()->email }}">
                                     @error('email')
                                     <div class="invalid-feedback">
@@ -27,9 +24,6 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="admin" class="form-label">New Password</label>
-                                    <div class="mb-3">
-                                    <img id="output" class="mb-3">
-                                    </div>
                                     <input class="form-control @error('password') is-invalid @enderror" name="password" type="password" id="admin">
                                     @error('password')
                                     <div class="invalid-feedback">

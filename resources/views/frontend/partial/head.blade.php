@@ -1,7 +1,7 @@
 <!-- HEADER-->
 <header class="header header__black" id="header">
     <div class="header__wrap">
-      <div class="header__logo"><a href="https://creativetribejkt.com"><img class="logo-1" src="{{ asset('storage/' . $general->brand_navbar1) }}"/><img class="logo-2" src="{{ asset('storage/' . $general->brand_navbar2) }}"/></a></div>
+      <div class="header__logo"><a href="/"><img class="logo-1" src="{{ asset('storage/' . $general->brand_navbar1) }}"/><img class="logo-2" src="{{ asset('storage/' . $general->brand_navbar2) }}"/></a></div>
       <div class="header__text">
         <span>{!! $general->title !!}</span>
       </div>

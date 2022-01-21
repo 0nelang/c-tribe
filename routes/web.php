@@ -27,7 +27,7 @@ use App\Http\Controllers\InspirationController;
 
 
 
-Route::get('/', [HomeController::class, 'landing']);
+Route::get('/homepage', [HomeController::class, 'landing']);
 
 Auth::routes();
 Route::get('register', function () {return abort(500);});
@@ -69,7 +69,7 @@ Route::put('/admin/reset',[AuthController::class,'password']);
 });
 Route::get('/flagship', [HomeController::class,'flagship']);
 
-Route::get('/homepage', [HomeController::class,'homepage']);
+Route::get('/', [HomeController::class,'homepage']);
 Route::get('/inspiration',[HomeController::class,'inspiration']);
 Route::get('/our-people', [HomeController::class,'our_people']);
 

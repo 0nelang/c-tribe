@@ -42,7 +42,7 @@
                                                     </button>
                                                     <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
                                                         <li><a class="dropdown-item text-dark"
-                                                                href="/admin/partners/{{ $part->id }}">Edit</a></li>
+                                                                href="/admin/partners/{{ $part->id }}/edit">Edit</a></li>
                                                         <li>
                                                             <form id="form-delete{{ $id }}"
                                                                 action="/admin/partners/delete/{{ $part->id }}" method="post"

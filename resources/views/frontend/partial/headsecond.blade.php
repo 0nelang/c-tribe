@@ -1,7 +1,7 @@
  <!-- HEADER-->
  <header class="header" id="header">
     <div class="header__wrap">
-      <div class="header__logo"><a href="https://creativetribejkt.com"><img class="logo-1" src="/images/logo-ctribe.svg"/><img class="logo-2"/></a></div>
+      <div class="header__logo"><a href="/"><img class="logo-1" src="/images/logo-ctribe.svg"/><img class="logo-2"/></a></div>
       <div class="header__text">
         <span>{!! $general->title !!}</span>
       </div>
