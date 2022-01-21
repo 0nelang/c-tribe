@@ -24,7 +24,7 @@
                                     @foreach ($inspiration as  $pep)
 
                                     <tr>
-                                        <td>{!! $pep->name !!}</td>
+                                        <td>{!!  strip_tags($pep->name) !!}</td>
                                         <td>{{ $pep->index }}</td>
                                         <td>{{ $pep->id }}</td>
                                         <td>{{ $pep->featured }}</td>
