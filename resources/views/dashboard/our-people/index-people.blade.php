@@ -13,9 +13,9 @@
                             <table id="logo-table" class="display" width="100%">
                                 <thead>
                                     <tr>
+                                        <th>Name</th>
                                         <th>index</th>
                                         <th>Id</th>
-                                        <th>Name</th>
                                         <th>Position</th>
                                         <th>photo</th>
                                         <th style="text-align: center">option</th>
@@ -25,9 +25,9 @@
                                     @foreach ($people as $id => $pep)
 
                                         <tr>
+                                            <td>{{ $pep->name }}</td>
                                             <td>{{ $pep->index }}</td>
                                             <td>{{ $pep->id }}</td>
-                                            <td>{{ $pep->name }}</td>
                                             <td>{{ $pep->title }}</td>
                                             <td><img src="{{ asset('storage/' . $pep->photo) }}"
                                                     style="max-height: 100px"></td>
@@ -62,9 +62,9 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>Name</th>
                                         <th>index</th>
                                         <th>Id</th>
-                                        <th>Name</th>
                                         <th>Position</th>
                                         <th>photo</th>
                                         <th style="text-align: center">option</th>

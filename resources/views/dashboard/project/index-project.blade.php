@@ -14,11 +14,11 @@
                             width:100%;">
                                 <thead>
                                     <tr>
+                                        <th>Brand</th>
                                         <th>Index</th>
                                         <th>Id</th>
                                         <th>Type</th>
                                         <th>Featured</th>
-                                        <th>Brand</th>
                                         <th>option</th>
                                     </tr>
                                 </thead>
@@ -26,11 +26,11 @@
                                     @foreach ($project as $id => $p)
 
                                     <tr>
+                                        <td>{!! $p->brand !!}</td>
                                         <td>{{ $p->index }}</td>
                                         <td>{{ $p->id }}</td>
                                         <td>{{ $p->type }}</td>
                                         <td>{{ $p->featured }}</td>
-                                        <td>{!! $p->brand !!}</td>
                                         <td style="">
                                             <div class="dropdown dropright">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,11 +54,11 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>Brand</th>
                                         <th>Index</th>
                                         <th>Id</th>
                                         <th>Type</th>
                                         <th>Featured</th>
-                                        <th>Brand</th>
                                         <th>option</th>
                                     </tr>
                                 </tfoot>
@@ -82,7 +82,7 @@
 
             table.on('row-reordered', function(e, diff, edit) {
                 setTimeout(() => {
-                    var obj_id = table.column(1).data().toArray();
+                    var obj_id = table.column(2).data().toArray();
                     console.log(obj_id);
                     $.ajax({
                         type: "post",
