@@ -19,7 +19,7 @@ class ProjectController extends Controller
     {
         return view('dashboard.project.index-project', [
             'page' => 'Project',
-            'project' => Project::all()
+            'project' => Project::orderBy('index')->get()
         ]);
     }
 
@@ -65,6 +65,7 @@ class ProjectController extends Controller
         }
 
         $validated['team'] = $request->team;
+        $validated['index'] = Project::all()->count() + 1 ;
         $project = Project::create($validated);
         if ($request->hasFile('otherImage')) {
             foreach ($request->otherImage as $value) {
@@ -167,7 +168,10 @@ class ProjectController extends Controller
         }
         storage::delete($project->mainImage);
         Project::destroy($project->id);
-
+        $notdel = Project::all();
+        foreach ($notdel as $key => $value) {
+            $value->update(['index' => $key + 1]);
+        }
         return redirect()->back();
     }
 
@@ -178,5 +182,15 @@ class ProjectController extends Controller
         Storage::delete($image->otherImage);
         ProjectImage::destroy($id);
         return response()->json("success");
+    }
+
+    public function position(Request $request)
+    {
+        foreach ($request->id as $index => $id) {
+            Project::find($id)->update(['index' => $index + 1]);
+        }
+
+        return response()->json('success');
+
     }
 }

@@ -75,6 +75,7 @@ class FlagshipController extends Controller
         }
 
         $validated['subTitle'] = $request->subTitle;
+        $validated['index'] = Flagship::all()->count() + 1 ;
         Flagship::create($validated);
         Alert::success('Success', 'Data create succesfully');
 
@@ -175,6 +176,10 @@ class FlagshipController extends Controller
         }
         storage::delete($flagship->mainImage);
         Flagship::destroy($flagship->id);
+        $notdel = Flagship::all();
+        foreach ($notdel as $key => $value) {
+            $value->update(['index' => $key + 1]);
+        }
 
         return redirect()->back();
     }
@@ -186,5 +191,15 @@ class FlagshipController extends Controller
         Storage::delete($image->otherImage);
         FlagshipImage::destroy($id);
         return response()->json("success");
+    }
+
+    public function position(Request $request)
+    {
+        foreach ($request->id as $index => $id) {
+            Flagship::find($id)->update(['index' => $index + 1]);
+        }
+
+        return response()->json('success');
+
     }
 }

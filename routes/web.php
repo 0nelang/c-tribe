@@ -13,6 +13,8 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FlagshipController;
 use App\Http\Controllers\InspirationController;
+use App\Models\Flagship;
+use App\Models\Inspiration;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,15 +38,21 @@ Route::get('/password/reset', function () {return abort(500);});
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/general', [GeneralController::class, 'general']);
 Route::put('/admin/general/{general:id}', [GeneralController::class, 'update']);
-Route::resource('/admin/people', PeopleController::class);
+
 Route::resource('/admin/inspiration', InspirationController::class);
+Route::post('/admin/inspiration/position', [InspirationController::class, 'position']);
+
 
 Route::resource('/admin/project', ProjectController::class);
 Route::post('/admin/project/image/{id}', [ProjectController::class, 'imgdel']);
+Route::post('/admin/project/position', [ProjectController::class, 'position']);
+
 
 
 Route::resource('/admin/flagship', FlagshipController::class);
 Route::post('/admin/flagship/image/{id}', [FlagshipController::class, 'imgdel']);
+Route::post('/admin/flagship/position', [FlagshipController::class, 'position']);
+
 
 Route::resource('/admin/service', ServiceController::class);
 Route::post('/admin/service/position', [ServiceController::class, 'position']);
@@ -61,6 +69,8 @@ Route::post('/admin/partners/position', [PartnerController::class, 'position'])-
 Route::resource('/admin/page', PageController::class);
 
 Route::resource('admin/people', PeopleController::class);
+Route::post('/admin/people/position', [PeopleController::class, 'position']);
+
 
 Route::resource('/admin/partners', PartnerController::class);
 

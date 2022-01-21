@@ -27,7 +27,7 @@
                                         <label for="brand" class="form-label is-invalid">Brand</label>
                                         <input type="text" name="brand"
                                         class="form-control @error('brand') is-invalid @enderror" id="exampleInputEmail1"
-                                        aria-describedby="project-brand" value="{{ $project->brand }}">
+                                        aria-describedby="project-brand">
                                         @error('brand')
                                             <div class="invalid-feedback">
                                                 {{ $message }}

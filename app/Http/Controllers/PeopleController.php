@@ -20,7 +20,7 @@ class PeopleController extends Controller
     {
         return view('dashboard.our-people.index-people',[
             "page" => "People",
-            "people" => People::all()
+            "people" => People::orderBy('index')->get()
         ]);
     }
 
@@ -61,7 +61,7 @@ class PeopleController extends Controller
             'description' => 'required'
         ]);
 
-
+        $validated['index'] = People::all()->count() + 1 ;
         $validated['photo'] = $img_path;
 
         People::create($validated);
@@ -142,6 +142,20 @@ class PeopleController extends Controller
     {
         Storage::delete($person->photo);
         People::destroy($person->id);
+        $notdel = People::all();
+        foreach ($notdel as $key => $value) {
+            $value->update(['index' => $key + 1]);
+        }
         return redirect('/admin/people');
+    }
+
+    public function position(Request $request)
+    {
+        foreach ($request->id as $index => $id) {
+            People::find($id)->update(['index' => $index + 1]);
+        }
+
+        return response()->json('success');
+
     }
 }
