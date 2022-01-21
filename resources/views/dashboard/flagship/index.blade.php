@@ -23,7 +23,7 @@
                                 @foreach($flag as $id => $pep)
 
                                     <tr>
-                                        <td>{{ $pep->title }}</td>
+                                        <td>{{ strip_tags($pep->title)}}</td>
                                         <td>{{ $pep->index }}</td>
                                         <td>{{ $pep->id }}</td>
                                         <td>{{ $pep->featured }}</td>
