@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\DailyUsersChart;
 use App\Models\Flagship;
 use App\Models\Project;
 use App\Models\User;
@@ -29,14 +30,15 @@ class AuthController extends Controller
         return redirect()->back();
     }
 
-    public function visitor()
+    public function visitor(DailyUsersChart $chart)
     {
         return view('dashboard.visitor', [
             "page" => "Admin",
             "today" => Visitor::whereDate('created_at', Carbon::today())->count(),
             "all_visitor" => Visitor::all()->count(),
             "project" => Project::all()->count(),
-            "flagship" => Flagship::all()->count()
+            "flagship" => Flagship::all()->count(),
+            "chart" => $chart->build()
         ]);
     }
 }

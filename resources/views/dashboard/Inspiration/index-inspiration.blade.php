@@ -13,21 +13,22 @@
                             <table id="logo-table" class="display" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
                                         <th>Index</th>
                                         <th>id</th>
+                                        <th>Name</th>
                                         <th>Featured</th>
                                         <th>Option</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($inspiration as  $pep)
-
+                                    @foreach ($inspiration as $pep)
                                     <tr>
-                                        <td>{!!  strip_tags($pep->name) !!}</td>
                                         <td>{{ $pep->index }}</td>
                                         <td>{{ $pep->id }}</td>
-                                        <td>{{ $pep->featured }}</td>
+                                        <td>{!!  strip_tags($pep->name) !!}</td>
+                                        <td>@if ($pep->featured == true)
+                                            yes
+                                        @endif</td>
                                         <td style="">
                                             <div class="dropdown">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -51,9 +52,9 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Name</th>
                                         <th>Index</th>
                                         <th>id</th>
+                                        <th>Name</th>
                                         <th>Featured</th>
                                         <th>Office</th>
                                     </tr>
@@ -76,23 +77,28 @@
         <script>
             var table = $('#logo-table').DataTable({
                 rowReorder: true,
+                columnDefs: [{
+                    targets: [1,0],
+                    visible: false,
+                    searchable: false
+                }]
             });
 
-            table.on('row-reorder', function(e, diff, edit) {
-                var result = 'Reorder started on row: ' + edit.triggerRow.data()[1] + '<br>';
-                var newIndex, oldIndex;
-                for (var i = 0, ien = diff.length; i < ien; i++) {
-                    var rowData = table.row(diff[i].node).data();
+            // table.on('row-reorder', function(e, diff, edit) {
+            //     var result = 'Reorder started on row: ' + edit.triggerRow.data()[2] + '<br>';
+            //     var newIndex, oldIndex;
+            //     for (var i = 0, ien = diff.length; i < ien; i++) {
+            //         var rowData = table.row(diff[i].node).data();
 
-                    newIndex = diff[i].newData;
-                    oldIndex = diff[i].oldData;
-                }
+            //         newIndex = diff[i].newData;
+            //         oldIndex = diff[i].oldData;
+            //     }
 
 
-            });
+            // });
             table.on('row-reordered', function(e, diff, edit) {
                 setTimeout(() => {
-                    var obj_id = table.column(2).data().toArray();
+                    var obj_id = table.column(1).data().toArray();
                     console.log(obj_id);
                     $.ajax({
                         type: "post",

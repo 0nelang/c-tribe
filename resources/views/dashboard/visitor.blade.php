@@ -45,12 +45,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6 col-xl-8">
+            <div class="col-12">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Revenue</h5>
-                        <div id="apex1"></div>
+                        <div id="chart" style="color: black">{!! $chart->container() !!}</div>
                     </div>
                 </div>
             </div>
+@endsection
+@section('js')
+    <script src="{{ $chart->cdn() }}"></script>
+    {{ $chart->script() }}
 @endsection

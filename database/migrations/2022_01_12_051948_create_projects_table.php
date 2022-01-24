@@ -16,13 +16,13 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->integer('index');
-            $table->string('type');
-            $table->text('team')->nullable();
-            $table->boolean('featured')->nullable();
             $table->string('brand');
-            $table->string('project');
-            $table->text('title');
             $table->text('subTitle');
+            $table->string('type');
+            $table->boolean('featured')->nullable();
+            $table->string('project');
+            $table->text('team')->nullable();
+            $table->text('title');
             $table->string('date');
             $table->string('mainImage')->nullable();
             $table->text('description');
