@@ -25,7 +25,7 @@
                                 @method("put")
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="image" class="form-label">Image Cover</label>
+                                    <label for="image" class="form-label">Cover Image</label>
                                     <br>
                                     <img id="img-output" class="mb-3"
                                         src="{{ asset('storage/' . $inspiration->image) }}"

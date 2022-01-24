@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Flagship;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\FlagshipImage;
 use Illuminate\Support\Facades\Storage;
@@ -71,11 +72,12 @@ class FlagshipController extends Controller
 
         if ($request->featured == true) {
             Flagship::where('featured', true)->update(['featured' => false]);
-            $validated['featured'] = true;
+            $validated['featured'] = $request->layout;
         }
 
         $validated['subTitle'] = $request->subTitle;
         $validated['index'] = Flagship::all()->count() + 1 ;
+        $validated['slug'] = Str::slug(strip_tags($request->title));
         Flagship::create($validated);
         Alert::success('Success', 'Data create succesfully');
 
@@ -149,10 +151,11 @@ class FlagshipController extends Controller
 
         if ($request->featured == true) {
             Flagship::where('featured', true)->update(['featured' => false]);
-            $validated['featured'] = true;
+            $validated['featured'] = $request->layout;
         }
 
         $validated['subTitle'] = $request->subTitle;
+        $validated['slug'] = Str::slug(strip_tags($request->title));
         Flagship::where('id', $flagship->id)->update($validated);
         Alert::success('Success', 'Data update succesfully');
 

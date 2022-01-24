@@ -66,7 +66,7 @@ class HomeController extends Controller
     {
         return view('frontend.our-people',[
             "general" => $this->general,
-            "people" => People::all(),
+            "people" => People::orderBy('index','asc')->get(),
             "partner" => Partner::orderBy('index','asc')->get(),
             "page" => "Our People",
             "pege1" => Page::where('page', 'Our People 1')->first(),
