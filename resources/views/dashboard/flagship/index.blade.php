@@ -13,7 +13,7 @@
                             <thead>
                                 <tr>
                                     <th>Title</th>
-                                    <th>Idex</th>
+                                    <th>Index</th>
                                     <th>Id</th>
                                     <th>Featured</th>
                                     <th>Option</th>
@@ -54,7 +54,7 @@
                             <tfoot>
                                 <tr>
                                     <th>Title</th>
-                                    <th>Idex</th>
+                                    <th>Index</th>
                                     <th>Id</th>
                                     <th>Featured</th>
                                     <th>option</th>

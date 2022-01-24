@@ -34,7 +34,7 @@
                                     <div class="item__date-sm"><span>{{ $p->date }}</span></div>
                                     <div class="item__content">
                                         <h2 class="item__title text-uppercase">{!! $p->name !!}</h2>
-                                        <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
+                                        <div class="item__cta"><a href="/inspiration/detail">READ THE FEATURE</a></div>
                                         <div class="item__date"><span class="text-uppercase">{{ $p->date }}</span>
                                         </div>
                                     </div>
@@ -47,7 +47,7 @@
                                     <div class="item__date-sm dark"><span>{{ $p->date }}</span></div>
                                     <div class="item__content">
                                         <h2 class="item__title">{!! $p->name !!}</h2>
-                                        <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
+                                        <div class="item__cta"><a href="/inspiration/detail">READ THE FEATURE</a></div>
                                         <div class="item__date"><span>{{ $p->date }}</span></div>
                                     </div>
                                 </div>
@@ -63,7 +63,7 @@
                                     <div class="item__date-sm"><span>{{ $p->date }}</span></div>
                                     <div class="item__content">
                                         <h2 class="item__title text-uppercase">{!! $p->name !!}</h2>
-                                        <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
+                                        <div class="item__cta"><a href="/inspiration/detail">READ THE FEATURE</a></div>
                                         <div class="item__date"><span class="text-uppercase">{{ $p->date }}</span>
                                         </div>
                                     </div>
@@ -76,7 +76,7 @@
                                     <div class="item__date-sm dark"><span>{{ $p->date }}</span></div>
                                     <div class="item__content">
                                         <h2 class="item__title">{!! $p->name !!}</h2>
-                                        <div class="item__cta"><a href="#">READ THE FEATURE</a></div>
+                                        <div class="item__cta"><a href="/inspiration/detail">READ THE FEATURE</a></div>
                                         <div class="item__date"><span>{{ $p->date }}</span></div>
                                     </div>
                                 </div>

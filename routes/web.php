@@ -1,6 +1,4 @@
 <?php
-
-use App\Models\Service;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -13,8 +11,6 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FlagshipController;
 use App\Http\Controllers\InspirationController;
-use App\Models\Flagship;
-use App\Models\Inspiration;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,9 +90,8 @@ Route::get('/tribes',[HomeController::class,'tribes']);
 Route::get('/tribes',[HomeController::class,'tribes']);
 
 // single page
-Route::get('/tribe',[HomeController::class,'tribe_single']);
-Route::get('/project/single',[HomeController::class,'project_single']);
-Route::get('/inspiration/single',[HomeController::class,'inspiration_single']);
-Route::get('/flagship/single',[HomeController::class,'flagship_single']);
-
+Route::get('/tribe/detail',[HomeController::class,'tribe_single']);
+Route::get('/project/detail',[HomeController::class,'project_single']);
+Route::get('/inspiration/detail',[HomeController::class,'inspiration_single']);
+Route::get('/flagship/detail',[HomeController::class,'flagship_single']);
 // end single page

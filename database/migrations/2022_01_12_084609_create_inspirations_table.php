@@ -17,6 +17,7 @@ class CreateInspirationsTable extends Migration
             $table->id();
             $table->integer('index');
             $table->string('name');
+            $table->string('slug');
             $table->text('subTitle')->nullable();
             $table->boolean('featured')->nullable();
             $table->string('date')->nullable();

@@ -23,6 +23,7 @@ class CreateProjectsTable extends Migration
             $table->string('project');
             $table->text('title');
             $table->text('subTitle');
+            $table->text('slug');
             $table->string('date');
             $table->string('mainImage')->nullable();
             $table->text('description');
