@@ -12,7 +12,7 @@
                         <table id="logo-table" class="display" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>Idex</th>
+                                    <th>Index</th>
                                     <th>Id</th>
                                     <th>Title</th>
                                     <th>Featured</th>
@@ -55,7 +55,7 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Idex</th>
+                                    <th>Index</th>
                                     <th>Id</th>
                                     <th>Title</th>
                                     <th>Featured</th>

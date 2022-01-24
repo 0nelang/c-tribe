@@ -29,8 +29,10 @@
                                             <td>{{ $pep->id }}</td>
                                             <td>{{ $pep->name }}</td>
                                             <td>{{ $pep->title }}</td>
-                                            <td><img src="{{ asset('storage/' . $pep->photo) }}"
-                                                    style="max-height: 100px"></td>
+                                            <td>
+                                                {{-- <img  src="paris.jpg" alt="Paris" style="width:200px;height:400px"> --}}
+                                                <img class="scale-down" src="{{ asset('storage/' . $pep->photo) }}"
+                                                    style="max-height: 100px" alt="{{ $pep->photo }}"></td>
                                             <td style="text-align: center">
                                                 {{-- <div class="dropdown dropstart">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton"

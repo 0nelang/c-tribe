@@ -92,4 +92,37 @@ class HomeController extends Controller
         ]);
     }
 
+    function flagship_single()
+    {
+       return view('frontend.flagship-single',[
+           "general" => $this->general,
+           "page" => "Detail Flagship"
+       ]);
+    }
+
+    function tribe_single()
+    {
+       return view('frontend.tribes-single',[
+           "general" => $this->general,
+           "page" => "Detail Tribe"
+       ]);
+    }
+
+    function project_single()
+    {
+       return view('frontend.project-single',[
+           "general" => $this->general,
+           "page" => "Detail Project"
+       ]);
+    }
+
+    function inspiration_single()
+    {
+       return view('frontend.inspiration-single',[
+           "general" => $this->general,
+           "page" => "Detail Inspiration"
+       ]);
+    }
+
+
 }

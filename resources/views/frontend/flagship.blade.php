@@ -57,7 +57,6 @@
                                 </div>
                             </div>
                         @endif
-
                     @else
                         @if ($p->mainImage != null)
                             <div class="item anim">

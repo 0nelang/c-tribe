@@ -22,6 +22,19 @@
                                 @method('patch')
                                 @csrf
                                 <div class="row">
+                                    <div class="mb-3">
+                                        <label for="mainImage" class="form-label">Main Image</label>
+                                        <br>
+                                        <img id="output" class="mb-3"
+                                            src="{{ asset('storage/' . $project->mainImage) }}" style="max-height: 200px; max-width: 200px;">
+                                        <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage"
+                                            type="file" id="filePhoto" accept="image/*">
+                                        @error('mainImage')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
                                     <div class="mb-3 col-lg-4">
                                         <label for="brand" class="form-label is-invalid">Brand</label>
                                         <input type="text" name="brand"
@@ -137,19 +150,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="mb-3">
-                                    <label for="mainImage" class="form-label">Main Image</label>
-                                    <br>
-                                    <img id="output" class="mb-3"
-                                        src="{{ asset('storage/' . $project->mainImage) }}" style="max-height: 200px; max-width: 200px;">
-                                    <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage"
-                                        type="file" id="filePhoto" accept="image/*">
-                                    @error('mainImage')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
+                               
 
                                 <div class="mb-3">
                                     <label for="otherImage" class="form-label">Other Image</label>

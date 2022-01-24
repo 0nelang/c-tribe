@@ -18,6 +18,7 @@
                                         <th>Id</th>
                                         <th>Brand</th>
                                         <th>Type</th>
+                                        <th>Image</th>
                                         <th>Featured</th>
                                         <th>option</th>
                                     </tr>
@@ -33,6 +34,7 @@
                                         <td>@if ($p->featured == true)
                                             yes
                                         @endif</td>
+                                        <td><img src="{{ asset('storage/' . $p->mainImage) }}" class="scale-down"  style="max-height: 100px"  alt="{{ $p->mainImage }}"></td>
                                         <td style="">
                                             <div class="dropdown dropright">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -61,6 +63,7 @@
                                         <th>Brand</th>
                                         <th>Type</th>
                                         <th>Featured</th>
+                                        <th>Image</th>
                                         <th>option</th>
                                     </tr>
                                 </tfoot>

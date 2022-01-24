@@ -2,7 +2,7 @@
 
 @section('css')
     <style>
-        .note-editable{
+        .note-editable {
             background: #2B3B52;
             border-color: #2B3B52;
             color: white;
@@ -23,11 +23,23 @@
                             <form action="{{ route('project.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
+                                    <div class="mb-3">
+                                        <label for="mainImage" class="form-label">Main Image</label>
+                                        <br>
+                                        <img id="output" class="mb-3" style="max-height: 200px; max-width: 200px;">
+                                        <input class="form-control @error('mainImage') is-invalid @enderror"
+                                            name="mainImage" type="file" id="filePhoto" accept="image/*">
+                                        @error('mainImage')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
                                     <div class="mb-3 col-lg-4">
                                         <label for="brand" class="form-label is-invalid">Brand</label>
                                         <input type="text" name="brand"
-                                        class="form-control @error('brand') is-invalid @enderror" id="exampleInputEmail1"
-                                        aria-describedby="project-brand">
+                                            class="form-control @error('brand') is-invalid @enderror"
+                                            id="exampleInputEmail1" aria-describedby="project-brand">
                                         @error('brand')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -63,8 +75,8 @@
                                     <div class="mb-3 col-lg-8">
                                         <label for="title" class="form-label">Title</label>
                                         <textarea type="text" name="title"
-                                        class="form-control @error('title') is-invalid @enderror editable" id="title"
-                                        ></textarea>
+                                            class="form-control @error('title') is-invalid @enderror editable"
+                                            id="title"></textarea>
                                         @error('title')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -75,15 +87,17 @@
                                         <label class="form-label">type</label>
                                         <div class="d-flex pt-2 ">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="type" id="type1" value="project" checked>
+                                                <input class="form-check-input" type="radio" name="type" id="type1"
+                                                    value="project" checked>
                                                 <label class="form-check-label" for="type1">
-                                                  project
+                                                    project
                                                 </label>
                                             </div>
                                             <div class="form-check ps-5">
-                                                <input class="form-check-input" type="radio" name="type" id="type2" value="person">
+                                                <input class="form-check-input" type="radio" name="type" id="type2"
+                                                    value="person">
                                                 <label class="form-check-label" for="type2">
-                                                  person
+                                                    person
                                                 </label>
                                             </div>
                                         </div>
@@ -102,8 +116,8 @@
                                 <div class="mb-3">
                                     <label for="team" class="form-label">Team</label>
                                     <textarea type="text" name="team"
-                                    class="form-control @error('team') is-invalid @enderror editable" id="team"
-                                    ></textarea>
+                                        class="form-control @error('team') is-invalid @enderror editable"
+                                        id="team"></textarea>
                                     @error('team')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -116,7 +130,7 @@
                                     <textarea type="text" name="description"
                                         class="text-dark form-control @error('description') is-invalid @enderror editable"
                                         id="ck1">
-                                            </textarea>
+                                                </textarea>
                                     @error('description')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -127,8 +141,8 @@
                                 <div class="mb-3">
                                     <label for="body" class="form-label">Body</label>
                                     <textarea type="text" name="body"
-                                        class="form-control  @error('body') is-invalid @enderror editable"
-                                        id="ck2" rows="5"></textarea>
+                                        class="form-control  @error('body') is-invalid @enderror editable" id="ck2"
+                                        rows="5"></textarea>
                                     @error('body')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -136,24 +150,14 @@
                                     @enderror
                                 </div>
 
-                                <div class="mb-3">
-                                    <label for="mainImage" class="form-label">Main Image</label>
-                                    <br>
-                                    <img id="output" class="mb-3" style="max-height: 200px; max-width: 200px;">
-                                    <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage"
-                                        type="file" id="filePhoto" accept="image/*">
-                                    @error('mainImage')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
+
 
                                 <div class="mb-3">
                                     <label for="otherImage" class="form-label">Other Image</label>
                                     <br>
-                                    <input class="form-control @error('otherImage') is-invalid @enderror" name="otherImage[]"
-                                        type="file" id="otherImage" accept="image/*" multiple="multiple">
+                                    <input class="form-control @error('otherImage') is-invalid @enderror"
+                                        name="otherImage[]" type="file" id="otherImage" accept="image/*"
+                                        multiple="multiple">
                                     @error('otherImage')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -184,16 +188,16 @@
     @section('js')
         <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
         <script>
-$(document).ready(function () {
-            var id;
-            $('.editable').each(function() {
-                id = $(this).attr('id');
-                if (id != '') {
-                    $('#' + id).summernote({
-                        height: 120,
-                    });
-                }
-            })
+            $(document).ready(function() {
+                var id;
+                $('.editable').each(function() {
+                    id = $(this).attr('id');
+                    if (id != '') {
+                        $('#' + id).summernote({
+                            height: 120,
+                        });
+                    }
+                })
             });
         </script>
     @endsection

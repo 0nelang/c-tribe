@@ -17,12 +17,12 @@
             </div>
         </div>
         <div class="arrow"><a class="has-scroll" href="#sec2"><img src="/images/arrow-down-green.png"
-                    alt="arrow-down" /></a></div>
+                    alt="arrow-down"/></a></div>
     </section>
     <section class="page-project__two" id="sec2">
         <div class="wrap">
           @foreach ($project as $p)
-          <a class="item" href="#" data-bg="{{ asset('storage/' . $p->mainImage) }}">
+          <a class="item" href="/project/detail" data-bg="{{ asset('storage/' . $p->mainImage) }}">
                 <div class="item__wrap">
                     <div class="item__title"><span class="text-uppercase">{{ $p->brand }}</span></div>
                     <div class="item__meta"><span>{{ $p->project }}</span></div>
