@@ -24,6 +24,20 @@
                                 method="POST" enctype="multipart/form-data">
                                 @method("put")
                                 @csrf
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">Image Cover</label>
+                                    <br>
+                                    <img id="img-output" class="mb-3"
+                                        src="{{ asset('storage/' . $inspiration->image) }}"
+                                        style="max-height: 200px; max-width:400px;">
+                                    <input class="form-control @error('image') is-invalid @enderror" name="image"
+                                        type="file" id="imageFile" accept="image/*">
+                                    @error('image')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
                                         <div class="mb-3">
                                             <label for="name" class="form-label is-invalid">Name</label>
                                             <textarea type="text" name="name"
@@ -86,20 +100,7 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="mb-3">
-                                    <label for="image" class="form-label">Image Cover</label>
-                                    <br>
-                                    <img id="img-output" class="mb-3"
-                                        src="{{ asset('storage/' . $inspiration->image) }}"
-                                        style="max-height: 200px; max-width:400px;">
-                                    <input class="form-control @error('image') is-invalid @enderror" name="image"
-                                        type="file" id="imageFile" accept="image/*">
-                                    @error('image')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
+                                
                                 <div class="mb-3">
                                     <label for="description" class="form-label">Desc</label>
                                     <textarea type="text" name="description"

@@ -23,6 +23,18 @@
                             <form action="{{ route('inspiration.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
+                                    <label id="image" for="image" class="form-label">Image Cover</label>
+                                    <br>
+                                    <img id="img-output" class="mb-3" style="max-height: 200px; max-width:400px;">
+                                    <input class="form-control @error('image') is-invalid @enderror" name="image"
+                                        type="file" id="imageFile" accept="image/*">
+                                    @error('image')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
                                     <label for="name" class="form-label is-invalid">Name</label>
                                     <textarea type="text" name="name"
                                         class="form-control @error('name') is-invalid @enderror editable" id="insname"
@@ -75,18 +87,6 @@
                                         class="form-control @error('quote') is-invalid @enderror editable"
                                         id="quote"></textarea>
                                     @error('quote')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                                <div class="mb-3">
-                                    <label id="image" for="image" class="form-label">Image Cover</label>
-                                    <br>
-                                    <img id="img-output" class="mb-3" style="max-height: 200px; max-width:400px;">
-                                    <input class="form-control @error('image') is-invalid @enderror" name="image"
-                                        type="file" id="imageFile" accept="image/*">
-                                    @error('image')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>

@@ -14,10 +14,11 @@
                             width:100%;">
                                 <thead>
                                     <tr>
-                                        <th>Brand</th>
                                         <th>Index</th>
                                         <th>Id</th>
+                                        <th>Brand</th>
                                         <th>Type</th>
+                                        <th>Image</th>
                                         <th>Featured</th>
                                         <th>option</th>
                                     </tr>
@@ -26,11 +27,14 @@
                                     @foreach ($project as $id => $p)
 
                                     <tr>
-                                        <td>{!! $p->brand !!}</td>
                                         <td>{{ $p->index }}</td>
                                         <td>{{ $p->id }}</td>
+                                        <td>{!! $p->brand !!}</td>
                                         <td>{{ $p->type }}</td>
-                                        <td>{{ $p->featured }}</td>
+                                        <td>@if ($p->featured == true)
+                                            yes
+                                        @endif</td>
+                                        <td><img src="{{ asset('storage/' . $p->mainImage) }}" class="scale-down"  style="max-height: 100px"  alt="{{ $p->mainImage }}"></td>
                                         <td style="">
                                             <div class="dropdown dropright">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,11 +58,12 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Brand</th>
                                         <th>Index</th>
                                         <th>Id</th>
+                                        <th>Brand</th>
                                         <th>Type</th>
                                         <th>Featured</th>
+                                        <th>Image</th>
                                         <th>option</th>
                                     </tr>
                                 </tfoot>
@@ -78,11 +83,16 @@
         <script>
             var table = $('#logo-table').DataTable({
                 rowReorder: true,
+                columnDefs: [{
+                    targets: [1,0],
+                    visible: false,
+                    searchable: false
+                }]
             });
 
             table.on('row-reordered', function(e, diff, edit) {
                 setTimeout(() => {
-                    var obj_id = table.column(2).data().toArray();
+                    var obj_id = table.column(1).data().toArray();
                     console.log(obj_id);
                     $.ajax({
                         type: "post",

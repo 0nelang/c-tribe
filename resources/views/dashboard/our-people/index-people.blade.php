@@ -13,9 +13,9 @@
                             <table id="logo-table" class="display" width="100%">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
                                         <th>index</th>
                                         <th>Id</th>
+                                        <th>Name</th>
                                         <th>Position</th>
                                         <th>photo</th>
                                         <th style="text-align: center">option</th>
@@ -25,12 +25,14 @@
                                     @foreach ($people as $id => $pep)
 
                                         <tr>
-                                            <td>{{ $pep->name }}</td>
                                             <td>{{ $pep->index }}</td>
                                             <td>{{ $pep->id }}</td>
+                                            <td>{{ $pep->name }}</td>
                                             <td>{{ $pep->title }}</td>
-                                            <td><img src="{{ asset('storage/' . $pep->photo) }}"
-                                                    style="max-height: 100px"></td>
+                                            <td>
+                                                {{-- <img  src="paris.jpg" alt="Paris" style="width:200px;height:400px"> --}}
+                                                <img class="scale-down" src="{{ asset('storage/' . $pep->photo) }}"
+                                                    style="max-height: 100px" alt="{{ $pep->photo }}"></td>
                                             <td style="text-align: center">
                                                 {{-- <div class="dropdown dropstart">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
@@ -62,9 +64,9 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Name</th>
                                         <th>index</th>
                                         <th>Id</th>
+                                        <th>Name</th>
                                         <th>Position</th>
                                         <th>photo</th>
                                         <th style="text-align: center">option</th>
@@ -87,6 +89,11 @@
         <script>
             var table = $('#logo-table').DataTable({
                 rowReorder: true,
+                columnDefs: [{
+                    targets: [1,0],
+                    visible: false,
+                    searchable: false
+                }]
             });
 
             table.on('row-reordered', function(e, diff, edit) {

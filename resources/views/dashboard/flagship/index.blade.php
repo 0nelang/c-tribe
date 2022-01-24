@@ -12,9 +12,9 @@
                         <table id="logo-table" class="display" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>Title</th>
                                     <th>Index</th>
                                     <th>Id</th>
+                                    <th>Title</th>
                                     <th>Featured</th>
                                     <th>Option</th>
                                 </tr>
@@ -23,10 +23,12 @@
                                 @foreach($flag as $id => $pep)
 
                                     <tr>
-                                        <td>{{ strip_tags($pep->title)}}</td>
                                         <td>{{ $pep->index }}</td>
                                         <td>{{ $pep->id }}</td>
-                                        <td>{{ $pep->featured }}</td>
+                                        <td>{{ strip_tags($pep->title)}}</td>
+                                        <td>@if ($pep->featured == true)
+                                            yes
+                                        @endif</td>
                                         <td style="">
                                             <div class="dropdown">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
@@ -53,9 +55,9 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Title</th>
                                     <th>Index</th>
                                     <th>Id</th>
+                                    <th>Title</th>
                                     <th>Featured</th>
                                     <th>option</th>
                                 </tr>
@@ -76,11 +78,16 @@
         <script>
             var table = $('#logo-table').DataTable({
                 rowReorder: true,
+                columnDefs: [{
+                    targets: [1,0],
+                    visible: false,
+                    searchable: false
+                }]
             });
 
             table.on('row-reordered', function(e, diff, edit) {
                 setTimeout(() => {
-                    var obj_id = table.column(2).data().toArray();
+                    var obj_id = table.column(1).data().toArray();
                     console.log(obj_id);
                     $.ajax({
                         type: "post",
