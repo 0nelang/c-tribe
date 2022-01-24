@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Inspiration;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use RealRashid\SweetAlert\Facades\Alert;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class InspirationController extends Controller
 {
@@ -70,6 +71,7 @@ class InspirationController extends Controller
 
         $validated['index'] = Inspiration::all()->count() + 1;
         $validated['subTitle'] = $request->subTitle;
+        $validated['slug'] = Str::slug(strip_tags($request->name));
         Inspiration::create($validated);
         Alert::success('Success', 'Data create succesfully');
 
@@ -134,6 +136,7 @@ class InspirationController extends Controller
             $validated['featured'] = true;
         }
 
+        $validated['slug'] = Str::slug(strip_tags($request->name));
         $validated['subTitle'] = $request->subTitle;
         Inspiration::where('id', $inspiration->id)->update($validated);
         Alert::success('Success', 'Update Data Succesfully');

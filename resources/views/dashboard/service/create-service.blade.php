@@ -71,7 +71,7 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="fileImage" class="form-label">Image</label>
+                                    <label for="fileImage" class="form-label">Detail Image</label>
                                     <div>
                                         <img id="output2" class="mb-3"
                                             style="max-height: 200px; max-width: 200px;">

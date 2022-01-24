@@ -69,6 +69,7 @@ class ProjectController extends Controller
 
         $validated['team'] = $request->team;
         $validated['index'] = Project::all()->count() + 1 ;
+        $validated['slug'] = Str::slug(strip_tags($request->title));
         $project = Project::create($validated);
         if ($request->hasFile('otherImage')) {
             foreach ($request->otherImage as $value) {

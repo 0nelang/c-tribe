@@ -15,6 +15,7 @@
                                     <th>Index</th>
                                     <th>Id</th>
                                     <th>Title</th>
+                                    <th>Image</th>
                                     <th>Featured</th>
                                     <th>Option</th>
                                 </tr>
@@ -26,6 +27,11 @@
                                         <td>{{ $pep->index }}</td>
                                         <td>{{ $pep->id }}</td>
                                         <td>{{ strip_tags($pep->title)}}</td>
+                                        <td>
+                                            <img src="{{ asset('storage/' . $pep->mainImage) }}"
+                                                style="height: 100px; width:200px; object-fit:cover"
+                                                alt="{{ $pep->mainImage }}">
+                                        </td>
                                         <td>@if ($pep->featured == true)
                                             yes
                                         @endif</td>
@@ -58,6 +64,7 @@
                                     <th>Index</th>
                                     <th>Id</th>
                                     <th>Title</th>
+                                    <th>Image</th>
                                     <th>Featured</th>
                                     <th>option</th>
                                 </tr>

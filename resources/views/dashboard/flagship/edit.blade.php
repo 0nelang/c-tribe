@@ -22,7 +22,7 @@
                                 @csrf
                                 <div class="row">
                                     <div class="mb-3">
-                                        <label for="mainImage" class="form-label">Main Image</label>
+                                        <label for="mainImage" class="form-label">Cover Image</label>
                                         <br>
                                         <img id="output" class="mb-3"
                                             src="{{ asset('storage/' . $flagship->mainImage) }}" alt="{{ $flagship->mainImage }}" style="max-height: 200px; max-width: 300px">

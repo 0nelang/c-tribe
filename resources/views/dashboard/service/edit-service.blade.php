@@ -72,7 +72,7 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="fileImage" class="form-label">Image</label>
+                                    <label for="fileImage" class="form-label">Detail Image</label>
                                     <div class="mb-3">
                                         <img id="output" class="mb-3"
                                             src="{{ asset('storage/' . $service->image) }}"

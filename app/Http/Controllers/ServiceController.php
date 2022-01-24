@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -18,7 +19,7 @@ class ServiceController extends Controller
     {
         return view('dashboard.service.index-service', [
             'page' => 'Service',
-            'service' => Service::orderBy('index', 'asc')
+            'service' => Service::orderBy('index', 'asc')->get()
         ]);
     }
 
@@ -56,6 +57,7 @@ class ServiceController extends Controller
             $validated['image'] = $request->file('image')->store('service-image', ['disk' => 'public']);
         }
         $validated['index'] = Service::all()->count() + 1;
+        $validated['slug'] = Str::slug(strip_tags($request->service));
         Service::create($validated);
         Alert::success('success', 'data successfuly created');
 
@@ -114,6 +116,7 @@ class ServiceController extends Controller
             $validated['image'] = $request->file('image')->store('service-image', ['disk' => 'public']);
         }
 
+        $validated['slug'] = Str::slug(strip_tags($request->service));
         Service::find($service->id)->update($validated);
         Alert::success('success', 'data update successfuly');
 

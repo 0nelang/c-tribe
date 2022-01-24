@@ -10,12 +10,12 @@
           <li class="sidebar-title">
             Apps
           </li>
-          <li>
+          <li class="{{ ($page === 'Setting')? 'active-page' : ''  }} {{ ($page === 'General')? 'active-page' : ''  }} {{ ($page === 'Page')? 'active-page' : ''  }}">
             <a href="#"><i data-feather="tool"></i>Settings<i class="fas fa-chevron-right dropdown-icon"></i></a>
-            <ul class="">
-              <li><a href="/admin/page"><i class="far fa-circle"></i>Page</a></li>
-              <li><a href="/admin/general"><i class="far fa-circle"></i>General</a></li>
-              <li><a href="/admin/setting"><i class="far fa-circle"></i>Admin</a></li>
+            <ul>
+              <li><a href="/admin/page" class="{{ ($page === 'Page')? 'active' : ''  }}"><i class="far fa-circle"></i>Page</a></li>
+              <li><a href="/admin/general" class="{{ ($page === 'General')? 'active' : ''  }}"><i class="far fa-circle"></i>General</a></li>
+              <li><a href="/admin/setting" class="{{ ($page === 'Setting')? 'active' : ''  }}"><i class="far fa-circle"></i>Admin</a></li>
             </ul>
           </li>
           <li class="{{ ($page === 'People')? 'active-page' : ''  }}">
