@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Flagship;
+use App\Models\Project;
 use App\Models\User;
 use App\Models\Visitor;
 use Carbon\Carbon;
@@ -12,7 +14,7 @@ class AuthController extends Controller
     public function index()
     {
         return view('dashboard.admin',[
-            "page" => "Admin",
+            "page" => "Setting",
             ]);
     }
 
@@ -30,9 +32,11 @@ class AuthController extends Controller
     public function visitor()
     {
         return view('dashboard.visitor', [
-            "page" => "Visitor",
-            "today" => Visitor::whereDate('created_at', Carbon::today()),
-            "all_visitor" => Visitor::all()->count()
+            "page" => "Admin",
+            "today" => Visitor::whereDate('created_at', Carbon::today())->count(),
+            "all_visitor" => Visitor::all()->count(),
+            "project" => Project::all()->count(),
+            "flagship" => Flagship::all()->count()
         ]);
     }
 }
