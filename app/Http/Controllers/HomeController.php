@@ -95,7 +95,8 @@ class HomeController extends Controller
     function flagship_single()
     {
        return view('frontend.flagship-single',[
-           "general" => $this->general
+           "general" => $this->general,
+           "page" => "Detail Flagship"
        ]);
     }
 

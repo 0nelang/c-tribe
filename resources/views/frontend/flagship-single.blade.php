@@ -1,44 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Creative Tribe</title>
-    <meta name="description" content=""/>
-    <meta name="theme-color" content=""/>
-    <link rel="shortcut icon" href="favicon.png"/>
-    <link rel="stylesheet" href="plugins/lity/lity.css"/>
-    <link rel="stylesheet" href="styles/main.css"/>
-  </head>
-  <body>
-    <div class="cursor"></div>
-    <!-- HEADER-->
-    <header class="header" id="header">
-      <div class="header__wrap">
-        <div class="header__logo"><a href="https://creativetribejkt.com"><img class="logo-1" src="images/logo-ctribe.svg"/><img class="logo-2" src="images/logo-ctribe-white.svg"/></a></div>
-        <div class="header__menu">
-          <div class="menu-toggle"><span>MENU</span><span class="close">CLOSE</span></div>
-        </div>
-      </div>
-      <div class="main-menu">
-        <div class="main-menu__wrap">
-          <div class="main-menu__fade-top"></div>
-          <div class="main-menu__fade-bot"></div>
-          <div class="main-menu__bg">
-            <div class="bg-hover"></div><span></span>
-          </div>
-          <ul>
-            <li class="menu-item disabled"><a class="menu-link" href="project.html" data-bg="images/img-bg-menu-inpsirtaion.jpg" data-text="PROJECT">PROJECT</a></li>
-            <li class="menu-item"><a class="menu-link" href="our-people.html" data-bg="images/img-bg-menu-inpsirtaion.jpg" data-text="PEOPLE">PEOPLE</a></li>
-            <li class="menu-item disabled"><a class="menu-link" href="tribes.html" data-bg="images/img-bg-menu-inpsirtaion.jpg" data-text="TRIBES">TRIBES</a></li>
-            <li class="menu-item disabled"><a class="menu-link" href="flagship.html" data-bg="images/img-bg-menu-inpsirtaion.jpg" data-text="FLAGSHIP">FLAGSHIP</a></li>
-            <li class="menu-item disabled"><a class="menu-link" href="#" data-bg="images/img-bg-menu-inpsirtaion.jpg" data-text="SHOP">SHOP</a></li>
-            <li class="menu-item disabled"><a class="menu-link" href="inspiration.html" data-bg="images/img-bg-menu-inpsirtaion.jpg" data-text="INSPIRATION">INSPIRATION</a></li>
-          </ul>
-        </div>
-      </div>
-    </header>
+@extends('frontend.partial.second')
+@section('css')
+    <style>
+        .text-uppercase {
+            text-transform: uppercase;
+        }
+
+        .page-inspiration__footer {
+            background-image: url({{ asset('storage/' . $general->background_footer) }});
+        }
+
+        .page-flagship__footer {
+            background-image: url({{ asset('storage/' . $general->background_footer) }});
+        }
+
+    </style>
     <main class="page-flagship">
       <section class="page-flagship-s__one">
         <div class="wrap">
@@ -48,7 +23,7 @@
             <p>Strategy: Brand Articulations Agency: Studio Lore Production company: Bullion Productions Director: James Willis</p>
             <p>Role & Lead art direction and design</p>
           </div>
-          <div class="img"><img src="images/img-flagship-single.jpg" alt="Image"/><span class="caption">CREATIVE TRIBE FLAGSHIP EVENT VOL. 1</span></div>
+          <div class="img"><img src="/images/img-flagship-single.jpg" alt="Image"/><span class="caption">CREATIVE TRIBE FLAGSHIP EVENT VOL. 1</span></div>
         </div>
       </section>
       <section class="page-flagship-s__two">
@@ -76,24 +51,22 @@
         </div>
       </section>
       <section class="page-flagship-s__three">
-        <div class="wrap"><img class="img-full" src="images/img-flagship-single-01.jpg" alt="Image"/><img class="img-full" src="images/img-flagship-single-02.jpg" alt="Image"/><img class="img-full" src="images/img-flagship-single-03.jpg" alt="Image"/><img class="img-full" src="images/img-flagship-single-04.jpg" alt="Image"/><img class="img-full" src="images/img-flagship-single-05.jpg" alt="Image"/><img class="img-full" src="images/img-flagship-single-06.jpg" alt="Image"/><img class="img-full" src="images/img-flagship-single-07.jpg" alt="Image"/></div>
+        <div class="wrap"><img class="img-full" src="/images/img-flagship-single-01.jpg" alt="Image"/><img class="img-full" src="/images/img-flagship-single-02.jpg" alt="Image"/><img class="img-full" src="/images/img-flagship-single-03.jpg" alt="Image"/><img class="img-full" src="/images/img-flagship-single-04.jpg" alt="Image"/><img class="img-full" src="/images/img-flagship-single-05.jpg" alt="Image"/><img class="img-full" src="/images/img-flagship-single-06.jpg" alt="Image"/><img class="img-full" src="/images/img-flagship-single-07.jpg" alt="Image"/></div>
       </section>
       <section class="page-flagship__footer">
         <div class="page-flagship__footer-top">
-          <div class="left"><a class="item email" href="mailto:GENERAL INQUIRIESHOLA@CTRIBEJKT.COM">GENERAL INQUIRIES <br>HOLA@CTRIBEJKT.COM</a>
-            <div class="item phone">Phone<br><a href="tel: +62812 197 19179">+62812 197 19179</a></div>
-            <div class="item ig">INSTAGRAM<br><a href="#">CTRIBEJKT.</a></div>
-          </div>
-          <div class="right"><span>JKT, IND</span></div>
+            <div class="left"><a class="item email"
+                    href="mailto:{{ $general->email_footer }}">GENERAL INQUIRIES
+                    <br>{{ $general->email_footer }}</a>
+                <div class="item phone">Phone<br><a
+                        href="tel: {{ $general->phone_footer }}">{{ $general->phone_footer }}</a></div>
+                <div class="item ig">INSTAGRAM<br><a target="_blank"
+                        href="https://www.instagram.com/{{ $general->social_footer }}"
+                        class="text-uppercase">{{ $general->social_footer }}.</a></div>
+            </div>
+            <div class="right"><span class="text-uppercase">{{ $general->addres_footer }}</span></div>
         </div>
-        <div class="imgctribe"><img src="images/big-ctribe.svg" alt="img"/></div>
-      </section>
+        <div class="imgctribe"><img src="{{ asset('storage/' . $general->brand_footer) }}" alt="img" /></div>
+    </section>
     </main>
-    <!-- FOOTER-->
-    <footer class="footer" id="footer"></footer>
-  </body>
-  <script src="plugins/jquery/jquery-3.4.1.min.js"></script>
-  <script src="plugins/lity/lity.js"></script>
-  <script src="plugins/marquee/js/marquee.js"></script>
-  <script src="scripts/main.js"></script>
-</html>
+   @endsection

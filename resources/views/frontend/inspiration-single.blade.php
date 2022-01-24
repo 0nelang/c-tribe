@@ -5,9 +5,8 @@
             text-transform: uppercase;
         }
 
-        .page-home__footer {background-image: url("{{ asset('storage/' . $general->background_footer) }}");}
-        .text-uppercase {
-            text-transform: uppercase;
+        .page-inspiration__footer {
+            background-image: url({{ asset('storage/' . $general->background_footer) }});
         }
     </style>
 @endsection
@@ -38,13 +37,18 @@
       </section>
       <section class="page-inspiration__footer">
         <div class="page-inspiration__footer-top">
-          <div class="left"><a class="item email" href="mailto:GENERAL INQUIRIESHOLA@CTRIBEJKT.COM">GENERAL INQUIRIES <br>HOLA@CTRIBEJKT.COM</a>
-            <div class="item phone">Phone<br><a href="tel: +62812 197 19179">+62812 197 19179</a></div>
-            <div class="item ig">INSTAGRAM<br><a href="#">CTRIBEJKT.</a></div>
-          </div>
-          <div class="right"><span>JKT, IND</span></div>
+            <div class="left"><a class="item email"
+                    href="mailto:{{ $general->email_footer }}">GENERAL INQUIRIES
+                    <br>{{ $general->email_footer }}</a>
+                <div class="item phone">Phone<br><a
+                        href="tel:  {{ $general->phone_footer }}">{{ $general->phone_footer }}</a></div>
+                <div class="item ig">INSTAGRAM<br><a target="_blank"
+                        href="https://www.instagram.com/{{ $general->social_footer }}"
+                        class="text-uppercase">{{ $general->social_footer }}.</a></div>
+            </div>
+            <div class="right"><span class="text-uppercase">{{ $general->addres_footer }}</span></div>
         </div>
-        <div class="imgctribe"><img src="/images/big-ctribe.svg" alt="img"/></div>
-      </section>
+        <div class="imgctribe"><img src="{{ asset('storage/' . $general->brand_footer) }}" alt="img" /></div>
+    </section>
     </main>
 @endsection
