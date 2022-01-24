@@ -20,7 +20,7 @@
                 <div class="card stat-widget">
                     <div class="card-body">
                         <h5 class="card-title">New Visitors Today</h5>
-                        {{-- <h2>{{ $today }}</h2> --}}
+                        <h2>{{ $today }}</h2>
                         <p>Orders in waitlist</p>
                     </div>
                 </div>
@@ -28,8 +28,8 @@
             <div class="col-md-6 col-xl-3">
                 <div class="card stat-widget">
                     <div class="card-body">
-                        <h5 class="card-title">Monthly Profit</h5>
-                        <h2>7.4K</h2>
+                        <h5 class="card-title">Total Project</h5>
+                        <h2>{{ $project }}</h2>
                         <p>For last 30 days</p>
                     </div>
                 </div>
@@ -37,8 +37,8 @@
             <div class="col-md-6 col-xl-3">
                 <div class="card stat-widget">
                     <div class="card-body">
-                        <h5 class="card-title">Orders</h5>
-                        <h2>87</h2>
+                        <h5 class="card-title">Total Flagship</h5>
+                        <h2>{{ $flagship }}</h2>
                         <p>Orders in waitlist</p>
                     </div>
                 </div>
