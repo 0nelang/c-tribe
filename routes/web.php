@@ -87,4 +87,16 @@ Route::get('/our-people', [HomeController::class,'our_people']);
 Route::get('/project', [HomeController::class,'project']);
 
 Route::get('/tribes',[HomeController::class,'tribes']);
-// Route::get('/home', [App\Http\Controllers\GeneralController::class, 'general'])->name('home');
+
+Route::get('/tribes/',[HomeController::class,'tribes']);
+Route::get('/tribes',[HomeController::class,'tribes']);
+Route::get('/tribes',[HomeController::class,'tribes']);
+Route::get('/tribes',[HomeController::class,'tribes']);
+
+// single page
+Route::get('/tribe',[HomeController::class,'tribe_single']);
+Route::get('/project/single',[HomeController::class,'project_single']);
+Route::get('/inspiration/single',[HomeController::class,'inspiration_single']);
+Route::get('/flagship/single',[HomeController::class,'flagship_single']);
+
+// end single page
