@@ -19,7 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string('brand');
             $table->text('subTitle');
             $table->string('type');
-            $table->boolean('featured')->nullable();
+            $table->integer('featured')->nullable();
             $table->string('project');
             $table->text('team')->nullable();
             $table->text('title');

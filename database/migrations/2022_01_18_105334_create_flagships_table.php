@@ -18,7 +18,7 @@ class CreateFlagshipsTable extends Migration
             $table->integer('index');
             $table->string('title');
             $table->text('subTitle')->nullable();
-            $table->boolean('featured')->nullable();
+            $table->integer('featured')->nullable();
             $table->string('date');
             $table->text('description');
             $table->text('body');
