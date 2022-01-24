@@ -12,7 +12,7 @@
 @endsection
 
 @section('main')
-
+s
     <div class="page-content">
         <div class="main-wrapper">
 
