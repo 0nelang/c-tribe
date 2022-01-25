@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="{{ asset('/css/styles/preview.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/plugins/lity/lity.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/styles/main.css') }}">
-    <style>
+    {{-- <style>
       .main-menu__bg { background: url("{{ asset('storage/' . $general->background_menu) }}") no-repeat center; }
-    </style>
+    </style> --}}
     @yield('css')
   </head>
 </html>
@@ -29,4 +29,5 @@
 <script src="{{ asset('/plugins/lity/lity.js') }}"></script>
 <script src="{{ asset('/plugins/marquee/js/marquee.js') }}"></script>
 <script src="{{ asset('/js/scripts/main.js') }}"></script>
+@yield('js')
 </html>

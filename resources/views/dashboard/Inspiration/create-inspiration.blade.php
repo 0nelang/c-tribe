@@ -12,7 +12,6 @@
 @endsection
 
 @section('main')
-s
     <div class="page-content">
         <div class="main-wrapper">
 
@@ -26,8 +25,8 @@ s
                                     <label id="image" for="image" class="form-label">Cover Image</label>
                                     <br>
                                     <img id="img-output" class="mb-3" style="max-height: 200px; max-width:400px;">
-                                    <input class="form-control @error('image') is-invalid @enderror" name="image"
-                                        type="file" id="imageFile" accept="image/*">
+                                    <input class="form-control @error('image') is-invalid @enderror" name="image" type="file"
+                                        id="imageFile" accept="image/*">
                                     @error('image')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -50,8 +49,8 @@ s
                                         <div class="mb-3">
                                             <label for="date" class="form-label is-invalid">Date</label>
                                             <input type="text" name="date"
-                                                class="form-control @error('date') is-invalid @enderror" id="exampleInputEmail1"
-                                                aria-describedby="our-people-date">
+                                                class="form-control @error('date') is-invalid @enderror"
+                                                id="exampleInputEmail1" aria-describedby="our-people-date">
                                             @error('date')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
