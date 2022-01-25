@@ -2,6 +2,8 @@
 
 namespace App\Charts;
 
+use Carbon\Carbon;
+use App\Models\Visitor;
 use ArielMejiaDev\LarapexCharts\LarapexChart;
 
 class DailyUsersChart
@@ -15,12 +17,19 @@ class DailyUsersChart
 
     public function build(): \ArielMejiaDev\LarapexCharts\LineChart
     {
+        $months = [];
+        $visitors = [];
+        for ($i=1; $i <= 12 ; $i++) {
+            $month = 'o1-' . $i . '-' . date('Y');
+            $visitor = Visitor::whereMonth('created_at', Carbon::parse($month))->count();
+            array_push($visitors, $visitor);
+            array_push($months, Carbon::parse($month)->format('F'));
+        }
         return $this->chart->lineChart()
-            ->setTitle('Sales during 2021.')
-            ->setSubtitle('Physical sales vs Digital sales.')
-            ->addData('Physical sales', [40, 93, 35, 42, 18, 82])
-            ->addData('Digital sales', [70, 29, 77, 28, 55, 45])
-            ->setXAxis(['January', 'February', 'March', 'April', 'May', 'June'])
-            ->setFontColor('#f3f4f7');;
+            ->setTitle('Monthly Visitors')
+            ->addData('Physical sales', $visitors)
+            ->setXAxis($months)
+            ->setFontFamily('Poppins')
+            ->setFontColor('#f3f4f7');
     }
 }
