@@ -68,7 +68,8 @@ class ProjectController extends Controller
             } else {
                 Project::where('type', 'project')->update(['featured' => null]);
             }
-            $validated['featured'] = $request->validate(['layout' => 'required']);
+            $request->validate(['layout' => 'required']);
+            $validated['featured'] = $request->layout;
         }
 
         $validated['team'] = $request->team;
@@ -156,7 +157,8 @@ class ProjectController extends Controller
             } else {
                 Project::where('type', 'project')->update(['featured' => null]);
             }
-            $validated['featured'] = $request->validate(['layout' => 'required']);
+            $request->validate(['layout' => 'required']);
+            $validated['featured'] = $request->layout;
         }
         $validated['team'] = $request->team;
         Project::where('id', $project->id)->update($validated);
