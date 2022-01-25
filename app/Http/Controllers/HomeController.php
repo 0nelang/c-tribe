@@ -24,13 +24,8 @@ class HomeController extends Controller
         $this->saveUser();
         $featured[] = Flagship::whereNotNull('featured')->first();
         $featured[] = Inspiration::whereNotNull('featured')->first();
-<<<<<<< HEAD
         $featured[] = Project::where('type', 'project')->whereNotNull('featured')->first();
         $featured[] = Project::where('type', 'person')->whereNotNull('featured')->first();
-=======
-        $featured[] = Project::whereNotNull('featured')->first();
-        $featured[] = Project::where('type', 'person')->first();
->>>>>>> c7cd8f6087a2f9f974bd0edb8903acddfbc45b83
         return view('frontend.homepage',[
             "general" => $this->general,
             "home1" => Page::where('page','Home 1')->first(),
