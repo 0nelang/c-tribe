@@ -72,7 +72,8 @@ class FlagshipController extends Controller
 
         if ($request->featured == true) {
             Flagship::whereNotNull('featured')->update(['featured' => null]);
-            $validated['featured'] = $request->validate(['layout' => 'required']);
+            $request->validate(['layout' => 'required']);
+            $validated['featured'] = $request->layout;
         }
 
         $validated['subTitle'] = $request->subTitle;
@@ -151,7 +152,8 @@ class FlagshipController extends Controller
 
         if ($request->featured == true) {
             Flagship::whereNotnull('featured')->update(['featured' => null]);
-            $validated['featured'] = $request->validate(['layout' => 'required']);
+            $request->validate(['layout' => 'required']);
+            $validated['featured'] = $request->layout;
         }
 
         $validated['subTitle'] = $request->subTitle;
