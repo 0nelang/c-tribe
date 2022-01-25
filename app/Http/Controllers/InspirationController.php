@@ -65,8 +65,8 @@ class InspirationController extends Controller
         }
 
         if ($request->featured == true) {
-            Inspiration::all()->update(['featured' => null]);
-            $validated['featured'] = $request->layout;
+            Inspiration::whereNotNull('featured')->update(['featured' => null]);
+            $validated['featured'] = $request->validate(['layout' => 'required']);
         }
 
         $validated['index'] = Inspiration::all()->count() + 1;
@@ -132,8 +132,8 @@ class InspirationController extends Controller
         }
 
         if ($request->featured == true) {
-            Inspiration::all()->update(['featured' => null]);
-            $validated['featured'] = $request->layout;
+            Inspiration::whereNotNull('featured')->update(['featured' => null]);
+            $validated['featured'] = $request->validate(['layout' => 'required']);
         }
 
         $validated['slug'] = Str::slug(strip_tags($request->name));

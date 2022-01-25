@@ -26,13 +26,13 @@
                                         <th>Option</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="images">
                                     @foreach ($service as $id => $part)
 
                                         <tr>
                                             <td>{{ $part->index }}</td>
                                             <td>{{ $part->id }}</td>
-                                            <td><img src="{{ asset('storage/' . $part->logo) }}" alt="{{ $part->logo }}"
+                                            <td><img onclick="image()" src="{{ asset('storage/' . $part->logo) }}" alt="{{ $part->logo }}"
                                                 style="max-height: 50px; max-width: 100px;"></td>
                                             <td>
                                                 <div class="dropdown dropend">

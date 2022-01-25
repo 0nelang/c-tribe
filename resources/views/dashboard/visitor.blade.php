@@ -1,5 +1,4 @@
 @extends('layouts.dashboard-main')
-
 @section('main')
 
 
@@ -49,7 +48,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Revenue</h5>
-                        <div id="chart" style="color: black">{!! $chart->container() !!}</div>
+                        <div id="chart" style="color: black;">{!! $chart->container() !!}</div>
                     </div>
                 </div>
             </div>

@@ -23,7 +23,7 @@
                                         <th>option</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="images">
                                     @foreach ($project as $id => $p)
 
                                         <tr>
@@ -31,12 +31,12 @@
                                             <td>{{ $p->id }}</td>
                                             <td>{!! $p->brand !!}</td>
                                             <td>
-                                                <img src="{{ asset('storage/' . $p->mainImage) }}"
+                                                <img onclick="image()" src="{{ asset('storage/' . $p->mainImage) }}"
                                                     style="height: 100px; width:200px; object-fit:cover"
                                                     alt="{{ $p->mainImage }}">
                                             </td>
                                             <td style="text-align: center">{{ $p->type }}</td>
-                                            
+
                                             <td>
                                                 @if ($p->featured == true)
                                                     Yes
@@ -44,7 +44,7 @@
                                                 --
                                                 @endif
                                             </td>
-                                            
+
                                             <td style="">
                                                 <div class="dropdown dropright">
                                                     <button class="btn btn-secondary" type="button" id="dropdownMenuButton"

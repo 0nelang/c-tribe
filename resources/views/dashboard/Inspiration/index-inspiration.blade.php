@@ -21,14 +21,18 @@
                                         <th>Option</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="images">
                                     @foreach ($inspiration as $pep)
                                     <tr>
                                         <td>{{ $pep->index }}</td>
                                         <td>{{ $pep->id }}</td>
                                         <td>{!!  strip_tags($pep->name) !!}</td>
                                         <td>
+<<<<<<< HEAD
                                             <img src="{{ asset('storage/' . $pep->mainImage) }}"
+=======
+                                            <img onclick="image()" src="{{ asset('storage/' . $pep->image) }}"
+>>>>>>> c7cd8f6087a2f9f974bd0edb8903acddfbc45b83
                                                 style="height: 100px; width:200px; object-fit:cover"
                                                 alt="{{ $pep->mainImage }}">
                                         </td>
