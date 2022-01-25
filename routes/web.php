@@ -25,7 +25,7 @@ use App\Http\Controllers\InspirationController;
 
 
 
-Route::get('/homepage', [HomeController::class, 'landing']);
+Route::get('/landing', [HomeController::class, 'landing']);
 
 Auth::routes();
 Route::get('register', function () {return abort(500);});
@@ -82,11 +82,6 @@ Route::get('/our-people', [HomeController::class,'our_people']);
 
 Route::get('/project', [HomeController::class,'project']);
 
-Route::get('/tribes',[HomeController::class,'tribes']);
-
-Route::get('/tribes/',[HomeController::class,'tribes']);
-Route::get('/tribes',[HomeController::class,'tribes']);
-Route::get('/tribes',[HomeController::class,'tribes']);
 Route::get('/tribes',[HomeController::class,'tribes']);
 
 // single page

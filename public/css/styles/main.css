@@ -1,2778 +1,602 @@
 @charset "UTF-8";
-
 /* ------------------------------------------------------------------------------------------------ */
 /* Core style */
 /* ------------------------------------------------------------------------------------------------ */
 /* Fonts */
-@font-face {
-    font-family: "Alte Haas Grotesk";
-    font-display: swap;
-    src: local("Alte Haas Grotesk");
-    src: url("../../../fonts/alte-haas-grotesk.eot");
-    src: url("../../../fonts/alte-haas-grotesk.eot#iefix") format("embedded-opentype"), url("../../../fonts/alte-haas-grotesk.woff2") format("woff2"), url("../../../fonts/alte-haas-grotesk.woff") format("woff"), url("../../../fonts/alte-haas-grotesk.ttf") format("truetype"), url("../../../fonts/alte-haas-grotesk.svg") format("svg");
-    font-style: normal;
-    font-weight: 400;
-}
+@font-face { font-family: "Alte Haas Grotesk"; font-display: swap; src: local("Alte Haas Grotesk"); src: url("../../../fonts/alte-haas-grotesk.eot"); src: url("../../../fonts/alte-haas-grotesk.eot#iefix") format("embedded-opentype"), url("../../../fonts/alte-haas-grotesk.woff2") format("woff2"), url("../../../fonts/alte-haas-grotesk.woff") format("woff"), url("../../../fonts/alte-haas-grotesk.ttf") format("truetype"), url("../../../fonts/alte-haas-grotesk.svg") format("svg"); font-style: normal; font-weight: 400; }
 
-@font-face {
-    font-family: "Alte Haas Grotesk";
-    font-display: swap;
-    src: local("Alte Haas Grotesk");
-    src: url("../../../fonts/alte-haas-grotesk-bold.eot");
-    src: url("../../../fonts/alte-haas-grotesk-bold.eot#iefix") format("embedded-opentype"), url("../../../fonts/alte-haas-grotesk-bold.woff2") format("woff2"), url("../../../fonts/alte-haas-grotesk-bold.woff") format("woff"), url("../../../fonts/alte-haas-grotesk-bold.ttf") format("truetype"), url("../../../fonts/alte-haas-grotesk-bold.svg") format("svg");
-    font-style: normal;
-    font-weight: 600;
-}
+@font-face { font-family: "Alte Haas Grotesk"; font-display: swap; src: local("Alte Haas Grotesk"); src: url("../../../fonts/alte-haas-grotesk-bold.eot"); src: url("../../../fonts/alte-haas-grotesk-bold.eot#iefix") format("embedded-opentype"), url("../../../fonts/alte-haas-grotesk-bold.woff2") format("woff2"), url("../../../fonts/alte-haas-grotesk-bold.woff") format("woff"), url("../../../fonts/alte-haas-grotesk-bold.ttf") format("truetype"), url("../../../fonts/alte-haas-grotesk-bold.svg") format("svg"); font-style: normal; font-weight: 600; }
 
-@font-face {
-    font-family: "Futura Condensed Extrabold";
-    font-display: swap;
-    src: local("Futura Condensed Extrabold");
-    src: url("../../../fonts/futura-condensed-extrabold.eot");
-    src: url("../../../fonts/futura-condensed-extrabold.eot#iefix") format("embedded-opentype"), url("../../../fonts/futura-condensed-extrabold.woff2") format("woff2"), url("../../../fonts/futura-condensed-extrabold.woff") format("woff"), url("../../../fonts/futura-condensed-extrabold.ttf") format("truetype"), url("../../../fonts/futura-condensed-extrabold.svg") format("svg");
-    font-style: normal;
-    font-weight: 700;
-}
+@font-face { font-family: "Futura Condensed Extrabold"; font-display: swap; src: local("Futura Condensed Extrabold"); src: url("../../../fonts/futura-condensed-extrabold.eot"); src: url("../../../fonts/futura-condensed-extrabold.eot#iefix") format("embedded-opentype"), url("../../../fonts/futura-condensed-extrabold.woff2") format("woff2"), url("../../../fonts/futura-condensed-extrabold.woff") format("woff"), url("../../../fonts/futura-condensed-extrabold.ttf") format("truetype"), url("../../../fonts/futura-condensed-extrabold.svg") format("svg"); font-style: normal; font-weight: 700; }
 
-@font-face {
-    font-family: "Ancient Medium";
-    font-display: swap;
-    src: local("Ancient Medium");
-    src: url("../../../fonts/ancient-medium.eot");
-    src: url("../../../fonts/ancient-medium.eot#iefix") format("embedded-opentype"), url("../../../fonts/ancient-medium.woff2") format("woff2"), url("../../../fonts/ancient-medium.woff") format("woff"), url("../../../fonts/ancient-medium.ttf") format("truetype"), url("../../../fonts/ancient-medium.svg") format("svg");
-    font-style: normal;
-    font-weight: 500;
-}
+@font-face { font-family: "Ancient Medium"; font-display: swap; src: local("Ancient Medium"); src: url("../../../fonts/ancient-medium.eot"); src: url("../../../fonts/ancient-medium.eot#iefix") format("embedded-opentype"), url("../../../fonts/ancient-medium.woff2") format("woff2"), url("../../../fonts/ancient-medium.woff") format("woff"), url("../../../fonts/ancient-medium.ttf") format("truetype"), url("../../../fonts/ancient-medium.svg") format("svg"); font-style: normal; font-weight: 500; }
 
-@font-face {
-    font-family: "Druk";
-    font-display: swap;
-    src: local("Druk");
-    src: url("../../../fonts/druk-medium.eot");
-    src: url("../../../fonts/druk-medium.eot#iefix") format("embedded-opentype"), url("../../../fonts/druk-medium.woff2") format("woff2"), url("../../../fonts/druk-medium.woff") format("woff"), url("../../../fonts/druk-medium.ttf") format("truetype"), url("../../../fonts/druk-medium.svg") format("svg");
-    font-style: normal;
-    font-weight: 500;
-}
+@font-face { font-family: "Druk"; font-display: swap; src: local("Druk"); src: url("../../../fonts/druk-medium.eot"); src: url("../../../fonts/druk-medium.eot#iefix") format("embedded-opentype"), url("../../../fonts/druk-medium.woff2") format("woff2"), url("../../../fonts/druk-medium.woff") format("woff"), url("../../../fonts/druk-medium.ttf") format("truetype"), url("../../../fonts/druk-medium.svg") format("svg"); font-style: normal; font-weight: 500; }
 
 /* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #404040;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    font-family: "Futura Condensed Extrabold", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: 700;
-    font-weight: 700;
-}
+h1, h2, h3, h4, h5, h6 { color: #404040; margin-top: 0; margin-bottom: 1rem; font-family: "Futura Condensed Extrabold", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: 700; font-weight: 700; }
 
-h1 {
-    font-size: 30px;
-    line-height: 45px;
-}
+h1 { font-size: 30px; line-height: 45px; }
 
-h2 {
-    font-size: 24px;
-    line-height: 29px;
-}
+h2 { font-size: 24px; line-height: 29px; }
 
-h3 {
-    font-size: 20px;
-    line-height: 30px;
-}
+h3 { font-size: 20px; line-height: 30px; }
 
-h4 {
-    font-size: 16px;
-    line-height: 19px;
-}
+h4 { font-size: 16px; line-height: 19px; }
 
-.small {
-    font-size: 14px;
-    line-height: 20px;
-}
+.small { font-size: 14px; line-height: 20px; }
 
-a {
-    transition: all .3s ease;
-    color: #034AA6;
-    text-decoration: none;
-}
+a { transition: all .3s ease; color: #034AA6; text-decoration: none; }
 
-a:hover {
-    color: #063C84;
-    text-decoration: none;
-}
+a:hover { color: #063C84; text-decoration: none; }
 
-p {
-    font-size: 16px;
-    line-height: 1.5em;
-    margin-top: 0;
-    margin-bottom: 20px;
-}
+p { font-size: 16px; line-height: 1.5em; margin-top: 0; margin-bottom: 20px; }
 
-p a:hover {
-    text-decoration: underline;
-}
+p a:hover { text-decoration: underline; }
 
-p:last-child {
-    margin-bottom: 0;
-}
+p:last-child { margin-bottom: 0; }
 
-ul,
-ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+ul, ol { margin: 0; padding: 0; list-style: none; }
 
-article p {
-    word-break: keep-all;
-    /* Non standard for webkit */
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
-}
+article p { word-break: keep-all; /* Non standard for webkit */ -webkit-hyphens: none; -moz-hyphens: none; -ms-hyphens: none; hyphens: none; }
 
-article p:last-child {
-    margin-bottom: 0;
-}
+article p:last-child { margin-bottom: 0; }
 
-article a:not(.btn):hover {
-    text-decoration: underline;
-}
+article a:not(.btn):hover { text-decoration: underline; }
 
-article blockquote {
-    font-style: italic;
-}
+article blockquote { font-style: italic; }
 
-article li ul,
-article li ol {
-    margin: 0 24px;
-    padding-top: 10px;
-}
+article li ul, article li ol { margin: 0 24px; padding-top: 10px; }
 
-article ul,
-article ol {
-    margin: 0 0 32px;
-    padding-left: 24px;
-}
+article ul, article ol { margin: 0 0 32px; padding-left: 24px; }
 
-article ul:last-child,
-article ol:last-child {
-    margin: 0;
-}
+article ul:last-child, article ol:last-child { margin: 0; }
 
-article ul li,
-article ol li {
-    margin-bottom: 24px;
-}
+article ul li, article ol li { margin-bottom: 24px; }
 
-article ul li:last-child,
-article ol li:last-child {
-    margin: 0;
-}
+article ul li:last-child, article ol li:last-child { margin: 0; }
 
-article ul {
-    list-style-type: disc;
-}
+article ul { list-style-type: disc; }
 
-article ol {
-    list-style-type: decimal;
-}
+article ol { list-style-type: decimal; }
 
-article ol ol {
-    list-style: lower-alpha;
-}
+article ol ol { list-style: lower-alpha; }
 
-article ol ol ol {
-    list-style: lower-roman;
-}
+article ol ol ol { list-style: lower-roman; }
 
-article ol ol ol ol {
-    list-style: lower-alpha;
-}
+article ol ol ol ol { list-style: lower-alpha; }
 
 /* BASE */
-*,
-*:after,
-*:before {
-    box-sizing: border-box;
-}
+*, *:after, *:before { box-sizing: border-box; }
 
-* {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-decoration: none;
-    -webkit-font-feature-settings: "kern"1;
-    -moz-font-feature-settings: "kern"1;
-    font-feature-settings: "kern"1;
-    -webkit-font-kerning: normal;
-    font-kerning: normal;
-}
+* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-decoration: none; -webkit-font-feature-settings: "kern" 1; -moz-font-feature-settings: "kern" 1; font-feature-settings: "kern" 1; -webkit-font-kerning: normal; font-kerning: normal; }
 
-*::-webkit-scrollbar {
-    width: 15px;
-    height: 15px;
-    background-color: #F2F2F2;
-}
+*::-webkit-scrollbar { width: 15px; height: 15px; background-color: #F2F2F2; }
 
-*::-webkit-scrollbar-track {
-    -webkit-box-shadow: none;
-    background-color: #F2F2F2;
-}
+*::-webkit-scrollbar-track { -webkit-box-shadow: none; background-color: #F2F2F2; }
 
-*::-webkit-scrollbar-thumb {
-    background-color: #BABABA;
-}
+*::-webkit-scrollbar-thumb { background-color: #BABABA; }
 
-img {
-    max-width: 100%;
-}
+img { max-width: 100%; }
 
-hr {
-    border: 0;
-    border-top: 1px solid #E2E2E2;
-}
+hr { border: 0; border-top: 1px solid #E2E2E2; }
 
-article,
-aside,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section {
-    display: block;
-}
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section { display: block; }
 
-html,
-body {
-    font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-    padding: 0;
-    margin: 0;
-    background-color: #FFFFFF;
-    color: #404040;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-}
+html, body { font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 16px; line-height: 24px; font-weight: 400; padding: 0; margin: 0; background-color: #FFFFFF; color: #404040; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
 
 /* ------------------------------------------------------------------------------------------------ */
 /* Component style */
 /* ------------------------------------------------------------------------------------------------ */
 /* Animation */
 /* GENERAL */
-* {
-    cursor: none !important;
-}
+* { cursor: none !important; }
 
-.cursor {
-    display: block;
-    width: 14px;
-    height: 14px;
-    border-radius: 7px;
-    background: #fff;
-    position: fixed;
-    z-index: 201;
-    pointer-events: none;
-    -webkit-transform: translate(-5px, -5px);
-    transform: translate(-5px, -5px);
-    transition: width .3s ease, height .3s ease;
-}
+.cursor { display: block; width: 14px; height: 14px; border-radius: 7px; background: #fff; position: fixed; z-index: 201; pointer-events: none; -webkit-transform: translate(-5px, -5px); transform: translate(-5px, -5px); transition: width .3s ease, height .3s ease; }
 
-/* .cursor.hasimg { width: 30.208vw; height: 17.188vw; border-radius: 0; background: url("../../../images/our-people-s1.jpg"); background-size: contain; background-position: center; background-repeat: no-repeat; -webkit-transform: translate(0, 0); transform: translate(0, 0); } */
+.cursor.hasimg { width: 30.208vw; height: 17.188vw; border-radius: 0; background-size: contain; background-position: center; background-repeat: no-repeat; -webkit-transform: translate(0, 0); transform: translate(0, 0); }
 
-@media (max-width: 991px) {
-    .cursor {
-        display: none;
-    }
-}
+@media (max-width: 991px) { .cursor { display: none; } }
 
-.trail {
-    position: absolute;
-    pointer-events: none;
-    z-index: 200;
-    height: 4px;
-    width: 4px;
-    border-radius: 2px;
-    background: #fff;
-}
+.trail { position: absolute; pointer-events: none; z-index: 200; height: 4px; width: 4px; border-radius: 2px; background: #fff; }
 
-.trail.hasimg {
-    display: none;
-}
+.trail.hasimg { display: none; }
 
-@media (max-width: 991px) {
-    .trail {
-        display: none;
-    }
-}
+@media (max-width: 991px) { .trail { display: none; } }
 
-html,
-body {
-    display: block;
-    max-width: 100vw;
-    overflow-x: hidden;
-}
+html, body { display: block; max-width: 100vw; overflow-x: hidden; }
 
-.sm-only {
-    display: none;
-}
+.sm-only { display: none; }
 
-@media (max-width: 991px) {
-    .sm-only {
-        display: block;
-    }
-}
+@media (max-width: 991px) { .sm-only { display: block; } }
 
 /* Header */
-.header {
-    z-index: 100;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 48px 62px;
-    transition: all .3s ease;
-}
+.header { z-index: 100; position: fixed; top: 0; left: 0; width: 100%; padding: 48px 62px; transition: all .3s ease; }
 
-.header__wrap {
-    z-index: 2;
-    position: relative;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
+.header__wrap { z-index: 2; position: relative; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
 
-.header__logo {
-    display: block;
-    width: 100%;
-    max-width: 25%;
-    -webkit-flex: 0 0 25%;
-    -ms-flex: 0 0 25%;
-    flex: 0 0 25%;
-}
+.header__logo { display: block; width: 100%; max-width: 25%; -webkit-flex: 0 0 25%; -ms-flex: 0 0 25%; flex: 0 0 25%; }
 
-.header__logo .logo-1 {
-    display: block;
-}
+.header__logo .logo-1 { display: block; }
 
-.header__logo .logo-2 {
-    display: none;
-}
+.header__logo .logo-2 { display: none; }
 
-.header__text {
-    display: block;
-    width: 100%;
-    max-width: 50%;
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 28px;
-    line-height: 1em;
-    color: #00FF00;
-    text-align: center;
-}
+.header__text { display: block; width: 100%; max-width: 50%; -webkit-flex: 0 0 50%; -ms-flex: 0 0 50%; flex: 0 0 50%; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 28px; line-height: 1em; color: #00FF00; text-align: center; }
 
-.header__menu {
-    position: relative;
-    display: block;
-    width: 100%;
-    max-width: 25%;
-    -webkit-flex: 0 0 25%;
-    -ms-flex: 0 0 25%;
-    flex: 0 0 25%;
-}
+.header__menu { position: relative; display: block; width: 100%; max-width: 25%; -webkit-flex: 0 0 25%; -ms-flex: 0 0 25%; flex: 0 0 25%; }
 
-.header__menu .menu-toggle {
-    margin-left: auto;
-    display: block;
-    width: 84px;
-    height: 32px;
-    overflow: hidden;
-}
+.header__menu .menu-toggle { margin-left: auto; display: block; width: 84px; height: 32px; overflow: hidden; }
 
-.header__menu span {
-    display: block;
-    font-family: "Futura Condensed Extrabold", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: 700;
-    color: #FFF;
-    font-size: 32px;
-    line-height: 1em;
-    cursor: pointer;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: all .3s ease-in-out;
-}
+.header__menu span { display: block; font-family: "Futura Condensed Extrabold", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: 700; color: #FFF; font-size: 32px; line-height: 1em; cursor: pointer; position: absolute; right: 0; top: 0; transition: all .3s ease-in-out; }
 
-.header__menu span.close {
-    top: 100%;
-    opacity: 0;
-}
+.header__menu span.close { top: 100%; opacity: 0; }
 
-.header.sticky {
-    background: transparent;
-    padding-top: 24px;
-    padding-bottom: 24px;
-}
+.header.sticky { background: transparent; padding-top: 24px; padding-bottom: 24px; }
 
-.header__black .header__logo .logo-2 {
-    display: block;
-}
+.header__black .header__logo .logo-2 { display: block; }
 
-.header__black .header__logo .logo-1 {
-    display: none;
-}
+.header__black .header__logo .logo-1 { display: none; }
 
-.header__black .header__text {
-    color: #000;
-}
+.header__black .header__text { color: #000; }
 
-.header__black .header__menu span {
-    color: #000;
-}
+.header__black .header__menu span { color: #000; }
 
-.header__black .menu-toggle span.close {
-    color: #FFF;
-}
+.header__black .menu-toggle span.close { color: #FFF; }
 
-.header__black.sticky {
-    background: transparent;
-}
+.header__black.sticky { background: transparent; }
 
-@media (max-width: 991px) {
-    .header {
-        padding: 16px 20px;
-    }
+@media (max-width: 991px) { .header { padding: 16px 20px; }
+  .header__logo img { height: 18px; width: auto; }
+  .header__text { font-size: 12px; line-height: 1em; }
+  .header__menu .menu-toggle { height: 18px; }
+  .header__menu span { font-size: 18px; line-height: 1em; } }
 
-    .header__logo img {
-        height: 18px;
-        width: auto;
-    }
+.main-menu { z-index: 2; position: fixed; height: 100vh; width: 100vw; left: 0; top: 0; display: none; }
 
-    .header__text {
-        font-size: 12px;
-        line-height: 1em;
-    }
+.main-menu__bg { z-index: 2; display: block; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: url("../../../images/img-bg-menu.jpg") no-repeat center; background-size: cover; display: none; }
 
-    .header__menu .menu-toggle {
-        height: 18px;
-    }
+.main-menu__bg .bg-hover { z-index: 1; display: none; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-size: cover; background-repeat: no-repeat; background-position: center; -webkit-transform: scale(1.2); transform: scale(1.2); transition: all .4s ease-in-out; }
 
-    .header__menu span {
-        font-size: 18px;
-        line-height: 1em;
-    }
-}
+.main-menu__bg .bg-hover.animate { -webkit-transform: scale(1); transform: scale(1); }
 
-.main-menu {
-    z-index: 1;
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    left: 0;
-    top: 0;
-    display: none;
-}
+.main-menu__bg span { z-index: 2; display: none; position: absolute; width: 100%; height: 100%; top: 0; left: 0; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; color: #00FF00; font-size: 30vw; line-height: 1em; padding-top: 100px; padding-bottom: 80px; text-align: center; }
 
-.main-menu__bg {
-    z-index: 2;
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    display: none;
-}
+.main-menu__fade-top, .main-menu__fade-bot { display: block; position: absolute; width: 100%; height: 50%; background: #000; left: 0; transition: all .4s ease-in-out; }
 
-.main-menu__bg .bg-hover {
-    z-index: 1;
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-    transition: all .4s ease-in-out;
-}
+.main-menu__fade-top { top: 0; -webkit-transform: translate(0px, -100%); transform: translate(0px, -100%); }
 
-.main-menu__bg .bg-hover.animate {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-}
+.main-menu__fade-bot { bottom: 0; -webkit-transform: translate(0px, 100%); transform: translate(0px, 100%); }
 
-.main-menu__bg span {
-    z-index: 2;
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: #00FF00;
-    font-size: 30vw;
-    line-height: 1em;
-    padding-top: 100px;
-    padding-bottom: 80px;
-    text-align: center;
-}
+.main-menu__wrap { position: relative; min-height: 100vh; }
 
-.main-menu__fade-top,
-.main-menu__fade-bot {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    background: #000;
-    left: 0;
-    transition: all .4s ease-in-out;
-}
+.main-menu ul { z-index: 3; display: block; position: absolute; left: 0; bottom: 0; width: 100%; padding: 32px; text-align: center; display: none; }
 
-.main-menu__fade-top {
-    top: 0;
-    -webkit-transform: translate(0px, -100%);
-    transform: translate(0px, -100%);
-}
+.main-menu ul > li { display: inline-block; vertical-align: middle; position: relative; }
 
-.main-menu__fade-bot {
-    bottom: 0;
-    -webkit-transform: translate(0px, 100%);
-    transform: translate(0px, 100%);
-}
+.main-menu ul > li > a { display: inline-block; vertical-align: middle; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 6vw; line-height: 1em; color: #00FF00; transition: all .3s ease; }
 
-.main-menu__wrap {
-    position: relative;
-    min-height: 100vh;
-}
+.main-menu ul > li > a::after { content: "•"; display: inline-block; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 6vw; line-height: 1em; color: #00FF00; margin: 0 1vw; }
 
-.main-menu ul {
-    z-index: 3;
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 32px;
-    text-align: center;
-    display: none;
-}
+.main-menu ul > li > a:hover { color: #FFF; }
 
-.main-menu ul>li {
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-}
+.main-menu ul > li:last-child > a::after { display: none; }
 
-.main-menu ul>li>a {
-    display: inline-block;
-    vertical-align: middle;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 6vw;
-    line-height: 1em;
-    color: #00FF00;
-    transition: all .3s ease;
-}
+.main-menu ul > li.disabled a { pointer-events: none; color: #FFF; }
 
-.main-menu ul>li>a::after {
-    content: "•";
-    display: inline-block;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 6vw;
-    line-height: 1em;
-    color: #00FF00;
-    margin: 0 1vw;
-}
-
-.main-menu ul>li>a:hover {
-    color: #FFF;
-}
-
-.main-menu ul>li:last-child>a::after {
-    display: none;
-}
-
-.main-menu ul>li.disabled a {
-    pointer-events: none;
-    color: #FFF;
-}
-
-
-@media (max-width: 991px) { .main-menu__bg { background: url("../images/img-bg-menu-sm.jpg") no-repeat; background-position: center -32px; background-size: contain; }
+@media (max-width: 991px) { .main-menu__bg { background: url("../../../images/img-bg-menu-sm.jpg") no-repeat; background-position: center -32px; background-size: contain; }
   .main-menu ul { bottom: 64px; }
   .main-menu ul > li > a { font-size: 10vw; line-height: 1em; }
   .main-menu ul > li > a::after { font-size: 10vw; line-height: 1em; }
   .main-menu ul > li:nth-child(3) > a::after { display: none; } }
 
+body.menu-open { overflow: hidden; }
 
-body.menu-open {
-    overflow: hidden;
-}
+body.menu-open .header__menu .menu-toggle span { top: -100%; opacity: 0; }
 
-body.menu-open .header__menu .menu-toggle span {
-    top: -100%;
-    opacity: 0;
-}
-
-body.menu-open .header__menu .menu-toggle span.close {
-    top: 0;
-    opacity: 1;
-}
+body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
 
 /* Footer */
 /* Contents */
 /* Page style */
-.page-landing {
-    background: url("../../../images/img-landing-bg.jpg") no-repeat center;
-    background-size: cover;
-    min-height: 100vh;
-    color: #00FF00;
-    padding: 175px 5vw 7vh;
-    position: relative;
-}
-
-.page-landing__title {
-    color: #00FF00;
-    font-size: 72px;
-    line-height: 1em;
-    text-align: center;
-    margin: 0;
-}
-
-.page-landing__title span {
-    color: #FFF;
-}
-
-.page-landing__title span i {
-    color: #00FF00;
-}
-
-.page-landing__date {
-    display: block;
-    text-align: center;
-    color: #FFF;
-    font-family: "Ancient Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: 500;
-    font-size: 92px;
-    line-height: 1.1em;
-    margin-bottom: 10px;
-}
-
-.page-landing__date .ic {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.page-landing__date span {
-    display: inline-block;
-    margin: 0 60px;
-}
-
-.page-landing__subtitle {
-    display: block;
-    text-align: center;
-    font-family: "Futura Condensed Extrabold", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1em;
-}
-
-.page-landing__desc {
-    padding-top: 30px;
-    text-align: center;
-}
-
-.page-landing__desc p {
-    font-size: 21px;
-    line-height: 1.2em;
-    font-weight: 600;
-}
-
-.page-landing__desc p span.text-white,
-.page-landing__desc p a.text-white,
-.page-landing__desc p .text-white {
-    color: #FFF;
-}
-
-.page-landing__desc p a.text-white:hover {
-    text-decoration: underline;
-}
-
-.page-landing__info {
-    padding-top: 30px;
-    text-align: center;
-    font-size: 21px;
-    line-height: 1.2em;
-    font-weight: 600;
-}
-
-.page-landing__info span.title {
-    display: block;
-}
-
-.page-landing__info a.text-white {
-    color: #FFF;
-}
-
-.page-landing__info a.text-white:hover {
-    text-decoration: underline;
-}
-
-.page-landing .bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
-
-.page-landing .bg-video video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.page-landing .wrap {
-    max-width: 1450px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    z-index: 2;
-}
-
-@media (max-width: 991px) {
-    .page-landing:before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        -webkit-filter: blur(1px);
-        filter: blur(1px);
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 0;
-        background: #000;
-        opacity: .5;
-    }
-
-    .page-landing__title {
-        font-size: 40px;
-        line-height: 1em;
-    }
-
-    .page-landing__date {
-        font-size: 54px;
-        line-height: 1em;
-    }
-
-    .page-landing__date .ic {
-        height: 30px;
-        width: auto;
-    }
-
-    .page-landing__date span {
-        display: block;
-        margin: 0 20px;
-    }
-
-    .page-landing__subtitle {
-        font-size: 20px;
-        line-height: 1em;
-    }
-
-    .page-landing__desc p {
-        font-size: 16px;
-        line-height: 1.2em;
-    }
-
-    .page-landing__info {
-        font-size: 16px;
-        line-height: 1.2em;
-    }
-
-    .page-landing .bg-video {
-        display: none;
-    }
-}
-
-.page-ourpeople__one {
-    background: #00FF00;
-    min-height: 100vh;
-    color: #00FF00;
-    padding: 10.417vw 5vw 9.375vw;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    position: relative;
-}
-
-.page-ourpeople__one .wrap {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-
-.page-ourpeople__one h1 {
-    font-size: 9.115vw;
-    line-height: .9em;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: 400;
-    color: #000;
-    position: relative;
-    margin-bottom: 0;
-}
-
-.page-ourpeople__one h1 img {
-    position: absolute;
-    width: 30.208vw;
-    height: 17.188vw;
-    bottom: 4.271vw;
-    left: 18.229vw;
-}
-
-.page-ourpeople__one h1 small {
-    position: absolute;
-    right: 0;
-    bottom: 40px;
-    font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: 600;
-    font-size: 0.938vw;
-    line-height: 1em;
-    max-width: 20.313vw;
-}
-
-.page-ourpeople__one .arrow {
-    position: absolute;
-    bottom: 3.646vw;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-}
-
-.page-ourpeople__one .arrow img {
-    display: block;
-    margin: 0 auto;
-    width: 24px;
-    height: 40px;
-}
-
-.page-ourpeople__two {
-    background: #000;
-}
-
-.page-ourpeople__two .wrap {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-
-.page-ourpeople__two .tagline-marquee {
-    overflow: hidden;
-    padding: 50px 0;
-    margin-bottom: 30px;
-}
-
-.page-ourpeople__two .tagline-marquee h2 {
-    font-size: 22.865vw;
-    line-height: 1em;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: 600;
-    white-space: nowrap;
-    color: #00FF00;
-    letter-spacing: 1.2vw;
-}
-
-.page-ourpeople__two-text {
-    max-width: 70.417vw;
-    margin: 0 auto 5.208vw;
-    text-align: center;
-}
-
-.page-ourpeople__two-text p {
-    font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 1.563vw;
-    line-height: 1em;
-    font-weight: medium;
-    color: #fff;
-}
-
-.page-ourpeople__two-people {
-    padding: 0 8.333vw;
-    padding-bottom: 8.333vw;
-}
-
-.page-ourpeople__two-people .people-item {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    margin-bottom: 64px;
-}
-
-.page-ourpeople__two-people .people-item:nth-last-child(odd) .photo {
-    -webkit-order: 2;
-    -ms-flex-order: 2;
-    order: 2;
-    margin-right: 0;
-    margin-left: 95px;
-}
-
-.page-ourpeople__two-people .people-item:nth-last-child(odd) .text {
-    -webkit-order: 1;
-    -ms-flex-order: 1;
-    order: 1;
-}
-
-.page-ourpeople__two-people .people-item:nth-last-child(odd) .name {
-    text-align: right;
-}
-
-.page-ourpeople__two-people .people-item .photo {
-    width: 33.958vw;
-    height: 46.198vw;
-    margin-right: 4.948vw;
-}
-
-.page-ourpeople__two-people .people-item .photo img {
-    display: block;
-    max-height: 100%;
-    max-width: 100%;
-}
-
-.page-ourpeople__two-people .people-item .name {
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 11.146vw;
-    line-height: .9em;
-    max-width: 40.781vw;
-    color: #00FF00;
-    margin-bottom: 40px;
-}
-
-.page-ourpeople__two-people .people-item .position {
-    font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 1.563vw;
-    line-height: 1em;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 40px;
-}
-
-.page-ourpeople__two-people .people-item .quote {
-    max-width: 37.500vw;
-    font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 1.771vw;
-    line-height: 1em;
-    color: #FFF;
-}
-
-.page-ourpeople__three {
-    background: #00FF00;
-}
-
-.page-ourpeople__three .wrap {
-    padding: 5.208vw 7.813vw;
-}
-
-.page-ourpeople__three-title {
-    font-size: 30px;
-    line-height: 40px;
-    font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    text-align: center;
-    color: #000;
-    margin-bottom: 5.208vw;
-}
-
-.page-ourpeople__three-logos {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    margin-left: -1.823vw;
-    margin-right: -1.823vw;
-}
-
-.page-ourpeople__three-logos .logo {
-    padding-left: 1.823vw;
-    padding-right: 1.823vw;
-}
-
-.page-ourpeople__three-logos .logo img {
-    height: 7.292vw;
-    max-width: 16.146vw;
-    object-fit: contain;
-}
-
-.page-ourpeople__three-logos+.page-ourpeople__three-logos {
-    margin-top: 8.333vw;
-}
-
-.page-ourpeople__three-logos:nth-child(3) .logo img {
-    height: 5.292vw;
-}
-
-.page-ourpeople__four {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 3.125vw;
-}
-
-.page-ourpeople__four-top {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-bottom: 72px;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.page-ourpeople__four-top .left {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-left: -32px;
-    margin-right: -32px;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 2.083vw;
-    line-height: 1em;
-    font-weight: 500;
-    color: #000;
-}
-
-.page-ourpeople__four-top .left .item {
-    padding-right: 32px;
-    padding-left: 32px;
-}
-
-.page-ourpeople__four-top .left a {
-    color: #000;
-    text-decoration: none;
-}
-
-.page-ourpeople__four-top .right {
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 2.083vw;
-    line-height: 1em;
-    font-weight: 500;
-    color: #00FF00;
-}
-
-@media (max-width: 1280px) and (min-width: 992px) {
-    .page-ourpeople__one h1 {
-        font-size: 7.292vw;
-        line-height: 1em;
-    }
-
-    .page-ourpeople__one h1 small {
-        bottom: -40px;
-    }
-}
-
-@media (max-width: 991px) {
-    .page-ourpeople__one h1 {
-        font-size: 18vw;
-        line-height: .8em;
-    }
-
-    .page-ourpeople__one h1 br {
-        display: none;
-    }
-
-    .page-ourpeople__one h1 img {
-        width: 53.426vw;
-        height: 30.370vw;
-        bottom: 48.271vw;
-        left: 33.229vw;
-    }
-
-    .page-ourpeople__one h1 small {
-        font-size: 3vw;
-        bottom: 0;
-        max-width: 45vw;
-    }
-
-    .page-ourpeople__two .tagline-marquee {
-        margin-bottom: 0;
-    }
-
-    .page-ourpeople__two-text {
-        margin-bottom: 60px;
-    }
-
-    .page-ourpeople__two-text p {
-        font-size: 16px;
-    }
-
-    .page-ourpeople__two-people .people-item {
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-    }
-
-    .page-ourpeople__two-people .people-item .photo {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 24px;
-    }
-
-    .page-ourpeople__two-people .people-item .quote {
-        font-size: 12px;
-        line-height: 1.2em;
-        max-width: 100%;
-    }
-
-    .page-ourpeople__two-people .people-item .name {
-        margin-bottom: 10px;
-        max-width: 100%;
-        text-align: left;
-    }
-
-    .page-ourpeople__two-people .people-item .position {
-        font-size: 12px;
-        line-height: 1.2em;
-        margin-bottom: 10px;
-        max-width: 100%;
-    }
-
-    .page-ourpeople__two-people .people-item:nth-last-child(odd) .photo {
-        margin-top: 0;
-        margin-left: 0;
-        -webkit-order: 1;
-        -ms-flex-order: 1;
-        order: 1;
-    }
-
-    .page-ourpeople__two-people .people-item:nth-last-child(odd) .name {
-        text-align: left;
-    }
-
-    .page-ourpeople__three-title {
-        font-size: 16px;
-        line-height: 1em;
-    }
-
-    .page-ourpeople__four-top {
-        -webkit-align-items: flex-start;
-        -ms-flex-align: start;
-        align-items: flex-start;
-    }
-
-    .page-ourpeople__four-top .left {
-        margin-left: -10px;
-        margin-right: -10px;
-        font-size: 16px;
-        line-height: 1em;
-        -webkit-flex-wrap: 0 0 57%;
-        -ms-flex-wrap: 0 0 57%;
-        flex-wrap: 0 0 57%;
-        max-width: 57%;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
-
-    .page-ourpeople__four-top .left .item {
-        padding-right: 10px;
-        padding-left: 10px;
-    }
-
-    .page-ourpeople__four-top .left .item.email {
-        margin-bottom: 16px;
-    }
-
-    .page-ourpeople__four-top .right {
-        font-size: 16px;
-        line-height: 1em;
-    }
-}
-
-.page-home .rtf {
-    color: #00FF00;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 76px;
-    line-height: 1em;
-    text-decoration: underline;
-    opacity: 1;
-    transition: all .3s ease;
-}
-
-.page-home .rtf:hover {
-    opacity: 0.7;
-}
-
-@media (max-width: 991px) {
-    .page-home .rtf {
-        font-size: 32px;
-        line-height: 1em;
-    }
-}
-
-.page-home__one {
-    background: #00FF00;
-    min-height: 100vh;
-    color: #00FF00;
-    padding: 10.417vw 5vw 9.375vw;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    position: relative;
-}
-
-.page-home__one .wrap {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-
-.page-home__one h1 {
-    font-size: 9.115vw;
-    line-height: .9em;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: 400;
-    color: #000;
-    position: relative;
-    margin-bottom: 0;
-}
-
-.page-home__one h1 small {
-    position: absolute;
-    right: 0;
-    bottom: 40px;
-    font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: 600;
-    font-size: 0.938vw;
-    line-height: 1em;
-    max-width: 20.313vw;
-}
-
-.page-home__one .arrow {
-    position: absolute;
-    bottom: 3.646vw;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-}
-
-.page-home__one .arrow img {
-    display: block;
-    margin: 0 auto;
-    width: 24px;
-    height: 40px;
-}
-
-@media (max-width: 991px) {
-    .page-home__one h1 {
-        font-size: 15vw;
-        line-height: .8em;
-    }
-
-    .page-home__one h1 br {
-        display: none;
-    }
-
-    .page-home__one h1 img {
-        width: 53.426vw;
-        height: 30.370vw;
-        bottom: 48.271vw;
-        left: 33.229vw;
-    }
-
-    .page-home__one h1 small {
-        font-size: 2vw;
-        bottom: 0;
-        max-width: 30vw;
-    }
-}
-
-.page-home__two {
-    min-height: 100vh;
-    background: #000;
-    padding-top: 120px;
-    padding-bottom: 100px;
-    position: relative;
-    overflow: hidden;
-}
-
-.page-home__two .wrap {
-    padding-left: 60px;
-    padding-right: 60px;
-}
-
-.page-home__two .huge-text {
-    display: block;
-    text-align: center;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 58vw;
-    line-height: 0.8em;
-    color: #FFFFFF;
-}
-
-.page-home__two .small-text {
-    position: absolute;
-    display: block;
-    max-width: 370px;
-    color: #00FF00;
-    bottom: 20%;
-    left: 100px;
-    -webkit-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    -webkit-transform-origin: left;
-    transform-origin: left;
-}
-
-@media (max-width: 991px) {
-    .page-home__two {
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        padding-bottom: 60px;
-    }
-
-    .page-home__two .wrap {
-        width: 100%;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    .page-home__two .huge-text {
-        font-size: 90vw;
-        word-break: break-all;
-    }
-
-    .page-home__two .small-text {
-        font-size: 3vw;
-        line-height: 1em;
-        left: 14vw;
-        bottom: 17%;
-    }
-
-    .page-home__two .wrap-buttons {
-        text-align: center;
-        margin-top: 40px;
-    }
-
-    .page-home__two .rtf {
-        font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        font-size: 32px;
-        line-height: 1em;
-        color: #00FF00;
-        text-decoration: underline;
-    }
-}
-
-.page-home__three {
-    min-height: 100vh;
-    background-color: #000;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding-top: 120px;
-    padding-bottom: 80px;
-    position: relative;
-    overflow: hidden;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: flex-end;
-    -ms-flex-align: end;
-    align-items: flex-end;
-}
-
-.page-home__three .wrap {
-    padding-left: 60px;
-    padding-right: 60px;
-    text-align: center;
-    width: 100%;
-}
-
-.page-home__three h2 {
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 8.5vw;
-    font-weight: 500;
-    line-height: 1em;
-    color: #00FF00;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-
-.page-home__three h2 span {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-order: 2;
-    -ms-flex-order: 2;
-    order: 2;
-}
-
-.page-home__three h2 span.oa {
-    font-size: 2vw;
-    line-height: 1em;
-    background: #00FF00;
-    color: #000;
-    padding: 0 10px;
-    margin-right: 2vw;
-    -webkit-order: 1;
-    -ms-flex-order: 1;
-    order: 1;
-}
-
-.page-home__three h2 span.date {
-    font-size: 2vw;
-    line-height: 1em;
-    margin-left: 2vw;
-    -webkit-order: 3;
-    -ms-flex-order: 3;
-    order: 3;
-}
-
-.page-home__three .desc {
-    margin: 0 0 40px;
-}
-
-.page-home__three .desc p {
-    color: #FFF;
-    font-size: 30px;
-    line-height: 1.2em;
-}
-
-.page-home__three .rtf {
-    color: #00FF00;
-}
-
-@media (max-width: 991px) {
-    .page-home__three {
-        background-image: url("../../../images/img-bg-home-02-sm.jpg");
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-    }
-
-    .page-home__three .wrap {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    .page-home__three h2 {
-        font-size: 22vw;
-        line-height: 1em;
-        display: block;
-    }
-
-    .page-home__three h2 span {
-        display: block;
-    }
-
-    .page-home__three h2 span.oa,
-    .page-home__three h2 span.date {
-        display: inline-block;
-        font-size: 32px;
-        line-height: 1em;
-        margin: 0 10px;
-    }
-
-    .page-home__three .desc p {
-        font-size: 16px;
-        line-height: 1.3em;
-    }
-}
-
-.page-home__four {
-    min-height: 100vh;
-    background: #00FF00;
-    padding-top: 120px;
-    padding-bottom: 80px;
-    position: relative;
-}
-
-.page-home__four .wrap {
-    padding-left: 60px;
-    padding-right: 60px;
-    text-align: center;
-    width: 100%;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-
-.page-home__four .wrap .col-left {
-    width: 100%;
-    max-width: 15%;
-    -webkit-flex: 0 0 15%;
-    -ms-flex: 0 0 15%;
-    flex: 0 0 15%;
-    -webkit-order: 1;
-    -ms-flex-order: 1;
-    order: 1;
-}
-
-.page-home__four .wrap .col-main {
-    width: 100%;
-    max-width: 70%;
-    -webkit-flex: 0 0 70%;
-    -ms-flex: 0 0 70%;
-    flex: 0 0 70%;
-    -webkit-order: 2;
-    -ms-flex-order: 2;
-    order: 2;
-}
-
-.page-home__four .wrap .col-right {
-    width: 100%;
-    max-width: 15%;
-    -webkit-flex: 0 0 15%;
-    -ms-flex: 0 0 15%;
-    flex: 0 0 15%;
-    -webkit-order: 3;
-    -ms-flex-order: 3;
-    order: 3;
-}
-
-.page-home__four span.oa {
-    display: inline-block;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 2vw;
-    line-height: 1em;
-    background: #000;
-    color: #FFF;
-    padding: 0 10px;
-}
-
-.page-home__four span.date {
-    display: inline-block;
-    color: #000;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 2vw;
-    line-height: 1em;
-}
-
-.page-home__four h2 {
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 8.5vw;
-    font-weight: 500;
-    line-height: 1em;
-    color: #000;
-}
-
-.page-home__four .img {
-    margin: 0 0 40px;
-}
-
-.page-home__four .img img {
-    display: block;
-    margin: 0 auto;
-    max-width: 25vw;
-    height: auto;
-    width: auto;
-}
-
-.page-home__four .desc {
-    margin: 0 0 40px;
-}
-
-.page-home__four .desc p {
-    color: #000;
-    font-size: 30px;
-    line-height: 1.2em;
-}
-
-.page-home__four .rtf {
-    color: #000;
-}
-
-@media (max-width: 991px) {
-    .page-home__four .wrap {
-        padding-left: 30px;
-        padding-right: 30px;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
-
-    .page-home__four .wrap .col-left,
-    .page-home__four .wrap .col-right {
-        max-width: 50%;
-        -webkit-flex: 0 0 50%;
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        -webkit-order: 1;
-        -ms-flex-order: 1;
-        order: 1;
-    }
-
-    .page-home__four .wrap .col-main {
-        max-width: 100%;
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        -webkit-order: 2;
-        -ms-flex-order: 2;
-        order: 2;
-    }
-
-    .page-home__four span.oa,
-    .page-home__four span.date {
-        display: inline-block;
-        font-size: 32px;
-        line-height: 1em;
-        margin: 0 10px 20px;
-    }
-
-    .page-home__four h2 {
-        font-size: 22vw;
-        line-height: 1em;
-    }
-
-    .page-home__four .img img {
-        max-width: 60vw;
-    }
-
-    .page-home__four .desc p {
-        font-size: 16px;
-        line-height: 1.3em;
-    }
-}
-
-.page-home__five {
-    min-height: 100vh;
-    background-color: #000;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding-top: 120px;
-    padding-bottom: 80px;
-    position: relative;
-}
-
-.page-home__five .wrap {
-    min-height: calc(100vh - 200px);
-    padding-left: 60px;
-    padding-right: 60px;
-    width: 100%;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: flex-end;
-    -ms-flex-align: end;
-    align-items: flex-end;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.page-home__five .wrap .col-left {
-    width: 100%;
-    max-width: 60%;
-    -webkit-flex: 0 0 60%;
-    -ms-flex: 0 0 60%;
-    flex: 0 0 60%;
-}
-
-.page-home__five .wrap .col-right {
-    width: 100%;
-    max-width: 40%;
-    -webkit-flex: 0 0 40%;
-    -ms-flex: 0 0 40%;
-    flex: 0 0 40%;
-    text-align: right;
-}
-
-.page-home__five span.oa {
-    display: inline-block;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 2vw;
-    line-height: 1em;
-    background: #00FF00;
-    color: #000;
-    padding: 0 10px;
-    margin-bottom: 15px;
-}
-
-.page-home__five h2 {
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 8.5vw;
-    font-weight: 500;
-    line-height: 1em;
-    color: #00FF00;
-}
-
-.page-home__five .desc {
-    margin: 0 0 40px;
-}
-
-.page-home__five .desc p {
-    color: #FFF;
-    font-size: 16px;
-    line-height: 1.2em;
-}
-
-@media (max-width: 991px) {
-    .page-home__five .wrap {
-        padding-left: 30px;
-        padding-right: 30px;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
-
-    .page-home__five .wrap .col-left,
-    .page-home__five .wrap .col-right {
-        max-width: 100%;
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        text-align: center;
-    }
-
-    .page-home__five span.oa {
-        display: inline-block;
-        font-size: 32px;
-        line-height: 1em;
-        margin: 0 10px 20px;
-    }
-
-    .page-home__five h2 {
-        font-size: 22vw;
-        line-height: 1em;
-    }
-
-    .page-home__five h2 br {
-        display: none;
-    }
-
-    .page-home__five .desc:not(.sm-only) {
-        display: none;
-    }
-}
-
-.page-home__six {
-    min-height: 100vh;
-    background-color: #000;
-    padding-top: 120px;
-    padding-bottom: 80px;
-    position: relative;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.page-home__six .wrap {
-    position: relative;
-    width: 100%;
-    padding-left: 60px;
-    padding-right: 60px;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-align-items: flex-end;
-    -ms-flex-align: end;
-    align-items: flex-end;
-}
-
-.page-home__six .wrap .col-main {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-    margin-bottom: 60px;
-}
-
-.page-home__six .wrap .col-main .img {
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: calc(50% - 12vw);
-    left: 0;
-}
-
-.page-home__six .wrap .col-main .img img {
-    display: block;
-    width: 24vw;
-    height: 24vw;
-    margin: 0 auto;
-}
-
-.page-home__six .wrap .col-bot-l {
-    width: 100%;
-    max-width: 30%;
-    -webkit-flex: 0 0 30%;
-    -ms-flex: 0 0 30%;
-    flex: 0 0 30%;
-}
-
-.page-home__six .wrap .col-bot-c {
-    width: 100%;
-    max-width: 40%;
-    -webkit-flex: 0 0 40%;
-    -ms-flex: 0 0 40%;
-    flex: 0 0 40%;
-    text-align: center;
-}
-
-.page-home__six .wrap .col-bot-r {
-    width: 100%;
-    max-width: 30%;
-    -webkit-flex: 0 0 30%;
-    -ms-flex: 0 0 30%;
-    flex: 0 0 30%;
-    text-align: right;
-}
-
-.page-home__six span.oa {
-    display: inline-block;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 2vw;
-    line-height: 1em;
-    background: #00FF00;
-    color: #000;
-    padding: 0 10px;
-    margin-bottom: 60px;
-}
-
-.page-home__six h2 {
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 24vw;
-    line-height: 1em;
-    color: #00FF00;
-    font-weight: 500;
-}
-
-.page-home__six h2 span.star {
-    display: inline-block;
-    position: relative;
-    margin: 0 2vw;
-    top: 6vw;
-}
-
-.page-home__six .desc p {
-    font-size: 16px;
-    line-height: 1.2em;
-    color: #FFF;
-}
-
-.page-home__six .date {
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: #FFF;
-    font-size: 2vw;
-    line-height: 1em;
-    margin-bottom: 60px;
-    display: block;
-    text-align: right;
-}
-
-.page-home__six .meta {
-    display: block;
-    font-size: 2vw;
-    line-height: 1em;
-    color: #FFF;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-@media (max-width: 991px) {
-    .page-home__six {
-        padding-top: 64px;
-        padding-bottom: 64px;
-    }
-
-    .page-home__six .wrap {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    .page-home__six .wrap .col-main {
-        -webkit-order: 1;
-        -ms-flex-order: 1;
-        order: 1;
-    }
-
-    .page-home__six .wrap .col-main .img {
-        position: relative;
-    }
-
-    .page-home__six .wrap .col-main .img img {
-        width: 60vw;
-        height: 60vw;
-    }
-
-    .page-home__six .wrap .col-bot-l {
-        -webkit-order: 3;
-        -ms-flex-order: 3;
-        order: 3;
-        max-width: 100%;
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .page-home__six .wrap .col-bot-l span.oa {
-        display: none;
-    }
-
-    .page-home__six .wrap .col-bot-c {
-        -webkit-order: 4;
-        -ms-flex-order: 4;
-        order: 4;
-        max-width: 100%;
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        text-align: center;
-        padding-top: 20px;
-    }
-
-    .page-home__six .wrap .col-bot-r {
-        -webkit-order: 2;
-        -ms-flex-order: 2;
-        order: 2;
-        max-width: 100%;
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .page-home__six .wrap .col-bot-r .date {
-        display: none;
-    }
-
-    .page-home__six .sm-only {
-        text-align: center;
-    }
-
-    .page-home__six .sm-only span.oa,
-    .page-home__six .sm-only span.date {
-        display: inline-block;
-        font-size: 32px;
-        line-height: 1em;
-        margin: 0 10px 20px;
-    }
-
-    .page-home__six h2 {
-        font-size: 40vw;
-        line-height: 1em;
-    }
-
-    .page-home__six .meta {
-        font-size: 24px;
-        line-height: 1.2em;
-    }
-}
-
-.page-home__footer {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 3.125vw;
-}
-
-.page-home__footer-top {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-bottom: 72px;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.page-home__footer-top .left {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-left: -32px;
-    margin-right: -32px;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 2.083vw;
-    line-height: 1em;
-    font-weight: 500;
-    color: #000;
-}
-
-.page-home__footer-top .left .item {
-    padding-right: 32px;
-    padding-left: 32px;
-}
-
-.page-home__footer-top .left a {
-    color: #000;
-    text-decoration: none;
-}
-
-.page-home__footer-top .right {
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 2.083vw;
-    line-height: 1em;
-    font-weight: 500;
-    color: #00FF00;
-}
-
-.page-inspiration__one {
-    background: #000;
-    min-height: 100vh;
-    color: #00FF00;
-    padding: 10.417vw 5vw 9.375vw;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    position: relative;
-}
-
-.page-inspiration__one .tagline-marquee {
-    display: block;
-    width: 100%;
-    letter-spacing: 1.2vw;
-}
-
-.page-inspiration__one h1 {
-    font-size: 22.865vw;
-    line-height: 1em;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: #00FF00;
-}
-
-.page-inspiration__one .desc {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    padding-left: 10vw;
-    padding-right: 10vw;
-}
-
-.page-inspiration__one .desc p {
-    color: #fff;
-    font-size: 30px;
-    line-height: 36px;
-}
-
-.page-inspiration__one .wrap {
-    position: relative;
-    width: 100%;
-}
-
-.page-inspiration__one .arrow {
-    position: absolute;
-    bottom: 3.646vw;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-}
-
-.page-inspiration__one .arrow img {
-    display: block;
-    margin: 0 auto;
-    width: 24px;
-    height: 40px;
-}
-
-@media (max-width: 991px) {
-    .page-inspiration__one h1 {
-        font-size: 40vw;
-        line-height: 1em;
-    }
-
-    .page-inspiration__one .desc p {
-        font-size: 16px;
-        line-height: 1.2em;
-    }
-}
-
-.page-inspiration__two .wrap {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-.page-inspiration__two .item {
-    position: relative;
-    display: block;
-    width: 100%;
-    max-width: 50%;
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    overflow: hidden;
-}
-
-.page-inspiration__two .item__title {
-    width: 100%;
-    max-width: 100%;
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 5vw;
-    line-height: 1em;
-    font-weight: 400;
-    color: #00FF00;
-    padding: 0 2vw 1vw;
-}
-
-.page-inspiration__two .item__cta {
-    width: 100%;
-    max-width: 50%;
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    padding: 0 2vw 2vw;
-}
-
-.page-inspiration__two .item__cta a {
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 2vw;
-    line-height: 1em;
-    opacity: 1;
-    color: #FFF;
-    text-decoration: underline;
-}
-
-.page-inspiration__two .item__cta a:hover {
-    opacity: 0.6;
-}
-
-.page-inspiration__two .item__date {
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    width: 100%;
-    max-width: 50%;
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    padding: 0 2vw 2vw;
-    font-size: 2vw;
-    line-height: 1em;
-    color: #FFF;
-    text-align: right;
-}
-
-.page-inspiration__two .item__date-sm {
-    display: none;
-}
-
-.page-inspiration__two .item__bg {
-    z-index: 1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    top: 0;
-    left: 0;
-    transition: all .3s ease-in-out;
-}
-
-.page-inspiration__two .item__content {
-    z-index: 2;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-.page-inspiration__two .item__wrap {
-    width: 100%;
-    padding-top: 60%;
-    background: #000;
-}
-
-.page-inspiration__two .item:hover .item__bg {
-    -webkit-transform: scale(1.03, 1.03);
-    transform: scale(1.03, 1.03);
-}
-
-.page-inspiration__two .item.item--alt .item__title {
-    color: #000;
-}
-
-.page-inspiration__two .item.item--alt .item__wrap {
-    background: #00FF00;
-}
-
-.page-inspiration__two .item.item--lg {
-    max-width: 100%;
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-}
-
-.page-inspiration__two .item.item--lg .item__wrap {
-    padding-top: 30%;
-}
-
-.page-inspiration__two .item.anim .item__bg {
-    opacity: 0;
-    transition: all .3s ease-in-out;
-    transition-delay: 0.2s;
-}
-
-.page-inspiration__two .item.anim.animate-in .item__bg {
-    opacity: 1;
-}
-
-@media (max-width: 991px) {
-    .page-inspiration__two .item {
-        max-width: 100%;
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-    }
-
-    .page-inspiration__two .item .item__title {
-        font-size: 8vw;
-        line-height: 1em;
-        text-align: center;
-        padding-bottom: 0;
-        margin-bottom: 0;
-    }
-
-    .page-inspiration__two .item .item__cta {
-        text-align: center;
-        max-width: 100%;
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        padding-bottom: 20px;
-    }
-
-    .page-inspiration__two .item .item__cta a {
-        font-size: 4vw;
-        line-height: 1em;
-    }
-
-    .page-inspiration__two .item .item__date {
-        display: none;
-    }
-
-    .page-inspiration__two .item .item__date-sm {
-        z-index: 3;
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 16px;
-        text-align: right;
-    }
-
-    .page-inspiration__two .item .item__date-sm span {
-        font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        font-size: 4vw;
-        line-height: 1em;
-        color: #FFF;
-    }
-
-    .page-inspiration__two .item .item__date-sm.dark span {
-        color: #000;
-    }
-
-    .page-inspiration__two .item.item--lg .item__wrap {
-        padding-top: 60%;
-    }
-}
-
-.page-inspiration__footer {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 3.125vw;
-}
-
-.page-inspiration__footer-top {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-bottom: 72px;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.page-inspiration__footer-top .left {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-left: -32px;
-    margin-right: -32px;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 2.083vw;
-    line-height: 1em;
-    font-weight: 500;
-    color: #000;
-}
-
-.page-inspiration__footer-top .left .item {
-    padding-right: 32px;
-    padding-left: 32px;
-}
-
-.page-inspiration__footer-top .left a {
-    color: #000;
-    text-decoration: none;
-}
-
-.page-inspiration__footer-top .right {
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 2.083vw;
-    line-height: 1em;
-    font-weight: 500;
-    color: #00FF00;
-}
-
-.page-flagship__one {
-    background: #000;
-    min-height: 100vh;
-    color: #00FF00;
-    padding: 10.417vw 5vw 9.375vw;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    position: relative;
-}
-
-.page-flagship__one .tagline-marquee {
-    display: block;
-    width: 100%;
-    letter-spacing: 1.2vw;
-}
-
-.page-flagship__one h1 {
-    font-size: 22.865vw;
-    line-height: 1em;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: #00FF00;
-}
-
-.page-flagship__one .desc {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    padding-left: 10vw;
-    padding-right: 10vw;
-}
-
-.page-flagship__one .desc p {
-    color: #fff;
-    font-size: 30px;
-    line-height: 36px;
-}
-
-.page-flagship__one .wrap {
-    position: relative;
-    width: 100%;
-}
-
-.page-flagship__one .arrow {
-    position: absolute;
-    bottom: 3.646vw;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-}
-
-.page-flagship__one .arrow img {
-    display: block;
-    margin: 0 auto;
-    width: 24px;
-    height: 40px;
-}
-
-@media (max-width: 991px) {
-    .page-flagship__one h1 {
-        font-size: 40vw;
-        line-height: 1em;
-    }
-
-    .page-flagship__one .desc p {
-        font-size: 16px;
-        line-height: 1.2em;
-    }
-}
-
-.page-flagship__two .wrap {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-.page-flagship__two .item {
-    position: relative;
-    display: block;
-    width: 100%;
-    max-width: 50%;
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    overflow: hidden;
-}
-
-.page-flagship__two .item__title {
-    width: 100%;
-    max-width: 100%;
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 5vw;
-    line-height: 1em;
-    font-weight: 400;
-    color: #00FF00;
-    padding: 0 2vw 1vw;
-}
-
-.page-flagship__two .item__cta {
-    width: 100%;
-    max-width: 50%;
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    padding: 0 2vw 2vw;
-}
-
-.page-flagship__two .item__cta a {
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 2vw;
-    line-height: 1em;
-    opacity: 1;
-    color: #FFF;
-    text-decoration: underline;
-}
-
-.page-flagship__two .item__cta a:hover {
-    opacity: 0.6;
-}
-
-.page-flagship__two .item__date {
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    width: 100%;
-    max-width: 50%;
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    padding: 0 2vw 2vw;
-    font-size: 2vw;
-    line-height: 1em;
-    color: #FFF;
-    text-align: right;
-}
-
-.page-flagship__two .item__date-sm {
-    display: none;
-}
-
-.page-flagship__two .item__bg {
-    z-index: 1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    top: 0;
-    left: 0;
-    transition: all .3s ease-in-out;
-}
-
-.page-flagship__two .item__content {
-    z-index: 2;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-.page-flagship__two .item__wrap {
-    width: 100%;
-    padding-top: 60%;
-    background: #000;
-}
-
-.page-flagship__two .item:hover .item__bg {
-    -webkit-transform: scale(1.03, 1.03);
-    transform: scale(1.03, 1.03);
-}
-
-.page-flagship__two .item.item--alt .item__title {
-    color: #000;
-}
-
-.page-flagship__two .item.item--alt .item__wrap {
-    background: #00FF00;
-}
-
-.page-flagship__two .item.item--lg {
-    max-width: 100%;
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-}
-
-.page-flagship__two .item.item--lg .item__wrap {
-    padding-top: 30%;
-}
-
-.page-flagship__two .item.anim .item__bg {
-    opacity: 0;
-    transition: all .3s ease-in-out;
-    transition-delay: 0.2s;
-}
-
-.page-flagship__two .item.anim.animate-in .item__bg {
-    opacity: 1;
-}
-
-@media (max-width: 991px) {
-    .page-flagship__two .item {
-        max-width: 100%;
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-    }
-
-    .page-flagship__two .item .item__title {
-        font-size: 8vw;
-        line-height: 1em;
-        text-align: center;
-        padding-bottom: 0;
-        margin-bottom: 0;
-    }
-
-    .page-flagship__two .item .item__cta {
-        text-align: center;
-        max-width: 100%;
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        padding-bottom: 20px;
-    }
-
-    .page-flagship__two .item .item__cta a {
-        font-size: 4vw;
-        line-height: 1em;
-    }
-
-    .page-flagship__two .item .item__date {
-        display: none;
-    }
-
-    .page-flagship__two .item .item__date-sm {
-        z-index: 3;
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 16px;
-        text-align: right;
-    }
-
-    .page-flagship__two .item .item__date-sm span {
-        font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        font-size: 4vw;
-        line-height: 1em;
-        color: #FFF;
-    }
-
-    .page-flagship__two .item .item__date-sm.dark span {
-        color: #000;
-    }
-
-    .page-flagship__two .item.item--lg .item__wrap {
-        padding-top: 60%;
-    }
-}
-
-.page-flagship__footer {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 3.125vw;
-}
-
-.page-flagship__footer-top {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-bottom: 72px;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.page-flagship__footer-top .left {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-left: -32px;
-    margin-right: -32px;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 2.083vw;
-    line-height: 1em;
-    font-weight: 500;
-    color: #000;
-}
-
-.page-flagship__footer-top .left .item {
-    padding-right: 32px;
-    padding-left: 32px;
-}
-
-.page-flagship__footer-top .left a {
-    color: #000;
-    text-decoration: none;
-}
-
-.page-flagship__footer-top .right {
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 2.083vw;
-    line-height: 1em;
-    font-weight: 500;
-    color: #00FF00;
-}
-
-.page-inspiration-s__one { background: #000; min-height: 100vh; color: #00FF00; padding: 10.417vw 5vw 9.375vw; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: relative; background-image: url("../images/img-bg-inspiration-single.jpg"); background-repeat: no-repeat; background-size: cover; background-position: center; }
+.page-landing { background: url("../../../images/img-landing-bg.jpg") no-repeat center; background-size: cover; min-height: 100vh; color: #00FF00; padding: 175px 5vw 7vh; position: relative; }
+
+.page-landing__title { color: #00FF00; font-size: 72px; line-height: 1em; text-align: center; margin: 0; }
+
+.page-landing__title span { color: #FFF; }
+
+.page-landing__title span i { color: #00FF00; }
+
+.page-landing__date { display: block; text-align: center; color: #FFF; font-family: "Ancient Medium", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: 500; font-size: 92px; line-height: 1.1em; margin-bottom: 10px; }
+
+.page-landing__date .ic { display: inline-block; margin: 0 10px; }
+
+.page-landing__date span { display: inline-block; margin: 0 60px; }
+
+.page-landing__subtitle { display: block; text-align: center; font-family: "Futura Condensed Extrabold", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: 700; font-size: 26px; line-height: 1em; }
+
+.page-landing__desc { padding-top: 30px; text-align: center; }
+
+.page-landing__desc p { font-size: 21px; line-height: 1.2em; font-weight: 600; }
+
+.page-landing__desc p span.text-white, .page-landing__desc p a.text-white, .page-landing__desc p .text-white { color: #FFF; }
+
+.page-landing__desc p a.text-white:hover { text-decoration: underline; }
+
+.page-landing__info { padding-top: 30px; text-align: center; font-size: 21px; line-height: 1.2em; font-weight: 600; }
+
+.page-landing__info span.title { display: block; }
+
+.page-landing__info a.text-white { color: #FFF; }
+
+.page-landing__info a.text-white:hover { text-decoration: underline; }
+
+.page-landing .bg-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+
+.page-landing .bg-video video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+
+.page-landing .wrap { max-width: 1450px; margin-left: auto; margin-right: auto; position: relative; z-index: 2; }
+
+@media (max-width: 991px) { .page-landing:before { content: ""; width: 100%; height: 100%; -webkit-filter: blur(1px); filter: blur(1px); position: absolute; top: 0; left: 0; z-index: 0; background: #000; opacity: .5; }
+  .page-landing__title { font-size: 40px; line-height: 1em; }
+  .page-landing__date { font-size: 54px; line-height: 1em; }
+  .page-landing__date .ic { height: 30px; width: auto; }
+  .page-landing__date span { display: block; margin: 0 20px; }
+  .page-landing__subtitle { font-size: 20px; line-height: 1em; }
+  .page-landing__desc p { font-size: 16px; line-height: 1.2em; }
+  .page-landing__info { font-size: 16px; line-height: 1.2em; }
+  .page-landing .bg-video { display: none; } }
+
+.page-ourpeople__one { background: #00FF00; min-height: 100vh; color: #00FF00; padding: 10.417vw 5vw 9.375vw; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: relative; }
+
+.page-ourpeople__one .wrap { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+
+.page-ourpeople__one h1 { font-size: 9.115vw; line-height: .9em; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: 400; color: #000; position: relative; margin-bottom: 0; }
+
+.page-ourpeople__one h1 img { position: absolute; width: 30.208vw; height: 17.188vw; bottom: 4.271vw; left: 18.229vw; }
+
+.page-ourpeople__one h1 small { position: absolute; right: 0; bottom: 40px; font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: 600; font-size: 0.938vw; line-height: 1em; max-width: 20.313vw; }
+
+.page-ourpeople__one .arrow { position: absolute; bottom: 3.646vw; left: 0; right: 0; margin: 0 auto; }
+
+.page-ourpeople__one .arrow img { display: block; margin: 0 auto; width: 24px; height: 40px; }
+
+.page-ourpeople__two { background: #000; }
+
+.page-ourpeople__two .wrap { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+
+.page-ourpeople__two .tagline-marquee { overflow: hidden; padding: 50px 0; margin-bottom: 30px; }
+
+.page-ourpeople__two .tagline-marquee h2 { font-size: 22.865vw; line-height: 1em; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: 600; white-space: nowrap; color: #00FF00; letter-spacing: 1.2vw; }
+
+.page-ourpeople__two-text { max-width: 70.417vw; margin: 0 auto 5.208vw; text-align: center; }
+
+.page-ourpeople__two-text p { font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 1.563vw; line-height: 1em; font-weight: medium; color: #fff; }
+
+.page-ourpeople__two-people { padding: 0 8.333vw; padding-bottom: 8.333vw; }
+
+.page-ourpeople__two-people .people-item { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: flex-start; -ms-flex-align: start; align-items: flex-start; margin-bottom: 64px; }
+
+.page-ourpeople__two-people .people-item:nth-last-child(odd) .photo { -webkit-order: 2; -ms-flex-order: 2; order: 2; margin-right: 0; margin-left: 95px; }
+
+.page-ourpeople__two-people .people-item:nth-last-child(odd) .text { -webkit-order: 1; -ms-flex-order: 1; order: 1; }
+
+.page-ourpeople__two-people .people-item:nth-last-child(odd) .name { text-align: right; }
+
+.page-ourpeople__two-people .people-item .photo { width: 33.958vw; height: 46.198vw; margin-right: 4.948vw; }
+
+.page-ourpeople__two-people .people-item .photo img { display: block; max-height: 100%; max-width: 100%; }
+
+.page-ourpeople__two-people .people-item .name { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 11.146vw; line-height: .9em; max-width: 40.781vw; color: #00FF00; margin-bottom: 40px; }
+
+.page-ourpeople__two-people .people-item .position { font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 1.563vw; line-height: 1em; font-weight: bold; color: #fff; margin-bottom: 40px; }
+
+.page-ourpeople__two-people .people-item .quote { max-width: 37.500vw; font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 1.771vw; line-height: 1em; color: #FFF; }
+
+.page-ourpeople__three { background: #00FF00; }
+
+.page-ourpeople__three .wrap { padding: 5.208vw 7.813vw; }
+
+.page-ourpeople__three-title { font-size: 30px; line-height: 40px; font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; text-align: center; color: #000; margin-bottom: 5.208vw; }
+
+.page-ourpeople__three-logos { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; margin-left: -1.823vw; margin-right: -1.823vw; }
+
+.page-ourpeople__three-logos .logo { padding-left: 1.823vw; padding-right: 1.823vw; }
+
+.page-ourpeople__three-logos .logo img { height: 7.292vw; max-width: 16.146vw; object-fit: contain; }
+
+.page-ourpeople__three-logos + .page-ourpeople__three-logos { margin-top: 8.333vw; }
+
+.page-ourpeople__three-logos:nth-child(3) .logo img { height: 5.292vw; }
+
+.page-ourpeople__four { background-image: url(../../../images/bg-sfour-ourpeople.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
+
+.page-ourpeople__four-top { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-bottom: 72px; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
+
+.page-ourpeople__four-top .left { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-left: -32px; margin-right: -32px; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 2.083vw; line-height: 1em; font-weight: 500; color: #000; }
+
+.page-ourpeople__four-top .left .item { padding-right: 32px; padding-left: 32px; }
+
+.page-ourpeople__four-top .left a { color: #000; text-decoration: none; }
+
+.page-ourpeople__four-top .right { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 2.083vw; line-height: 1em; font-weight: 500; color: #00FF00; }
+
+@media (max-width: 1280px) and (min-width: 992px) { .page-ourpeople__one h1 { font-size: 7.292vw; line-height: 1em; }
+  .page-ourpeople__one h1 small { bottom: -40px; } }
+
+@media (max-width: 991px) { .page-ourpeople__one h1 { font-size: 18vw; line-height: .8em; }
+  .page-ourpeople__one h1 br { display: none; }
+  .page-ourpeople__one h1 img { width: 53.426vw; height: 30.370vw; bottom: 48.271vw; left: 33.229vw; }
+  .page-ourpeople__one h1 small { font-size: 3vw; bottom: 0; max-width: 45vw; }
+  .page-ourpeople__two .tagline-marquee { margin-bottom: 0; }
+  .page-ourpeople__two-text { margin-bottom: 60px; }
+  .page-ourpeople__two-text p { font-size: 16px; }
+  .page-ourpeople__two-people .people-item { -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
+  .page-ourpeople__two-people .people-item .photo { width: 100%; max-width: 100%; height: auto; margin-bottom: 24px; }
+  .page-ourpeople__two-people .people-item .quote { font-size: 12px; line-height: 1.2em; max-width: 100%; }
+  .page-ourpeople__two-people .people-item .name { margin-bottom: 10px; max-width: 100%; text-align: left; }
+  .page-ourpeople__two-people .people-item .position { font-size: 12px; line-height: 1.2em; margin-bottom: 10px; max-width: 100%; }
+  .page-ourpeople__two-people .people-item:nth-last-child(odd) .photo { margin-top: 0; margin-left: 0; -webkit-order: 1; -ms-flex-order: 1; order: 1; }
+  .page-ourpeople__two-people .people-item:nth-last-child(odd) .name { text-align: left; }
+  .page-ourpeople__three-title { font-size: 16px; line-height: 1em; }
+  .page-ourpeople__four-top { -webkit-align-items: flex-start; -ms-flex-align: start; align-items: flex-start; }
+  .page-ourpeople__four-top .left { margin-left: -10px; margin-right: -10px; font-size: 16px; line-height: 1em; -webkit-flex-wrap: 0 0 57%; -ms-flex-wrap: 0 0 57%; flex-wrap: 0 0 57%; max-width: 57%; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+  .page-ourpeople__four-top .left .item { padding-right: 10px; padding-left: 10px; }
+  .page-ourpeople__four-top .left .item.email { margin-bottom: 16px; }
+  .page-ourpeople__four-top .right { font-size: 16px; line-height: 1em; } }
+
+.page-home .rtf { color: #00FF00; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 76px; line-height: 1em; text-decoration: underline; opacity: 1; transition: all .3s ease; }
+
+.page-home .rtf:hover { opacity: 0.7; }
+
+@media (max-width: 991px) { .page-home .rtf { font-size: 32px; line-height: 1em; } }
+
+.page-home__one { background: #00FF00; min-height: 100vh; color: #00FF00; padding: 10.417vw 5vw 9.375vw; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: relative; }
+
+.page-home__one .wrap { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+
+.page-home__one h1 { font-size: 9.115vw; line-height: .9em; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: 400; color: #000; position: relative; margin-bottom: 0; }
+
+.page-home__one h1 small { position: absolute; right: 0; bottom: 40px; font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: 600; font-size: 0.938vw; line-height: 1em; max-width: 20.313vw; }
+
+.page-home__one .arrow { position: absolute; bottom: 3.646vw; left: 0; right: 0; margin: 0 auto; }
+
+.page-home__one .arrow img { display: block; margin: 0 auto; width: 24px; height: 40px; }
+
+@media (max-width: 991px) { .page-home__one h1 { font-size: 15vw; line-height: .8em; }
+  .page-home__one h1 br { display: none; }
+  .page-home__one h1 img { width: 53.426vw; height: 30.370vw; bottom: 48.271vw; left: 33.229vw; }
+  .page-home__one h1 small { font-size: 2vw; bottom: 0; max-width: 30vw; } }
+
+.page-home__two { min-height: 100vh; background: #000; padding-top: 120px; padding-bottom: 100px; position: relative; overflow: hidden; }
+
+.page-home__two .wrap { padding-left: 60px; padding-right: 60px; }
+
+.page-home__two .huge-text { display: block; text-align: center; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 58vw; line-height: 0.8em; color: #FFFFFF; }
+
+.page-home__two .small-text { position: absolute; display: block; max-width: 370px; color: #00FF00; bottom: 20%; left: 100px; -webkit-transform: rotate(-90deg); transform: rotate(-90deg); -webkit-transform-origin: left; transform-origin: left; }
+
+@media (max-width: 991px) { .page-home__two { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; padding-bottom: 60px; }
+  .page-home__two .wrap { width: 100%; padding-left: 30px; padding-right: 30px; }
+  .page-home__two .huge-text { font-size: 90vw; word-break: break-all; }
+  .page-home__two .small-text { font-size: 3vw; line-height: 1em; left: 14vw; bottom: 17%; }
+  .page-home__two .wrap-buttons { text-align: center; margin-top: 40px; }
+  .page-home__two .rtf { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 32px; line-height: 1em; color: #00FF00; text-decoration: underline; } }
+
+.page-home__three { min-height: 100vh; background-color: #000; background-image: url("../../../images/img-bg-home-02.jpg"); background-repeat: no-repeat; background-size: cover; background-position: center; padding-top: 120px; padding-bottom: 80px; position: relative; overflow: hidden; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end; }
+
+.page-home__three .wrap { padding-left: 60px; padding-right: 60px; text-align: center; width: 100%; }
+
+.page-home__three h2 { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 8.5vw; font-weight: 500; line-height: 1em; color: #00FF00; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+
+.page-home__three h2 span { display: inline-block; vertical-align: middle; -webkit-order: 2; -ms-flex-order: 2; order: 2; }
+
+.page-home__three h2 span.oa { font-size: 2vw; line-height: 1em; background: #00FF00; color: #000; padding: 0 10px; margin-right: 2vw; -webkit-order: 1; -ms-flex-order: 1; order: 1; }
+
+.page-home__three h2 span.date { font-size: 2vw; line-height: 1em; margin-left: 2vw; -webkit-order: 3; -ms-flex-order: 3; order: 3; }
+
+.page-home__three .desc { margin: 0 0 40px; }
+
+.page-home__three .desc p { color: #FFF; font-size: 30px; line-height: 1.2em; }
+
+.page-home__three .rtf { color: #00FF00; }
+
+@media (max-width: 991px) { .page-home__three { background-image: url("../../../images/img-bg-home-02-sm.jpg"); -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+  .page-home__three .wrap { padding-left: 30px; padding-right: 30px; }
+  .page-home__three h2 { font-size: 22vw; line-height: 1em; display: block; }
+  .page-home__three h2 span { display: block; }
+  .page-home__three h2 span.oa, .page-home__three h2 span.date { display: inline-block; font-size: 32px; line-height: 1em; margin: 0 10px; }
+  .page-home__three .desc p { font-size: 16px; line-height: 1.3em; } }
+
+.page-home__four { min-height: 100vh; background: #00FF00; padding-top: 120px; padding-bottom: 80px; position: relative; }
+
+.page-home__four .wrap { padding-left: 60px; padding-right: 60px; text-align: center; width: 100%; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+
+.page-home__four .wrap .col-left { width: 100%; max-width: 15%; -webkit-flex: 0 0 15%; -ms-flex: 0 0 15%; flex: 0 0 15%; -webkit-order: 1; -ms-flex-order: 1; order: 1; }
+
+.page-home__four .wrap .col-main { width: 100%; max-width: 70%; -webkit-flex: 0 0 70%; -ms-flex: 0 0 70%; flex: 0 0 70%; -webkit-order: 2; -ms-flex-order: 2; order: 2; }
+
+.page-home__four .wrap .col-right { width: 100%; max-width: 15%; -webkit-flex: 0 0 15%; -ms-flex: 0 0 15%; flex: 0 0 15%; -webkit-order: 3; -ms-flex-order: 3; order: 3; }
+
+.page-home__four span.oa { display: inline-block; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 2vw; line-height: 1em; background: #000; color: #FFF; padding: 0 10px; }
+
+.page-home__four span.date { display: inline-block; color: #000; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 2vw; line-height: 1em; }
+
+.page-home__four h2 { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 8.5vw; font-weight: 500; line-height: 1em; color: #000; }
+
+.page-home__four .img { margin: 0 0 40px; }
+
+.page-home__four .img img { display: block; margin: 0 auto; max-width: 25vw; height: auto; width: auto; }
+
+.page-home__four .desc { margin: 0 0 40px; }
+
+.page-home__four .desc p { color: #000; font-size: 30px; line-height: 1.2em; }
+
+.page-home__four .rtf { color: #000; }
+
+@media (max-width: 991px) { .page-home__four .wrap { padding-left: 30px; padding-right: 30px; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+  .page-home__four .wrap .col-left, .page-home__four .wrap .col-right { max-width: 50%; -webkit-flex: 0 0 50%; -ms-flex: 0 0 50%; flex: 0 0 50%; -webkit-order: 1; -ms-flex-order: 1; order: 1; }
+  .page-home__four .wrap .col-main { max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; -webkit-order: 2; -ms-flex-order: 2; order: 2; }
+  .page-home__four span.oa, .page-home__four span.date { display: inline-block; font-size: 32px; line-height: 1em; margin: 0 10px 20px; }
+  .page-home__four h2 { font-size: 22vw; line-height: 1em; }
+  .page-home__four .img img { max-width: 60vw; }
+  .page-home__four .desc p { font-size: 16px; line-height: 1.3em; } }
+
+.page-home__five { min-height: 100vh; background-color: #000; background-image: url("../../../images/img-bg-home-05.png"); background-repeat: no-repeat; background-size: cover; background-position: center; padding-top: 120px; padding-bottom: 80px; position: relative; }
+
+.page-home__five .wrap { min-height: calc(100vh - 200px); padding-left: 60px; padding-right: 60px; width: 100%; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
+
+.page-home__five .wrap .col-left { width: 100%; max-width: 60%; -webkit-flex: 0 0 60%; -ms-flex: 0 0 60%; flex: 0 0 60%; }
+
+.page-home__five .wrap .col-right { width: 100%; max-width: 40%; -webkit-flex: 0 0 40%; -ms-flex: 0 0 40%; flex: 0 0 40%; text-align: right; }
+
+.page-home__five span.oa { display: inline-block; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 2vw; line-height: 1em; background: #00FF00; color: #000; padding: 0 10px; margin-bottom: 15px; }
+
+.page-home__five h2 { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 8.5vw; font-weight: 500; line-height: 1em; color: #00FF00; }
+
+.page-home__five .desc { margin: 0 0 40px; }
+
+.page-home__five .desc p { color: #FFF; font-size: 16px; line-height: 1.2em; }
+
+@media (max-width: 991px) { .page-home__five .wrap { padding-left: 30px; padding-right: 30px; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+  .page-home__five .wrap .col-left, .page-home__five .wrap .col-right { max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; text-align: center; }
+  .page-home__five span.oa { display: inline-block; font-size: 32px; line-height: 1em; margin: 0 10px 20px; }
+  .page-home__five h2 { font-size: 22vw; line-height: 1em; }
+  .page-home__five h2 br { display: none; }
+  .page-home__five .desc:not(.sm-only) { display: none; } }
+
+.page-home__six { min-height: 100vh; background-color: #000; padding-top: 120px; padding-bottom: 80px; position: relative; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+
+.page-home__six .wrap { position: relative; width: 100%; padding-left: 60px; padding-right: 60px; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end; }
+
+.page-home__six .wrap .col-main { position: relative; width: 100%; max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; margin-bottom: 60px; }
+
+.page-home__six .wrap .col-main .img { display: block; width: 100%; position: absolute; top: calc(50% - 12vw); left: 0; }
+
+.page-home__six .wrap .col-main .img img { display: block; width: 24vw; height: 24vw; margin: 0 auto; }
+
+.page-home__six .wrap .col-bot-l { width: 100%; max-width: 30%; -webkit-flex: 0 0 30%; -ms-flex: 0 0 30%; flex: 0 0 30%; }
+
+.page-home__six .wrap .col-bot-c { width: 100%; max-width: 40%; -webkit-flex: 0 0 40%; -ms-flex: 0 0 40%; flex: 0 0 40%; text-align: center; }
+
+.page-home__six .wrap .col-bot-r { width: 100%; max-width: 30%; -webkit-flex: 0 0 30%; -ms-flex: 0 0 30%; flex: 0 0 30%; text-align: right; }
+
+.page-home__six span.oa { display: inline-block; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 2vw; line-height: 1em; background: #00FF00; color: #000; padding: 0 10px; margin-bottom: 60px; }
+
+.page-home__six h2 { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 24vw; line-height: 1em; color: #00FF00; font-weight: 500; }
+
+.page-home__six h2 span.star { display: inline-block; position: relative; margin: 0 2vw; top: 6vw; }
+
+.page-home__six .desc p { font-size: 16px; line-height: 1.2em; color: #FFF; }
+
+.page-home__six .date { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; color: #FFF; font-size: 2vw; line-height: 1em; margin-bottom: 60px; display: block; text-align: right; }
+
+.page-home__six .meta { display: block; font-size: 2vw; line-height: 1em; color: #FFF; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; }
+
+@media (max-width: 991px) { .page-home__six { padding-top: 64px; padding-bottom: 64px; }
+  .page-home__six .wrap { padding-left: 30px; padding-right: 30px; }
+  .page-home__six .wrap .col-main { -webkit-order: 1; -ms-flex-order: 1; order: 1; }
+  .page-home__six .wrap .col-main .img { position: relative; }
+  .page-home__six .wrap .col-main .img img { width: 60vw; height: 60vw; }
+  .page-home__six .wrap .col-bot-l { -webkit-order: 3; -ms-flex-order: 3; order: 3; max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; text-align: center; margin-bottom: 20px; }
+  .page-home__six .wrap .col-bot-l span.oa { display: none; }
+  .page-home__six .wrap .col-bot-c { -webkit-order: 4; -ms-flex-order: 4; order: 4; max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; text-align: center; padding-top: 20px; }
+  .page-home__six .wrap .col-bot-r { -webkit-order: 2; -ms-flex-order: 2; order: 2; max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; text-align: center; margin-bottom: 20px; }
+  .page-home__six .wrap .col-bot-r .date { display: none; }
+  .page-home__six .sm-only { text-align: center; }
+  .page-home__six .sm-only span.oa, .page-home__six .sm-only span.date { display: inline-block; font-size: 32px; line-height: 1em; margin: 0 10px 20px; }
+  .page-home__six h2 { font-size: 40vw; line-height: 1em; }
+  .page-home__six .meta { font-size: 24px; line-height: 1.2em; } }
+
+.page-home__footer { background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
+
+.page-home__footer-top { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-bottom: 72px; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
+
+.page-home__footer-top .left { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-left: -32px; margin-right: -32px; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 2.083vw; line-height: 1em; font-weight: 500; color: #000; }
+
+.page-home__footer-top .left .item { padding-right: 32px; padding-left: 32px; }
+
+.page-home__footer-top .left a { color: #000; text-decoration: none; }
+
+.page-home__footer-top .right { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 2.083vw; line-height: 1em; font-weight: 500; color: #00FF00; }
+
+.page-inspiration__one { background: #000; min-height: 100vh; color: #00FF00; padding: 10.417vw 5vw 9.375vw; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: relative; }
+
+.page-inspiration__one .tagline-marquee { display: block; width: 100%; letter-spacing: 1.2vw; }
+
+.page-inspiration__one h1 { font-size: 22.865vw; line-height: 1em; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; color: #00FF00; }
+
+.page-inspiration__one .desc { width: 100%; margin: 0 auto; text-align: center; padding-left: 10vw; padding-right: 10vw; }
+
+.page-inspiration__one .desc p { color: #fff; font-size: 30px; line-height: 36px; }
+
+.page-inspiration__one .wrap { position: relative; width: 100%; }
+
+.page-inspiration__one .arrow { position: absolute; bottom: 3.646vw; left: 0; right: 0; margin: 0 auto; }
+
+.page-inspiration__one .arrow img { display: block; margin: 0 auto; width: 24px; height: 40px; }
+
+@media (max-width: 991px) { .page-inspiration__one h1 { font-size: 40vw; line-height: 1em; }
+  .page-inspiration__one .desc p { font-size: 16px; line-height: 1.2em; } }
+
+.page-inspiration__two .wrap { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+.page-inspiration__two .item { position: relative; display: block; width: 100%; max-width: 50%; -webkit-flex: 0 0 50%; -ms-flex: 0 0 50%; flex: 0 0 50%; overflow: hidden; }
+
+.page-inspiration__two .item__title { width: 100%; max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 5vw; line-height: 1em; font-weight: 400; color: #00FF00; padding: 0 2vw 1vw; }
+
+.page-inspiration__two .item__cta { width: 100%; max-width: 50%; -webkit-flex: 0 0 50%; -ms-flex: 0 0 50%; flex: 0 0 50%; padding: 0 2vw 2vw; }
+
+.page-inspiration__two .item__cta a { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 2vw; line-height: 1em; opacity: 1; color: #FFF; text-decoration: underline; }
+
+.page-inspiration__two .item__cta a:hover { opacity: 0.6; }
+
+.page-inspiration__two .item__date { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; width: 100%; max-width: 50%; -webkit-flex: 0 0 50%; -ms-flex: 0 0 50%; flex: 0 0 50%; padding: 0 2vw 2vw; font-size: 2vw; line-height: 1em; color: #FFF; text-align: right; }
+
+.page-inspiration__two .item__date-sm { display: none; }
+
+.page-inspiration__two .item__bg { z-index: 1; position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; top: 0; left: 0; transition: all .3s ease-in-out; }
+
+.page-inspiration__two .item__content { z-index: 2; position: absolute; width: 100%; left: 0; bottom: 0; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+.page-inspiration__two .item__wrap { width: 100%; padding-top: 60%; background: #000; }
+
+.page-inspiration__two .item:hover .item__bg { -webkit-transform: scale(1.03, 1.03); transform: scale(1.03, 1.03); }
+
+.page-inspiration__two .item.item--alt .item__title { color: #000; }
+
+.page-inspiration__two .item.item--alt .item__wrap { background: #00FF00; }
+
+.page-inspiration__two .item.item--lg { max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; }
+
+.page-inspiration__two .item.item--lg .item__wrap { padding-top: 30%; }
+
+.page-inspiration__two .item.anim .item__bg { opacity: 0; transition: all .3s ease-in-out; transition-delay: 0.2s; }
+
+.page-inspiration__two .item.anim.animate-in .item__bg { opacity: 1; }
+
+@media (max-width: 991px) { .page-inspiration__two .item { max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; }
+  .page-inspiration__two .item .item__title { font-size: 8vw; line-height: 1em; text-align: center; padding-bottom: 0; margin-bottom: 0; }
+  .page-inspiration__two .item .item__cta { text-align: center; max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; padding-bottom: 20px; }
+  .page-inspiration__two .item .item__cta a { font-size: 4vw; line-height: 1em; }
+  .page-inspiration__two .item .item__date { display: none; }
+  .page-inspiration__two .item .item__date-sm { z-index: 3; display: block; position: absolute; top: 20px; right: 16px; text-align: right; }
+  .page-inspiration__two .item .item__date-sm span { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 4vw; line-height: 1em; color: #FFF; }
+  .page-inspiration__two .item .item__date-sm.dark span { color: #000; }
+  .page-inspiration__two .item.item--lg .item__wrap { padding-top: 60%; } }
+
+.page-inspiration__footer { background-image: url(../../../images/bg-sfour-ourpeople.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
+
+.page-inspiration__footer-top { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-bottom: 72px; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
+
+.page-inspiration__footer-top .left { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-left: -32px; margin-right: -32px; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 2.083vw; line-height: 1em; font-weight: 500; color: #000; }
+
+.page-inspiration__footer-top .left .item { padding-right: 32px; padding-left: 32px; }
+
+.page-inspiration__footer-top .left a { color: #000; text-decoration: none; }
+
+.page-inspiration__footer-top .right { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 2.083vw; line-height: 1em; font-weight: 500; color: #00FF00; }
+
+.page-inspiration-s__one { background: #000; min-height: 100vh; color: #00FF00; padding: 10.417vw 5vw 9.375vw; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: relative; background-image: url("../../../images/img-bg-inspiration-single.jpg"); background-repeat: no-repeat; background-size: cover; background-position: center; }
 
 .page-inspiration-s__one h1 { font-size: 10vw; line-height: 1em; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: 500; color: #00FF00; text-align: center; margin-bottom: 40px; }
 
@@ -2786,7 +610,7 @@ body.menu-open .header__menu .menu-toggle span.close {
 
 .page-inspiration-s__one .wrap { position: relative; width: 100%; }
 
-@media (max-width: 991px) { .page-inspiration-s__one { min-height: 80vh; -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end; background-image: url("../images/img-bg-inspiration-single-xs.jpg"); background-position: center; }
+@media (max-width: 991px) { .page-inspiration-s__one { min-height: 80vh; -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end; background-image: url("../../../images/img-bg-inspiration-single-xs.jpg"); background-position: center; }
   .page-inspiration-s__one h1 { font-size: 18vw; line-height: 1em; }
   .page-inspiration-s__one .desc { display: none; } }
 
@@ -2801,7 +625,7 @@ body.menu-open .header__menu .menu-toggle span.close {
 
 .page-inspiration-s__three .video-wrap { display: block; padding-top: 56.2%; position: relative; }
 
-.page-inspiration-s__three .video-wrap .btn-play { content: ""; z-index: 2; display: block; width: 20vw; height: 20vw; background: url("../images/ic-play.svg") no-repeat center; background-size: contain; position: absolute; top: calc(50% - 10vw); left: calc(50% - 10vw); pointer-events: none; }
+.page-inspiration-s__three .video-wrap .btn-play { content: ""; z-index: 2; display: block; width: 20vw; height: 20vw; background: url("../../../images/ic-play.svg") no-repeat center; background-size: contain; position: absolute; top: calc(50% - 10vw); left: calc(50% - 10vw); pointer-events: none; }
 
 .page-inspiration-s__three .video-wrap iframe, .page-inspiration-s__three .video-wrap video { display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0; border: 0; }
 
@@ -2870,7 +694,7 @@ body.menu-open .header__menu .menu-toggle span.close {
   .page-flagship__two .item .item__date-sm.dark span { color: #000; }
   .page-flagship__two .item.item--lg .item__wrap { padding-top: 60%; } }
 
-.page-flagship__footer { background-image: url(../images/bg-sfour-ourpeople.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
+.page-flagship__footer { background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
 
 .page-flagship__footer-top { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-bottom: 72px; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
 
@@ -2943,877 +767,208 @@ body.menu-open .header__menu .menu-toggle span.close {
 
 .page-flagship-s__three .wrap .img-half { display: block; width: 100%; max-width: 50%; -webkit-flex: 0 0 50%; -ms-flex: 0 0 50%; flex: 0 0 50%; }
 
-.page-project__one {
-    background: #000;
-    min-height: 100vh;
-    color: #00FF00;
-    padding: 10.417vw 5vw 9.375vw;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    position: relative;
-}
-
-.page-project__one .tagline-marquee {
-    display: block;
-    width: 100%;
-    letter-spacing: 1.2vw;
-}
-
-.page-project__one h1 {
-    font-size: 22.865vw;
-    line-height: 1em;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: #00FF00;
-}
-
-.page-project__one .desc {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    padding-left: 10vw;
-    padding-right: 10vw;
-}
-
-.page-project__one .desc p {
-    color: #fff;
-    font-size: 30px;
-    line-height: 36px;
-}
-
-.page-project__one .wrap {
-    position: relative;
-    width: 100%;
-}
-
-.page-project__one .arrow {
-    position: absolute;
-    bottom: 3.646vw;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-}
-
-.page-project__one .arrow img {
-    display: block;
-    margin: 0 auto;
-    width: 24px;
-    height: 40px;
-}
-
-@media (max-width: 991px) {
-    .page-project__one {
-        min-height: 80vh;
-    }
-
-    .page-project__one h1 {
-        font-size: 40vw;
-        line-height: 1em;
-    }
-
-    .page-project__one .desc p {
-        font-size: 16px;
-        line-height: 1.2em;
-    }
-}
-
-.page-project__two {
-    background: #000;
-}
-
-.page-project__two .item {
-    display: block;
-    width: 100%;
-}
-
-.page-project__two .item__title {
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 2.5vw;
-    font-weight: 400;
-    line-height: 1.2em;
-    color: #FFF;
-    width: 100%;
-    max-width: 33.333%;
-    -webkit-flex: 0 0 33.333%;
-    -ms-flex: 0 0 33.333%;
-    flex: 0 0 33.333%;
-    transition: all .3s ease;
-}
-
-.page-project__two .item__meta {
-    color: #FFF;
-    font-size: 1.563vw;
-    line-height: 1.3em;
-    font-weight: 600;
-    text-align: center;
-    width: 100%;
-    max-width: 33.333%;
-    -webkit-flex: 0 0 33.333%;
-    -ms-flex: 0 0 33.333%;
-    flex: 0 0 33.333%;
-    transition: all .3s ease;
-}
-
-.page-project__two .item__date {
-    color: #FFF;
-    font-size: 1.563vw;
-    line-height: 1.3em;
-    font-weight: 600;
-    text-align: right;
-    width: 100%;
-    max-width: 33.333%;
-    -webkit-flex: 0 0 33.333%;
-    -ms-flex: 0 0 33.333%;
-    flex: 0 0 33.333%;
-    transition: all .3s ease;
-}
-
-.page-project__two .item__wrap {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding-left: 62px;
-    padding-right: 62px;
-    border-top: 2px solid #00FF00;
-}
-
-.page-project__two .item:last-child .item__wrap {
-    border-bottom: 2px solid #00FF00;
-}
-
-.page-project__two .item:hover .item__title,
-.page-project__two .item:hover .item__meta,
-.page-project__two .item:hover .item__date {
-    color: #00FF00;
-}
-
-.page-project__two .wrap {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-@media (max-width: 991px) {
-    .page-project__two .item__wrap {
-        padding: 10px 20px;
-    }
-
-    .page-project__two .item__title {
-        font-size: 16px;
-    }
-
-    .page-project__two .item__meta {
-        font-size: 11px;
-    }
-
-    .page-project__two .item__date {
-        font-size: 12px;
-    }
-}
-
-.page-project-s__one {
-    background: #000;
-    color: #00FF00;
-    padding: 10.417vw 64px 130px;
-    position: relative;
-}
-
-.page-project-s__one h1 {
-    display: block;
-    width: 100%;
-    max-width: 80%;
-    -webkit-flex: 0 0 80%;
-    -ms-flex: 0 0 80%;
-    flex: 0 0 80%;
-    font-size: 10vw;
-    line-height: 1em;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: #00FF00;
-    font-weight: 500;
-    margin-bottom: 0;
-}
-
-.page-project-s__one .desc {
-    display: block;
-    width: 100%;
-    max-width: 20%;
-    -webkit-flex: 0 0 20%;
-    -ms-flex: 0 0 20%;
-    flex: 0 0 20%;
-    margin-bottom: 0;
-}
-
-.page-project-s__one .desc p {
-    color: #FFF;
-    font-size: 18px;
-    line-height: 1.3em;
-    margin-bottom: 40px;
-}
-
-.page-project-s__one .img {
-    display: block;
-    width: 100%;
-    padding-top: 60px;
-}
-
-.page-project-s__one .img img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.page-project-s__one .img .caption {
-    padding-top: 30px;
-    display: block;
-    width: 100%;
-    font-size: 30px;
-    line-height: 1.3em;
-    font-weight: 600;
-    color: #FFF;
-}
-
-.page-project-s__one .wrap {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    width: 100%;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-@media (max-width: 991px) {
-    .page-project-s__one {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-
-    .page-project-s__one h1 {
-        max-width: 100%;
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        font-size: 20vw;
-        margin-bottom: 40px;
-    }
-
-    .page-project-s__one .desc {
-        max-width: 100%;
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-    }
-
-    .page-project-s__one .desc p {
-        font-size: 16px;
-        line-height: 1.5em;
-        margin-bottom: 24px;
-    }
-
-    .page-project-s__one .img {
-        padding-top: 30px;
-    }
-
-    .page-project-s__one .img .caption {
-        font-size: 18px;
-    }
-}
-
-.page-project-s__two {
-    background: #000;
-    padding-bottom: 160px;
-}
-
-.page-project-s__two article {
-    color: #FFF;
-}
-
-.page-project-s__two article p {
-    color: #FFF;
-    font-size: 29px;
-    line-height: 1.3em;
-    margin-bottom: 40px;
-}
-
-.page-project-s__two .article-top {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-left: -15px;
-    margin-right: -15px;
-}
-
-.page-project-s__two .article-top p {
-    font-size: 19px;
-    line-height: 1.5em;
-    font-weight: 600;
-    color: #FFF;
-}
-
-.page-project-s__two .article-top p:last-child {
-    margin-bottom: 0;
-}
-
-.page-project-s__two .article-top a {
-    font-size: 19px;
-    line-height: 1.5em;
-    font-weight: 600;
-    color: #FFF;
-}
-
-.page-project-s__two .article-top a:hover {
-    text-decoration: underline;
-}
-
-.page-project-s__two .article-top .tr {
-    text-align: right;
-}
-
-.page-project-s__two .article-top .tc {
-    text-align: center;
-}
-
-.page-project-s__two .article-top .col {
-    display: block;
-    width: 100%;
-    max-width: 33.333333%;
-    -webkit-flex: 0 0 33.333333%;
-    -ms-flex: 0 0 33.333333%;
-    flex: 0 0 33.333333%;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 80px;
-}
-
-.page-project-s__two .wrap {
-    padding-left: 64px;
-    padding-right: 64px;
-}
-
-@media (max-width: 991px) {
-    .page-project-s__two {
-        padding-bottom: 60px;
-    }
-
-    .page-project-s__two .article-top {
-        padding-bottom: 30px;
-    }
-
-    .page-project-s__two .article-top .col {
-        max-width: 100%;
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        padding-bottom: 30px;
-        text-align: left !important;
-    }
-
-    .page-project-s__two .article-top p {
-        font-size: 14px;
-        line-height: 1.5em;
-        font-weight: 400;
-    }
-
-    .page-project-s__two .article-top a {
-        font-size: 14px;
-        line-height: 1.5em;
-        font-weight: 400;
-    }
-
-    .page-project-s__two article p {
-        font-size: 20px;
-        line-height: 1.5em;
-    }
-
-    .page-project-s__two .wrap {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-}
-
-.page-project-s__three .wrap {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-.page-project-s__three .wrap .img-full {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-}
-
-.page-project-s__three .wrap .img-half {
-    display: block;
-    width: 100%;
-    max-width: 50%;
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-}
-
-
-.page-tribes__one {
-    background: #000;
-    min-height: 100vh;
-    color: #00FF00;
-    padding: 10.417vw 5vw 9.375vw;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    position: relative;
-}
-
-.page-tribes__one .tagline-marquee {
-    display: block;
-    width: 100%;
-    letter-spacing: 1.2vw;
-}
-
-.page-tribes__one h1 {
-    font-size: 22.865vw;
-    line-height: 1em;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: #00FF00;
-}
-
-.page-tribes__one .desc {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    padding-left: 10vw;
-    padding-right: 10vw;
-}
-
-.page-tribes__one .desc p {
-    color: #fff;
-    font-size: 30px;
-    line-height: 36px;
-}
-
-.page-tribes__one .wrap {
-    position: relative;
-    width: 100%;
-}
-
-.page-tribes__one .arrow {
-    position: absolute;
-    bottom: 3.646vw;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-}
-
-.page-tribes__one .arrow img {
-    display: block;
-    margin: 0 auto;
-    width: 24px;
-    height: 40px;
-}
-
-@media (max-width: 991px) {
-    .page-tribes__one {
-        min-height: 80vh;
-    }
-
-    .page-tribes__one h1 {
-        font-size: 40vw;
-        line-height: 1em;
-    }
-
-    .page-tribes__one .desc p {
-        font-size: 16px;
-        line-height: 1.2em;
-    }
-}
-
-.page-tribes__two {
-    background: #00FF00;
-}
-
-.page-tribes__two .item {
-    display: block;
-    position: relative;
-    width: 100%;
-    max-width: 25%;
-    -webkit-flex: 0 0 25%;
-    -ms-flex: 0 0 25%;
-    flex: 0 0 25%;
-    min-height: 25vw;
-}
-
-.page-tribes__two .item__logo {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    height: 100%;
-    padding: 1vw;
-}
-
-.page-tribes__two .item__logo img {
-    display: block;
-    max-width: 80%;
-    max-height: 80%;
-    width: auto;
-    height: auto;
-}
-
-.page-tribes__two .item__title {
-    display: block;
-    font-size: 20px;
-    line-height: 1.2em;
-    text-align: center;
-    color: #000;
-}
-
-.page-tribes__two .item__wrap {
-    padding: 1vw;
-    height: 100%;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    border-right: 1px solid #000;
-    border-bottom: 1px solid #000;
-}
-
-.page-tribes__two .wrap {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-@media (max-width: 991px) {
-    .page-tribes__two .item {
-        max-width: 50%;
-        -webkit-flex: 0 0 50%;
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        min-height: 50vw;
-    }
-
-    .page-tribes__two .item__logo {
-        padding: 4vw;
-    }
-
-    .page-tribes__two .item__logo img {
-        max-width: 60%;
-        max-height: 60%;
-    }
-
-    .page-tribes__two .item:nth-child(2n) .item__wrap {
-        border-right: 0;
-    }
-}
-
-.page-tribe-s__one {
-    background: #000;
-    color: #00FF00;
-    padding: 10.417vw 64px 60px;
-    position: relative;
-}
-
-.page-tribe-s__one h1 {
-    display: block;
-    width: 100%;
-    max-width: 80%;
-    -webkit-flex: 0 0 80%;
-    -ms-flex: 0 0 80%;
-    flex: 0 0 80%;
-    font-size: 10vw;
-    line-height: 1em;
-    font-family: "Druk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: #00FF00;
-    font-weight: 500;
-    margin-bottom: 0;
-}
-
-.page-tribe-s__one .desc {
-    display: block;
-    width: 100%;
-    max-width: 20%;
-    -webkit-flex: 0 0 20%;
-    -ms-flex: 0 0 20%;
-    flex: 0 0 20%;
-    margin-bottom: 0;
-}
-
-.page-tribe-s__one .desc p {
-    color: #FFF;
-    font-size: 18px;
-    line-height: 1.3em;
-    margin-bottom: 40px;
-}
-
-.page-tribe-s__one .img {
-    display: block;
-    width: 100%;
-    padding-top: 60px;
-}
-
-.page-tribe-s__one .img img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.page-tribe-s__one .img .caption {
-    padding-top: 30px;
-    display: block;
-    width: 100%;
-    font-size: 30px;
-    line-height: 1.3em;
-    font-weight: 600;
-    color: #FFF;
-}
-
-.page-tribe-s__one .wrap {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    width: 100%;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-@media (max-width: 991px) {
-    .page-tribe-s__one {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-
-    .page-tribe-s__one h1 {
-        max-width: 100%;
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        font-size: 20vw;
-        margin-bottom: 40px;
-    }
-
-    .page-tribe-s__one .desc {
-        max-width: 100%;
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-    }
-
-    .page-tribe-s__one .desc p {
-        font-size: 16px;
-        line-height: 1.5em;
-        margin-bottom: 24px;
-    }
-
-    .page-tribe-s__one .img {
-        padding-top: 30px;
-    }
-
-    .page-tribe-s__one .img .caption {
-        font-size: 18px;
-    }
-}
-
-.page-tribe-s__two {
-    background: #000;
-    padding-bottom: 160px;
-}
-
-.page-tribe-s__two article {
-    color: #FFF;
-}
-
-.page-tribe-s__two article p {
-    color: #FFF;
-    font-size: 29px;
-    line-height: 1.3em;
-    margin-bottom: 40px;
-}
-
-.page-tribe-s__two .article-top {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-left: -15px;
-    margin-right: -15px;
-}
-
-.page-tribe-s__two .article-top p {
-    font-size: 19px;
-    line-height: 1.5em;
-    font-weight: 600;
-    color: #FFF;
-}
-
-.page-tribe-s__two .article-top p:last-child {
-    margin-bottom: 0;
-}
-
-.page-tribe-s__two .article-top a {
-    font-size: 19px;
-    line-height: 1.5em;
-    font-weight: 600;
-    color: #FFF;
-}
-
-.page-tribe-s__two .article-top a:hover {
-    text-decoration: underline;
-}
-
-.page-tribe-s__two .article-top .tr {
-    text-align: right;
-}
-
-.page-tribe-s__two .article-top .tc {
-    text-align: center;
-}
-
-.page-tribe-s__two .article-top .col {
-    display: block;
-    width: 100%;
-    max-width: 33.333333%;
-    -webkit-flex: 0 0 33.333333%;
-    -ms-flex: 0 0 33.333333%;
-    flex: 0 0 33.333333%;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 80px;
-}
-
-.page-tribe-s__two .wrap {
-    padding-left: 64px;
-    padding-right: 64px;
-}
-
-@media (max-width: 991px) {
-    .page-tribe-s__two {
-        padding-bottom: 60px;
-    }
-
-    .page-tribe-s__two .article-top {
-        padding-bottom: 30px;
-    }
-
-    .page-tribe-s__two .article-top .col {
-        max-width: 100%;
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        padding-bottom: 30px;
-        text-align: left !important;
-    }
-
-    .page-tribe-s__two .article-top p {
-        font-size: 14px;
-        line-height: 1.5em;
-        font-weight: 400;
-    }
-
-    .page-tribe-s__two .article-top a {
-        font-size: 14px;
-        line-height: 1.5em;
-        font-weight: 400;
-    }
-
-    .page-tribe-s__two article p {
-        font-size: 20px;
-        line-height: 1.5em;
-    }
-
-    .page-tribe-s__two .wrap {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-}
-
-.page-tribe-s__three .wrap {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-.page-tribe-s__three .wrap .img-full {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-}
-
-.page-tribe-s__three .wrap .img-half {
-    display: block;
-    width: 100%;
-    max-width: 50%;
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-}
+.page-project__one { background: #000; min-height: 100vh; color: #00FF00; padding: 10.417vw 5vw 9.375vw; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: relative; }
+
+.page-project__one .tagline-marquee { display: block; width: 100%; letter-spacing: 1.2vw; }
+
+.page-project__one h1 { font-size: 22.865vw; line-height: 1em; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; color: #00FF00; }
+
+.page-project__one .desc { width: 100%; margin: 0 auto; text-align: center; padding-left: 10vw; padding-right: 10vw; }
+
+.page-project__one .desc p { color: #fff; font-size: 30px; line-height: 36px; }
+
+.page-project__one .wrap { position: relative; width: 100%; }
+
+.page-project__one .arrow { position: absolute; bottom: 3.646vw; left: 0; right: 0; margin: 0 auto; }
+
+.page-project__one .arrow img { display: block; margin: 0 auto; width: 24px; height: 40px; }
+
+@media (max-width: 991px) { .page-project__one { min-height: 80vh; }
+  .page-project__one h1 { font-size: 40vw; line-height: 1em; }
+  .page-project__one .desc p { font-size: 16px; line-height: 1.2em; } }
+
+.page-project__two { background: #000; }
+
+.page-project__two .item { display: block; width: 100%; }
+
+.page-project__two .item__title { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 2.5vw; font-weight: 400; line-height: 1.2em; color: #FFF; width: 100%; max-width: 33.333%; -webkit-flex: 0 0 33.333%; -ms-flex: 0 0 33.333%; flex: 0 0 33.333%; transition: all .3s ease; }
+
+.page-project__two .item__meta { color: #FFF; font-size: 1.563vw; line-height: 1.3em; font-weight: 600; text-align: center; width: 100%; max-width: 33.333%; -webkit-flex: 0 0 33.333%; -ms-flex: 0 0 33.333%; flex: 0 0 33.333%; transition: all .3s ease; }
+
+.page-project__two .item__date { color: #FFF; font-size: 1.563vw; line-height: 1.3em; font-weight: 600; text-align: right; width: 100%; max-width: 33.333%; -webkit-flex: 0 0 33.333%; -ms-flex: 0 0 33.333%; flex: 0 0 33.333%; transition: all .3s ease; }
+
+.page-project__two .item__wrap { display: -webkit-flex; display: -ms-flexbox; display: flex; width: 100%; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; padding-left: 62px; padding-right: 62px; border-top: 2px solid #00FF00; }
+
+.page-project__two .item:last-child .item__wrap { border-bottom: 2px solid #00FF00; }
+
+.page-project__two .item:hover .item__title, .page-project__two .item:hover .item__meta, .page-project__two .item:hover .item__date { color: #00FF00; }
+
+.page-project__two .wrap { background-size: cover; background-position: center; background-repeat: no-repeat; }
+
+@media (max-width: 991px) { .page-project__two .item__wrap { padding: 10px 20px; }
+  .page-project__two .item__title { font-size: 16px; }
+  .page-project__two .item__meta { font-size: 11px; }
+  .page-project__two .item__date { font-size: 12px; } }
+
+.page-project-s__one { background: #000; color: #00FF00; padding: 10.417vw 64px 130px; position: relative; }
+
+.page-project-s__one h1 { display: block; width: 100%; max-width: 80%; -webkit-flex: 0 0 80%; -ms-flex: 0 0 80%; flex: 0 0 80%; font-size: 10vw; line-height: 1em; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; color: #00FF00; font-weight: 500; margin-bottom: 0; }
+
+.page-project-s__one .desc { display: block; width: 100%; max-width: 20%; -webkit-flex: 0 0 20%; -ms-flex: 0 0 20%; flex: 0 0 20%; margin-bottom: 0; }
+
+.page-project-s__one .desc p { color: #FFF; font-size: 18px; line-height: 1.3em; margin-bottom: 40px; }
+
+.page-project-s__one .img { display: block; width: 100%; padding-top: 60px; }
+
+.page-project-s__one .img img { display: block; width: 100%; height: auto; }
+
+.page-project-s__one .img .caption { padding-top: 30px; display: block; width: 100%; font-size: 30px; line-height: 1.3em; font-weight: 600; color: #FFF; }
+
+.page-project-s__one .wrap { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; width: 100%; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+
+@media (max-width: 991px) { .page-project-s__one { padding-left: 20px; padding-right: 20px; padding-top: 60px; padding-bottom: 60px; }
+  .page-project-s__one h1 { max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; font-size: 20vw; margin-bottom: 40px; }
+  .page-project-s__one .desc { max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; }
+  .page-project-s__one .desc p { font-size: 16px; line-height: 1.5em; margin-bottom: 24px; }
+  .page-project-s__one .img { padding-top: 30px; }
+  .page-project-s__one .img .caption { font-size: 18px; } }
+
+.page-project-s__two { background: #000; padding-bottom: 160px; }
+
+.page-project-s__two article { color: #FFF; }
+
+.page-project-s__two article p { color: #FFF; font-size: 29px; line-height: 1.3em; margin-bottom: 40px; }
+
+.page-project-s__two .article-top { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-left: -15px; margin-right: -15px; }
+
+.page-project-s__two .article-top p { font-size: 19px; line-height: 1.5em; font-weight: 600; color: #FFF; }
+
+.page-project-s__two .article-top p:last-child { margin-bottom: 0; }
+
+.page-project-s__two .article-top a { font-size: 19px; line-height: 1.5em; font-weight: 600; color: #FFF; }
+
+.page-project-s__two .article-top a:hover { text-decoration: underline; }
+
+.page-project-s__two .article-top .tr { text-align: right; }
+
+.page-project-s__two .article-top .tc { text-align: center; }
+
+.page-project-s__two .article-top .col { display: block; width: 100%; max-width: 33.333333%; -webkit-flex: 0 0 33.333333%; -ms-flex: 0 0 33.333333%; flex: 0 0 33.333333%; padding-left: 15px; padding-right: 15px; padding-bottom: 80px; }
+
+.page-project-s__two .wrap { padding-left: 64px; padding-right: 64px; }
+
+@media (max-width: 991px) { .page-project-s__two { padding-bottom: 60px; }
+  .page-project-s__two .article-top { padding-bottom: 30px; }
+  .page-project-s__two .article-top .col { max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; padding-bottom: 30px; text-align: left !important; }
+  .page-project-s__two .article-top p { font-size: 14px; line-height: 1.5em; font-weight: 400; }
+  .page-project-s__two .article-top a { font-size: 14px; line-height: 1.5em; font-weight: 400; }
+  .page-project-s__two article p { font-size: 20px; line-height: 1.5em; }
+  .page-project-s__two .wrap { padding-left: 20px; padding-right: 20px; } }
+
+.page-project-s__three .wrap { display: -webkit-flex; display: -ms-flexbox; display: flex; width: 100%; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+.page-project-s__three .wrap .img-full { display: block; width: 100%; max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; }
+
+.page-project-s__three .wrap .img-half { display: block; width: 100%; max-width: 50%; -webkit-flex: 0 0 50%; -ms-flex: 0 0 50%; flex: 0 0 50%; }
+
+.page-tribes__one { background: #000; min-height: 100vh; color: #00FF00; padding: 10.417vw 5vw 9.375vw; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: relative; }
+
+.page-tribes__one .tagline-marquee { display: block; width: 100%; letter-spacing: 1.2vw; }
+
+.page-tribes__one h1 { font-size: 22.865vw; line-height: 1em; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; color: #00FF00; }
+
+.page-tribes__one .desc { width: 100%; margin: 0 auto; text-align: center; padding-left: 10vw; padding-right: 10vw; }
+
+.page-tribes__one .desc p { color: #fff; font-size: 30px; line-height: 36px; }
+
+.page-tribes__one .wrap { position: relative; width: 100%; }
+
+.page-tribes__one .arrow { position: absolute; bottom: 3.646vw; left: 0; right: 0; margin: 0 auto; }
+
+.page-tribes__one .arrow img { display: block; margin: 0 auto; width: 24px; height: 40px; }
+
+@media (max-width: 991px) { .page-tribes__one { min-height: 80vh; }
+  .page-tribes__one h1 { font-size: 40vw; line-height: 1em; }
+  .page-tribes__one .desc p { font-size: 16px; line-height: 1.2em; } }
+
+.page-tribes__two { background: #00FF00; }
+
+.page-tribes__two .item { display: block; position: relative; width: 100%; max-width: 25%; -webkit-flex: 0 0 25%; -ms-flex: 0 0 25%; flex: 0 0 25%; min-height: 25vw; }
+
+.page-tribes__two .item__logo { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; height: 100%; padding: 1vw; }
+
+.page-tribes__two .item__logo img { display: block; max-width: 80%; max-height: 80%; width: auto; height: auto; }
+
+.page-tribes__two .item__title { display: block; font-size: 20px; line-height: 1.2em; text-align: center; color: #000; }
+
+.page-tribes__two .item__wrap { padding: 1vw; height: 100%; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; border-right: 1px solid #000; border-bottom: 1px solid #000; }
+
+.page-tribes__two .wrap { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+@media (max-width: 991px) { .page-tribes__two .item { max-width: 50%; -webkit-flex: 0 0 50%; -ms-flex: 0 0 50%; flex: 0 0 50%; min-height: 50vw; }
+  .page-tribes__two .item__logo { padding: 4vw; }
+  .page-tribes__two .item__logo img { max-width: 60%; max-height: 60%; }
+  .page-tribes__two .item:nth-child(2n) .item__wrap { border-right: 0; } }
+
+.page-tribe-s__one { background: #000; color: #00FF00; padding: 10.417vw 64px 60px; position: relative; }
+
+.page-tribe-s__one h1 { display: block; width: 100%; max-width: 80%; -webkit-flex: 0 0 80%; -ms-flex: 0 0 80%; flex: 0 0 80%; font-size: 10vw; line-height: 1em; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; color: #00FF00; font-weight: 500; margin-bottom: 0; }
+
+.page-tribe-s__one .desc { display: block; width: 100%; max-width: 20%; -webkit-flex: 0 0 20%; -ms-flex: 0 0 20%; flex: 0 0 20%; margin-bottom: 0; }
+
+.page-tribe-s__one .desc p { color: #FFF; font-size: 18px; line-height: 1.3em; margin-bottom: 40px; }
+
+.page-tribe-s__one .img { display: block; width: 100%; padding-top: 60px; }
+
+.page-tribe-s__one .img img { display: block; width: 100%; height: auto; }
+
+.page-tribe-s__one .img .caption { padding-top: 30px; display: block; width: 100%; font-size: 30px; line-height: 1.3em; font-weight: 600; color: #FFF; }
+
+.page-tribe-s__one .wrap { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; width: 100%; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+
+@media (max-width: 991px) { .page-tribe-s__one { padding-left: 20px; padding-right: 20px; padding-top: 60px; padding-bottom: 60px; }
+  .page-tribe-s__one h1 { max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; font-size: 20vw; margin-bottom: 40px; }
+  .page-tribe-s__one .desc { max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; }
+  .page-tribe-s__one .desc p { font-size: 16px; line-height: 1.5em; margin-bottom: 24px; }
+  .page-tribe-s__one .img { padding-top: 30px; }
+  .page-tribe-s__one .img .caption { font-size: 18px; } }
+
+.page-tribe-s__two { background: #000; padding-bottom: 160px; }
+
+.page-tribe-s__two article { color: #FFF; }
+
+.page-tribe-s__two article p { color: #FFF; font-size: 29px; line-height: 1.3em; margin-bottom: 40px; }
+
+.page-tribe-s__two .article-top { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-left: -15px; margin-right: -15px; }
+
+.page-tribe-s__two .article-top p { font-size: 19px; line-height: 1.5em; font-weight: 600; color: #FFF; }
+
+.page-tribe-s__two .article-top p:last-child { margin-bottom: 0; }
+
+.page-tribe-s__two .article-top a { font-size: 19px; line-height: 1.5em; font-weight: 600; color: #FFF; }
+
+.page-tribe-s__two .article-top a:hover { text-decoration: underline; }
+
+.page-tribe-s__two .article-top .tr { text-align: right; }
+
+.page-tribe-s__two .article-top .tc { text-align: center; }
+
+.page-tribe-s__two .article-top .col { display: block; width: 100%; max-width: 33.333333%; -webkit-flex: 0 0 33.333333%; -ms-flex: 0 0 33.333333%; flex: 0 0 33.333333%; padding-left: 15px; padding-right: 15px; padding-bottom: 80px; }
+
+.page-tribe-s__two .wrap { padding-left: 64px; padding-right: 64px; }
+
+@media (max-width: 991px) { .page-tribe-s__two { padding-bottom: 60px; }
+  .page-tribe-s__two .article-top { padding-bottom: 30px; }
+  .page-tribe-s__two .article-top .col { max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; padding-bottom: 30px; text-align: left !important; }
+  .page-tribe-s__two .article-top p { font-size: 14px; line-height: 1.5em; font-weight: 400; }
+  .page-tribe-s__two .article-top a { font-size: 14px; line-height: 1.5em; font-weight: 400; }
+  .page-tribe-s__two article p { font-size: 20px; line-height: 1.5em; }
+  .page-tribe-s__two .wrap { padding-left: 20px; padding-right: 20px; } }
+
+.page-tribe-s__three .wrap { display: -webkit-flex; display: -ms-flexbox; display: flex; width: 100%; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+.page-tribe-s__three .wrap .img-full { display: block; width: 100%; max-width: 100%; -webkit-flex: 0 0 100%; -ms-flex: 0 0 100%; flex: 0 0 100%; }
+
+.page-tribe-s__three .wrap .img-half { display: block; width: 100%; max-width: 50%; -webkit-flex: 0 0 50%; -ms-flex: 0 0 50%; flex: 0 0 50%; }
 
 /*# sourceMappingURL=main.css.map */
