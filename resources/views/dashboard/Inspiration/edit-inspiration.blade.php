@@ -25,14 +25,14 @@
                                 @method("put")
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="image" class="form-label">Cover Image</label>
+                                    <label for="mainImage" class="form-label">Cover Image</label>
                                     <br>
                                     <img id="img-output" class="mb-3"
-                                        src="{{ asset('storage/' . $inspiration->image) }}"
+                                        src="{{ asset('storage/' . $inspiration->mainImage) }}"
                                         style="max-height: 200px; max-width:400px;">
-                                    <input class="form-control @error('image') is-invalid @enderror" name="image"
+                                    <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage"
                                         type="file" id="imageFile" accept="image/*">
-                                    @error('image')
+                                    @error('mainImage')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>

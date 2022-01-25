@@ -49,14 +49,14 @@ class InspirationController extends Controller
             'name' => 'required',
             'quote' => 'required',
             'description' => 'required',
-            'image' => '|image|file',
+            'mainImage' => '|image|file',
             'video' => 'mimetypes:video/avi,video/mp4',
             'date' => 'max:255'
         ]);
 
         $validated['date'] = $request->date;
-        if ($request->hasFile('image')) {
-          $validated['image'] = $request->file('image')->store('inspiration-images', ['disk' => 'public']);
+        if ($request->hasFile('mainImage')) {
+          $validated['mainImage'] = $request->file('mainImage')->store('inspiration-images', ['disk' => 'public']);
         }
 
 
@@ -116,14 +116,14 @@ class InspirationController extends Controller
             'name' => 'required',
             'quote' => 'required',
             'description' => 'required',
-            'image' => 'image|file',
+            'mainImage' => 'image|file',
             'video' => 'mimetypes:video/avi,video/mp4',
             'date' => 'max:255'
         ]);
         $validated['date'] = $request->date;
-        if ($request->hasFile('image')) {
-            Storage::disk('public')->delete($inspiration->image);
-            $validated['image'] = $request->file('image')->store('inspiration-images', ['disk' => 'public']);
+        if ($request->hasFile('mainImage')) {
+            Storage::disk('public')->delete($inspiration->mainImage);
+            $validated['mainImage'] = $request->file('mainImage')->store('inspiration-images', ['disk' => 'public']);
         }
 
         if ($request->hasFile('video')) {

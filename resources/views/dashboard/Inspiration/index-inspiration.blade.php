@@ -28,9 +28,9 @@
                                         <td>{{ $pep->id }}</td>
                                         <td>{!!  strip_tags($pep->name) !!}</td>
                                         <td>
-                                            <img src="{{ asset('storage/' . $pep->image) }}"
+                                            <img src="{{ asset('storage/' . $pep->mainImage) }}"
                                                 style="height: 100px; width:200px; object-fit:cover"
-                                                alt="{{ $pep->image }}">
+                                                alt="{{ $pep->mainImage }}">
                                         </td>
                                         <td>@if ($pep->featured == true)
                                             Yes
