@@ -39,7 +39,9 @@
                                             
                                             <td>
                                                 @if ($p->featured == true)
-                                                    yes
+                                                    Yes
+                                                @else
+                                                --
                                                 @endif
                                             </td>
                                             

@@ -22,14 +22,15 @@ class HomeController extends Controller
     function homepage()
     {
         $this->saveUser();
+        $featured[] = Flagship::whereNotNull('featured')->first();
+        $featured[] = Inspiration::whereNotNull('featured')->first();
+        $featured[] = Project::where('type', 'project')->whereNotNull('featured')->first();
+        $featured[] = Project::where('type', 'person')->whereNotNull('featured')->first();
         return view('frontend.homepage',[
             "general" => $this->general,
             "home1" => Page::where('page','Home 1')->first(),
             "page" => "Home",
-            "flagship" => Flagship::where('featured', true)->first(),
-            "inspiration" => Inspiration::where('featured', true)->first(),
-            "project" => Project::where('featured', true)->first(),
-            "partner" => Project::where('type', 'person')->first(),
+            "featured" => $featured
         ]);
     }
 

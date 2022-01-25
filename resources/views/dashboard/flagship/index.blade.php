@@ -33,7 +33,9 @@
                                                 alt="{{ $pep->mainImage }}">
                                         </td>
                                         <td>@if ($pep->featured == true)
-                                            yes
+                                            Yes
+                                            @else
+                                            --
                                         @endif</td>
                                         <td style="">
                                             <div class="dropdown">

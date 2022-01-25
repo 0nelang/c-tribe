@@ -78,15 +78,38 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="mb-3 col-lg-2">
+                                        <div class="mb-3 col-lg-2" onclick="hilzam()">
                                             <label class="form-label">featured</label>
                                             <div class="form-check pt-2">
-                                                <input type="checkbox" class="form-check-input" id="featured" name="featured">
+                                                <input type="checkbox" class="form-check-input" id="featured" name="featured" @if ($inspiration->featured)
+                                                checked
+                                                @endif>
                                                 <label class="form-check-label" for="featured">featured</label>
                                             </div>
                                         </div>
                                     </div>
-
+                                    <div class="row">
+                                        <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: {{ ($inspiration->featured == true)? 'block' : 'none'  }}">
+                                            <input type="radio" class="form-check-input" id="featured1" name="layout" value="1" {{ ($inspiration->featured == 1)? 'checked' : ''  }}>
+                                            <label class="form-check-label" for="featured1"><img
+                                                    src="/images/layouts/c-tribe home.jpeg" width="250px"></label>
+                                        </div>
+                                        <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: {{ ($inspiration->featured == true)? 'block' : 'none'  }}">
+                                            <input type="radio" class="form-check-input" id="featured2" name="layout" value="2" {{ ($inspiration->featured == 2)? 'checked' : ''  }}>
+                                            <label class="form-check-label" for="featured2"><img
+                                                    src="/images/layouts/c-tribe home1.jpeg" width="250px"></label>
+                                        </div>
+                                        <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: {{ ($inspiration->featured == true)? 'block' : 'none'  }}">
+                                            <input type="radio" class="form-check-input" id="featured3" name="layout" value="3" {{ ($inspiration->featured == 3)? 'checked' : ''  }}>
+                                            <label class="form-check-label" for="featured3"><img
+                                                    src="/images/layouts/c-tribe home2.jpeg" width="250px"></label>
+                                        </div>
+                                        <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: {{ ($inspiration->featured == true)? 'block' : 'none'  }}">
+                                            <input type="radio" class="form-check-input" id="featured4" name="layout" value="4" {{ ($inspiration->featured == 4)? 'checked' : ''  }}>
+                                            <label class="form-check-label" for="featured4"><img
+                                                    src="/images/layouts/c-tribe home3.jpeg" width="250px"></label>
+                                        </div>
+                                    </div>
 
 
                                 <div class="mb-3">
@@ -100,7 +123,7 @@
                                         </div>
                                     @enderror
                                 </div>
-                                
+
                                 <div class="mb-3">
                                     <label for="description" class="form-label">Desc</label>
                                     <textarea type="text" name="description"
@@ -156,6 +179,13 @@
 
     @section('js')
         <script>
+            function hilzam() {
+                if ($('#featured').prop('checked') == true) {
+                    $('.layout').show();
+                } else {
+                    $('.layout').hide();
+                }
+            };
             $(document).ready(function() {
                 var id;
                 $('.editable').each(function() {
