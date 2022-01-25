@@ -63,8 +63,12 @@ class ProjectController extends Controller
         }
 
         if ($request->featured == true) {
-            Project::where('featured', true)->update(['featured' => false]);
-            $validated['featured'] = true;
+            if ($request->type == 'person') {
+                Project::where('type', 'person')->update(['featured' => null]);
+            } else {
+                Project::where('type', 'project')->update(['featured' => null]);
+            }
+            $validated['featured'] = $request->layout;
         }
 
         $validated['team'] = $request->team;
@@ -147,8 +151,12 @@ class ProjectController extends Controller
         }
 
         if ($request->featured == true) {
-            Project::where('featured', true)->update(['featured' => false]);
-            $validated['featured'] = true;
+            if ($request->type == 'person') {
+                Project::where('type', 'person')->update(['featured' => null]);
+            } else {
+                Project::where('type', 'project')->update(['featured' => null]);
+            }
+            $validated['featured'] = $request->layout;
         }
         $validated['team'] = $request->team;
         Project::where('id', $project->id)->update($validated);

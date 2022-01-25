@@ -619,31 +619,13 @@ body {
     color: #FFF;
 }
 
-@media (max-width: 991px) {
-    .main-menu__bg {
-        background: url("../../../images/img-bg-menu-sm.jpg") no-repeat;
-        background-position: center -32px;
-        background-size: contain;
-    }
 
-    .main-menu ul {
-        bottom: 64px;
-    }
+@media (max-width: 991px) { .main-menu__bg { background: url("../images/img-bg-menu-sm.jpg") no-repeat; background-position: center -32px; background-size: contain; }
+  .main-menu ul { bottom: 64px; }
+  .main-menu ul > li > a { font-size: 10vw; line-height: 1em; }
+  .main-menu ul > li > a::after { font-size: 10vw; line-height: 1em; }
+  .main-menu ul > li:nth-child(3) > a::after { display: none; } }
 
-    .main-menu ul>li>a {
-        font-size: 10vw;
-        line-height: 1em;
-    }
-
-    .main-menu ul>li>a::after {
-        font-size: 10vw;
-        line-height: 1em;
-    }
-
-    .main-menu ul>li:nth-child(3)>a::after {
-        display: none;
-    }
-}
 
 body.menu-open {
     overflow: hidden;

@@ -106,12 +106,37 @@
 
                                     <div class="mb-3 col-lg-2">
                                         <label class="form-label">featured</label>
-                                        <div class="form-check pt-2">
-                                            <input type="checkbox" class="form-check-input" id="featured" name="featured">
+                                        <div class="form-check pt-2" onclick="hilzam()">
+                                            <input type="checkbox" class="form-check-input" id="featured" name="featured" @if ($project->featured)
+                                            checked
+                                            @endif>
                                             <label class="form-check-label" for="featured">featured</label>
                                         </div>
                                     </div>
 
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: {{ ($project->featured == true)? 'block' : 'none'  }}">
+                                        <input type="radio" class="form-check-input" id="featured1" name="layout" value="1" {{ ($project->featured == 1)? 'checked' : ''  }}>
+                                        <label class="form-check-label" for="featured1"><img
+                                                src="/images/layouts/c-tribe home.jpeg" width="250px"></label>
+                                    </div>
+                                    <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: {{ ($project->featured == true)? 'block' : 'none'  }}">
+                                        <input type="radio" class="form-check-input" id="featured2" name="layout" value="2" {{ ($project->featured == 2)? 'checked' : ''  }}>
+                                        <label class="form-check-label" for="featured2"><img
+                                                src="/images/layouts/c-tribe home1.jpeg" width="250px"></label>
+                                    </div>
+                                    <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: {{ ($project->featured == true)? 'block' : 'none'  }}">
+                                        <input type="radio" class="form-check-input" id="featured3" name="layout" value="3" {{ ($project->featured == 3)? 'checked' : ''  }}>
+                                        <label class="form-check-label" for="featured3"><img
+                                                src="/images/layouts/c-tribe home2.jpeg" width="250px"></label>
+                                    </div>
+                                    <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: {{ ($project->featured == true)? 'block' : 'none'  }}">
+                                        <input type="radio" class="form-check-input" id="featured4" name="layout" value="4" {{ ($project->featured == 4)? 'checked' : ''  }}>
+                                        <label class="form-check-label" for="featured4"><img
+                                                src="/images/layouts/c-tribe home3.jpeg" width="250px"></label>
+                                    </div>
                                 </div>
 
                                 <div class="mb-3">
@@ -150,7 +175,7 @@
                                     @enderror
                                 </div>
 
-                               
+
 
                                 <div class="mb-3">
                                     <label for="otherImage" class="form-label">Other Image</label>
@@ -195,6 +220,13 @@
     @section('js')
         <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
         <script>
+            function hilzam() {
+                if ($('#featured').prop('checked') == true) {
+                    $('.layout').show();
+                } else {
+                    $('.layout').hide();
+                }
+            };
             function what(id) {
                 Swal.fire({
                     title: 'Are you sure?',

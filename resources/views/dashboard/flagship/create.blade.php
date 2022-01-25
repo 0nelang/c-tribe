@@ -27,8 +27,8 @@
                                         <label for="mainImage" class="form-label">Main Image</label>
                                         <br>
                                         <img id="out" class="mb-3" style="max-height: 200px; max-width: 300px">
-                                        <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage[]"
-                                            type="file" id="photo" accept="image/*">
+                                        <input class="form-control @error('mainImage') is-invalid @enderror"
+                                            name="mainImage[]" type="file" id="photo" accept="image/*">
                                         @error('mainImage')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -62,31 +62,31 @@
                                         <div class="mb-3 col-lg-2">
                                             <label class="form-label">featured</label>
                                             <div class="form-check pt-2" onclick="hilzam()">
-                                                <input type="checkbox" class="form-check-input"
-                                                    name="featured" id="featured">
+                                                <input type="checkbox" class="form-check-input" name="featured"
+                                                    id="featured">
                                                 <label class="form-check-label" for="featured">featured</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: none">
-                                        <input type="radio" class="form-check-input" id="featured1"
-                                            name="layout" value="1">
-                                        <label class="form-check-label" for="featured1"><img src="/images/layouts/c-tribe home.jpeg" width="250px"></label>
+                                        <input type="radio" class="form-check-input" id="featured1" name="layout" value="1">
+                                        <label class="form-check-label" for="featured1"><img
+                                                src="/images/layouts/c-tribe home.jpeg" width="250px"></label>
                                     </div>
                                     <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: none">
-                                        <input type="radio" class="form-check-input" id="featured2"
-                                            name="layout" value="2">
-                                        <label class="form-check-label" for="featured2"><img src="/images/layouts/c-tribe home1.jpeg" width="250px"></label>
+                                        <input type="radio" class="form-check-input" id="featured2" name="layout" value="2">
+                                        <label class="form-check-label" for="featured2"><img
+                                                src="/images/layouts/c-tribe home1.jpeg" width="250px"></label>
                                     </div>
                                     <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: none">
-                                        <input type="radio" class="form-check-input" id="featured3"
-                                            name="layout" value="3">
-                                        <label class="form-check-label" for="featured3"><img src="/images/layouts/c-tribe home2.jpeg" width="250px"></label>
+                                        <input type="radio" class="form-check-input" id="featured3" name="layout" value="3">
+                                        <label class="form-check-label" for="featured3"><img
+                                                src="/images/layouts/c-tribe home2.jpeg" width="250px"></label>
                                     </div>
                                     <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: none">
-                                        <input type="radio" class="form-check-input" id="featured4"
-                                            name="layout" value="4">
-                                        <label class="form-check-label" for="featured4"><img src="/images/layouts/c-tribe home3.jpeg" width="250px"></label>
+                                        <input type="radio" class="form-check-input" id="featured4" name="layout" value="4">
+                                        <label class="form-check-label" for="featured4"><img
+                                                src="/images/layouts/c-tribe home3.jpeg" width="250px"></label>
                                     </div>
                                 </div>
 
@@ -109,7 +109,7 @@
                                     <textarea type="text" name="description"
                                         class="text-dark form-control @error('description') is-invalid @enderror editable"
                                         id="ck2">
-                                                </textarea>
+                                                    </textarea>
                                     @error('description')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -192,18 +192,18 @@
             } else {
                 $('.layout').hide();
             }
-         }
-;
-    </script>
-@endsection
+        };
 
-@section('js')
-    <script>
-  $('#' + id).summernote({
+        $(document).ready(function () {
+            var id;
+            $('.editable').each(function() {
+                id = $(this).attr('id');
+                if (id != '') {
+                    $('#' + id).summernote({
                         height: 120,
                     });
                 }
             })
-        });
+            });
     </script>
 @endsection

@@ -22,6 +22,11 @@ class HomeController extends Controller
     function homepage()
     {
         $this->saveUser();
+        $featured[] = Flagship::whereNotNull('featured')->first();
+        $featured[] = Inspiration::whereNotNull('featured')->first();
+        $featured[] = Project::whereNotNull('featured')->first();
+        $featured[] = Project::where('type', 'person')->first();
+        dd($featured);
         return view('frontend.homepage',[
             "general" => $this->general,
             "home1" => Page::where('page','Home 1')->first(),

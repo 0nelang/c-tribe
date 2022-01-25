@@ -71,7 +71,7 @@ class FlagshipController extends Controller
         }
 
         if ($request->featured == true) {
-            Flagship::where('featured', true)->update(['featured' => false]);
+            Flagship::all()->update(['featured' => null]);
             $validated['featured'] = $request->layout;
         }
 
@@ -150,7 +150,7 @@ class FlagshipController extends Controller
         }
 
         if ($request->featured == true) {
-            Flagship::where('featured', true)->update(['featured' => false]);
+            Flagship::all()->update(['featured' => null]);
             $validated['featured'] = $request->layout;
         }
 

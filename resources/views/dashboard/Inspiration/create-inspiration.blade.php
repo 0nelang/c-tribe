@@ -62,10 +62,32 @@ s
 
                                     <div class="mb-3 col-lg-2">
                                         <label class="form-label">featured</label>
-                                        <div class="form-check pt-2">
+                                        <div class="form-check pt-2" onclick="hilzam()">
                                             <input type="checkbox" class="form-check-input" id="featured" name="featured">
                                             <label class="form-check-label" for="featured">featured</label>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: none">
+                                        <input type="radio" class="form-check-input" id="featured1" name="layout" value="1">
+                                        <label class="form-check-label" for="featured1"><img
+                                                src="/images/layouts/c-tribe home.jpeg" width="250px"></label>
+                                    </div>
+                                    <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: none">
+                                        <input type="radio" class="form-check-input" id="featured2" name="layout" value="2">
+                                        <label class="form-check-label" for="featured2"><img
+                                                src="/images/layouts/c-tribe home1.jpeg" width="250px"></label>
+                                    </div>
+                                    <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: none">
+                                        <input type="radio" class="form-check-input" id="featured3" name="layout" value="3">
+                                        <label class="form-check-label" for="featured3"><img
+                                                src="/images/layouts/c-tribe home2.jpeg" width="250px"></label>
+                                    </div>
+                                    <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: none">
+                                        <input type="radio" class="form-check-input" id="featured4" name="layout" value="4">
+                                        <label class="form-check-label" for="featured4"><img
+                                                src="/images/layouts/c-tribe home3.jpeg" width="250px"></label>
                                     </div>
                                 </div>
 
@@ -147,6 +169,13 @@ s
 @endsection
 @section('js')
     <script>
+        function hilzam() {
+                if ($('#featured').prop('checked') == true) {
+                    $('.layout').show();
+                } else {
+                    $('.layout').hide();
+                }
+            };
         $(document).ready(function() {
             var id;
             $('.editable').each(function() {
