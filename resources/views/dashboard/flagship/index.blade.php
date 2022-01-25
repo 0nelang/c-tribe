@@ -2,79 +2,85 @@
 
 @section('main')
 
-<div class="page-content">
-    <div class="main-wrapper">
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <a href="{{ route('flagship.create') }}" class="btn btn-primary mb-3">Create</a>
-                        <table id="logo-table" class="display" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>Index</th>
-                                    <th>Id</th>
-                                    <th>Title</th>
-                                    <th>Image</th>
-                                    <th>Featured</th>
-                                    <th>Option</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($flag as $id => $pep)
-
+    <div class="page-content">
+        <div class="main-wrapper">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="{{ route('flagship.create') }}" class="btn btn-primary mb-3">Create</a>
+                            <table id="logo-table" class="display" style="width:100%">
+                                <thead>
                                     <tr>
-                                        <td>{{ $pep->index }}</td>
-                                        <td>{{ $pep->id }}</td>
-                                        <td>{{ strip_tags($pep->title)}}</td>
-                                        <td>
-                                            <img src="{{ asset('storage/' . $pep->mainImage) }}"
-                                                style="height: 100px; width:200px; object-fit:cover"
-                                                alt="{{ $pep->mainImage }}">
-                                        </td>
-                                        <td>@if ($pep->featured == true)
-                                            yes
-                                        @endif</td>
-                                        <td style="">
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-v"></i>
-                                                </button>
-                                                <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
-                                                    <li><a class="dropdown-item text-dark" href="{{ route('flagship.edit',['flagship' => $pep->id]) }}">Edit</a></li>
-                                                    <li>
-                                                        <form id="form-delete{{ $id }}" action="{{ route('flagship.destroy',['flagship' => $pep->id]) }}" method="post"
-                                                            style="display: none">
-                                                            @method('delete')
-                                                            @csrf
-                                                        </form>
-                                                        <a class="dropdown-item text-dark" href="#"
-                                                            onclick="what({{ $id }})">delete</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
+                                        <th>Index</th>
+                                        <th>Id</th>
+                                        <th>Title</th>
+                                        <th>Image</th>
+                                        <th>Featured</th>
+                                        <th>Option</th>
                                     </tr>
+                                </thead>
+                                <tbody id="images">
+                                    @foreach ($flag as $id => $pep)
 
-                                @endforeach
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Index</th>
-                                    <th>Id</th>
-                                    <th>Title</th>
-                                    <th>Image</th>
-                                    <th>Featured</th>
-                                    <th>option</th>
-                                </tr>
-                            </tfoot>
-                        </table>
+                                        <tr>
+                                            <td>{{ $pep->index }}</td>
+                                            <td>{{ $pep->id }}</td>
+                                            <td>{{ strip_tags($pep->title) }}</td>
+                                            <td>
+                                                <img onclick="image()"
+                                                    src="{{ asset('storage/' . $pep->mainImage) }}"
+                                                    style="height: 100px; width:200px; object-fit:cover"
+                                                    class="img-show">
+                                            </td>
+                                            <td>
+                                                @if ($pep->featured == true)
+                                                    yes
+                                                @endif
+                                            </td>
+                                            <td style="">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
+                                                        <li><a class="dropdown-item text-dark"
+                                                                href="{{ route('flagship.edit', ['flagship' => $pep->id]) }}">Edit</a>
+                                                        </li>
+                                                        <li>
+                                                            <form id="form-delete{{ $id }}"
+                                                                action="{{ route('flagship.destroy', ['flagship' => $pep->id]) }}"
+                                                                method="post" style="display: none">
+                                                                @method('delete')
+                                                                @csrf
+                                                            </form>
+                                                            <a class="dropdown-item text-dark" href="#"
+                                                                onclick="what({{ $id }})">delete</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    @endforeach
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Index</th>
+                                        <th>Id</th>
+                                        <th>Title</th>
+                                        <th>Image</th>
+                                        <th>Featured</th>
+                                        <th>option</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
     @endsection
     @section('js')
@@ -83,10 +89,11 @@
         <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
         <script type="text/javascript" src="{{ asset('js/reorder.js') }}"></script>
         <script>
+
             var table = $('#logo-table').DataTable({
                 rowReorder: true,
                 columnDefs: [{
-                    targets: [1,0],
+                    targets: [1, 0],
                     visible: false,
                     searchable: false
                 }]
