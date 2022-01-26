@@ -45,9 +45,11 @@ class InspirationController extends Controller
      */
     public function store(Request $request)
     {
+        $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
+        $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $validated = $request->validate([
-            'title' => 'required',
-            'description' => 'required',
+            'title' => 'required|min:1',
+            'description' => 'required|min:1',
             'mainImage' => '|image|file',
             'video' => 'mimetypes:video/avi,video/mp4',
             'date' => 'max:255'
@@ -112,9 +114,11 @@ class InspirationController extends Controller
      */
     public function update(Request $request, Inspiration $inspiration)
     {
+        $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
+        $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $validated = $request->validate([
-            'title' => 'required',
-            'description' => 'required',
+            'title' => 'required|min:1',
+            'description' => 'required|min:1',
             'mainImage' => 'image|file',
             'video' => 'mimetypes:video/avi,video/mp4',
             'date' => 'max:255'

@@ -43,12 +43,15 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+        $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
+        $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
+        $request['body'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['body'])));
         $validated = $request->validate([
             'logo' => 'required|image|file',
             'service' => 'required',
-            'title' => 'required',
-            'description' => 'required',
-            'body' => 'required',
+            'title' => 'required|min:1',
+            'description' => 'required|min:1',
+            'body' => 'required|min:1',
             'image' => 'required|image|file'
         ]);
 
@@ -99,11 +102,14 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
+        $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
+        $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
+        $request['body'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['body'])));
         $validated = $request->validate([
             'service' => 'required',
-            'title' => 'required',
-            'description' => 'required',
-            'body' => 'required'
+            'title' => 'required|min:1',
+            'description' => 'required|min:1',
+            'body' => 'required|min:1'
         ]);
 
         if ($request->hasFile('logo')) {

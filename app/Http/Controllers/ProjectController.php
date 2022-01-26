@@ -44,14 +44,17 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
+        $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
+        $request['body'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['body'])));
         $validated = $request->validate([
             'type' => 'required',
             'brand' => 'required',
             'project' => 'required',
             'date' => 'required',
-            'title' => 'required',
-            'description' => 'required',
-            'body' => 'required',
+            'title' => 'required|min:1',
+            'description' => 'required|min:1',
+            'body' => 'required|min:1',
             'mainImage' => 'required|image|file',
             'otherImage*' => 'image|file'
         ]);
@@ -124,14 +127,17 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
+        $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
+        $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
+        $request['body'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['body'])));
         $validated = $request->validate([
             'type' => 'required',
             'brand' => 'required',
             'project' => 'required',
             'date' => 'required',
-            'title' => 'required',
-            'description' => 'required',
-            'body' => 'required',
+            'title' => 'required|min:1',
+            'description' => 'required|min:1',
+            'body' => 'required|min:1',
             'mainImage' => 'image|file',
             'otherImage*' => 'image|file'
         ]);
