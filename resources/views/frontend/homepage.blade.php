@@ -46,17 +46,17 @@
                 <section class="page-home__three header-1" style="background-image:url(
                                 {{ asset('storage/' . $f->mainImage) }})">
                     <div class="wrap">
-                        <h2><span class="oa">OUR ACTION</span><span
+                        <h2><span class="oa">{{ $f->tag }}</span><span
                                 class="date">{{ $f->date }}</span><span>{{ $f->title }}</span></h2>
                         <div class="desc">
                             {!! $f->subTitle !!}
-                        </div><a class="rtf" href="#">READ THE FEATURE</a>
+                        </div><a class="rtf" href="{{ $f->link }}">READ THE FEATURE</a>
                     </div>
                 </section>
             @elseif($f->featured == 1)
                 <section class="page-home__four header-2">
                     <div class="wrap">
-                        <div class="col-left"><span class="oa">
+                        <div class="col-left"><span class="oa">{{ $f->tag }}
                             </span></div>
                         <div class="col-right"><span class="date">{{ $f->date }}</span></div>
                         <div class="col-main">
@@ -65,7 +65,7 @@
                                     alt="{{ $f->mainImage }}" /></div>
                             <div class="desc">
                                 {!! $f->subTitle !!}
-                            </div><a class="rtf" href="#">READ THE FEATURE</a>
+                            </div><a class="rtf" href="{{ $f->link }}">READ THE FEATURE</a>
                         </div>
                     </div>
                 </section>
@@ -73,7 +73,7 @@
                 <section class="page-home__five header-1" style="background-image:url(
                                 {{ asset('storage/' . $f->mainImage) }})">
                     <div class="wrap">
-                        <div class="col-left text-uppercase"><span class="oa">OUR ACTION</span>
+                        <div class="col-left text-uppercase"><span class="oa">{{ $f->tag }}</span>
                             <h2 class="text-uppercase">{!! $f->title !!}</h2>
                             <div class="desc text-uppercase">
                                 {!! $f->subTitle !!}
@@ -82,14 +82,14 @@
                                 {!! $f->subTitle !!}
                             </div>
                         </div>
-                        <div class="col-right"><a class="rtf" href="#">READ THE FEATURE</a></div>
+                        <div class="col-right"><a class="rtf" href="{{ $f->link }}">READ THE FEATURE</a></div>
                     </div>
                 </section>
             @elseif($f->featured == 4)
                 <section class="page-home__six header-1">
                     <div class="wrap">
                         <div class="col-main">
-                            <div class="sm-only"><span class="oa">OUR ACTION</span><span
+                            <div class="sm-only"><span class="oa">{{ $f->tag }}</span><span
                                     class="date">{{ $f->date }}</span></div>
                             <div class="tagline-marquee marquee">
                                 <h2 class="text-uppercase">{{ strip_tags($f->title) }}<span
@@ -99,12 +99,12 @@
                             <div class="img"><img src="{{ asset('storage/' . $f->mainImage) }}"
                                     alt="{{ $f->mainImage }}" /></div>
                         </div>
-                        <div class="col-bot-l"><span class="oa">OUR ACTION</span>
+                        <div class="col-bot-l"><span class="oa">{{ $f->tag }}</span>
                             <div class="desc">
                                 {!! $f->subTitle !!}
                             </div>
                         </div>
-                        <div class="col-bot-c"><a class="rtf" href="#">READ THE FEATURE</a></div>
+                        <div class="col-bot-c"><a class="rtf" href="{{ $f->link }}">READ THE FEATURE</a></div>
                         <div class="col-bot-r"><span class="date">{{ $f->date }}</span><span
                                 class="meta">{{ $f->project }}</span></div>
                     </div>
