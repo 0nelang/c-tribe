@@ -79,7 +79,7 @@
             var table = $('#logo-table').DataTable({
                 rowReorder: true,
                 columnDefs: [{
-                    targets: [1, 0],
+                    targets: [1],
                     visible: false,
                     searchable: false
                 }]
