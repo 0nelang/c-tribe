@@ -40,6 +40,8 @@
                 <div class="wrap-buttons sm-only"><a class="rtf" href="#">READ THE FEATURE</a></div>
             </div>
         </section>
+        @isset($featured)
+        
         @foreach ($featured as $index => $f)
             {{-- @dd($f) --}}
             @if ($f->featured == 3)
@@ -112,6 +114,7 @@
             @endif
 
         @endforeach
+        @endisset
         <section class="page-home__footer">
             <div class="page-home__footer-top">
                 <div class="left"><a class="item email" href="mailto:{{ $general->email_footer }}">GENERAL
@@ -129,17 +132,4 @@
             </div>
         </section>
     </main>
-@endsection
-
-@section('js')
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-217402264-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-217402264-1');
-    </script>
 @endsection
