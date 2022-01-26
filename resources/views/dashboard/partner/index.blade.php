@@ -78,6 +78,11 @@
         <script>
             var table = $('#logo-table').DataTable({
                 rowReorder: true,
+                columnDefs: [{
+                    targets: [1, 0],
+                    visible: false,
+                    searchable: false
+                }]
             });
 
             // table.on('row-reorder', function(e, diff, edit) {
