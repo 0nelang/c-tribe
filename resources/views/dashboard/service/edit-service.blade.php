@@ -85,7 +85,7 @@
                                 <div class="mb-3">
                                     <label for="fileImage" class="form-label">Detail Image</label>
                                     <div class="mb-3">
-                                        <img id="output" class="mb-3"
+                                        <img id="output2" class="mb-3"
                                             src="{{ asset('storage/' . $service->image) }}"
                                             style="max-height: 200px; max-width: 200px;">
                                     </div>
@@ -112,6 +112,13 @@
                 $("#filePhoto").change(function(event) {
                     var x = URL.createObjectURL(event.target.files[0]);
                     $("#output").attr("src", x);
+                    console.log(event);
+                });
+            });
+            $(function() {
+                $("#fileImage").change(function(event) {
+                    var x = URL.createObjectURL(event.target.files[0]);
+                    $("#output2").attr("src", x);
                     console.log(event);
                 });
             });
