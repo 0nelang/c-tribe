@@ -94,8 +94,6 @@ html, body { font-family: "Alte Haas Grotesk", -apple-system, BlinkMacSystemFont
 
 .cursor { display: block; width: 14px; height: 14px; border-radius: 7px; background: #fff; position: fixed; z-index: 201; pointer-events: none; -webkit-transform: translate(-5px, -5px); transform: translate(-5px, -5px); transition: width .3s ease, height .3s ease; }
 
-.cursor.hasimg { width: 30.208vw; height: 17.188vw; border-radius: 0; background: url("../../../images/our-people-s1.jpg"); background-size: contain; background-position: center; background-repeat: no-repeat; -webkit-transform: translate(0, 0); transform: translate(0, 0); }
-
 @media (max-width: 991px) { .cursor { display: none; } }
 
 .trail { position: absolute; pointer-events: none; z-index: 200; height: 4px; width: 4px; border-radius: 2px; background: #fff; }
@@ -308,7 +306,7 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
 
 .page-ourpeople__three-logos:nth-child(3) .logo img { height: 5.292vw; }
 
-.page-ourpeople__four { background-image: url(../../../images/bg-sfour-ourpeople.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
+.page-ourpeople__four { background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
 
 .page-ourpeople__four-top { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-bottom: 72px; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
 
@@ -507,7 +505,7 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
   .page-home__six h2 { font-size: 40vw; line-height: 1em; }
   .page-home__six .meta { font-size: 24px; line-height: 1.2em; } }
 
-.page-home__footer { background-image: url(../../../images/bg-sfour-ourpeople.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
+.page-home__footer { background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
 
 .page-home__footer-top { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-bottom: 72px; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
 
@@ -584,7 +582,7 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
   .page-inspiration__two .item .item__date-sm.dark span { color: #000; }
   .page-inspiration__two .item.item--lg .item__wrap { padding-top: 60%; } }
 
-.page-inspiration__footer { background-image: url(../../../images/bg-sfour-ourpeople.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
+.page-inspiration__footer {  background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
 
 .page-inspiration__footer-top { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-bottom: 72px; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
 
@@ -694,7 +692,7 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
   .page-flagship__two .item .item__date-sm.dark span { color: #000; }
   .page-flagship__two .item.item--lg .item__wrap { padding-top: 60%; } }
 
-.page-flagship__footer { background-image: url(../../../images/bg-sfour-ourpeople.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
+.page-flagship__footer { background-size: cover; background-position: center; background-repeat: no-repeat; padding: 3.125vw; }
 
 .page-flagship__footer-top { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-bottom: 72px; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
 
