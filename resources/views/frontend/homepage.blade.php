@@ -43,7 +43,8 @@
         @foreach ($featured as $index => $f)
             {{-- @dd($f) --}}
             @if ($f->featured == 3)
-                <section class="page-home__three header-1">
+                <section class="page-home__three header-1" style="background-image:url(
+                                {{ asset('storage/' . $f->mainImage) }})">
                     <div class="wrap">
                         <h2><span class="oa">OUR ACTION</span><span
                                 class="date">{{ $f->date }}</span><span>{{ $f->title }}</span></h2>
@@ -91,8 +92,8 @@
                             <div class="sm-only"><span class="oa">OUR ACTION</span><span
                                     class="date">{{ $f->date }}</span></div>
                             <div class="tagline-marquee marquee">
-                                <h2 class="text-uppercase">{{ $f->title }}<span
-                                        class="star">*</span>{{ $f->title }}<span
+                                <h2 class="text-uppercase">{{ strip_tags($f->title) }}<span
+                                        class="star">*</span>{{ strip_tags($f->title) }}<span
                                         class="star">*</span></h2>
                             </div>
                             <div class="img"><img src="{{ asset('storage/' . $f->mainImage) }}"
@@ -100,7 +101,7 @@
                         </div>
                         <div class="col-bot-l"><span class="oa">OUR ACTION</span>
                             <div class="desc">
-                                {!! $f->description !!}
+                                {!! $f->subTitle !!}
                             </div>
                         </div>
                         <div class="col-bot-c"><a class="rtf" href="#">READ THE FEATURE</a></div>
@@ -109,209 +110,6 @@
                     </div>
                 </section>
             @endif
-
-            {{-- @if ($f->featured == 1)
-                <section class="page-home__four header-2">
-                    <div class="wrap">
-                        <div class="col-left"><span class="oa">INSPIRATION</span></div>
-                        <div class="col-right"><span class="date">{{ $f->date }}</span></div>
-                        <div class="col-main">
-                            <h2>{!! $f->name !!}</h2>
-                            <div class="img"><img src="{{ asset('storage/' . $f->image) }}" alt="Image" />
-                            </div>
-                            <div class="desc">
-                                {!! $f->subTitle !!}
-                            </div><a class="rtf" href="#">READ THE FEATURE</a>
-                        </div>
-                    </div>
-                </section>
-            @elseif($f->featured == 2)
-                <section class="page-home__five header-1" style="">
-                    <div class="wrap">
-                        <div class="col-left text-uppercase"><span class="oa">INSPIRATION</span>
-                            <h2 class="text-uppercase">{!! $f->title !!}</h2>
-                            <div class="desc text-uppercase">
-                                {!! $f->subTitle !!}
-                            </div>
-                            <div class="desc sm-only">
-                                {!! $f->subTitle !!}
-                            </div>
-                        </div>
-                        <div class="col-right"><a class="rtf" href="#">READ THE FEATURE</a></div>
-                    </div>
-                </section>
-            @elseif($f->featured == 3)
-                <section class="page-home__three header-1">
-                    <div class="wrap">
-                        <h2><span class="oa">INSPIRATION</span><span
-                                class="date">{{ $f->date }}</span><span>{{ $f->title }}</span></h2>
-                        <div class="desc">
-                            {!! $f->subTitle !!}
-                        </div><a class="rtf" href="#">READ THE FEATURE</a>
-                    </div>
-                </section>
-            @elseif($f->featured == 4)
-                <section class="page-home__six header-1">
-                    <div class="wrap">
-                        <div class="col-main">
-                            <div class="sm-only"><span class="oa">INSPIRATION</span><span
-                                    class="date">{{ $f->date }}</span></div>
-                            <div class="tagline-marquee marquee">
-                                <h2 class="text-uppercase">{{ $f->title }}<span
-                                        class="star">*</span>{{ $f->title }}<span
-                                        class="star">*</span></h2>
-                            </div>
-                            <div class="img"><img src="{{ asset('storage/' . $f->mainImage) }}"
-                                    alt="{{ $f->mainImage }}" /></div>
-                        </div>
-                        <div class="col-bot-l"><span class="oa">INSPIRATION</span>
-                            <div class="desc">
-                                {!! $f->description !!}
-                            </div>
-                        </div>
-                        <div class="col-bot-c"><a class="rtf" href="#">READ THE FEATURE</a></div>
-                        <div class="col-bot-r"><span class="date">{{ $f->date }}</span><span
-                                class="meta">{{ $f->project }}</span></div>
-                    </div>
-                </section>
-            @endif
-
-            @if ($f->featured == 2)
-                <section class="page-home__five header-1" style="">
-                    <div class="wrap">
-                        <div class="col-left text-uppercase"><span class="oa">PROJECTS</span>
-                            <h2 class="text-uppercase">{!! $f->title !!}</h2>
-                            <div class="desc text-uppercase">
-                                {!! $f->team !!}
-                            </div>
-                            <div class="desc sm-only">
-                                <p>We empower brand and connect consumers through creative marketing solution for a better
-                                    market presence</p>
-                            </div>
-                        </div>
-                        <div class="col-right"><a class="rtf" href="#">READ THE FEATURE</a></div>
-                    </div>
-                </section>
-            @elseif($f->featured == 1)
-                <section class="page-home__four header-2">
-                    <div class="wrap">
-                        <div class="col-left"><span class="oa">PROJECTS</span></div>
-                        <div class="col-right"><span class="date">{{ $f->date }}</span></div>
-                        <div class="col-main">
-                            <h2>{!! $f->name !!}</h2>
-                            <div class="img"><img src="{{ asset('storage/' . $f->image) }}" alt="Image" />
-                            </div>
-                            <div class="desc">
-                                {!! $f->subTitle !!}
-                            </div><a class="rtf" href="#">READ THE FEATURE</a>
-                        </div>
-                    </div>
-                </section>
-            @elseif($f->featured == 3)
-                <section class="page-home__three header-1">
-                    <div class="wrap">
-                        <h2><span class="oa">PROJECTS</span><span
-                                class="date">{{ $f->date }}</span><span>{{ $f->title }}</span></h2>
-                        <div class="desc">
-                            {!! $f->subTitle !!}
-                        </div><a class="rtf" href="#">READ THE FEATURE</a>
-                    </div>
-                </section>
-            @elseif($f->featured == 4)
-                <section class="page-home__six header-1">
-                    <div class="wrap">
-                        <div class="col-main">
-                            <div class="sm-only"><span class="oa">PROJECTS</span><span
-                                    class="date">{{ $f->date }}</span></div>
-                            <div class="tagline-marquee marquee">
-                                <h2 class="text-uppercase">{{ $f->title }}<span
-                                        class="star">*</span>{{ $f->title }}<span
-                                        class="star">*</span></h2>
-                            </div>
-                            <div class="img"><img src="{{ asset('storage/' . $f->mainImage) }}"
-                                    alt="{{ $f->mainImage }}" /></div>
-                        </div>
-                        <div class="col-bot-l"><span class="oa">PROJECTS</span>
-                            <div class="desc">
-                                {!! $f->description !!}
-                            </div>
-                        </div>
-                        <div class="col-bot-c"><a class="rtf" href="#">READ THE FEATURE</a></div>
-                        <div class="col-bot-r"><span class="date">{{ $f->date }}</span><span
-                                class="meta">{{ $f->project }}</span></div>
-                    </div>
-                </section>
-            @endif
-
-            @if ($f->featured == 4)
-                @isset($f->brand)
-                    <section class="page-home__six header-1">
-                        <div class="wrap">
-                            <div class="col-main">
-                                <div class="sm-only"><span class="oa">PARTNERS</span><span
-                                        class="date">{{ $f->date }}</span></div>
-                                <div class="tagline-marquee marquee">
-                                    <h2 class="text-uppercase">{{ $f->brand }}<span
-                                            class="star">*</span>{{ $f->brand }}<span
-                                            class="star">*</span></h2>
-                                </div>
-                                <div class="img"><img src="{{ asset('storage/' . $f->mainImage) }}"
-                                        alt="{{ $f->mainImage }}" /></div>
-                            </div>
-                            <div class="col-bot-l"><span class="oa">PARTNERS</span>
-                                <div class="desc">
-                                    {!! $f->description !!}
-                                </div>
-                            </div>
-                            <div class="col-bot-c"><a class="rtf" href="#">READ THE FEATURE</a></div>
-                            <div class="col-bot-r"><span class="date">{{ $f->date }}</span><span
-                                    class="meta">{{ $f->project }}</span></div>
-                        </div>
-                    </section>
-                @endisset
-            @elseif($f->featured == 1)
-                <section class="page-home__four header-2">
-                    <div class="wrap">
-                        <div class="col-left"><span class="oa">PARTNERS</span></div>
-                        <div class="col-right"><span class="date">{{ $f->date }}</span></div>
-                        <div class="col-main">
-                            <h2>{!! $f->name !!}</h2>
-                            <div class="img"><img src="{{ asset('storage/' . $f->image) }}" alt="Image" />
-                            </div>
-                            <div class="desc">
-                                {!! $f->subTitle !!}
-                            </div><a class="rtf" href="#">READ THE FEATURE</a>
-                        </div>
-                    </div>
-                </section>
-            @elseif($f->featured == 2)
-                <section class="page-home__five header-1" style="">
-                    <div class="wrap">
-                        <div class="col-left text-uppercase"><span class="oa">PARTNERS</span>
-                            <h2 class="text-uppercase">{!! $f->title !!}</h2>
-                            <div class="desc text-uppercase">
-                                {!! $f->team !!}
-                            </div>
-                            <div class="desc sm-only">
-                                <p>We empower brand and connect consumers through creative marketing solution for a better
-                                    market presence</p>
-                            </div>
-                        </div>
-                        <div class="col-right"><a class="rtf" href="#">READ THE FEATURE</a></div>
-                    </div>
-                </section>
-            @elseif($f->featured == 3)
-                <section class="page-home__three header-1">
-                    <div class="wrap">
-                        <h2><span class="oa">PARTNERS</span><span
-                                class="date">{{ $f->date }}</span><span>{{ $f->title }}</span></h2>
-                        <div class="desc">
-                            {!! $f->subTitle !!}
-                        </div><a class="rtf" href="#">READ THE FEATURE</a>
-                    </div>
-                </section>
-            @endif --}}
-
 
         @endforeach
         <section class="page-home__footer">
@@ -330,7 +128,6 @@
             <div class="imgctribe"><img src="{{ asset('storage/' . $general->brand_footer) }}" alt="img" />
             </div>
         </section>
-
     </main>
 @endsection
 

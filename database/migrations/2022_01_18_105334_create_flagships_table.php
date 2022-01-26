@@ -15,9 +15,9 @@ class CreateFlagshipsTable extends Migration
     {
         Schema::create('flagships', function (Blueprint $table) {
             $table->id();
-            $table->integer('index');
+            $table->integer('index')->nullable();
             $table->string('title');
-            $table->string('slug');
+            $table->string('slug')->nullable();
             $table->text('subTitle')->nullable();
             $table->integer('featured')->nullable();
             $table->string('date');

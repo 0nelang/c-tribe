@@ -15,7 +15,7 @@
     <main class="page-project">
       <section class="page-project-s__one">
         <div class="wrap">
-          <h1>NIKE X DRAKA <br>BRAND EXPRESSION</h1>
+          <h1>{{ strip_tags($project->) }}</h1>
           <div class="desc">
             <p>CTRIBE Scores a Coveted Meeting with the Brand's Special Projects Senior Director, the Man Behind Every Fashionable Nike Collaboration From the Past Decade</p>
             <p>Strategy: Brand Articulations <br>Agency: Studio Lore <br>Production company: Bullion Productions <br>Director: James Willis</p>

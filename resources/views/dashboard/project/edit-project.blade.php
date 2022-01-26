@@ -140,11 +140,11 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="team" class="form-label">Team</label>
-                                    <textarea type="text" name="team"
-                                    class="form-control @error('team') is-invalid @enderror editable" id="team"
-                                    >{{ $project->team }}</textarea>
-                                    @error('team')
+                                    <label for="subTitle" class="form-label">Sub Title</label>
+                                    <textarea type="text" name="subTitle"
+                                    class="form-control @error('subTitle') is-invalid @enderror editable" id="subTitle"
+                                    >{{ $project->subTitle }}</textarea>
+                                    @error('subTitle')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>

@@ -72,7 +72,7 @@ class ProjectController extends Controller
             $validated['featured'] = $request->layout;
         }
 
-        $validated['team'] = $request->team;
+        $validated['subTitle'] = $request->subTitle;
         $validated['index'] = Project::all()->count() + 1 ;
         $validated['slug'] = Str::slug(strip_tags($request->title));
         $project = Project::create($validated);
@@ -160,7 +160,8 @@ class ProjectController extends Controller
             $request->validate(['layout' => 'required']);
             $validated['featured'] = $request->layout;
         }
-        $validated['team'] = $request->team;
+        $validated['subTitle'] = $request->subTitle;
+        $validated['slug'] = Str::slug(strip_tags($request->title));
         Project::where('id', $project->id)->update($validated);
         Alert::success('Success', 'Data update succesfully');
 

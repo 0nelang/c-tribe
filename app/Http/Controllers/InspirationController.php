@@ -46,7 +46,7 @@ class InspirationController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required',
+            'title' => 'required',
             'quote' => 'required',
             'description' => 'required',
             'mainImage' => '|image|file',
@@ -114,7 +114,7 @@ class InspirationController extends Controller
     public function update(Request $request, Inspiration $inspiration)
     {
         $validated = $request->validate([
-            'name' => 'required',
+            'title' => 'required',
             'quote' => 'required',
             'description' => 'required',
             'mainImage' => 'image|file',

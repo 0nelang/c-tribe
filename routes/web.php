@@ -85,8 +85,8 @@ Route::get('/project', [HomeController::class,'project']);
 Route::get('/tribes',[HomeController::class,'tribes']);
 
 // single page
-Route::get('/tribe/detail',[HomeController::class,'tribe_single']);
-Route::get('/project/detail',[HomeController::class,'project_single']);
-Route::get('/inspiration/detail',[HomeController::class,'inspiration_single']);
-Route::get('/flagship/detail',[HomeController::class,'flagship_single']);
+Route::get('/tribe/detail/{service:slug}',[HomeController::class,'tribe_single']);
+Route::get('/project/detail/{project:slug}',[HomeController::class,'project_single']);
+Route::get('/inspiration/detail/{inspiration:slug}',[HomeController::class,'inspiration_single']);
+Route::get('/flagship/detail/{flagship:slug}',[HomeController::class,'flagship_single']);
 // end single page

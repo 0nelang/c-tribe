@@ -20,7 +20,7 @@
         <div class="wrap">
             @foreach ($service as $s)
 
-            <a class="item" href="/tribe/detail">
+            <a class="item" href="/tribe/detail/{{ $s->slug }}">
             <div class="item__wrap">
               <div class="item__logo"><img src="{{ asset('storage/' . $s->logo) }}" alt="{{ $s->logo }}"/></div>
               <div class="item__title"><span>{{ $s->service }}</span></div>
