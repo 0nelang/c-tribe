@@ -41,7 +41,7 @@
                                                 @if ($p->featured == true)
                                                     Yes
                                                 @else
-                                                --
+                                                No
                                                 @endif
                                             </td>
 

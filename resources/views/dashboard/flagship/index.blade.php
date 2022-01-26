@@ -35,7 +35,9 @@
                                             </td>
                                             <td>
                                                 @if ($pep->featured == true)
-                                                    yes
+                                                    Yes
+                                                @else
+                                                No
                                                 @endif
                                             </td>
                                             <td style="">

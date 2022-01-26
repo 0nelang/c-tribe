@@ -95,7 +95,6 @@ class HomeController extends Controller
 
     function flagship_single(Flagship $flagship)
     {
-        dd($flagship->otherImage);
        return view('frontend.flagship-single',[
            "general" => $this->general,
            "page" => "Detail Flagship",
