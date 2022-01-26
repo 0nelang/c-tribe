@@ -12,48 +12,12 @@
                             <table id="logo-table" class="display" style="width:100%">
                                 <thead>
                                     <tr>
-<<<<<<< HEAD
-                                        <td>{{ $pep->index }}</td>
-                                        <td>{{ $pep->id }}</td>
-                                        <td>{{ strip_tags($pep->title)}}</td>
-                                        <td>
-                                            <img src="{{ asset('storage/' . $pep->mainImage) }}"
-                                                style="height: 100px; width:200px; object-fit:cover"
-                                                alt="{{ $pep->mainImage }}">
-                                        </td>
-                                        <td>@if ($pep->featured == true)
-                                            Yes
-                                            @else
-                                            --
-                                        @endif</td>
-                                        <td style="">
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-v"></i>
-                                                </button>
-                                                <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
-                                                    <li><a class="dropdown-item text-dark" href="{{ route('flagship.edit',['flagship' => $pep->id]) }}">Edit</a></li>
-                                                    <li>
-                                                        <form id="form-delete{{ $id }}" action="{{ route('flagship.destroy',['flagship' => $pep->id]) }}" method="post"
-                                                            style="display: none">
-                                                            @method('delete')
-                                                            @csrf
-                                                        </form>
-                                                        <a class="dropdown-item text-dark" href="#"
-                                                            onclick="what({{ $id }})">delete</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
-=======
                                         <th>Index</th>
                                         <th>Id</th>
                                         <th>Title</th>
                                         <th>Image</th>
                                         <th>Featured</th>
                                         <th>Option</th>
->>>>>>> c7cd8f6087a2f9f974bd0edb8903acddfbc45b83
                                     </tr>
                                 </thead>
                                 <tbody id="images">
