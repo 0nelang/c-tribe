@@ -93,7 +93,7 @@ class HomeController extends Controller
         ]);
     }
 
-    function flagship_single()
+    function flagship_single(Flagship $flagship)
     {
        return view('frontend.flagship-single',[
            "general" => $this->general,
@@ -101,7 +101,7 @@ class HomeController extends Controller
        ]);
     }
 
-    function tribe_single()
+    function tribe_single(Service $tribe)
     {
        return view('frontend.tribes-single',[
            "general" => $this->general,
@@ -109,15 +109,16 @@ class HomeController extends Controller
        ]);
     }
 
-    function project_single()
+    function project_single(Project $project)
     {
        return view('frontend.project-single',[
            "general" => $this->general,
+           "project" => $project,
            "page" => "Detail Project"
        ]);
     }
 
-    function inspiration_single()
+    function inspiration_single(Inspiration $inspiration)
     {
        return view('frontend.inspiration-single',[
            "general" => $this->general,

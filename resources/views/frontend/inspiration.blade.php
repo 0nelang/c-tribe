@@ -26,15 +26,15 @@
             <div class="wrap">
                 @foreach ($inspiration as $index => $p)
                     @if ($index == 0 && count($inspiration) % 2 != 0)
-                        @if ($p->image != null)
+                        @if ($p->mainImage != null)
                             <div class="item item--lg anim">
                                 <div class="item__wrap">
                                     <div class="item__bg"
-                                        style="background-image: url('{{ asset('storage/' . $p->image) }}')"></div>
+                                        style="background-image: url('{{ asset('storage/' . $p->mainImage) }}')"></div>
                                     <div class="item__date-sm"><span>{{ $p->date }}</span></div>
                                     <div class="item__content">
                                         <h2 class="item__title text-uppercase">{!! $p->name !!}</h2>
-                                        <div class="item__cta"><a href="/inspiration/detail">READ THE FEATURE</a></div>
+                                        <div class="item__cta"><a href="/inspiration/detail/{{ $p->slug }}">READ THE FEATURE</a></div>
                                         <div class="item__date"><span class="text-uppercase">{{ $p->date }}</span>
                                         </div>
                                     </div>
@@ -47,7 +47,7 @@
                                     <div class="item__date-sm dark"><span>{{ $p->date }}</span></div>
                                     <div class="item__content">
                                         <h2 class="item__title">{!! $p->name !!}</h2>
-                                        <div class="item__cta"><a href="/inspiration/detail">READ THE FEATURE</a></div>
+                                        <div class="item__cta"><a href="/inspiration/detail/{{ $p->slug }}">READ THE FEATURE</a></div>
                                         <div class="item__date"><span>{{ $p->date }}</span></div>
                                     </div>
                                 </div>
@@ -55,15 +55,15 @@
                         @endif
 
                     @else
-                        @if ($p->image != null)
+                        @if ($p->mainImage != null)
                             <div class="item anim">
                                 <div class="item__wrap">
                                     <div class="item__bg"
-                                        style="background-image: url('{{ asset('storage/' . $p->image) }}')"></div>
+                                        style="background-image: url('{{ asset('storage/' . $p->mainImage) }}')"></div>
                                     <div class="item__date-sm"><span>{{ $p->date }}</span></div>
                                     <div class="item__content">
                                         <h2 class="item__title text-uppercase">{!! $p->name !!}</h2>
-                                        <div class="item__cta"><a href="/inspiration/detail">READ THE FEATURE</a></div>
+                                        <div class="item__cta"><a href="/inspiration/detail/{{ $p->slug }}">READ THE FEATURE</a></div>
                                         <div class="item__date"><span class="text-uppercase">{{ $p->date }}</span>
                                         </div>
                                     </div>
@@ -76,7 +76,7 @@
                                     <div class="item__date-sm dark"><span>{{ $p->date }}</span></div>
                                     <div class="item__content">
                                         <h2 class="item__title">{!! $p->name !!}</h2>
-                                        <div class="item__cta"><a href="/inspiration/detail">READ THE FEATURE</a></div>
+                                        <div class="item__cta"><a href="/inspiration/detail/{{ $p->slug }}">READ THE FEATURE</a></div>
                                         <div class="item__date"><span>{{ $p->date }}</span></div>
                                     </div>
                                 </div>

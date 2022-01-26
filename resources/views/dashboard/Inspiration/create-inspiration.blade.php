@@ -34,11 +34,11 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="name" class="form-label is-invalid">Name</label>
-                                    <textarea type="text" name="name"
-                                        class="form-control @error('name') is-invalid @enderror editable" id="insname"
+                                    <label for="title" class="form-label is-invalid">Title</label>
+                                    <textarea type="text" name="title"
+                                        class="form-control @error('title') is-invalid @enderror editable" id="insname"
                                         aria-describedby="our-people-name"></textarea>
-                                    @error('name')
+                                    @error('title')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>

@@ -15,7 +15,7 @@ class CreateOurPeoplesTable extends Migration
     {
         Schema::create('our_peoples', function (Blueprint $table) {
             $table->id();
-            $table->integer('index');
+            $table->integer('index')->nullable();
             $table->string('photo');
             $table->string('name');
             $table->string('title');
