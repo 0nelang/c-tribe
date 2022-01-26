@@ -97,7 +97,8 @@ class HomeController extends Controller
     {
        return view('frontend.flagship-single',[
            "general" => $this->general,
-           "page" => "Detail Flagship"
+           "page" => "Detail Flagship",
+           "f" => $flagship
        ]);
     }
 
@@ -105,7 +106,8 @@ class HomeController extends Controller
     {
        return view('frontend.tribes-single',[
            "general" => $this->general,
-           "page" => "Detail Tribe"
+           "page" => "Detail Tribe",
+           "t" => $tribe
        ]);
     }
 
@@ -122,7 +124,8 @@ class HomeController extends Controller
     {
        return view('frontend.inspiration-single',[
            "general" => $this->general,
-           "page" => "Detail Inspiration"
+           "page" => "Detail Inspiration",
+           "i" => $inspiration
        ]);
     }
 

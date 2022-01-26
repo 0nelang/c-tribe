@@ -25,7 +25,7 @@ use App\Http\Controllers\InspirationController;
 
 
 
-Route::get('/landing', [HomeController::class, 'landing']);
+
 
 Auth::routes();
 Route::get('register', function () {return abort(500);});
@@ -74,6 +74,10 @@ Route::resource('/admin/partners', PartnerController::class);
 Route::get('/admin/setting',[AuthController::class,'index']);
 Route::put('/admin/reset',[AuthController::class,'password']);
 });
+
+//frontend
+Route::get('/landing', [HomeController::class, 'landing']);
+
 Route::get('/flagship', [HomeController::class,'flagship']);
 
 Route::get('/', [HomeController::class,'homepage']);
