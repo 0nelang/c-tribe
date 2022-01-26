@@ -22,6 +22,7 @@
                                     <tr>
                                         <th>position</th>
                                         <th>Id</th>
+                                        <th>Service</th>
                                         <th>Logo</th>
                                         <th>Option</th>
                                     </tr>
@@ -32,6 +33,7 @@
                                         <tr>
                                             <td>{{ $part->index }}</td>
                                             <td>{{ $part->id }}</td>
+                                            <td>{{ $part->service }}</td>
                                             <td><img onclick="image()" src="{{ asset('storage/' . $part->logo) }}" alt="{{ $part->logo }}"
                                                 style="max-height: 50px; max-width: 100px;"></td>
                                             <td>
@@ -79,6 +81,11 @@
         <script>
             var table = $('#logo-table').DataTable({
                 rowReorder: true,
+                columnDefs: [{
+                    targets: [1, 0],
+                    visible: false,
+                    searchable: false
+                }]
             });
 
             table.on('row-reorder', function(e, diff, edit) {
