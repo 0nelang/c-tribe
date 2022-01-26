@@ -1,3 +1,4 @@
+{{-- @dd($project->otherImage) --}}
 @extends('frontend.partial.second')
 @section('css')
     <style>
@@ -15,13 +16,11 @@
     <main class="page-project">
       <section class="page-project-s__one">
         <div class="wrap">
-          <h1>{{ strip_tags($project->) }}</h1>
+          <h1 class="text-uppercase">{{ strip_tags($project->title) }}</h1>
           <div class="desc">
-            <p>CTRIBE Scores a Coveted Meeting with the Brand's Special Projects Senior Director, the Man Behind Every Fashionable Nike Collaboration From the Past Decade</p>
-            <p>Strategy: Brand Articulations <br>Agency: Studio Lore <br>Production company: Bullion Productions <br>Director: James Willis</p>
-            <p>Role & Lead art direction and design</p>
+            {!! $project->description !!}
           </div>
-          <div class="img"><img src="/images/img-project-single.jpg" alt="Image"/><span class="caption">CREATIVE TRIBE PROJECT</span></div>
+          <div class="img"><img src="{{ asset('storage/' . $project->mainImage) }}" alt="Image"/><span class="caption">CREATIVE TRIBE PROJECT</span></div>
         </div>
       </section>
       <section class="page-project-s__two">
@@ -41,15 +40,16 @@
             <div class="col tr"><a href="#">@DASH</a></div>
           </div>
           <article>
-            <p>adidas Run For The Oceans is a global movement that harnesses the power of running to raise awareness of the threat of marine plastic pollution and inspire positive action. For every 1 km run, adidas donates $1 to the Parley Ocean School to educate the next generation of ocean activists. The massive campaign ends in three running events hosted in New York City, Barcelona, and Shanghai on World Ocean Day. </p>
-            <p>To promote the 2019 event and recruit the next generation of activists, we created a visual identity injecting some urgency around the issue. To represent the collective voice of activists, we developed a typographic repetition system combined with plastic-wrapped textures, confronting the audience with the plastic pollution problem in a real and tangible way but in the same conversation giving them a path to activism - through running.</p>
-            <p>Strategy: Brand Articulations <br>Agency: Creative Tribe <br>Production company: Creative Tribe <br>Photographer: Albert Judiyanto <br>Filmmaker: Syndicate <br>Illustrator: Eze Matteo <br><br>Film</p>
-            <p>Strategy: Brand Articulations <br>Agency: Studio Lore <br>Production company: Bullion Productions <br>Director: James Willis <br>Role & Lead art direction and design</p>
+            {!! $project->body !!}
           </article>
         </div>
       </section>
       <section class="page-project-s__three">
-        <div class="wrap"><img class="img-full" src="/images/img-project-single-01.jpg" alt="Image"/><img class="img-full" src="/images/img-project-single-02.jpg" alt="Image"/><img class="img-full" src="/images/img-project-single-03.jpg" alt="Image"/></div>
+        @if ($project->otherImage)
+        @foreach ($project->otherImage as $f)
+        <div class="wrap"><img class="img-full" src="{{ asset('storage/' . $f->otherImage) }}" alt="{{ $f->otherImage }}"/></div>
+        @endforeach
+        @endif
       </section>
       <section class="page-home__footer">
         <div class="page-home__footer-top">

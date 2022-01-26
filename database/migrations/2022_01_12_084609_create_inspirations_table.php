@@ -22,8 +22,7 @@ class CreateInspirationsTable extends Migration
             $table->integer('featured')->nullable();
             $table->string('date')->nullable();
             $table->string('mainImage')->nullable();
-            $table->string('quote')->nullable();
-            $table->string('description');
+            $table->text('description');
             $table->string('video')->nullable();
             $table->timestamps();
         });

@@ -10,4 +10,9 @@ class Flagship extends Model
     use HasFactory;
     protected $table = 'flagships';
     protected $guarded = ['id'];
+
+    public function otherImage()
+    {
+        return $this->hasMany('App\Models\FlagshipImage', 'flagship');
+    }
 }

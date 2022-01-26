@@ -95,6 +95,7 @@ class HomeController extends Controller
 
     function flagship_single(Flagship $flagship)
     {
+        dd($flagship->otherImage);
        return view('frontend.flagship-single',[
            "general" => $this->general,
            "page" => "Detail Flagship",
@@ -102,12 +103,12 @@ class HomeController extends Controller
        ]);
     }
 
-    function tribe_single(Service $tribe)
+    function tribe_single(Service $service)
     {
        return view('frontend.tribes-single',[
            "general" => $this->general,
            "page" => "Detail Tribe",
-           "t" => $tribe
+           "t" => $service
        ]);
     }
 

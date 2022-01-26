@@ -111,19 +111,6 @@
                                         </div>
                                     </div>
 
-
-                                <div class="mb-3">
-                                    <label for="quote" class="form-label">Quote</label>
-                                    <textarea type="text" name="quote"
-                                        class="form-control @error('quote') is-invalid @enderror editable"
-                                        id="quote">{{ $inspiration->quote }}</textarea>
-                                    @error('quote')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-
                                 <div class="mb-3">
                                     <label for="description" class="form-label">Desc</label>
                                     <textarea type="text" name="description"

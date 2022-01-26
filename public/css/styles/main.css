@@ -596,7 +596,7 @@ body.menu-open .header__menu .menu-toggle span.close { top: 0; opacity: 1; }
 
 .page-inspiration__footer-top .right { font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 2.083vw; line-height: 1em; font-weight: 500; color: #00FF00; }
 
-.page-inspiration-s__one { background: #000; min-height: 100vh; color: #00FF00; padding: 10.417vw 5vw 9.375vw; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: relative; background-image: url("../../../images/img-bg-inspiration-single.jpg"); background-repeat: no-repeat; background-size: cover; background-position: center; }
+.page-inspiration-s__one { background: #000; min-height: 100vh; color: #00FF00; padding: 10.417vw 5vw 9.375vw; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: relative; background-repeat: no-repeat; background-size: cover; background-position: center; }
 
 .page-inspiration-s__one h1 { font-size: 10vw; line-height: 1em; font-family: "Druk", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: 500; color: #00FF00; text-align: center; margin-bottom: 40px; }
 
