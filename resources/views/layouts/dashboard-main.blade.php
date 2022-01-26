@@ -26,7 +26,7 @@
     <link href="{{ asset('/css/main.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/dark-theme.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ asset('/images/favicon.png') }}"/>
+    <link rel="shortcut icon" href="{{ asset('/images/favicon.png') }}" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,25 +40,32 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.2/viewer.min.css" integrity="sha512-r+5gXtPk5M2lBWiI+/ITUncUNNO15gvjjVNVadv9qSd3/dsFZdpYuVu4O2yELRwSZcxlsPKOrMaC7Ug3+rbOXw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.2/viewer.js" integrity="sha512-taR40V17AK2+3RjqzCYkczb0/hTHuQCid0kBs0I2g6DqkFjkTcAIpsa+4PzGuWcRica2AOZQmz4pNPj4InFR8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.2/viewer.min.css"
+        integrity="sha512-r+5gXtPk5M2lBWiI+/ITUncUNNO15gvjjVNVadv9qSd3/dsFZdpYuVu4O2yELRwSZcxlsPKOrMaC7Ug3+rbOXw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.2/viewer.js"
+        integrity="sha512-taR40V17AK2+3RjqzCYkczb0/hTHuQCid0kBs0I2g6DqkFjkTcAIpsa+4PzGuWcRica2AOZQmz4pNPj4InFR8A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- include summernote css/js -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
     @yield('css')
     <style>
-        .scale-down {object-fit: scale-down;}
+        .scale-down {
+            object-fit: scale-down;
+        }
+
     </style>
 </head>
 
 <body>
     @include('sweetalert::alert')
-    {{-- <div class='loader'>
-    <div class='spinner-grow text-primary' role='status'>
-        <span class='sr-only'>Loading...</span>
+    <div class='loader'>
+        <div class='spinner-grow text-primary' role='status'>
+            <span class='sr-only'>Loading...</span>
+        </div>
     </div>
-    </div> --}}
     <div class="page-container">
         @include('partials.dashboard.page-header')
 
@@ -90,7 +97,6 @@
                 }
             })
         }
-
     </script>
 
     <!-- Javascripts -->
@@ -109,12 +115,12 @@
     @yield('js')
     <script>
         function image() {
-                const viewer = new Viewer( document.getElementById('images'), {
-                            viewed() {
-                                viewer.zoomTo(1);
-                            },
-                        });
-            }
+            const viewer = new Viewer(document.getElementById('images'), {
+                viewed() {
+                    viewer.zoomTo(1);
+                },
+            });
+        }
     </script>
 </body>
 

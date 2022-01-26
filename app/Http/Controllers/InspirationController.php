@@ -45,6 +45,7 @@ class InspirationController extends Controller
      */
     public function store(Request $request)
     {
+        $title = $request->title;
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $validated = $request->validate([
@@ -114,6 +115,7 @@ class InspirationController extends Controller
      */
     public function update(Request $request, Inspiration $inspiration)
     {
+        $title = $request->title;
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $validated = $request->validate([
