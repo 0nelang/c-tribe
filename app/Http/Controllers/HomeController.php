@@ -42,7 +42,7 @@ class HomeController extends Controller
         return view('frontend.homepage',[
             "general" => $this->general,
             "home1" => Page::where('page','Home 1')->first(),
-            "page" => "Home",
+            "page" => "Pelarian",
             "featured" => $featured
         ]);
     }

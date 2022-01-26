@@ -57,36 +57,6 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Menu</h5>
                                     <div class="mb-3">
-                                        <label for="background_menu" class="form-label">Background Image</label>
-                                        <div class="mb-3">
-                                            <img src="{{ asset('storage/' . $general->background_menu) }}"
-                                                alt="{{ $general->background_menu }}" id="output-img3"
-                                                style="max-height: 200px; max-width: 200px;">
-                                        </div>
-                                        <input
-                                            class="form-control @error('background_menu') is-invalid @enderror image-show"
-                                            value="{{ $general->background_menu }}" name="background_menu"
-                                            type="file" id="img3" accept="image/*">
-                                        @error('background_menu')
-                                            <small class="text-danger">{{ $message }}</small>
-                                        @enderror
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="background_menu_sm" class="form-label">Background Image Small</label>
-                                        <div class="mb-3">
-                                            <img src="{{ asset('storage/' . $general->background_menu_sm) }}"
-                                                alt="{{ $general->background_menu_sm }}" id="output-img4"
-                                                style="max-height: 200px; max-width: 200px;">
-                                        </div>
-                                        <input
-                                            class="form-control @error('background_menu_sm') is-invalid @enderror image-show"
-                                            value="{{ $general->background_menu_sm }}" name="background_menu_sm"
-                                            type="file" id="img4" accept="image/*">
-                                        @error('background_menu_sm')
-                                            <small class="text-danger">{{ $message }}</small>
-                                        @enderror
-                                    </div>
-                                    <div class="mb-3">
                                         <label for="hover_image" class="form-label">Hover Image
                                             Menu</label>
                                         <div class="mb-3">
