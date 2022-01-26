@@ -29,5 +29,14 @@
 <script src="{{ asset('/plugins/lity/lity.js') }}"></script>
 <script src="{{ asset('/plugins/marquee/js/marquee.js') }}"></script>
 <script src="{{ asset('/js/scripts/main.js') }}"></script>
-@yield('js')
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-217402264-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-217402264-1');
+    </script>
 </html>
