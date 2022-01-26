@@ -45,21 +45,32 @@ class FlagshipController extends Controller
     public function store(Request $request)
     {
         $title = $request->title;
-        $description = $request->description;
+        $desc = $request->description;
         $body = $request->body;
 
-        $title = strip_tags($request->title);
-        $request->description = strip_tags($request->description);
-        $request->body = strip_tags($request->body);
+        $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
+        $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
+        $request['body'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['body'])));
         $validated = $request->validate([
-            // 'title' => 'required|min:3',
-            // 'description' => 'required|min:3',
-            // 'body' => 'required|min:3',
+            'title' => 'required|min:1',
+            'description' => 'required|min:1',
+            'body' => 'required|min:1',
             'date' => 'required',
             'mainImage' => 'image|file',
             'detailImage' => 'image|file',
             'otherImage*' => 'image|file'
         ]);
+
+        $validated['title'] = $title;
+        $validated['description'] = $desc;
+        $validated['body'] = $body;
+        // if ($title != '' && $desc != '' && $body != '') {
+        //     $validated['title'] = $request->title;
+        //     $validated['description'] = $request->description;
+        //     $validated['body'] = $request->body;
+        // }else {
+        //     return redirect()->back()->withInput($request->all());
+        // }
 
         if ($request->hasFile('mainImage'))
         {
@@ -129,15 +140,27 @@ class FlagshipController extends Controller
      */
     public function update(Request $request, Flagship $flagship)
     {
+        $title = $request->title;
+        $desc = $request->description;
+        $body = $request->body;
+
+        $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
+        $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
+        $request['body'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['body'])));
+
         $validated = $request->validate([
-            strip_tags('title') => 'required|min:1',
-            strip_tags('description') => 'required|min:1',
-            strip_tags('body') => 'required|min:1',
+            'title' => 'required|min:1',
+            'description' => 'required|min:1',
+            'body' => 'required|min:1',
             'date' => 'required',
             'mainImage' => 'image|file',
             'detailImage' => 'image|file',
             'otherImage*' => 'image|file'
         ]);
+
+        $validated['title'] = $title;
+        $validated['description'] = $desc;
+        $validated['body'] = $body;
 
         if ($request->hasFile('otherImage')) {
             foreach ($request->otherImage as $value) {

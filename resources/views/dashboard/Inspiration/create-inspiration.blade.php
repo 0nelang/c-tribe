@@ -26,7 +26,7 @@
                                     <br>
                                     <img id="img-output" class="mb-3" style="max-height: 200px; max-width:400px;">
                                     <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage" type="file"
-                                        id="imageFile" accept="image/*">
+                                        id="imageFile" accept="image/*" value="{{ old('mainImage') }}">
                                     @error('mainImage')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -37,7 +37,7 @@
                                     <label for="title" class="form-label is-invalid">Title</label>
                                     <textarea type="text" name="title"
                                         class="form-control @error('title') is-invalid @enderror editable" id="insname"
-                                        aria-describedby="our-people-name"></textarea>
+                                        aria-describedby="our-people-name">{{ old('title') }}</textarea>
                                     @error('title')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -50,7 +50,7 @@
                                             <label for="date" class="form-label is-invalid">Date</label>
                                             <input type="text" name="date"
                                                 class="form-control @error('date') is-invalid @enderror"
-                                                id="exampleInputEmail1" aria-describedby="our-people-date">
+                                                id="exampleInputEmail1" aria-describedby="our-people-date" value="{{ old('date') }}">
                                             @error('date')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -94,7 +94,7 @@
                                     <label for="subTitle" class="form-label">Sub Title</label>
                                     <textarea type="text" name="subTitle"
                                         class="form-control @error('subTitle') is-invalid @enderror editable"
-                                        id="subTitle"></textarea>
+                                        id="subTitle">{{ old('subTitle') }}</textarea>
                                     @error('subTitle')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -106,7 +106,7 @@
                                     <label for="description" class="form-label">Desc</label>
                                     <textarea type="text" name="description"
                                         class="form-control text-white @error('description') is-invalid @enderror editable"
-                                        id="desc" rows="5"></textarea>
+                                        id="desc" rows="5">{{ old('description') }}</textarea>
                                     @error('description')
                                         <div class="invalid-feedback">
                                             {{ $message }}

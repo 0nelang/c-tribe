@@ -12,7 +12,6 @@
 @endsection
 
 @section('main')
-
     <div class="page-content">
         <div class="main-wrapper">
 

@@ -44,6 +44,14 @@ class PeopleController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
+        $validated = $request->validate([
+            'name' => 'required',
+            'title' => 'required',
+            'photo' => 'required|image|file',
+            'description' => 'required|min:1'
+        ]);
         $img = Image::make($request->file('photo'));
         $img->resize(521, null,  function ($constraint)
         {
@@ -53,16 +61,9 @@ class PeopleController extends Controller
         $filename = time().'.'.$request->file('photo')->getClientOriginalExtension();
         $img_path = 'people-photo/'.$filename;
         Storage::put($img_path, $img->encode());
-
-        $validated = $request->validate([
-            'name' => 'required',
-            'title' => 'required',
-            'photo' => 'required|image|file',
-            'description' => 'required'
-        ]);
+        $validated['photo'] = $img_path;
 
         $validated['index'] = People::all()->count() + 1 ;
-        $validated['photo'] = $img_path;
 
         People::create($validated);
         Alert::success('Success', 'Data create succesfully');
@@ -103,11 +104,12 @@ class PeopleController extends Controller
      */
     public function update(Request $request, People $person)
     {
+        $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $validated = $request->validate([
             'name' => 'required',
             'title' => 'required',
             'photo' => 'image|file',
-            'description' => 'required'
+            'description' => 'required|min:1'
         ]);
 
         Alert::success('Success', 'Update Data Succesfully');

@@ -25,7 +25,7 @@
                             <div class="mb-3">
                                 <label for="name" class="form-label is-invalid">Name</label>
                                 <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                                    id="exampleInputEmail1" aria-describedby="our-people-name">
+                                    id="exampleInputEmail1" aria-describedby="our-people-name" value="{{ old('name') }}">
                                 @error('name')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -35,7 +35,7 @@
                             <div class="mb-3">
                                 <label for="title" class="form-label">Title</label>
                                 <input type="text" name="title"
-                                    class="form-control @error('title') is-invalid @enderror" id="title">
+                                    class="form-control @error('title') is-invalid @enderror" id="title" value="{{ old('title') }}">
                                 @error('title')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -47,7 +47,7 @@
                                 <br>
                                 <img id="output" class="mb-3" style="max-height: 200px; max-width: 200px;">
                                 <input class="form-control @error('photo') is-invalid @enderror" name="photo"
-                                    type="file" id="filePhoto" accept="image/*">
+                                    type="file" id="filePhoto" accept="image/*" {{ old('photo') }}>
                                 @error('photo')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -58,7 +58,7 @@
                                 <label for="editor" class="form-label">Desc</label>
                                 <textarea type="name" name="description"
                                     class="form-control text-white @error('description') is-invalid @enderror editable"
-                                    id="editor"></textarea>
+                                    id="editor">{{ old('description') }}</textarea>
                                 @error('description')
                                     <div class="invalid-feedback">
                                         {{ $message }}

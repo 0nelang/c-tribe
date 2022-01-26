@@ -29,7 +29,7 @@
                                         <img id="output" class="mb-3" style="max-height: 200px; max-width: 200px;">
                                     </div>
                                     <input class="form-control @error('logo') is-invalid @enderror" name="logo" type="file"
-                                        id="filePhoto" accept="image/*">
+                                        id="filePhoto" accept="image/*" value="{{ old('mainImage') }}">
                                     @error('logo')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -88,7 +88,7 @@
                                             style="max-height: 200px; max-width: 200px;">
                                     </div>
                                     <input class="form-control @error('image') is-invalid @enderror" name="image"
-                                        type="file" id="fileImage" accept="image/*">
+                                        type="file" id="fileImage" accept="image/*" {{ old('image') }}>
                                     @error('image')
                                         <div class="invalid-feedback">
                                             {{ $message }}
