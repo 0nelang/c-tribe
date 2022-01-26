@@ -21,8 +21,6 @@
         text-transform: uppercase;
     }
 
-    .home
-
 </style>
 @section('content')
 
@@ -41,7 +39,7 @@
             </div>
         </section>
         @isset($featured)
-        
+
         @foreach ($featured as $index => $f)
             {{-- @dd($f) --}}
             @if ($f->featured == 3)

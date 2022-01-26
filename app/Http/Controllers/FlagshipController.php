@@ -44,27 +44,28 @@ class FlagshipController extends Controller
      */
     public function store(Request $request)
     {
+        $title = $request->title;
+        $description = $request->description;
+        $body = $request->body;
+
+        $title = strip_tags($request->title);
+        $request->description = strip_tags($request->description);
+        $request->body = strip_tags($request->body);
         $validated = $request->validate([
-            'title' => 'required',
+            // 'title' => 'required|min:3',
+            // 'description' => 'required|min:3',
+            // 'body' => 'required|min:3',
             'date' => 'required',
-            'description' => 'required',
-            'body' => 'required',
-            'mainImage*' => 'image|file',
-            'detailImage' => 'image|file'
+            'mainImage' => 'image|file',
+            'detailImage' => 'image|file',
+            'otherImage*' => 'image|file'
         ]);
 
         if ($request->hasFile('mainImage'))
         {
-            foreach ($request->mainImage as $index => $value) {
-                if ($index == 0) {
-                    $validated['mainImage'] = $value->store('flagship-image', ['disk' => 'public']);
-                } else {
-                    $otherImage['otherImage'] = $value->store('flagship-image', ['disk' => 'public']);
-                    $otherImage['flagship'] = $request->title;
-                    FlagshipImage::create($otherImage);
-                }
-            }
+            $validated['mainImage'] = $request->store('flagship-image', ['disk' => 'public']);
         }
+
 
         if ($request->hasFile('detailImage')) {
             $validated['detailImage'] = $request->file('detailImage')->store('flagship-image', ['disk' => 'public']);
@@ -79,7 +80,14 @@ class FlagshipController extends Controller
         $validated['subTitle'] = $request->subTitle;
         $validated['index'] = Flagship::all()->count() + 1 ;
         $validated['slug'] = Str::slug(strip_tags($request->title));
-        Flagship::create($validated);
+        $flagship = Flagship::create($validated);
+        if ($request->hasFile('otherImage')) {
+            foreach ($request->otherImage as $value) {
+                $otherImage['otherImage'] = $value->store('flagship-image', ['disk' => 'public']);
+                $otherImage['flagship'] = $$flagship->id;
+                FlagshipImage::create($otherImage);
+            }
+        }
         Alert::success('Success', 'Data create succesfully');
 
         return redirect(route('flagship.index'));
@@ -122,11 +130,10 @@ class FlagshipController extends Controller
     public function update(Request $request, Flagship $flagship)
     {
         $validated = $request->validate([
-            'title' => 'required',
+            strip_tags('title') => 'required|min:1',
+            strip_tags('description') => 'required|min:1',
+            strip_tags('body') => 'required|min:1',
             'date' => 'required',
-            'title' => 'required',
-            'description' => 'required',
-            'body' => 'required',
             'mainImage' => 'image|file',
             'detailImage' => 'image|file',
             'otherImage*' => 'image|file'
@@ -135,7 +142,7 @@ class FlagshipController extends Controller
         if ($request->hasFile('otherImage')) {
             foreach ($request->otherImage as $value) {
                 $otherImage['otherImage'] = $value->store('flagship-image', ['disk' => 'public']);
-                $otherImage['flagship'] = $request->title;
+                $otherImage['flagship'] = $flagship->id;
                 FlagshipImage::create($otherImage);
             }
         }
