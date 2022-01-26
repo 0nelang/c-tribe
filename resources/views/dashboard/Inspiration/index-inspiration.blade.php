@@ -35,7 +35,7 @@
                                         <td>@if ($pep->featured == true)
                                             Yes
                                             @else
-                                            --
+                                            No
                                         @endif</td>
                                         <td style="">
                                             <div class="dropdown">

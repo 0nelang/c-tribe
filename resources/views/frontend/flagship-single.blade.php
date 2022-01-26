@@ -53,16 +53,17 @@
                 </article>
             </div>
         </section>
-        <section class="page-flagship-s__three">
+        @if ($f->otherImage)
+            <section class="page-flagship-s__three">
             <div class="wrap">
-                    <img class="img-full" src="/images/img-flagship-single-01.jpg" alt="Image" />
-                    <img class="img-full" src="/images/img-flagship-single-02.jpg" alt="Image" />
-                    <img class="img-full" src="/images/img-flagship-single-03.jpg" alt="Image" />
-                    <img class="img-full" src="/images/img-flagship-single-04.jpg" alt="Image" /><img
-                    class="img-full" src="/images/img-flagship-single-05.jpg" alt="Image" /><img
-                    class="img-full" src="/images/img-flagship-single-06.jpg" alt="Image" /><img
-                    class="img-full" src="/images/img-flagship-single-07.jpg" alt="Image" /></div>
+                @foreach ($f->otherImage as $i)
+                     <img class="img-full" src="{{ asset('storage/' . $i->otherImage) }}" alt="{{ $i->otherImage }}" />
+                @endforeach
+                   
+                </div>
         </section>
+        @endif
+        
         <section class="page-flagship__footer">
             <div class="page-flagship__footer-top">
                 <div class="left"><a class="item email" href="mailto:{{ $general->email_footer }}">GENERAL
