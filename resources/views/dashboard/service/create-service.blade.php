@@ -49,10 +49,21 @@
                                 </div>
 
                                 <div class="mb-3">
+                                    <label for="title" class="form-label">Title</label>
+                                    <textarea type="text" name="title"
+                                        class="text-dark form-control @error('title') is-invalid @enderror editable"
+                                        id="ck1">{{ old('title') }}</textarea> @error('title')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
                                     <label for="description" class="form-label">Description</label>
                                     <textarea type="text" name="description"
                                         class="text-dark form-control @error('description') is-invalid @enderror editable"
-                                        id="ck1">{{ old('description') }}</textarea> @error('description')
+                                        id="ck2">{{ old('description') }}</textarea> @error('description')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -63,7 +74,7 @@
                                     <label for="body" class="form-label">Body</label>
                                     <textarea type="text" name="body"
                                         class="text-dark form-control @error('body') is-invalid @enderror editable"
-                                        id="ck2">{{ old('body') }}</textarea> @error('body')
+                                        id="ck3">{{ old('body') }}</textarea> @error('body')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>

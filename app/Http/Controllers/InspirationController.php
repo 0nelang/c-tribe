@@ -47,7 +47,6 @@ class InspirationController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required',
-            'quote' => 'required',
             'description' => 'required',
             'mainImage' => '|image|file',
             'video' => 'mimetypes:video/avi,video/mp4',
@@ -72,7 +71,7 @@ class InspirationController extends Controller
 
         $validated['index'] = Inspiration::all()->count() + 1;
         $validated['subTitle'] = $request->subTitle;
-        $validated['slug'] = Str::slug(strip_tags($request->name));
+        $validated['slug'] = Str::slug(strip_tags($request->title));
         Inspiration::create($validated);
         Alert::success('Success', 'Data create succesfully');
 
@@ -115,7 +114,6 @@ class InspirationController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required',
-            'quote' => 'required',
             'description' => 'required',
             'mainImage' => 'image|file',
             'video' => 'mimetypes:video/avi,video/mp4',
@@ -138,7 +136,7 @@ class InspirationController extends Controller
             $validated['featured'] = $request->layout;
         }
 
-        $validated['slug'] = Str::slug(strip_tags($request->name));
+        $validated['slug'] = Str::slug(strip_tags($request->title));
         $validated['subTitle'] = $request->subTitle;
         Inspiration::where('id', $inspiration->id)->update($validated);
         Alert::success('Success', 'Update Data Succesfully');

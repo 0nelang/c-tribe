@@ -41,7 +41,7 @@
         @isset($featured)
 
         @foreach ($featured as $index => $f)
-            {{-- @dd($f) --}}
+        @if($f != null)
             @if ($f->featured == 3)
                 <section class="page-home__three header-1" style="background-image:url(
                                 {{ asset('storage/' . $f->mainImage) }})">
@@ -109,6 +109,7 @@
                                 class="meta">{{ $f->project }}</span></div>
                     </div>
                 </section>
+                @endif
             @endif
 
         @endforeach

@@ -46,6 +46,7 @@ class ServiceController extends Controller
         $validated = $request->validate([
             'logo' => 'required|image|file',
             'service' => 'required',
+            'title' => 'required',
             'description' => 'required',
             'body' => 'required',
             'image' => 'required|image|file'
@@ -100,6 +101,7 @@ class ServiceController extends Controller
     {
         $validated = $request->validate([
             'service' => 'required',
+            'title' => 'required',
             'description' => 'required',
             'body' => 'required'
         ]);
