@@ -106,12 +106,13 @@ class HomeController extends Controller
         ]);
     }
 
-    function flagship_single(Flagship $flagship)
+    function flagship_single(Flagship $flagship,$index)
     {
        return view('frontend.flagship-single',[
            "general" => $this->general,
            "page" => "Detail Flagship",
-           "f" => $flagship
+           "f" => $flagship,
+           "index" => $index
        ]);
     }
 

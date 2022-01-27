@@ -67,29 +67,37 @@
                                             <div class="form-check pt-2" onclick="hilzam()">
                                                 <input type="checkbox" class="form-check-input" id="featured"
                                                     name="featured" @if ($flagship->featured)
-                                                    checked
-                                                    @endif>
+                                                checked
+                                                @endif>
                                                 <label class="form-check-label" for="featured">featured</label>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: {{ ($flagship->featured == true)? 'block' : 'none'  }}">
-                                        <input type="radio" class="form-check-input" id="featured1" name="layout" value="1" {{ ($flagship->featured == 1)? 'checked' : ''  }}>
+                                    <div class="form-check pt-2 mb-3 col-lg-3 layout"
+                                        style="display: {{ $flagship->featured == true ? 'block' : 'none' }}">
+                                        <input type="radio" class="form-check-input" id="featured1" name="layout" value="1"
+                                            {{ $flagship->featured == 1 ? 'checked' : '' }}>
                                         <label class="form-check-label" for="featured1"><img
                                                 src="/images/layouts/c-tribe home.jpeg" width="250px"></label>
                                     </div>
-                                    <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: {{ ($flagship->featured == true)? 'block' : 'none'  }}">
-                                        <input type="radio" class="form-check-input" id="featured2" name="layout" value="2" {{ ($flagship->featured == 2)? 'checked' : ''  }}>
+                                    <div class="form-check pt-2 mb-3 col-lg-3 layout"
+                                        style="display: {{ $flagship->featured == true ? 'block' : 'none' }}">
+                                        <input type="radio" class="form-check-input" id="featured2" name="layout" value="2"
+                                            {{ $flagship->featured == 2 ? 'checked' : '' }}>
                                         <label class="form-check-label" for="featured2"><img
                                                 src="/images/layouts/c-tribe home1.jpeg" width="250px"></label>
                                     </div>
-                                    <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: {{ ($flagship->featured == true)? 'block' : 'none'  }}">
-                                        <input type="radio" class="form-check-input" id="featured3" name="layout" value="3" {{ ($flagship->featured == 3)? 'checked' : ''  }}>
+                                    <div class="form-check pt-2 mb-3 col-lg-3 layout"
+                                        style="display: {{ $flagship->featured == true ? 'block' : 'none' }}">
+                                        <input type="radio" class="form-check-input" id="featured3" name="layout" value="3"
+                                            {{ $flagship->featured == 3 ? 'checked' : '' }}>
                                         <label class="form-check-label" for="featured3"><img
                                                 src="/images/layouts/c-tribe home2.jpeg" width="250px"></label>
                                     </div>
-                                    <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: {{ ($flagship->featured == true)? 'block' : 'none'  }}">
-                                        <input type="radio" class="form-check-input" id="featured4" name="layout" value="4" {{ ($flagship->featured == 4)? 'checked' : ''  }}>
+                                    <div class="form-check pt-2 mb-3 col-lg-3 layout"
+                                        style="display: {{ $flagship->featured == true ? 'block' : 'none' }}">
+                                        <input type="radio" class="form-check-input" id="featured4" name="layout" value="4"
+                                            {{ $flagship->featured == 4 ? 'checked' : '' }}>
                                         <label class="form-check-label" for="featured4"><img
                                                 src="/images/layouts/c-tribe home3.jpeg" width="250px"></label>
                                     </div>
@@ -97,7 +105,7 @@
 
 
 
-                                <div class="mb-3">
+                                <div class="mb-3 layout" style="display:{{ $flagship->featured == true ? 'block' : 'none' }}">
                                     <label for="subTitle" class="form-label">Sub Title</label>
                                     <textarea type="text" name="subTitle"
                                         class="form-control @error('subTitle') is-invalid @enderror editable"
@@ -119,6 +127,77 @@
                                             {{ $message }}
                                         </div>
                                     @enderror
+                                </div>
+
+                                <div class="row">
+                                    <div class="mb-3 col-lg-4">
+                                        <div class="mb-3">
+                                            <label for="detail1" class="form-label">Detail 1</label>
+                                            <textarea type="text" name="detail1"
+                                                class="form-control @error('detail1') is-invalid @enderror editable"
+                                                id="detail1">{{ $flagship->detail1 }}</textarea>
+                                            @error('detail1')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <label for="insta1" class="form-label">Insta 1</label>
+                                        <input type="text" name="insta1"
+                                            class="form-control @error('insta1') is-invalid @enderror" id="insta1"
+                                            value="{{ $flagship->insta1 }}">
+                                        @error('insta1')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="mb-3 col-lg-4">
+                                        <div class="mb-3">
+                                            <label for="detail2" class="form-label">Detail 2</label>
+                                            <textarea type="text" name="detail2"
+                                                class="form-control @error('detail2') is-invalid @enderror editable"
+                                                id="detail2">{{ $flagship->detail2 }}</textarea>
+                                            @error('detail2')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <label for="insta2" class="form-label">Insta 2</label>
+                                        <input type="text" name="insta2"
+                                            class="form-control @error('insta2') is-invalid @enderror" id="insta2"
+                                            value="{{ $flagship->insta2 }}">
+                                        @error('insta2')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="mb-3 col-lg-4">
+                                        <div class="mb-3">
+                                            <label for="detail3" class="form-label">Detail 3</label>
+                                            <textarea type="text" name="detail3"
+                                                class="form-control @error('detail3') is-invalid @enderror editable"
+                                                id="detail3">{{ $flagship->detail3 }}</textarea>
+                                            @error('detail3')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <label for="insta3" class="form-label">Insta 3</label>
+                                        <input type="text" name="insta3"
+                                            class="form-control @error('insta3') is-invalid @enderror" id="insta3"
+                                            value="{{ $flagship->insta3 }}">
+                                        @error('insta3')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
                                 </div>
 
                                 <div class="mb-3">

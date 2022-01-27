@@ -19,7 +19,9 @@
           <div class="desc">
            {!! $t->description !!}
           </div>
+          @if ($t->image != null)
           <div class="img"><img src="{{ asset('storage/' . $t->image) }}" alt="{{ $t->image }}"/><span class="caption text-uppercase">{{ strip_tags($t->title) }}.</span></div>
+          @endif
         </div>
       </section>
       <section class="page-tribe-s__two">

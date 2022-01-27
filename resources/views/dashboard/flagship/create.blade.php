@@ -51,7 +51,8 @@
                                         <div class="mb-3">
                                             <label for="date" class="form-label">Date</label>
                                             <input type="text" name="date"
-                                                class="form-control @error('date') is-invalid @enderror" id="date" value="{{ old('date') }}">
+                                                class="form-control @error('date') is-invalid @enderror" id="date"
+                                                value="{{ old('date') }}">
                                             @error('date')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -91,7 +92,7 @@
 
 
 
-                                <div class="mb-3">
+                                <div class="mb-3 layout" style="display: none">
                                     <label for="subTitle" class="form-label">Sub Title</label>
                                     <textarea type="text" name="subTitle"
                                         class="form-control @error('subTitle') is-invalid @enderror editable"
@@ -115,6 +116,77 @@
                                     @enderror
                                 </div>
 
+                                <div class="row">
+                                    <div class="mb-3 col-lg-4">
+                                        <div class="mb-3">
+                                            <label for="detail1" class="form-label">Detail 1</label>
+                                            <textarea type="text" name="detail1"
+                                                class="form-control @error('detail1') is-invalid @enderror editable"
+                                                id="detail1">{{ old('detail1') }}</textarea>
+                                            @error('detail1')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <label for="insta1" class="form-label">Insta 1</label>
+                                        <input type="text" name="insta1"
+                                            class="form-control @error('insta1') is-invalid @enderror" id="insta1"
+                                            value="{{ old('insta1') }}">
+                                        @error('insta1')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="mb-3 col-lg-4">
+                                        <div class="mb-3">
+                                            <label for="detail2" class="form-label">Detail 2</label>
+                                            <textarea type="text" name="detail2"
+                                                class="form-control @error('detail2') is-invalid @enderror editable"
+                                                id="detail2">{{ old('detail2') }}</textarea>
+                                            @error('detail2')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <label for="insta2" class="form-label">Insta 2</label>
+                                        <input type="text" name="insta2"
+                                            class="form-control @error('insta2') is-invalid @enderror" id="insta2"
+                                            value="{{ old('insta2') }}">
+                                        @error('insta2')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="mb-3 col-lg-4">
+                                        <div class="mb-3">
+                                            <label for="detail3" class="form-label">Detail 3</label>
+                                            <textarea type="text" name="detail3"
+                                                class="form-control @error('detail3') is-invalid @enderror editable"
+                                                id="detail3">{{ old('detail3') }}</textarea>
+                                            @error('detail3')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <label for="insta3" class="form-label">Insta 3</label>
+                                        <input type="text" name="insta3"
+                                            class="form-control @error('insta3') is-invalid @enderror" id="insta3"
+                                            value="{{ old('insta3') }}">
+                                        @error('insta3')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+
                                 <div class="mb-3">
                                     <label for="body" class="form-label">Body</label>
                                     <textarea type="text" name="body"
@@ -132,7 +204,8 @@
                                     <br>
                                     <img id="output" class="mb-3" style="max-height: 200px; max-width: 300px">
                                     <input class="form-control @error('detailImage') is-invalid @enderror"
-                                        name="detailImage" type="file" id="filePhoto" accept="image/*" value="{{ old('detailImage') }}">
+                                        name="detailImage" type="file" id="filePhoto" accept="image/*"
+                                        value="{{ old('detailImage') }}">
                                     @error('detailImage')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -192,7 +265,7 @@
             }
         };
 
-        $(document).ready(function () {
+        $(document).ready(function() {
             var id;
             $('.editable').each(function() {
                 id = $(this).attr('id');
@@ -202,6 +275,6 @@
                     });
                 }
             })
-            });
+        });
     </script>
 @endsection

@@ -25,7 +25,7 @@
                     @elseif($f->detailImage != null) <img src="{{ asset('storage/' . $f->detailImage) }}"
                             alt="Image" />
                     @endif
-                    <span class="caption">CREATIVE TRIBE FLAGSHIP EVENT VOL. 1</span>
+                    <span class="caption">CREATIVE TRIBE FLAGSHIP EVENT VOL. {{ $index + 1 }}</span>
 
                 </div>
             </div>
@@ -33,20 +33,33 @@
         <section class="page-flagship-s__two">
             <div class="wrap">
                 <div class="article-top">
-                    <div class="col">
-                        <p>STRATEGY: BRAND ARTICULATIONS <br>AGENCY: STUDIO LORE <br>PRODUCTION COMPANY: BULLION PRODUCTIONS
-                            <br>DIRECTOR: JAMES WILLIS
-                        </p>
-                    </div>
+                    @if ($f->detail1 != null)
+                        <div class="col">
+                            {!! $f->detail1 !!}
+                        </div>
+                    @endif
+                    @if ($f->detail2 != null)
                     <div class="col tc">
-                        <p>ROLE & LEAD ART DIRECTION AND DESIGN</p>
+                        {!! $f->detail2 !!}
                     </div>
+                    @endif
+                    @if ($f->detail3 != null)
                     <div class="col tr">
-                        <p>FEBRUARY 2022 <br>JAKARTA, INDONESIA</p>
+                        {!! $f->detail3 !!}
                     </div>
-                    <div class="col"><a href="#">@CREATIVETRIBEJKT</a></div>
-                    <div class="col tc"><a href="#">@SANASTUDIO</a></div>
-                    <div class="col tr"><a href="#">@DASH</a></div>
+                    @endif
+                    @if ($f->insta1 != null)
+                        <div class="col"><a href="https://www.instagram.com/{{ $f->insta1 }}"
+                                class="text-uppercase">@ {{ $f->insta1 }}</a></div>
+                    @endif
+                    @if ($f->insta2 != null)
+                        <div class="col tc"><a href="https://www.instagram.com/{{ $f->insta2 }}"
+                                class="text-uppercase">@ {{ $f->insta2 }}</a></div>
+                    @endif
+                    @if ($f->insta3 != null)
+                        <div class="col tr"><a href="https://www.instagram.com/{{ $f->insta3 }}"
+                                class="text-uppercase">@ {{ $f->insta3 }}</a></div>
+                    @endif
                 </div>
                 <article>
                     {!! $f->body !!}
@@ -55,15 +68,16 @@
         </section>
         @if ($f->otherImage)
             <section class="page-flagship-s__three">
-            <div class="wrap">
-                @foreach ($f->otherImage as $i)
-                     <img class="img-full" src="{{ asset('storage/' . $i->otherImage) }}" alt="{{ $i->otherImage }}" />
-                @endforeach
-                   
+                <div class="wrap">
+                    @foreach ($f->otherImage as $i)
+                        <img class="img-full" src="{{ asset('storage/' . $i->otherImage) }}"
+                            alt="{{ $i->otherImage }}" />
+                    @endforeach
+
                 </div>
-        </section>
+            </section>
         @endif
-        
+
         <section class="page-flagship__footer">
             <div class="page-flagship__footer-top">
                 <div class="left"><a class="item email" href="mailto:{{ $general->email_footer }}">GENERAL

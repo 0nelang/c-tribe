@@ -58,7 +58,13 @@ class FlagshipController extends Controller
             'date' => 'required',
             'mainImage' => 'image|file',
             'detailImage' => 'image|file',
-            'otherImage*' => 'image|file'
+            'otherImage*' => 'image|file',
+            'detail1' => 'min:0',
+            'detail2' => 'min:0',
+            'detail3' => 'min:0',
+            'insta1' => 'min:0',
+            'insta2' => 'min:0',
+            'insta3' => 'min:0',
         ]);
 
         $validated['title'] = $title;
@@ -155,7 +161,13 @@ class FlagshipController extends Controller
             'date' => 'required',
             'mainImage' => 'image|file',
             'detailImage' => 'image|file',
-            'otherImage*' => 'image|file'
+            'otherImage*' => 'image|file',
+            'detail1' => 'min:0',
+            'detail2' => 'min:0',
+            'detail3' => 'min:0',
+            'insta1' => 'min:0',
+            'insta2' => 'min:0',
+            'insta3' => 'min:0',
         ]);
 
         $validated['title'] = $title;
