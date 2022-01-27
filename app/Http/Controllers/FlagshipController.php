@@ -90,8 +90,8 @@ class FlagshipController extends Controller
 
         $validated['subTitle'] = $request->subTitle;
         $validated['index'] = Flagship::all()->count() + 1 ;
-        $validated['slug'] = Str::slug(strip_tags($request->title));
         $flagship = Flagship::create($validated);
+        $flagship::find($flagship->id)->update(['slug' => self::slugify(strip_tags($title . strval($flagship->id) ))]);
         if ($request->hasFile('otherImage')) {
             foreach ($request->otherImage as $value) {
                 $otherImage['otherImage'] = $value->store('flagship-image', ['disk' => 'public']);
@@ -186,8 +186,8 @@ class FlagshipController extends Controller
             $validated['featured'] = $request->layout;
         }
 
+        $validated['slug'] = self::slugify(strip_tags($title . strval($flagship->id) ));
         $validated['subTitle'] = $request->subTitle;
-        $validated['slug'] = Str::slug(strip_tags($request->title));
         Flagship::where('id', $flagship->id)->update($validated);
         Alert::success('Success', 'Data update succesfully');
 

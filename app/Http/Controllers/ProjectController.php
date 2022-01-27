@@ -84,8 +84,8 @@ class ProjectController extends Controller
 
         $validated['subTitle'] = $request->subTitle;
         $validated['index'] = Project::all()->count() + 1 ;
-        $validated['slug'] = Str::slug(strip_tags($request->title));
         $project = Project::create($validated);
+        $project::find($project->id)->update(['slug' => self::slugify(strip_tags($title . strval($project->id) ))]);
         if ($request->hasFile('otherImage')) {
             foreach ($request->otherImage as $value) {
                 # code...
@@ -157,7 +157,7 @@ class ProjectController extends Controller
         $validated['body'] = $body;
 
         $validated['project']= Str::title($request->project);
-
+        $validated['slug'] = self::slugify(strip_tags($title . strval($project->id) ));
         if ($request->hasFile('otherImage')) {
             foreach ($request->otherImage as $value) {
                 $otherImage['otherImage'] = $value->store('project-image', ['disk' => 'public']);
@@ -181,7 +181,6 @@ class ProjectController extends Controller
             $validated['featured'] = $request->layout;
         }
         $validated['subTitle'] = $request->subTitle;
-        $validated['slug'] = Str::slug(strip_tags($request->title));
         Project::where('id', $project->id)->update($validated);
         Alert::success('Success', 'Data update succesfully');
 

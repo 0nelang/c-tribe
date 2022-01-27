@@ -15,4 +15,13 @@ class Project extends Model
     {
         return $this->hasMany('App\Models\ProjectImage', 'project');
     }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
 }

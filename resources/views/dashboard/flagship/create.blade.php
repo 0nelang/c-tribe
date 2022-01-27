@@ -27,7 +27,7 @@
                                         <br>
                                         <img id="out" class="mb-3" style="max-height: 200px; max-width: 300px">
                                         <input class="form-control @error('mainImage') is-invalid @enderror"
-                                            name="mainImage[]" type="file" id="photo" accept="image/*">
+                                            name="mainImage" type="file" id="photo" accept="image/*">
                                         @error('mainImage')
                                             <div class="invalid-feedback">
                                                 {{ $message }}

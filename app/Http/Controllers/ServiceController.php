@@ -67,7 +67,8 @@ class ServiceController extends Controller
         }
         $validated['index'] = Service::all()->count() + 1;
         $validated['slug'] = Str::slug(strip_tags($request->service));
-        Service::create($validated);
+        $service = Service::create($validated);
+        $service::find($service->id)->update(['slug' => self::slugify(strip_tags($title . strval($service->id) ))]);
         Alert::success('success', 'data successfuly created');
 
         return redirect('admin/service');
@@ -134,7 +135,7 @@ class ServiceController extends Controller
             $validated['image'] = $request->file('image')->store('service-image', ['disk' => 'public']);
         }
 
-        $validated['slug'] = Str::slug(strip_tags($request->service));
+        $validated['slug'] = self::slugify(strip_tags($title . strval($service->id) ));
         Service::find($service->id)->update($validated);
         Alert::success('success', 'data update successfuly');
 

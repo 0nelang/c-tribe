@@ -10,4 +10,13 @@ class Service extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
 }

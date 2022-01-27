@@ -78,8 +78,8 @@ class InspirationController extends Controller
 
         $validated['index'] = Inspiration::all()->count() + 1;
         $validated['subTitle'] = $request->subTitle;
-        $validated['slug'] = Str::slug(strip_tags($request->title));
-        Inspiration::create($validated);
+        $inspiration =  Inspiration::create($validated);
+        $inspiration::find($inspiration->id)->update(['slug' => self::slugify(strip_tags($title . strval($inspiration->id) ))]);
         Alert::success('Success', 'Data create succesfully');
 
         return redirect(route('inspiration.index'));
@@ -149,7 +149,7 @@ class InspirationController extends Controller
             $validated['featured'] = $request->layout;
         }
 
-        $validated['slug'] = Str::slug(strip_tags($request->title));
+        $validated['slug'] = self::slugify(strip_tags($title . strval($inspiration->id) ));
         $validated['subTitle'] = $request->subTitle;
         Inspiration::where('id', $inspiration->id)->update($validated);
         Alert::success('Success', 'Update Data Succesfully');
