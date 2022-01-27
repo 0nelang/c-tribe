@@ -17,7 +17,7 @@ class Controller extends BaseController
     {
         $agent = Visitor::pluck('user_agent')->toArray();
         $ip = Visitor::pluck('ip_address')->toArray();
-        if (!in_array($_SERVER['HTTP_USER_AGENT'], $agent) && !in_array($_SERVER['SERVER_ADDR'], $ip) ) {
+        if (!in_array($_SERVER['HTTP_USER_AGENT'], $agent)) {
             Visitor::create([
                 'user_agent' => $_SERVER['HTTP_USER_AGENT'],
                 'ip_address' => $_SERVER['SERVER_ADDR']

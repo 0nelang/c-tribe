@@ -49,18 +49,39 @@ class HomeController extends Controller
 
     function flagship()
     {
+        $flagship = Flagship::orderBy('index','asc')->get();
+        $count = $flagship->count();
+        for ($i=0; $i < $count; $i++) {
+            if ($flagship[$i]->mainImage != null) {
+                $dummy = $flagship[$i];
+                $flagship[$i] = $flagship[0];
+                $flagship[0] = $dummy;
+                $i = $flagship->count();
+            }
+        }
+
         return view('frontend.flagship',[
             "general" => $this->general,
-            "flagship" => Flagship::orderBy('index','asc')->get(),
+            "flagship" => $flagship,
             "page" => "Flagship"
         ]);
     }
 
     function inspiration()
     {
+        $Inspiration = Inspiration::orderBy('index','asc')->get();
+        $count = $Inspiration->count();
+        for ($i=0; $i < $count; $i++) {
+            if ($Inspiration[$i]->mainImage != null) {
+                $dummy = $Inspiration[$i];
+                $Inspiration[$i] = $Inspiration[0];
+                $Inspiration[0] = $dummy;
+                $i = $Inspiration->count();
+            }
+        }
         return view('frontend.inspiration',[
             "general" => $this->general,
-            "inspiration" => Inspiration::orderBy('index','asc')->get(),
+            "inspiration" => $Inspiration,
             "page" => "Insipiration"
         ]);
     }
