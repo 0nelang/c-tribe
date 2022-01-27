@@ -46,6 +46,8 @@ class InspirationController extends Controller
     public function store(Request $request)
     {
         $title = $request->title;
+        $desc = $request->description;
+
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $validated = $request->validate([
@@ -55,6 +57,8 @@ class InspirationController extends Controller
             'video' => 'mimetypes:video/avi,video/mp4',
             'date' => 'max:255'
         ]);
+        $validated['title'] = $title;
+        $validated['description'] = $desc;
 
         $validated['date'] = $request->date;
         if ($request->hasFile('mainImage')) {
@@ -116,6 +120,7 @@ class InspirationController extends Controller
     public function update(Request $request, Inspiration $inspiration)
     {
         $title = $request->title;
+        $desc = $request->description;
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $validated = $request->validate([
@@ -125,6 +130,8 @@ class InspirationController extends Controller
             'video' => 'mimetypes:video/avi,video/mp4',
             'date' => 'max:255'
         ]);
+        $validated['title'] = $title;
+        $validated['description'] = $desc;
         $validated['date'] = $request->date;
         if ($request->hasFile('mainImage')) {
             Storage::disk('public')->delete($inspiration->mainImage);

@@ -44,6 +44,10 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        $title = $request->title;
+        $desc = $request->description;
+        $body = $request->body;
+
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $request['body'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['body'])));
@@ -58,6 +62,9 @@ class ProjectController extends Controller
             'mainImage' => 'required|image|file',
             'otherImage*' => 'image|file'
         ]);
+        $validated['title'] = $title;
+        $validated['description'] = $desc;
+        $validated['body'] = $body;
 
         $validated['project']= Str::title($request->project);
 
@@ -127,6 +134,10 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
+        $title = $request->title;
+        $desc = $request->description;
+        $body = $request->body;
+
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $request['body'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['body'])));
@@ -141,6 +152,9 @@ class ProjectController extends Controller
             'mainImage' => 'image|file',
             'otherImage*' => 'image|file'
         ]);
+        $validated['title'] = $title;
+        $validated['description'] = $desc;
+        $validated['body'] = $body;
 
         $validated['project']= Str::title($request->project);
 

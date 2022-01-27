@@ -44,6 +44,7 @@ class PeopleController extends Controller
      */
     public function store(Request $request)
     {
+        $desc = $request->description;
 
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $validated = $request->validate([
@@ -52,6 +53,7 @@ class PeopleController extends Controller
             'photo' => 'required|image|file',
             'description' => 'required|min:1'
         ]);
+        $validated['description'] = $desc;
         $img = Image::make($request->file('photo'));
         $img->resize(521, null,  function ($constraint)
         {
@@ -104,6 +106,8 @@ class PeopleController extends Controller
      */
     public function update(Request $request, People $person)
     {
+        $desc = $request->description;
+
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $validated = $request->validate([
             'name' => 'required',
@@ -111,7 +115,7 @@ class PeopleController extends Controller
             'photo' => 'image|file',
             'description' => 'required|min:1'
         ]);
-
+        $validated['description'] = $desc;
         Alert::success('Success', 'Update Data Succesfully');
 
         if ($request->hasFile('photo')) {
