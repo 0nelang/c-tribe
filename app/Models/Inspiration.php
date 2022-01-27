@@ -12,4 +12,13 @@ class Inspiration extends Model
     protected $guarded = ['id'];
 
     protected $table = 'inspirations';
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
 }
