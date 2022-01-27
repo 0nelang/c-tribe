@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Visitor;
-use Jenssegers\Agent\Agent;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
