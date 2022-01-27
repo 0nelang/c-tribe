@@ -60,7 +60,13 @@ class ProjectController extends Controller
             'description' => 'required|min:1',
             'body' => 'required|min:1',
             'mainImage' => 'required|image|file',
-            'otherImage*' => 'image|file'
+            'otherImage*' => 'image|file',
+            'detail1' => 'min:0',
+            'detail2' => 'min:0',
+            'detail3' => 'min:0',
+            'insta1' => 'min:0',
+            'insta2' => 'min:0',
+            'insta3' => 'min:0',
         ]);
         $validated['title'] = $title;
         $validated['description'] = $desc;
@@ -150,7 +156,13 @@ class ProjectController extends Controller
             'description' => 'required|min:1',
             'body' => 'required|min:1',
             'mainImage' => 'image|file',
-            'otherImage*' => 'image|file'
+            'otherImage*' => 'image|file',
+            'detail1' => 'min:0',
+            'detail2' => 'min:0',
+            'detail3' => 'min:0',
+            'insta1' => 'min:0',
+            'insta2' => 'min:0',
+            'insta3' => 'min:0',
         ]);
         $validated['title'] = $title;
         $validated['description'] = $desc;

@@ -25,6 +25,12 @@ class CreateFlagshipsTable extends Migration
             $table->text('body');
             $table->string('mainImage')->nullable();
             $table->string('detailImage')->nullable();
+            $table->text('detail1')->nullable();
+            $table->text('detail2')->nullable();
+            $table->text('detail3')->nullable();
+            $table->string('insta1')->nullable();
+            $table->string('insta2')->nullable();
+            $table->string('insta3')->nullable();
             $table->timestamps();
         });
     }

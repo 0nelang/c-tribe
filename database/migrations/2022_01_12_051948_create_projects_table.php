@@ -27,6 +27,12 @@ class CreateProjectsTable extends Migration
             $table->string('mainImage')->nullable();
             $table->text('description');
             $table->text('body');
+            $table->text('detail1')->nullable();
+            $table->text('detail2')->nullable();
+            $table->text('detail3')->nullable();
+            $table->string('insta1')->nullable();
+            $table->string('insta2')->nullable();
+            $table->string('insta3')->nullable();
             $table->timestamps();
         });
     }

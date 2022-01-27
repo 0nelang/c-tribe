@@ -121,7 +121,6 @@ class InspirationController extends Controller
     {
         $title = $request->title;
         $desc = $request->description;
-        // dd($title);
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $validated = $request->validate([
@@ -133,7 +132,6 @@ class InspirationController extends Controller
         ]);
         $validated['title'] = $title;
         $validated['description'] = $desc;
-        // dd($validated['title']);
         $validated['date'] = $request->date;
         if ($request->hasFile('mainImage')) {
             Storage::disk('public')->delete($inspiration->mainImage);
