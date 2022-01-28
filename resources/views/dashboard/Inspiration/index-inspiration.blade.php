@@ -27,11 +27,19 @@
                                         <td>{{ $pep->index }}</td>
                                         <td>{{ $pep->id }}</td>
                                         <td>{!!  strip_tags($pep->title) !!}</td>
+                                        @if ($pep->mainImage != null)
                                         <td>
                                             <img onclick="image()" src="{{ asset('storage/' . $pep->mainImage) }}"
                                                 style="height: 100px; width:200px; object-fit:cover"
-                                                alt="{{ $pep->mainImage }}">
+                                                class="img-show" alt="{{ $pep->mainImage }}">
                                         </td>
+                                    @else
+                                        <td>
+                                            <img onclick="image()" src="{{ asset('/images/no-image.svg') }}"
+                                                style="height: 100px; width:200px; object-fit:cover"
+                                                class="img-show" alt="{{ $pep->mainImage }}">
+                                        </td>
+                                    @endif
                                         <td>@if ($pep->featured == true)
                                             Yes
                                             @else

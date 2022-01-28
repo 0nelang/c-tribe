@@ -27,17 +27,25 @@
                                             <td>{{ $pep->index }}</td>
                                             <td>{{ $pep->id }}</td>
                                             <td>{{ strip_tags($pep->title) }}</td>
-                                            <td>
-                                                <img onclick="image()"
-                                                    src="{{ asset('storage/' . $pep->mainImage) }}"
-                                                    style="height: 100px; width:200px; object-fit:cover"
-                                                    class="img-show">
-                                            </td>
+                                            @if ($pep->mainImage != null)
+                                                <td>
+                                                    <img onclick="image()" src="{{ asset('storage/' . $pep->mainImage) }}"
+                                                        style="height: 100px; width:200px; object-fit:cover"
+                                                        class="img-show" alt="{{ $pep->mainImage }}">
+                                                </td>
+                                            @else
+                                                <td>
+                                                    <img onclick="image()" src="{{ asset('/images/no-image.svg') }}"
+                                                        style="height: 100px; width:200px; object-fit:cover"
+                                                        class="img-show" alt="{{ $pep->mainImage }}">
+                                                </td>
+                                            @endif
+
                                             <td>
                                                 @if ($pep->featured == true)
                                                     Yes
                                                 @else
-                                                No
+                                                    No
                                                 @endif
                                             </td>
                                             <td style="">
@@ -91,7 +99,6 @@
         <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
         <script type="text/javascript" src="{{ asset('js/reorder.js') }}"></script>
         <script>
-
             var table = $('#logo-table').DataTable({
                 rowReorder: true,
                 columnDefs: [{
