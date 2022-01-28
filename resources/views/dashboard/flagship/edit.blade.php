@@ -240,7 +240,6 @@
                                         </div>
                                     @enderror
                                 </div>
-
                                 @foreach ($otherImage as $item)
                                     <a id="image{{ $item->id }}" href="#" onclick="what({{ $item->id }})">
                                         <img src="{{ asset('storage/' . $item->otherImage) }}" alt=""

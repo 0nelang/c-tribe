@@ -80,7 +80,7 @@ class FlagshipController extends Controller
 
         if ($request->hasFile('mainImage'))
         {
-            $validated['mainImage'] = $request->store('flagship-image', ['disk' => 'public']);
+            $validated['mainImage'] = $request->file('mainImage')->store('flagship-image', ['disk' => 'public']);
         }
 
 
@@ -101,7 +101,7 @@ class FlagshipController extends Controller
         if ($request->hasFile('otherImage')) {
             foreach ($request->otherImage as $value) {
                 $otherImage['otherImage'] = $value->store('flagship-image', ['disk' => 'public']);
-                $otherImage['flagship'] = $$flagship->id;
+                $otherImage['flagship'] = $flagship->id;
                 FlagshipImage::create($otherImage);
             }
         }
@@ -133,7 +133,7 @@ class FlagshipController extends Controller
         return view('dashboard.flagship.edit', [
             'page' => 'Flagship',
             'flagship' => $flagship,
-            'otherImage' => FlagshipImage::where('flagship', $flagship->title)->get()
+            'otherImage' => FlagshipImage::where('flagship', $flagship->id)->get()
         ]);
     }
 

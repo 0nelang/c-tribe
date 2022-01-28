@@ -218,7 +218,7 @@
                                     <label for="otherImage" class="form-label">Other Image</label>
                                     <br>
                                     <img id="output" class="mb-3">
-                                    <input class="form-control @error('otherImage') is-invalid @enderror" name="mainImage[]"
+                                    <input class="form-control @error('otherImage') is-invalid @enderror" name="otherImage[]"
                                         type="file" id="otherImage" accept="image/*" multiple="multiple">
                                     @error('otherImage')
                                         <div class="invalid-feedback">
