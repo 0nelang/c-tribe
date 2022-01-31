@@ -92,7 +92,7 @@ class PeopleController extends Controller
     public function edit(People $person)
     {
         return view('dashboard.our-people.edit-people',[
-            'page' => 'Person',
+            'page' => 'People',
             'people' => $person
         ]);
     }
