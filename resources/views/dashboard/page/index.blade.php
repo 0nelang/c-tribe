@@ -26,7 +26,7 @@
                                         <td>{{  substr(strip_tags($pag->title) , 0, 40)  }}....</td>
                                         <td>{{  substr(strip_tags($pag->sub_title) , 0, 40)  }}....</td>
                                         <td style="">
-                                            <div class="dropdown dropstart">
+                                            <div class="dropdown dropend">
                                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
                                                     data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>

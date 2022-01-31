@@ -48,7 +48,7 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <button type="submit" class="btn btn-primary">Edit</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </div>
                     <div class="row">
@@ -77,7 +77,7 @@
 
 
 
-                                    <button type="submit" class="btn btn-primary">Edit</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
                             </div>
 
@@ -165,7 +165,7 @@
 
 
 
-                                            <button type="submit" class="btn btn-primary">Edit</button>
+                                            <button type="submit" class="btn btn-primary">Update</button>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -208,7 +208,7 @@
                                                             </div>
                                                         @enderror
                                                     </div>
-                                                    <button type="submit" class="btn btn-primary">Edit</button>
+                                                    <button type="submit" class="btn btn-primary">Update</button>
                                                     </form>
                                                 </div>
                                             </div>

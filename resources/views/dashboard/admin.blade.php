@@ -31,7 +31,7 @@
                                     </div>
                                   @enderror
                                 </div>
-                                <a class="btn btn-primary" onclick="change({{ auth()->user()->id }})">Submit</a>
+                                <a class="btn btn-primary" onclick="change({{ auth()->user()->id }})">Update</a>
                             </form>
                         </div>
                     </div>

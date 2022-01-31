@@ -53,7 +53,7 @@
                                                     </button>
                                                     <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
                                                         <li><a class="dropdown-item text-dark"
-                                                                href="{{ route('project.edit', ['project' => $p->id]) }}">Edit</a>
+                                                                href="{{ route('project.edit', ['project' => $p->id]) }}">Show</a>
                                                         </li>
                                                         <li>
                                                             <form id="form-delete{{ $id }}"
@@ -63,7 +63,7 @@
                                                                 @csrf
                                                             </form>
                                                             <a class="dropdown-item text-dark" href="#"
-                                                                onclick="what({{ $id }})">delete</a>
+                                                                onclick="what({{ $id }})">Delete</a>
                                                         </li>
                                                     </ul>
                                                 </div>

@@ -57,7 +57,7 @@
                                                             @method('delete')
                                                             @csrf
                                                         </form>
-                                                        <a class="dropdown-item text-dark" href="#" onclick="what({{ $pep->id }})">delete</a>
+                                                        <a class="dropdown-item text-dark" href="#" onclick="what({{ $pep->id }})">Delete</a>
                                                     </li>
                                                 </ul>
                                             </div>
