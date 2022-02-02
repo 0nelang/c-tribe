@@ -19,10 +19,10 @@
                 </div>
 
                 <div class="img">
-                    @if ($f->detailImage == null && $f->mainImage != null)
+                    @if ($f->mainImage == null && $f->mainImage != null)
                         <img src="{{ asset('storage/' . $f->mainImage) }}" alt="Image" />
 
-                    @elseif($f->detailImage != null) <img src="{{ asset('storage/' . $f->detailImage) }}"
+                    @elseif($f->mainImage != null) <img src="{{ asset('storage/' . $f->mainImage) }}"
                             alt="Image" />
                     @endif
                     <span class="caption">CREATIVE TRIBE FLAGSHIP EVENT VOL. {{ $index + 1 }}</span>

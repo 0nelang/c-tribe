@@ -60,7 +60,7 @@ class HomeController extends Controller
         $flagship = Flagship::orderBy('index','asc')->get();
         $count = $flagship->count();
         for ($i=0; $i < $count; $i++) {
-            if ($flagship[$i]->mainImage != null) {
+            if ($flagship[$i]->detailImage != null || $flagship[$i]->mainImage != null) {
                 $dummy = $flagship[$i];
                 $flagship[$i] = $flagship[0];
                 $flagship[0] = $dummy;
