@@ -25,6 +25,7 @@ class CreateProjectsTable extends Migration
             $table->text('title');
             $table->string('date');
             $table->string('mainImage')->nullable();
+            $table->string('detailImage')->nullable();
             $table->text('description');
             $table->text('body');
             $table->text('detail1')->nullable();

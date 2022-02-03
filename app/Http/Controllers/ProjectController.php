@@ -60,6 +60,7 @@ class ProjectController extends Controller
             'description' => 'required|min:1',
             'body' => 'required|min:1',
             'mainImage' => 'required|image|file',
+            'detailImage' => 'image|file',
             'otherImage*' => 'image|file',
             'detail1' => 'min:0',
             'detail2' => 'min:0',
@@ -76,6 +77,10 @@ class ProjectController extends Controller
 
         if ($request->hasfile('mainImage')) {
                 $validated['mainImage'] = $request->file('mainImage')->store('project-image', ['disk' => 'public']);
+        }
+
+        if ($request->hasfile('detailImage')) {
+                $validated['detailImage'] = $request->file('detailImage')->store('project-image', ['disk' => 'public']);
         }
 
         if ($request->featured == true) {
@@ -156,6 +161,7 @@ class ProjectController extends Controller
             'description' => 'required|min:1',
             'body' => 'required|min:1',
             'mainImage' => 'image|file',
+            'detailImage' => 'image|file',
             'otherImage*' => 'image|file',
             'detail1' => 'min:0',
             'detail2' => 'min:0',
@@ -181,6 +187,11 @@ class ProjectController extends Controller
         if ($request->hasFile('mainImage')) {
             Storage::delete($project->mainImage);
             $validated['mainImage'] =  $request->file('mainImage')->store('project-image', ['disk' => 'public']);
+        }
+
+        if ($request->hasFile('detailImage')) {
+            Storage::delete($project->detailImage);
+            $validated['detailImage'] =  $request->file('detailImage')->store('project-image', ['disk' => 'public']);
         }
 
         if ($request->featured == true) {
@@ -215,6 +226,9 @@ class ProjectController extends Controller
             }
         }
         storage::delete($project->mainImage);
+        if ($project->detailImage != null) {
+           storage::delete($project->detailImage);
+        }  
         Project::destroy($project->id);
         $notdel = Project::all();
         foreach ($notdel as $key => $value) {

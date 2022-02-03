@@ -261,6 +261,20 @@
                                     @enderror
                                 </div>
 
+                                <div class="mb-3">
+                                    <label for="detailImage" class="form-label">Detail Image</label>
+                                    <br>
+                                    <img id="out" class="mb-3"
+                                        src="{{ asset('storage/' . $project->detailImage) }}"
+                                        style="max-height: 200px; max-width: 300px">
+                                    <input class="form-control @error('detailImage') is-invalid @enderror"
+                                        name="detailImage" type="file" id="photo" accept="image/*">
+                                    @error('detailImage')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
 
 
                                 <div class="mb-3">
@@ -301,6 +315,13 @@
                     console.log(event);
                 });
             });
+            $(function() {
+            $("#photo").change(function(event) {
+                var x = URL.createObjectURL(event.target.files[0]);
+                $("#out").attr("src", x);
+                console.log(event);
+            });
+        });
         </script>
     @endsection
 

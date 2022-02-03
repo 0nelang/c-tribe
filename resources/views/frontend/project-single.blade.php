@@ -24,8 +24,13 @@
                 <div class="desc">
                     {!! $project->description !!}
                 </div>
+                @if ($project->detailImage != null)
+                <div class="img"><img src="{{ asset('storage/' . $project->detailImage) }}" alt="Image" /><span
+                        class="caption">CREATIVE TRIBE PROJECT</span></div>
+                @else  
                 <div class="img"><img src="{{ asset('storage/' . $project->mainImage) }}" alt="Image" /><span
                         class="caption">CREATIVE TRIBE PROJECT</span></div>
+                @endif
             </div>
         </section>
         <section class="page-project-s__two">
