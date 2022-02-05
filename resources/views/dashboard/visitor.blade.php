@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <h5 class="card-title">New Visitors Today</h5>
                         <h2>{{ $today }}</h2>
-                        <p>Orders in waitlist</p>
+                        <p>TOTAL</p>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Total Project</h5>
                         <h2>{{ $project }}</h2>
-                        <p>For last 30 days</p>
+                        <p>TOTAL</p>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Total Flagship</h5>
                         <h2>{{ $flagship }}</h2>
-                        <p>Orders in waitlist</p>
+                        <p>TOTAL</p>
                     </div>
                 </div>
             </div>
