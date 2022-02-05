@@ -79,7 +79,7 @@
                                             </div>
                                         </div>
                                         <div class="mb-3 col-lg-2" onclick="hilzam()">
-                                            <label class="form-label">featured</label>
+                                            <label class="form-label">Featured</label>
                                             <div class="form-check pt-2">
                                                 <input type="checkbox" class="form-check-input" id="featured" name="featured" @if ($inspiration->featured)
                                                 checked
