@@ -25,10 +25,10 @@
                                 <div class="row">
                                     <div class="mb-3">
                                         <label for="filePhoto" class="form-label">Cover Image
-                                        <br>
-                                        <img id="output" class="mb-3 mt-2"
-                                            src="{{ asset('storage/' . $project->mainImage) }}"
-                                            style="max-height: 200px; max-width: 300px;"></label>
+                                            <br>
+                                            <img id="output" class="mb-3 mt-2"
+                                                src="{{ asset('storage/' . $project->mainImage) }}"
+                                                style="max-height: 200px; max-width: 300px;"></label>
                                         <input class="form-control @error('mainImage') is-invalid @enderror"
                                             name="mainImage" type="file" id="filePhoto" accept="image/*">
                                         @error('mainImage')
@@ -89,7 +89,7 @@
                                     </div>
 
                                     <div class="mb-3 col-lg-2 ps-3">
-                                        <label class="form-label">type</label>
+                                        <label class="form-label">Type</label>
                                         <div class="d-flex pt-2 ">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="type" id="type1"
@@ -109,7 +109,7 @@
                                     </div>
 
                                     <div class="mb-3 col-lg-2">
-                                        <label class="form-label">featured</label>
+                                        <label class="form-label">Featured</label>
                                         <div class="form-check pt-2" onclick="hilzam()">
                                             <input type="checkbox" class="form-check-input" id="featured" name="featured"
                                                 @if ($project->featured)
@@ -270,10 +270,10 @@
 
                                 <div class="mb-3">
                                     <label for="photo" class="form-label">Detail Image
-                                    <br>
-                                    <img id="out" class="mb-3 mt-2"
-                                        src="{{ asset('storage/' . $project->detailImage) }}"
-                                        style="max-height: 200px; max-width: 300px"></label>
+                                        <br>
+                                        <img id="out" class="mb-3 mt-2"
+                                            src="{{ asset('storage/' . $project->detailImage) }}"
+                                            style="max-height: 200px; max-width: 300px"></label>
                                     <input class="form-control @error('detailImage') is-invalid @enderror"
                                         name="detailImage" type="file" id="photo" accept="image/*">
                                     @error('detailImage')

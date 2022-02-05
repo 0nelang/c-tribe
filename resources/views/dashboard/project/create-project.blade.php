@@ -89,7 +89,7 @@
                                         @enderror
                                     </div>
                                     <div class="mb-3 col-lg-2 ps-3">
-                                        <label class="form-label">type</label>
+                                        <label class="form-label">Type</label>
                                         <div class="d-flex pt-2 ">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="type" id="type1"
@@ -109,7 +109,7 @@
                                     </div>
 
                                     <div class="mb-3 col-lg-2">
-                                        <label class="form-label">featured</label>
+                                        <label class="form-label">Featured</label>
                                         <div class="form-check pt-2" onclick="hilzam()">
                                             <input type="checkbox" class="form-check-input" id="featured" name="featured">
                                             <label class="form-check-label" for="featured">featured</label>
