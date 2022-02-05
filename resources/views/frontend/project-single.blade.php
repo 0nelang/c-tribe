@@ -52,16 +52,19 @@
                         </div>
                     @endif
                     @if ($project->insta1 != null)
-                        <div class="col"><a href="https://www.instagram.com/{{ $project->insta1 }}"
-                                class="text-uppercase">@ {{ $project->insta1 }}</a></div>
+                        <div class="col"><a target="_blank" href="https://www.instagram.com/{{ $project->insta1 }}"
+                                class="text-uppercase">@<?= $project->insta1
+                                ?></a></div>
                     @endif
                     @if ($project->insta2 != null)
-                        <div class="col tc"><a href="https://www.instagram.com/{{ $project->insta2 }}"
-                                class="text-uppercase">@ {{ $project->insta2 }}</a></div>
+                        <div class="col tc"><a target="_blank" href="https://www.instagram.com/{{ $project->insta2 }}"
+                                class="text-uppercase">@<?= $project->insta2
+                                ?></a></div>
                     @endif
                     @if ($project->insta3 != null)
-                        <div class="col tr"><a href="https://www.instagram.com/{{ $project->insta3 }}"
-                                class="text-uppercase">@ {{ $project->insta3 }}</a></div>
+                        <div class="col tr"><a target="_blank" href="https://www.instagram.com/{{ $project->insta3 }}"
+                                class="text-uppercase">@<?= $project->insta3
+                                ?></a></div>
                     @endif
                 </div>
                 <article>

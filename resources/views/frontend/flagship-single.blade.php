@@ -13,18 +13,19 @@
     <main class="page-flagship">
         <section class="page-flagship-s__one">
             <div class="wrap">
-                <h1>{!! $f->title !!}</h1>
+                <h1 class="text-uppercase">{!! $f->title !!}</h1>
                 <div class="desc">
                     {!! $f->description !!}
                 </div>
 
                 <div class="img">
-                    @if ($f->mainImage != null && $f->detailImage != null)
+                    @if ($f->mainImage == null && $f->detailImage != null)
                         <img src="{{ asset('storage/' . $f->detailImage) }}" alt="Image" />
 
-                    @elseif($f->mainImage != null && $f->detailImage == null) 
-                    <img src="{{ asset('storage/' . $f->mainImage) }}"
-                            alt="Image" />
+                    @elseif($f->mainImage != null && $f->detailImage == null)
+                        <img src="{{ asset('storage/' . $f->mainImage) }}" alt="Image" />
+                    @elseif($f->mainImage != null && $f->detailImage != null)
+                        <img src="{{ asset('storage/' . $f->detailImage) }}" alt="Image" />
                     @endif
                     <span class="caption">CREATIVE TRIBE FLAGSHIP EVENT VOL. {{ $index + 1 }}</span>
 
@@ -50,16 +51,17 @@
                         </div>
                     @endif
                     @if ($f->insta1 != null)
-                        <div class="col"><a href="https://www.instagram.com/{{ $f->insta1 }}"
-                                class="text-uppercase">@ {{ $f->insta1 }}</a></div>
+                        <div class="col"><a target="_blank" href="https://www.instagram.com/{{ $f->insta1 }}"
+                                class="text-uppercase">@<?= $f->insta1 ?>
+                            </a></div>
                     @endif
                     @if ($f->insta2 != null)
-                        <div class="col tc"><a href="https://www.instagram.com/{{ $f->insta2 }}"
-                                class="text-uppercase">@ {{ $f->insta2 }}</a></div>
+                        <div class="col tc"><a target="_blank" href="https://www.instagram.com/{{ $f->insta2 }}"
+                                class="text-uppercase">@<?= $f->insta2 ?></a></div>
                     @endif
                     @if ($f->insta3 != null)
-                        <div class="col tr"><a href="https://www.instagram.com/{{ $f->insta3 }}"
-                                class="text-uppercase">@ {{ $f->insta3 }}</a></div>
+                        <div class="col tr"><a target="_blank" href="https://www.instagram.com/{{ $f->insta3 }}"
+                                class="text-uppercase">@<?= $f->insta3 ?></a></div>
                     @endif
                 </div>
                 <article>
