@@ -2,11 +2,12 @@
 
 @section('css')
     <style>
-        .note-editable{
+        .note-editable {
             background: #2B3B52;
             border-color: #2B3B52;
             color: white;
         }
+
     </style>
 @endsection
 
@@ -23,7 +24,7 @@
                                 @method("put")
 
                                 <div class="mb-3">
-                                    <label for="page" class="form-label">page</label>
+                                    <label for="page" class="form-label">Page</label>
                                     <input type="text" name="page" class="form-control @error('page') is-invalid @enderror"
                                         value="{{ $pafe->page }}" id="page" disabled>
                                     @error('page')
@@ -48,8 +49,8 @@
                                 <div class="mb-3">
                                     <label for="sub_title" class="form-label">sub_Title</label>
                                     <textarea type="text" name="sub_title"
-                                        class="form-control  @error('sub_title') is-invalid @enderror editable" id="subTitle"
-                                        rows="5">{{ $pafe->sub_title }}</textarea>
+                                        class="form-control  @error('sub_title') is-invalid @enderror editable"
+                                        id="subTitle" rows="5">{{ $pafe->sub_title }}</textarea>
                                     @error('sub_title')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -78,16 +79,16 @@
 
     @section('js')
         <script>
-            $(document).ready(function () {
-            var id;
-            $('.editable').each(function() {
-                id = $(this).attr('id');
-                if (id != '') {
-                    $('#' + id).summernote({
-                        height: 120,
-                    });
-                }
-            })
+            $(document).ready(function() {
+                var id;
+                $('.editable').each(function() {
+                    id = $(this).attr('id');
+                    if (id != '') {
+                        $('#' + id).summernote({
+                            height: 120,
+                        });
+                    }
+                })
             });
         </script>
     @endsection

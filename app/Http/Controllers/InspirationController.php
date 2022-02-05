@@ -55,7 +55,7 @@ class InspirationController extends Controller
             'description' => 'required|min:1',
             'mainImage' => '|image|file',
             'video' => 'mimetypes:video/avi,video/mp4',
-            'date' => 'max:255'
+            'date' => 'required|max:255'
         ]);
         $validated['title'] = $title;
         $validated['description'] = $desc;
@@ -128,7 +128,7 @@ class InspirationController extends Controller
             'description' => 'required|min:1',
             'mainImage' => 'image|file',
             'video' => 'mimetypes:video/avi,video/mp4',
-            'date' => 'max:255'
+            'date' => 'required|max:255'
         ]);
         $validated['title'] = $title;
         $validated['description'] = $desc;

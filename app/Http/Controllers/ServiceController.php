@@ -51,7 +51,7 @@ class ServiceController extends Controller
         $request['body'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['body'])));
         $validated = $request->validate([
             'logo' => 'required|image|file',
-            'service' => 'required',
+            'service' => 'required|max:255',
             'title' => 'required|min:1',
             'description' => 'required|min:1',
             'body' => 'required|min:1',
@@ -115,7 +115,7 @@ class ServiceController extends Controller
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
 
         $validated = $request->validate([
-            'service' => 'required',
+            'service' => 'required|max:255',
             'title' => 'required|min:1',
             'description' => 'required|min:1',
             'body' => 'required|min:1'

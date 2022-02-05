@@ -24,7 +24,7 @@
                                 @csrf
                                 <div class="row">
                                     <div class="mb-3">
-                                        <label for="mainImage" class="form-label">Cover Image</label>
+                                        <label for="filePhoto" class="form-label">Cover Image</label>
                                         <br>
                                         <img id="output" class="mb-3"
                                             src="{{ asset('storage/' . $project->mainImage) }}"
@@ -40,9 +40,8 @@
                                     <div class="mb-3 col-lg-4">
                                         <label for="brand" class="form-label is-invalid">Brand</label>
                                         <input type="text" name="brand"
-                                            class="form-control @error('brand') is-invalid @enderror"
-                                            id="exampleInputEmail1" aria-describedby="project-brand"
-                                            value="{{ $project->brand }}">
+                                            class="form-control @error('brand') is-invalid @enderror" id="brand"
+                                            aria-describedby="project-brand" value="{{ $project->brand }}">
                                         @error('brand')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -94,8 +93,7 @@
                                         <div class="d-flex pt-2 ">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="type" id="type1"
-                                                    value="project"
-                                                    {{ $project->type === 'project' ? 'checked' : '' }}>
+                                                    value="project" {{ $project->type === 'project' ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="type1">
                                                     project
                                                 </label>
@@ -192,14 +190,17 @@
                                             @enderror
                                         </div>
                                         <label for="insta1" class="form-label">Insta 1</label>
-                                        <input type="text" name="insta1"
-                                            class="form-control @error('insta1') is-invalid @enderror" id="insta1"
-                                            value="{{ $project->insta1 }}">
-                                        @error('insta1')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">@</span>
+                                            <input type="text" value="{{ $project->insta1 }}" name="insta1" id="insta1"
+                                                class="form-control @error('insta1') is-invalid @enderror"
+                                                placeholder="Username">
+                                            @error('insta1')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
                                     </div>
 
                                     <div class="mb-3 col-lg-4">
@@ -215,14 +216,17 @@
                                             @enderror
                                         </div>
                                         <label for="insta2" class="form-label">Insta 2</label>
-                                        <input type="text" name="insta2"
-                                            class="form-control @error('insta2') is-invalid @enderror" id="insta2"
-                                            value="{{ $project->insta2 }}">
-                                        @error('insta2')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">@</span>
+                                            <input type="text" name="insta2" value="{{ $project->insta2 }}" id="insta2"
+                                                class="form-control @error('insta2') is-invalid @enderror"
+                                                placeholder="Username">
+                                            @error('insta2')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
                                     </div>
 
                                     <div class="mb-3 col-lg-4">
@@ -238,14 +242,17 @@
                                             @enderror
                                         </div>
                                         <label for="insta3" class="form-label">Insta 3</label>
-                                        <input type="text" name="insta3"
-                                            class="form-control @error('insta3') is-invalid @enderror" id="insta3"
-                                            value="{{ $project->insta3 }}">
-                                        @error('insta3')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">@</span>
+                                            <input type="text" value="{{ $project->insta3 }}" name="insta3" id="insta3"
+                                                class="form-control @error('insta3') is-invalid @enderror"
+                                                placeholder="Username">
+                                            @error('insta3')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
                                     </div>
                                 </div>
 
@@ -262,7 +269,7 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="detailImage" class="form-label">Detail Image</label>
+                                    <label for="photo" class="form-label">Detail Image</label>
                                     <br>
                                     <img id="out" class="mb-3"
                                         src="{{ asset('storage/' . $project->detailImage) }}"
@@ -316,12 +323,12 @@
                 });
             });
             $(function() {
-            $("#photo").change(function(event) {
-                var x = URL.createObjectURL(event.target.files[0]);
-                $("#out").attr("src", x);
-                console.log(event);
+                $("#photo").change(function(event) {
+                    var x = URL.createObjectURL(event.target.files[0]);
+                    $("#out").attr("src", x);
+                    console.log(event);
+                });
             });
-        });
         </script>
     @endsection
 

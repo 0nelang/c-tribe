@@ -25,7 +25,7 @@
                                 @method("put")
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="mainImage" class="form-label">Cover Image</label>
+                                    <label for="imageFile" class="form-label">Cover Image</label>
                                     <br>
                                     <img id="img-output" class="mb-3"
                                         src="{{ asset('storage/' . $inspiration->mainImage) }}"
@@ -69,7 +69,7 @@
                                                 <label for="date" class="form-label is-invalid">Date</label>
                                                 <input type="text" name="date"
                                                     class="form-control @error('date') is-invalid @enderror"
-                                                    id="exampleInputEmail1" aria-describedby="our-people-date"
+                                                    id="date" aria-describedby="our-people-date"
                                                     value="{{ $inspiration->date }}">
                                                 @error('date')
                                                     <div class="invalid-feedback">
@@ -123,10 +123,10 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="video" class="form-label">video</label>
+                                    <label for="videoFile" class="form-label">video</label>
                                     <br>
-                                    <video id="vid-output" src="{{ asset('storage/' . $inspiration->video) }}" controls
-                                        style="max-height: 300px; max-width:600px;"></video>
+                                        <video id="vid-output" src="{{ asset('storage/' . $inspiration->video) }}" controls
+                                        style="max-height: 300px; max-width:600px;"></video>     
                                     <input class="form-control @error('video') is-invalid @enderror" name="video"
                                         type="file" id="videoFile" accept="video/*">
                                     @error('video')

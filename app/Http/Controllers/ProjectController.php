@@ -53,9 +53,9 @@ class ProjectController extends Controller
         $request['body'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['body'])));
         $validated = $request->validate([
             'type' => 'required',
-            'brand' => 'required',
-            'project' => 'required',
-            'date' => 'required',
+            'brand' => 'required|max:255',
+            'project' => 'required|max:255',
+            'date' => 'required|max:255',
             'title' => 'required|min:1',
             'description' => 'required|min:1',
             'body' => 'required|min:1',
@@ -65,9 +65,9 @@ class ProjectController extends Controller
             'detail1' => 'min:0',
             'detail2' => 'min:0',
             'detail3' => 'min:0',
-            'insta1' => 'min:0',
-            'insta2' => 'min:0',
-            'insta3' => 'min:0',
+            'insta1' => 'min:0|max:255',
+            'insta2' => 'min:0|max:255',
+            'insta3' => 'min:0|max:255',
         ]);
         $validated['title'] = $title;
         $validated['description'] = $desc;
@@ -154,9 +154,9 @@ class ProjectController extends Controller
         $request['body'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['body'])));
         $validated = $request->validate([
             'type' => 'required',
-            'brand' => 'required',
-            'project' => 'required',
-            'date' => 'required',
+            'brand' => 'required|max:255',
+            'project' => 'required|max:255',
+            'date' => 'required|max:255',
             'title' => 'required|min:1',
             'description' => 'required|min:1',
             'body' => 'required|min:1',
@@ -166,9 +166,9 @@ class ProjectController extends Controller
             'detail1' => 'min:0',
             'detail2' => 'min:0',
             'detail3' => 'min:0',
-            'insta1' => 'min:0',
-            'insta2' => 'min:0',
-            'insta3' => 'min:0',
+            'insta1' => 'min:0|max:255',
+            'insta2' => 'min:0|max:255',
+            'insta3' => 'min:0|max:255',
         ]);
         $validated['title'] = $title;
         $validated['description'] = $desc;

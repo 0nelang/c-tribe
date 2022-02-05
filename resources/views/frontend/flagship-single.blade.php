@@ -19,10 +19,11 @@
                 </div>
 
                 <div class="img">
-                    @if ($f->mainImage == null && $f->mainImage != null)
-                        <img src="{{ asset('storage/' . $f->mainImage) }}" alt="Image" />
+                    @if ($f->mainImage != null && $f->detailImage != null)
+                        <img src="{{ asset('storage/' . $f->detailImage) }}" alt="Image" />
 
-                    @elseif($f->mainImage != null) <img src="{{ asset('storage/' . $f->mainImage) }}"
+                    @elseif($f->mainImage != null && $f->detailImage == null) 
+                    <img src="{{ asset('storage/' . $f->mainImage) }}"
                             alt="Image" />
                     @endif
                     <span class="caption">CREATIVE TRIBE FLAGSHIP EVENT VOL. {{ $index + 1 }}</span>
@@ -39,14 +40,14 @@
                         </div>
                     @endif
                     @if ($f->detail2 != null)
-                    <div class="col tc">
-                        {!! $f->detail2 !!}
-                    </div>
+                        <div class="col tc">
+                            {!! $f->detail2 !!}
+                        </div>
                     @endif
                     @if ($f->detail3 != null)
-                    <div class="col tr">
-                        {!! $f->detail3 !!}
-                    </div>
+                        <div class="col tr">
+                            {!! $f->detail3 !!}
+                        </div>
                     @endif
                     @if ($f->insta1 != null)
                         <div class="col"><a href="https://www.instagram.com/{{ $f->insta1 }}"

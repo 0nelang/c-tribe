@@ -22,7 +22,7 @@
                             <form action="{{ route('inspiration.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
-                                    <label id="mainImage" for="mainImage" class="form-label">Cover Image</label>
+                                    <label id="mainImage" for="imageFile" class="form-label">Cover Image</label>
                                     <br>
                                     <img id="img-output" class="mb-3" style="max-height: 200px; max-width:400px;">
                                     <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage" type="file"
@@ -36,7 +36,7 @@
                                 <div class="mb-3">
                                     <label for="title" class="form-label is-invalid">Title</label>
                                     <textarea type="text" name="title"
-                                        class="form-control @error('title') is-invalid @enderror editable" id="insname"
+                                        class="form-control @error('title') is-invalid @enderror editable" id="title"
                                         aria-describedby="our-people-name">{{ old('title') }}</textarea>
                                     @error('title')
                                         <div class="invalid-feedback">
@@ -50,7 +50,7 @@
                                             <label for="date" class="form-label is-invalid">Date</label>
                                             <input type="text" name="date"
                                                 class="form-control @error('date') is-invalid @enderror"
-                                                id="exampleInputEmail1" aria-describedby="our-people-date" value="{{ old('date') }}">
+                                                id="date" aria-describedby="our-people-date" value="{{ old('date') }}">
                                             @error('date')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -114,7 +114,7 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="video" class="form-label">video</label>
+                                    <label for="videoFile" class="form-label">video</label>
                                     <br>
                                     <video id="vid-output" controls
                                         style="display: none;max-height: 300px; max-width:600px;"></video>

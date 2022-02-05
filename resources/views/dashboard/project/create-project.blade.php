@@ -24,7 +24,7 @@
                                 @csrf
                                 <div class="row">
                                     <div class="mb-3">
-                                        <label for="mainImage" class="form-label">Cover Image</label>
+                                        <label for="filePhoto" class="form-label">Cover Image</label>
                                         <br>
                                         <img id="output" class="mb-3" style="max-height: 200px; max-width: 200px;">
                                         <input class="form-control @error('mainImage') is-invalid @enderror"
@@ -40,7 +40,7 @@
                                         <label for="brand" class="form-label is-invalid">Brand</label>
                                         <input type="text" name="brand"
                                             class="form-control @error('brand') is-invalid @enderror"
-                                            id="exampleInputEmail1" aria-describedby="project-brand"
+                                            id="brand" aria-describedby="project-brand"
                                             value="{{ old('brand') }}">
                                         @error('brand')
                                             <div class="invalid-feedback">
@@ -178,14 +178,15 @@
                                             @enderror
                                         </div>
                                         <label for="insta1" class="form-label">Insta 1</label>
-                                        <input type="text" name="insta1"
-                                            class="form-control @error('insta1') is-invalid @enderror" id="insta1"
-                                            value="{{ old('insta1') }}">
-                                        @error('insta1')
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">@</span>
+                                            <input type="text" name="insta1" value="{{ old('insta1') }}" id="insta1" class="form-control @error('insta1') is-invalid @enderror" placeholder="Username">
+                                            @error('insta1')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
-                                        @enderror
+                                        @enderror 
+                                          </div>
                                     </div>
 
                                     <div class="mb-3 col-lg-4">
@@ -201,14 +202,15 @@
                                             @enderror
                                         </div>
                                         <label for="insta2" class="form-label">Insta 2</label>
-                                        <input type="text" name="insta2"
-                                            class="form-control @error('insta2') is-invalid @enderror" id="insta2"
-                                            value="{{ old('insta2') }}">
-                                        @error('insta2')
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">@</span>
+                                            <input type="text" name="insta2" value="{{ old('insta2') }}" id="insta2" class="form-control @error('insta2') is-invalid @enderror" placeholder="Username">
+                                            @error('insta2')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
-                                        @enderror
+                                        @enderror 
+                                          </div>
                                     </div>
 
                                     <div class="mb-3 col-lg-4">
@@ -224,14 +226,15 @@
                                             @enderror
                                         </div>
                                         <label for="insta3" class="form-label">Insta 3</label>
-                                        <input type="text" name="insta3"
-                                            class="form-control @error('insta3') is-invalid @enderror" id="insta3"
-                                            value="{{ old('insta3') }}">
-                                        @error('insta3')
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">@</span>
+                                            <input type="text" name="insta3" value="{{ old('insta3') }}" id="insta3" class="form-control @error('insta3') is-invalid @enderror" placeholder="Username">
+                                            @error('insta3')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
-                                        @enderror
+                                        @enderror 
+                                          </div>
                                     </div>
                                 </div>
 
@@ -248,7 +251,7 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="detailImage" class="form-label">Detail Image</label>
+                                    <label for="photo" class="form-label">Detail Image</label>
                                     <br>
                                     <img id="out" class="mb-3" style="max-height: 200px; max-width: 300px">
                                     <input class="form-control @error('detailImage') is-invalid @enderror"

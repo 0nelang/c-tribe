@@ -48,8 +48,8 @@ class PeopleController extends Controller
 
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $validated = $request->validate([
-            'name' => 'required',
-            'title' => 'required',
+            'name' => 'required|max:255',
+            'title' => 'required|max:255',
             'photo' => 'required|image|file',
             'description' => 'required|min:1'
         ]);
@@ -110,8 +110,8 @@ class PeopleController extends Controller
 
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $validated = $request->validate([
-            'name' => 'required',
-            'title' => 'required',
+            'name' => 'required|max:255',
+            'title' => 'required|max:255',
             'photo' => 'image|file',
             'description' => 'required|min:1'
         ]);
