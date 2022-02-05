@@ -23,9 +23,9 @@
                                 @csrf
                                 <div class="row">
                                     <div class="mb-3">
-                                        <label for="photo" class="form-label">Main Image</label>
+                                        <label for="photo" class="form-label">Main Image
                                         <br>
-                                        <img id="out" class="mb-3" style="max-height: 200px; max-width: 300px">
+                                        <img id="out" class="mb-2 mt-2" style="max-height: 200px; max-width: 300px"></label>
                                         <input class="form-control @error('mainImage') is-invalid @enderror"
                                             name="mainImage" type="file" id="photo" accept="image/*">
                                         @error('mainImage')
@@ -60,7 +60,7 @@
                                             @enderror
                                         </div>
                                         <div class="mb-3 col-lg-2">
-                                            <label class="form-label">featured</label>
+                                            <label class="form-label">Featured</label>
                                             <div class="form-check pt-2" onclick="hilzam()">
                                                 <input type="checkbox" class="form-check-input" name="featured"
                                                     id="featured">
@@ -203,9 +203,9 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="filePhoto" class="form-label">Detail Image</label>
+                                    <label for="filePhoto" class="form-label">Detail Image
                                     <br>
-                                    <img id="output" class="mb-3" style="max-height: 200px; max-width: 300px">
+                                    <img id="output" class="mb-2 mt-2" style="max-height: 200px; max-width: 300px"></label>
                                     <input class="form-control @error('detailImage') is-invalid @enderror"
                                         name="detailImage" type="file" id="filePhoto" accept="image/*"
                                         value="{{ old('detailImage') }}">

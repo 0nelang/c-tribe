@@ -24,11 +24,11 @@
                                 @csrf
                                 <div class="row">
                                     <div class="mb-3">
-                                        <label for="filePhoto" class="form-label">Cover Image</label>
+                                        <label for="filePhoto" class="form-label">Cover Image
                                         <br>
-                                        <img id="output" class="mb-3"
+                                        <img id="output" class="mb-3 mt-2"
                                             src="{{ asset('storage/' . $project->mainImage) }}"
-                                            style="max-height: 200px; max-width: 200px;">
+                                            style="max-height: 200px; max-width: 300px;"></label>
                                         <input class="form-control @error('mainImage') is-invalid @enderror"
                                             name="mainImage" type="file" id="filePhoto" accept="image/*">
                                         @error('mainImage')
@@ -269,11 +269,11 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="photo" class="form-label">Detail Image</label>
+                                    <label for="photo" class="form-label">Detail Image
                                     <br>
-                                    <img id="out" class="mb-3"
+                                    <img id="out" class="mb-3 mt-2"
                                         src="{{ asset('storage/' . $project->detailImage) }}"
-                                        style="max-height: 200px; max-width: 300px">
+                                        style="max-height: 200px; max-width: 300px"></label>
                                     <input class="form-control @error('detailImage') is-invalid @enderror"
                                         name="detailImage" type="file" id="photo" accept="image/*">
                                     @error('detailImage')
@@ -301,7 +301,7 @@
                                 @foreach ($otherImage as $item)
                                     <a id="image{{ $item->id }}" href="#" onclick="what({{ $item->id }})">
                                         <img src="{{ asset('storage/' . $item->otherImage) }}" alt=""
-                                            style="max-height: 100px; max-width: 100px;">
+                                            style="max-height: 200px; max-width: 300px;">
                                     </a>
                                 @endforeach
                                 <br>

@@ -22,9 +22,9 @@
                             <form action="{{ route('inspiration.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
-                                    <label id="mainImage" for="imageFile" class="form-label">Cover Image</label>
+                                    <label id="mainImage" for="imageFile" class="form-label">Cover Image
                                     <br>
-                                    <img id="img-output" class="mb-3" style="max-height: 200px; max-width:400px;">
+                                    <img id="img-output" class="mb-2 mt-2" style="max-height: 200px; max-width:300px;"></label>
                                     <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage" type="file"
                                         id="imageFile" accept="image/*" value="{{ old('mainImage') }}">
                                     @error('mainImage')
@@ -114,9 +114,9 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="videoFile" class="form-label">video</label>
+                                    <label for="videoFile" class="form-label">Video</label>
                                     <br>
-                                    <video id="vid-output" controls
+                                    <video id="vid-output" controls class="mb-2"
                                         style="display: none;max-height: 300px; max-width:600px;"></video>
                                     <input class="form-control @error('video') is-invalid @enderror" name="video"
                                         type="file" id="videoFile" accept="video/*">

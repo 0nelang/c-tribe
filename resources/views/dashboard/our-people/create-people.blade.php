@@ -44,9 +44,10 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="filePhoto" class="form-label">Photo</label>
+                                    <label for="filePhoto" class="form-label">Photo
                                     <br>
                                     <img id="output" class="mb-3" style="max-height: 200px; max-width: 200px;">
+                                    </label>
                                     <input class="form-control @error('photo') is-invalid @enderror" name="photo"
                                         type="file" id="filePhoto" accept="image/*" {{ old('photo') }}>
                                     @error('photo')

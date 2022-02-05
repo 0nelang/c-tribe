@@ -24,10 +24,11 @@
                                 @csrf
 
                                 <div class="mb-3">
-                                    <label for="filePhoto" class="form-label">Logo</label>
+                                    <label for="filePhoto" class="form-label">Logo
                                     <div>
                                         <img id="output" class="mb-3" style="max-height: 200px; max-width: 200px;">
                                     </div>
+                                    </label>
                                     <input class="form-control @error('logo') is-invalid @enderror" name="logo" type="file"
                                         id="filePhoto" accept="image/*" value="{{ old('mainImage') }}">
                                     @error('logo')
@@ -82,11 +83,11 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="fileImage" class="form-label">Detail Image</label>
+                                    <label for="fileImage" class="form-label">Detail Image
                                     <div>
                                         <img id="output2" class="mb-3"
                                             style="max-height: 200px; max-width: 200px;">
-                                    </div>
+                                    </div></label>
                                     <input class="form-control @error('image') is-invalid @enderror" name="image"
                                         type="file" id="fileImage" accept="image/*" {{ old('image') }}>
                                     @error('image')

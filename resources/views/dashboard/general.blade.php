@@ -14,7 +14,7 @@
                                 @csrf
                                 <div class="mb-3">
                                     <label for="img1" class="form-label">Brand Image 1
-                                        <div class="mb-3">
+                                        <div class="mb-2 mt-2">
                                             <img src="{{ asset('storage/' . $general->brand_navbar1) }}"
                                                 alt="{{ $general->brand_navbar1 }}" id="output-img1"
                                                 style="max-height: 200px; max-width: 200px;">
@@ -29,7 +29,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="img2" class="form-label">Brand Image 2
-                                        <div class="mb-3">
+                                        <div class="mb-2 mt-2">
                                             <img src="{{ asset('storage/' . $general->brand_navbar2) }}"
                                                 alt="{{ $general->brand_navbar2 }}" id="output-img2"
                                                 style="max-height: 200px; max-width: 200px;">
@@ -61,7 +61,7 @@
                                     <div class="mb-3">
                                         <label for="img5" class="form-label">Hover Image
                                             Menu
-                                            <div class="mb-3">
+                                            <div class="mb-2 mt-2">
                                                 <img src="{{ asset('storage/' . $general->hover_image) }}"
                                                     alt="{{ $general->hover_image }}" id="output-img5"
                                                     style="max-height: 200px; max-width: 200px;">
@@ -134,7 +134,7 @@
                                             </div>
                                             <label for="img6" class="form-label">Background
                                                 Image
-                                                <div class="mb-3">
+                                                <div class="mb-2 mt-2">
                                                     <img src="{{ asset('storage/' . $general->background_footer) }}"
                                                         alt="{{ $general->background_footer }}" id="output-img6"
                                                         style="max-height: 200px; max-width: 200px;">
@@ -150,7 +150,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="img7" class="form-label">Brand Image
-                                                <div class="mb-3">
+                                                <div class="mb-2 mt-2">
                                                     <img src="{{ asset('storage/' . $general->brand_footer) }}"
                                                         alt="{{ $general->brand_footer }}" id="output-img7"
                                                         style="max-height: 200px; max-width: 200px;">
@@ -176,7 +176,7 @@
                                                 <div class="mb-3">
                                                     <label for="img8" class="form-label">Cursor
                                                         Image
-                                                        <div class="mb-3">
+                                                        <div class="mb-2 mt-2">
                                                             <img src="{{ asset('storage/' . $general->cursor_image) }}"
                                                                 alt="{{ $general->cursor_image }}" id="output-img8"
                                                                 style="max-height: 200px; max-width: 200px;">
@@ -197,6 +197,7 @@
                                                         Background
                                                     <br>
                                                     <video id="vid-output"
+                                                        class="mb-1 mt-2"
                                                         src="{{ asset('storage/' . $general->video_background) }}"
                                                         style="max-height: 300px; max-width: 300px;" controls></video>
                                                     </label>

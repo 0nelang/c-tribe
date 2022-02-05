@@ -12,10 +12,11 @@
                             <form action="/admin/partners" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="filePhoto" class="form-label">Logo</label>
-                                    <div class="mb-3">
-                                    <img id="output" class="mb-3">
+                                    <label for="filePhoto" class="form-label">Logo
+                                    <div >
+                                    <img id="output" class="mt-2"mb-2 style="max-height: 200px; max-width: 200px;">
                                     </div>
+                                    </label>
                                     <input class="form-control @error('logo') is-invalid @enderror" name="logo" type="file" id="filePhoto" accept="image/*">
                                     @error('logo')
                                     <div class="invalid-feedback">

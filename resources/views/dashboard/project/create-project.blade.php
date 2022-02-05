@@ -24,9 +24,10 @@
                                 @csrf
                                 <div class="row">
                                     <div class="mb-3">
-                                        <label for="filePhoto" class="form-label">Cover Image</label>
+                                        <label for="filePhoto" class="form-label">Cover Image
                                         <br>
-                                        <img id="output" class="mb-3" style="max-height: 200px; max-width: 200px;">
+                                        <img id="output" class="mt-2 mb-3" style="max-height: 200px; max-width: 300px;">
+                                        </label>
                                         <input class="form-control @error('mainImage') is-invalid @enderror"
                                             name="mainImage" type="file" id="filePhoto" accept="image/*"
                                             value="{{ old('mainImage') }}">
@@ -251,9 +252,10 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="photo" class="form-label">Detail Image</label>
+                                    <label for="photo" class="form-label">Detail Image
                                     <br>
-                                    <img id="out" class="mb-3" style="max-height: 200px; max-width: 300px">
+                                    <img id="out" class="mt-2 mb-3" style="max-height: 200px; max-width: 300px">
+                                    </label>
                                     <input class="form-control @error('detailImage') is-invalid @enderror"
                                         name="detailImage" type="file" id="photo" accept="image/*"
                                         value="{{ old('detailImage') }}">

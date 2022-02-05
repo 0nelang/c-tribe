@@ -25,11 +25,11 @@
                                 @method("put")
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="imageFile" class="form-label">Cover Image</label>
+                                    <label for="imageFile" class="form-label">Cover Image
                                     <br>
-                                    <img id="img-output" class="mb-3"
+                                    <img id="img-output" class="mb-2 mt-2"
                                         src="{{ asset('storage/' . $inspiration->mainImage) }}"
-                                        style="max-height: 200px; max-width:400px;">
+                                        style="max-height: 200px; max-width:400px;"></label>
                                     <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage"
                                         type="file" id="imageFile" accept="image/*">
                                     @error('mainImage')
@@ -123,9 +123,9 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="videoFile" class="form-label">video</label>
+                                    <label for="videoFile" class="form-label">Video</label>
                                     <br>
-                                        <video id="vid-output" src="{{ asset('storage/' . $inspiration->video) }}" controls
+                                        <video class="mb-2" id="vid-output" src="{{ asset('storage/' . $inspiration->video) }}" controls
                                         style="max-height: 300px; max-width:600px;"></video>     
                                     <input class="form-control @error('video') is-invalid @enderror" name="video"
                                         type="file" id="videoFile" accept="video/*">

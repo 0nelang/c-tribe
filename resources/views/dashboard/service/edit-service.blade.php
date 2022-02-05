@@ -23,12 +23,12 @@
                                 @method('put')
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="filePhoto" class="form-label">Logo</label>
+                                    <label for="filePhoto" class="form-label">Logo
                                     <div class="mb-3">
-                                        <img id="output" class="mb-3"
+                                        <img id="output" class="mt-3"
                                             src="{{ asset('storage/' . $service->logo) }}"
                                             style="max-height: 200px; max-width: 200px;">
-                                    </div>
+                                    </div></label>
                                     <input class="form-control @error('logo') is-invalid @enderror" name="logo" type="file"
                                         id="filePhoto" accept="image/*">
                                     @error('logo')
@@ -83,12 +83,12 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="fileImage" class="form-label">Detail Image</label>
+                                    <label for="fileImage" class="form-label">Detail Image
                                     <div class="mb-3">
-                                        <img id="output2" class="mb-3"
+                                        <img id="output2" class="mt-3"
                                             src="{{ asset('storage/' . $service->image) }}"
                                             style="max-height: 200px; max-width: 200px;">
-                                    </div>
+                                    </div></label>
                                     <input class="form-control @error('image') is-invalid @enderror" name="image"
                                         type="file" id="fileImage" accept="image/*">
                                     @error('image')

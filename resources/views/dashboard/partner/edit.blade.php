@@ -13,10 +13,11 @@
                                 @method("put")
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="filePhoto" class="form-label">Logo</label>
+                                    <label for="filePhoto" class="form-label">Logo
                                     <div class="mb-3">
-                                    <img id="output" class="mb-3" src="{{ asset('storage/' . $logo) }}">
+                                    <img id="output" style="max-height: 200px; max-width: 200px;" class="mb-3" src="{{ asset('storage/' . $logo) }}">
                                     </div>
+                                    </label>
                                     <input class="form-control @error('logo') is-invalid @enderror" name="logo" type="file" id="filePhoto" accept="image/*">
                                     @error('logo')
                                     <div class="invalid-feedback">

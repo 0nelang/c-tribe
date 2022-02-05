@@ -46,10 +46,11 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="filePhoto" class="form-label">Photo</label>
+                                    <label for="filePhoto" class="form-label">Photo
                                     <br>
                                     <img src="{{ asset('storage/' . $people->photo) }}" id="output"
                                         class="mb-3" style="max-height: 200px; max-width: 200px;">
+                                    </label>
                                     <input class="form-control @error('photo') is-invalid @enderror"
                                         value="{{ $people->photo }}" name="photo" type="file" id="filePhoto"
                                         accept="image/*">
