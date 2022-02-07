@@ -30,13 +30,9 @@
                                             <td>{{ $pep->name }}</td>
                                             <td>{{ $pep->title }}</td>
                                             <td>
-                                                {{-- <img  src="paris.jpg" alt="Paris" style="width:200px;height:400px"> --}}
                                                 <img onclick="image()" class="scale-down" src="{{ asset('storage/' . $pep->photo) }}"
-                                                    style="max-height: 100px" alt="{{ $pep->photo }}"></td>
+                                                style="height: 250px; width:200px; object-fit:cover" alt="{{ $pep->photo }}"></td>
                                             <td style="text-align: center">
-                                                {{-- <div class="dropdown dropstart">
-                                                <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
-                                                    data-bs-toggle="dropdown" aria-expanded="false"> --}}
                                                 <div class="dropdown dropright">
                                                     <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
                                                         data-bs-toggle="dropdown" aria-expanded="false">

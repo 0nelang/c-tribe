@@ -35,7 +35,7 @@
                                             <td>{{ $part->id }}</td>
                                             <td>{{ $part->service }}</td>
                                             <td><img onclick="image()" src="{{ asset('storage/' . $part->logo) }}" alt="{{ $part->logo }}"
-                                                style="max-height: 50px; max-width: 100px;"></td>
+                                                style="max-height:100px; max-width: 100px; object-fit:cover"></td>
                                             <td>
                                                 <div class="dropdown dropend">
                                                     <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
