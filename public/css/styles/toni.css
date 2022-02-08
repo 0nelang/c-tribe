@@ -14,6 +14,15 @@ background: #00FF00 !important;
 .page-inspiration__two .item__wrap:hover .item__title,.page-flagship__two .item__wrap:hover .item__title{
     color: black !important;
 }
+#btn-audio{
+    position: fixed;
+    bottom: 62px;
+    left: 62px;
+    font-family: "Futura Condensed Extrabold", -apple-system, BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 30px;
+    color: white;
+    z-index: 99;
+}
 
 @media (max-width: 991px){
     .page-home__one h1 small{

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('/css/styles/preview.css') }}" />
     <link rel="stylesheet" href="{{ asset('/plugins/lity/lity.css') }}" />
     <link rel="stylesheet" href="{{ asset('/css/styles/main.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/css/styles/toni.css') }}"/>
     @yield('css')
     {{-- <style>
         .main-menu__bg {
@@ -25,6 +26,7 @@
 
 <body>
     <div class="cursor"></div>
+    @yield('unmute')
     {{-- HEAD --}}
     @include('frontend.partial.headsecond')
     @yield('content')
@@ -45,4 +47,5 @@
         gtag('js', new Date());
         gtag('config', 'UA-217402264-1');
     </script>
+    @yield('js')
 </html>

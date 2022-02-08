@@ -1,11 +1,15 @@
 @extends('frontend.partial.second')
 
+@section('unmute')
+    <p id="btn-audio">UNMUTE</p>
+@endsection
+
 @section('content')
 
     <main class="page-landing">
         <div class="bg-video">
             <video src="{{ asset('storage/' . $general->video_background) }}" type="video/mp4" playsinline="playsinline"
-                autoplay="autoplay" loop="loop" muted="muted"></video>
+                autoplay="autoplay" loop="loop" muted="muted" id="video-bg"></video>
         </div>
         <div class="wrap">
             <h1 class="page-landing__title">{!! $landing1->title !!}</h1><span class="page-landing__date"><img
@@ -26,4 +30,26 @@
             </div>
         </div>
     </main>
+@endsection
+
+@section('js')
+    <script>
+        var video = document.getElementById("video-bg");
+        var muteButton = document.getElementById("btn-audio");
+        muteButton.addEventListener("click", function() {
+            if (video.muted == true) {
+                // Mute the video
+                video.muted = false;
+
+                // Update the button text
+                muteButton.innerHTML = "MUTE";
+            } else {
+                // Unmute the video
+                video.muted = true;
+
+                // Update the button text
+                muteButton.innerHTML = "UNMUTE";
+            }
+        });
+    </script>
 @endsection
