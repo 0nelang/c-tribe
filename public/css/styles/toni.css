@@ -14,6 +14,9 @@ background: #00FF00 !important;
 .page-inspiration__two .item__wrap:hover .item__title,.page-flagship__two .item__wrap:hover .item__title{
     color: black !important;
 }
+.teks-home{
+    display: none;
+}
 #btn-audio{
     position: fixed;
     bottom: 62px;
@@ -30,5 +33,8 @@ background: #00FF00 !important;
         margin-left: 15px !important;
         font-size: 3vw !important;
         max-width: 100% !important;
+    }
+    .teks-home{
+        display: block;
     }
 }
