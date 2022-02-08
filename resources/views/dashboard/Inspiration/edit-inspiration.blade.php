@@ -29,7 +29,7 @@
                                     <br>
                                     <img id="img-output" class="mb-2 mt-2"
                                         src="{{ asset('storage/' . $inspiration->mainImage) }}"
-                                        style="max-height: 200px; max-width:400px;"></label>
+                                        style="max-height: 200px; max-width:400px;" alt="{{ $inspiration->mainImage }}"></label>
                                     <input class="form-control @error('mainImage') is-invalid @enderror" name="mainImage"
                                         type="file" id="imageFile" accept="image/*">
                                     @error('mainImage')

@@ -11,6 +11,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FlagshipController;
 use App\Http\Controllers\InspirationController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,6 +88,11 @@ Route::get('/our-people', [HomeController::class,'our_people']);
 Route::get('/project', [HomeController::class,'project']);
 
 Route::get('/tribes',[HomeController::class,'tribes']);
+Route::get('/storage/link', function ()
+{
+    Artisan::call('storage:link');
+
+});
 
 // single page
 Route::get('/tribe/detail/{service:slug}',[HomeController::class,'tribe_single']);
