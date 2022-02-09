@@ -34,7 +34,26 @@ background: #00FF00 !important;
         font-size: 3vw !important;
         max-width: 100% !important;
     }
-    .teks-home{
+    /* .teks-home{
         display: block;
+    } */
+    .page-landing .bg-video{
+        display: block !important;
+        width: 100%;
+        height: auto;
+        top: 0;
+        bottom: 0;
+    }
+    .page-landing .bg-video video{
+        display: block !important;
+        height: auto !important;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+    }
+    #btn-audio{
+        left: 20px;
+        bottom: 16px;
+        font-size: 18px;
     }
 }
