@@ -35,11 +35,12 @@ class GeneralController extends Controller
             "addres_footer" => "required",
             "cursor_image" => "image|file",
             "hover_image" => "image|file",
-            "video_background" => "mimetypes:video/avi,video/mp4"
+            "video_background" => "mimetypes:video/avi,video/mp4",
+            "link" => "min:0|max:255"
         ];
 
         $validated = $request->validate($rules);
-
+        $validated['link'] = str_replace( 'youtu.be', 'www.youtube-nocookie.com/embed', $validated["link"]);
         if ($request->hasFile('brand_navbar1')) {
             Storage::delete($general->brand_navbar1);
             $validated['brand_navbar1'] = $request->file('brand_navbar1')->store('general-images',[

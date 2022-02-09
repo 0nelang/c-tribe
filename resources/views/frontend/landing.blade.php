@@ -10,7 +10,9 @@
         <div class="bg-video">
             <video src="{{ asset('storage/' . $general->video_background) }}" type="video/mp4" playsinline="playsinline"
                 autoplay="autoplay" loop="loop" muted="muted" id="video-bg"></video>
-                <iframe width="100%" src="https://www.youtube-nocookie.com/embed/pAl4K9W2l1A?controls=0&amp;start=4&amp;autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                @if ( $general->link != null )
+                <iframe width="100%" src="{{ $general->link }}?controls=0&amp;start=4&amp;autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                @endif
         </div>
         <div class="wrap teks-home">
             <h1 class="page-landing__title">{!! $landing1->title !!}</h1><span class="page-landing__date"><img

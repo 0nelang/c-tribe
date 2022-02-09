@@ -81,11 +81,10 @@
             </section>
         @endif
 
-        <section class="page-flagship__footer">
-            <div class="page-flagship__footer-top">
+        <section class="page-ourpeople__four">
+            <div class="page-ourpeople__four-top">
                 <div class="left"><a class="item email" href="mailto:{{ $general->email_footer }}">GENERAL
-                        INQUIRIES
-                        <br>{{ $general->email_footer }}</a>
+                        INQUIRIES <br>{{ $general->email_footer }}</a>
                     <div class="item phone">Phone<br><a
                             href="tel: {{ $general->phone_footer }}">{{ $general->phone_footer }}</a></div>
                     <div class="item ig">INSTAGRAM<br><a target="_blank"
@@ -94,8 +93,7 @@
                 </div>
                 <div class="right"><span class="text-uppercase">{{ $general->addres_footer }}</span></div>
             </div>
-            <div class="imgctribe"><img src="{{ asset('storage/' . $general->brand_footer) }}"
-                    alt="{{ $general->brand_footer }}" /></div>
+            <div class="imgctribe"><img src="{{ asset('storage/' . $general->brand_footer) }}" alt="img" /></div>
         </section>
     </main>
 @endsection
