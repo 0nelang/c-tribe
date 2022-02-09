@@ -77,11 +77,11 @@ Route::put('/admin/reset',[AuthController::class,'password']);
 });
 
 //frontend
-Route::get('/landing', [HomeController::class, 'landing']);
+Route::get('/', [HomeController::class, 'landing']);
 
 Route::get('/flagship', [HomeController::class,'flagship']);
 
-Route::get('/', [HomeController::class,'homepage']);
+Route::get('/landing', [HomeController::class,'homepage']);
 Route::get('/inspiration',[HomeController::class,'inspiration']);
 Route::get('/our-people', [HomeController::class,'our_people']);
 

@@ -63,10 +63,10 @@
                     @if ($index % 5 == 1 || $index == 0)
                         <div class="page-ourpeople__three-logos">
                     @endif
-                    <div class="logo"><img src="{{ asset('storage/' . $p->logo) }}" alt="$p->logo" /></div>
+                    <div class="logo"><img src="{{ asset('storage/' . $p->logo) }}" 
+                            alt="{{ $p->logo }}" /></div>
                     @if ($index % 5 == 0)
-            </div>
-
+                </div>
             @endif
             @endforeach
             </div>

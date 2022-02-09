@@ -17,12 +17,12 @@
           <div class="bg-hover"></div><span></span>
         </div>
         <ul>
-          <li class="menu-item "><a class="menu-link" href="/project" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="PROJECT">PROJECT</a></li>
-          <li class="menu-item"><a class="menu-link" href="/our-people" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="PEOPLE">PEOPLE</a></li>
-          <li class="menu-item "><a class="menu-link" href="/tribes" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="TRIBES">TRIBES</a></li>
-          <li class="menu-item "><a class="menu-link" href="/flagship" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="FLAGSHIP">FLAGSHIP</a></li>
-          <li class="menu-item "><a class="menu-link" href="#" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="SHOP">SHOP</a></li>
-          <li class="menu-item "><a class="menu-link" href="/inspiration" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="INSPIRATION">INSPIRATION</a></li>
+          <li class="menu-item disabled"><a class="menu-link" href="/project" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="PROJECT">PROJECT</a></li>
+          <li class="menu-item "><a class="menu-link" href="/our-people" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="PEOPLE">PEOPLE</a></li>
+          <li class="menu-item disabled"><a class="menu-link" href="/tribes" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="TRIBES">TRIBES</a></li>
+          <li class="menu-item disabled"><a class="menu-link" href="/flagship" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="FLAGSHIP">FLAGSHIP</a></li>
+          <li class="menu-item disabled"><a class="menu-link" href="#" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="SHOP">SHOP</a></li>
+          <li class="menu-item disabled"><a class="menu-link" href="/inspiration" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="INSPIRATION">INSPIRATION</a></li>
         </ul>
       </div>
     </div>
