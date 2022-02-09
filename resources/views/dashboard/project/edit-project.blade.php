@@ -28,7 +28,7 @@
                                             <br>
                                             <img id="output" class="mb-3 mt-2"
                                                 src="{{ asset('storage/' . $project->mainImage) }}"
-                                                style="max-height: 200px; max-width: 300px;"></label>
+                                                style="max-height: 200px; max-width: 300px;" alt="{{ $project->mainImage }}"></label>
                                         <input class="form-control @error('mainImage') is-invalid @enderror"
                                             name="mainImage" type="file" id="filePhoto" accept="image/*">
                                         @error('mainImage')
@@ -273,7 +273,7 @@
                                         <br>
                                         <img id="out" class="mb-3 mt-2"
                                             src="{{ asset('storage/' . $project->detailImage) }}"
-                                            style="max-height: 200px; max-width: 300px"></label>
+                                            style="max-height: 200px; max-width: 300px" alt="{{ $project->detailImage }}"></label>
                                     <input class="form-control @error('detailImage') is-invalid @enderror"
                                         name="detailImage" type="file" id="photo" accept="image/*">
                                     @error('detailImage')
@@ -300,7 +300,7 @@
 
                                 @foreach ($otherImage as $item)
                                     <a id="image{{ $item->id }}" href="#" onclick="what({{ $item->id }})">
-                                        <img src="{{ asset('storage/' . $item->otherImage) }}" alt=""
+                                        <img src="{{ asset('storage/' . $item->otherImage) }}" alt="{{ $item->otherImage }}"
                                             style="max-height: 200px; max-width: 300px;">
                                     </a>
                                 @endforeach

@@ -227,7 +227,7 @@
                                     <br>
                                     <img id="out" class="mb-2 mt-2"
                                         src="{{ asset('storage/' . $flagship->detailImage) }}"
-                                        style="max-height: 200px; max-width: 300px"></label>
+                                        style="max-height: 200px; max-width: 300px" alt="{{ $flagship->detailImage }}"></label>
                                     <input class="form-control @error('detailImage') is-invalid @enderror"
                                         name="detailImage" type="file" id="photo" accept="image/*">
                                     @error('detailImage')
@@ -252,7 +252,7 @@
                                 </div>
                                 @foreach ($otherImage as $item)
                                     <a id="image{{ $item->id }}" href="#" onclick="what({{ $item->id }})">
-                                        <img src="{{ asset('storage/' . $item->otherImage) }}" alt=""
+                                        <img src="{{ asset('storage/' . $item->otherImage) }}" alt="{{ $item->otherImage }}"
                                             style="max-height: 100px; max-width: 100px;">
                                     </a>
                                 @endforeach

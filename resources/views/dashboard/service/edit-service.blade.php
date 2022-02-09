@@ -87,7 +87,7 @@
                                     <div class="mb-3">
                                         <img id="output2" class="mt-3"
                                             src="{{ asset('storage/' . $service->image) }}"
-                                            style="max-height: 200px; max-width: 200px;">
+                                            style="max-height: 200px; max-width: 200px;" alt="{{ $service->image }}">
                                     </div></label>
                                     <input class="form-control @error('image') is-invalid @enderror" name="image"
                                         type="file" id="fileImage" accept="image/*">
