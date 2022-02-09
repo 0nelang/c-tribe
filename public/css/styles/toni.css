@@ -45,15 +45,17 @@ background: #00FF00 !important;
         bottom: 0;
     }
     .page-landing .bg-video video{
+        display: none;
+    }
+    .page-landing .bg-video iframe{
+        position: absolute;
         display: block !important;
-        height: auto !important;
+        height: 300px !important;
         bottom: 0;
         top: 0;
         margin: auto;
     }
     #btn-audio{
-        left: 20px;
-        bottom: 16px;
-        font-size: 18px;
+        display: none;
     }
 }
