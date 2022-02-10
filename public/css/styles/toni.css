@@ -26,6 +26,14 @@ background: #00FF00 !important;
     color: white;
     z-index: 99;
 }
+.page-landing .bg-video iframe{
+    position: absolute;
+    display: block !important;
+    height: 100vh !important;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
 
 @media (max-width: 991px){
     .page-home__one h1 small{

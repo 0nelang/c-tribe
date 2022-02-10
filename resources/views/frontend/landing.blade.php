@@ -8,12 +8,18 @@
 
     <main class="page-landing">
         <div class="bg-video">
+<<<<<<< HEAD
             <video src="{{ asset('storage/' . $general->video_background) }}" type="video/mp4" playsinline="playsinline"
                 autoplay="autoplay" loop="loop" muted="muted" id="video-bg"></video>
                 @if ( $general->link != null )
                 <iframe width="100%" src="{{ str_replace( 'youtu.be', 'www.youtube-nocookie.com/embed', $general->link) }}?controls=0&amp;start=4&amp;autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
                 @endif
         </div>
+=======
+            {{-- <video src="{{ asset('storage/' . $general->video_background) }}" type="video/mp4" playsinline="playsinline"
+                autoplay="autoplay" loop="loop" muted="muted" id="video-bg"></video> --}}
+                <iframe width="100%" src="https://www.youtube-nocookie.com/embed/pAl4K9W2l1A?autoplay=1&amp;mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
+>>>>>>> 66b197e03d34aaa28a29c0973a41500bdb84ab37
         <div class="wrap teks-home">
             <h1 class="page-landing__title">{!! $landing1->title !!}</h1><span class="page-landing__date"><img
                     class="ic" src="/images/icon-01.svg" alt="Icon" /><img class="ic"
