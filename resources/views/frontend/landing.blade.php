@@ -1,7 +1,7 @@
 @extends('frontend.partial.second')
 
 @section('unmute')
-    <p id="btn-audio">UNMUTE</p>
+    {{-- <p id="btn-audio">UNMUTE</p> --}}
 @endsection
 
 @section('content')
@@ -10,8 +10,10 @@
         <div class="bg-video">
             {{-- <video src="{{ asset('storage/' . $general->video_background) }}" type="video/mp4" playsinline="playsinline"
                 autoplay="autoplay" loop="loop" muted="muted" id="video-bg"></video> --}}
+                @if ($general->link != null)
                 <iframe width="100%" src="https://www.youtube-nocookie.com/embed/pAl4K9W2l1A?autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;loop=1&amp;playlist=pAl4K9W2l1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <div class="wrap teks-home">
+                @endif
+        <div class="wrap teks-home">
             <h1 class="page-landing__title">{!! $landing1->title !!}</h1><span class="page-landing__date"><img
                     class="ic" src="/images/icon-01.svg" alt="Icon" /><img class="ic"
                     src="/images/icon-01.svg" alt="Icon" /><span class="date">{!! $landing1->sub_title !!}</span><img
