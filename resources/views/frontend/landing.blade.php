@@ -11,7 +11,7 @@
             {{-- <video src="{{ asset('storage/' . $general->video_background) }}" type="video/mp4" playsinline="playsinline"
                 autoplay="autoplay" loop="loop" muted="muted" id="video-bg"></video> --}}
                 @if ($general->link != null)
-                <iframe width="100%" src="{{ str_replace( 'youtu.be', 'www.youtube-nocookie.com/embed', $general->link) }}?autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;loop=1&amp;playlist=pAl4K9W2l1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" src="{{ str_replace( 'youtu.be', 'www.youtube-nocookie.com/embed', $general->link) }}?autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;loop=1&amp;playlist={{ str_replace( 'https://youtu.be/', '', $general->link) }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 @endif
         {{-- <div class="wrap teks-home">
             <h1 class="page-landing__title">{!! $landing1->title !!}</h1><span class="page-landing__date"><img
