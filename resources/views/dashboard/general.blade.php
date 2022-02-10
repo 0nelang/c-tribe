@@ -186,30 +186,45 @@
                                                         class="form-control @error('cursor_image') is-invalid
                                                         @enderror image-show"
                                                         value="{{ $general->cursor_image }}" name="cursor_image"
-                                                        type="file" id="img8"
-                                                        accept="image/*"  name="cursor_image">
+                                                        type="file" id="img8" accept="image/*" name="cursor_image">
                                                     @error('cursor_image')
                                                         <small class="text-danger">{{ $message }}</small>
                                                     @enderror
                                                 </div>
-                                                <div class="mb-3">
-                                                    <label for="videoFile" class="form-label">Video
-                                                        Background
-                                                    <br>
-                                                    <video id="vid-output"
-                                                        class="mb-1 mt-2"
-                                                        src="{{ asset('storage/' . $general->video_background) }}"
-                                                        style="max-height: 300px; max-width: 300px;" controls></video>
-                                                    </label>
-                                                    <input
-                                                        class="form-control @error('video_background') is-invalid @enderror"
-                                                        name="video_background" type="file" id="videoFile" accept="video/*">
-                                                    @error('video_background')
-                                                        <div class="invalid-feedback">
-                                                            {{ $message }}
+                                                <div class="row">
+                                                    <div class="col-8">
+                                                        <div class="mb-3">
+                                                            <label for="videoFile" class="form-label">Video
+                                                                Background</label>
+                                                                <br>
+                                                                
+                                                            
+                                                            <input
+                                                                class="form-control @error('video_background') is-invalid @enderror"
+                                                                name="video_background" type="file" id="videoFile"
+                                                                accept="video/*">
+                                                            @error('video_background')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                        </div><video id="vid-output" class="mb-1 mt-2"
+                                                                    src="{{ asset('storage/' . $general->video_background) }}"
+                                                                    style="max-height: 300px; max-width: 300px;"
+                                                                    controls></video>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="mb-3">
+                                                            <label for="link" class="form-label">Link Youtube</label>
+                                                            <input type="text" class="form-control" id="link"
+                                                                name="link" value="{{ $general->link }}">
+                                                            @error('link')
+                                                                <small class="text-danger">{{ $message }}</small>
+                                                            @enderror
                                                         </div>
-                                                    @enderror
+                                                    </div>
                                                 </div>
+
                                                 <button type="submit" class="btn btn-primary">Update</button>
                                                 </form>
                                             </div>

@@ -29,6 +29,7 @@ class CreateGeneralsTable extends Migration
             $table->string('background_menu')->nullable();
             $table->string('background_menu_sm')->nullable();
             $table->string('video_background')->nullable();
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }
