@@ -192,7 +192,7 @@
                                                     @enderror
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-8">
+                                                    {{-- <div class="col-8">
                                                         <div class="mb-3">
                                                             <label for="videoFile" class="form-label">Video
                                                                 Background</label>
@@ -213,8 +213,8 @@
                                                                     style="max-height: 300px; max-width: 300px;"
                                                                     controls></video>
                                                     </div>
-                                                    <div class="col-4">
-                                                        <div class="mb-3">
+                                                    <div class="col-4">--}}
+                                                        <div class="mb-3"> 
                                                             <label for="link" class="form-label">Link Youtube</label>
                                                             <input type="text" class="form-control" id="link"
                                                                 name="link" value="{{ $general->link }}">
@@ -222,7 +222,7 @@
                                                                 <small class="text-danger">{{ $message }}</small>
                                                             @enderror
                                                         </div>
-                                                    </div>
+                                                    {{-- </div> --}}
                                                 </div>
 
                                                 <button type="submit" class="btn btn-primary">Update</button>
