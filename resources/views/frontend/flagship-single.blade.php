@@ -5,7 +5,7 @@
             text-transform: uppercase;
         }
 
-        .page-flagship__footer {
+        .page-ourpeople__four {
             background-image: url({{ asset('storage/' . $general->background_footer) }});
         }
 

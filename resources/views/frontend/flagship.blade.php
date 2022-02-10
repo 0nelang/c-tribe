@@ -5,11 +5,7 @@
             text-transform: uppercase;
         }
 
-        .page-inspiration__footer {
-            background-image: url({{ asset('storage/' . $general->background_footer) }});
-        }
-
-        .page-flagship__footer {
+        .page-ourpeople__four {
             background-image: url({{ asset('storage/' . $general->background_footer) }});
         }
 

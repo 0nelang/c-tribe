@@ -5,9 +5,8 @@
             text-transform: uppercase;
         }
 
-        .page-home__footer {background-image: url("{{ asset('storage/' . $general->background_footer) }}");}
-        .text-uppercase {
-            text-transform: uppercase;
+        .page-ourpeople__four {
+            background-image: url({{ asset('storage/' . $general->background_footer) }});
         }
     </style>
 @endsection

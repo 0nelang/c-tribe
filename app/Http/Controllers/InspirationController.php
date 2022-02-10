@@ -53,7 +53,7 @@ class InspirationController extends Controller
         $validated = $request->validate([
             'title' => 'required|min:1',
             'description' => 'required|min:1',
-            'mainImage' => '|image|file',
+            'mainImage' => 'image|file',
             'video' => 'mimetypes:video/avi,video/mp4',
             'date' => 'required|max:255'
         ]);

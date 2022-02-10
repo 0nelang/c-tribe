@@ -40,7 +40,6 @@ class GeneralController extends Controller
         ];
 
         $validated = $request->validate($rules);
-        $validated['link'] = str_replace( 'youtu.be', 'www.youtube-nocookie.com/embed', $validated["link"]);
         if ($request->hasFile('brand_navbar1')) {
             Storage::delete($general->brand_navbar1);
             $validated['brand_navbar1'] = $request->file('brand_navbar1')->store('general-images',[
