@@ -11,7 +11,7 @@
             <video src="{{ asset('storage/' . $general->video_background) }}" type="video/mp4" playsinline="playsinline"
                 autoplay="autoplay" loop="loop" muted="muted" id="video-bg"></video>
                 @if ( $general->link != null )
-                <iframe width="100%" src="{{ $general->link }}?controls=0&amp;start=4&amp;autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                <iframe width="100%" src="{{ str_replace( 'youtu.be', 'www.youtube-nocookie.com/embed', $general->link) }}?controls=0&amp;start=4&amp;autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
                 @endif
         </div>
         <div class="wrap teks-home">
