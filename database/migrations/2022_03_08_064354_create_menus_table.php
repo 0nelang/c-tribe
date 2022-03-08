@@ -20,6 +20,7 @@ class CreateMenusTable extends Migration
             $table->string('default_url');
             $table->string('custom_name')->nullable();
             $table->string('custom_url')->nullable();
+            $table->boolean('custom')->nullable();
             $table->timestamps();
         });
     }
