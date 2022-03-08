@@ -10,7 +10,7 @@
                 </li>
             </ul>
         </div>
-        <div class="logo">
+        <div class="headerNav">
             <div class="ms-5">
                 <a class="dark" href="{{ route('logout') }}" onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
