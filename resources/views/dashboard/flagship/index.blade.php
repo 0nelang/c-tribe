@@ -56,7 +56,7 @@
                                                     </button>
                                                     <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
                                                         <li><a class="dropdown-item text-dark"
-                                                                href="{{ route('flagship.edit', ['flagship' => $pep->id]) }}">Show</a>
+                                                                href="{{ route('flagship.edit', ['flagship' => $pep->id]) }}">Edit</a>
                                                         </li>
                                                         <li>
                                                             <form id="form-delete{{ $id }}"
