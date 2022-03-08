@@ -12,7 +12,8 @@
         </div>
         <div class="logo">
                     {{-- <a class="btn btn-primary" href="login.html">Logout</a> --}}
-                        <a class="btn btn-primary" href="{{ route('logout') }}"
+
+                        <a class="btn btn-primary ms-5 " href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
