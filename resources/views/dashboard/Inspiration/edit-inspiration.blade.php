@@ -67,7 +67,7 @@
                                         <div class="col-6">
                                             <div class="mb-3">
                                                 <label for="date" class="form-label is-invalid">Date</label>
-                                                <input type="text" name="date"
+                                                <input type="date" name="date"
                                                     class="form-control @error('date') is-invalid @enderror"
                                                     id="date" aria-describedby="our-people-date"
                                                     value="{{ $inspiration->date }}">
@@ -126,7 +126,7 @@
                                     <label for="videoFile" class="form-label">Video</label>
                                     <br>
                                         <video class="mb-2" id="vid-output" src="{{ asset('storage/' . $inspiration->video) }}" controls
-                                        style="max-height: 300px; max-width:600px;"></video>     
+                                        style="max-height: 300px; max-width:600px;"></video>
                                     <input class="form-control @error('video') is-invalid @enderror" name="video"
                                         type="file" id="videoFile" accept="video/*">
                                     @error('video')

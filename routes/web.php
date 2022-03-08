@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
@@ -10,8 +11,8 @@ use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FlagshipController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\InspirationController;
-use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,14 @@ use Illuminate\Support\Facades\Artisan;
 Auth::routes();
 Route::get('register', function () {return abort(500);});
 Route::get('/password/reset', function () {return abort(500);});
+// show form route
+Route::get('dash-ctribe', [LoginController::class, 'showLoginForm']);
+// post credential to the login method
+Route::post('dash-ctribe', [LoginController::class, 'login'])->name('dash-ctribe');
+// remove default login route
+Route::get('login', function() {
+    return abort(404);
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AuthController::class, 'visitor']);

@@ -50,7 +50,7 @@
                                     <div class="col-lg-4">
                                         <div class="mb-3">
                                             <label for="date" class="form-label">Date</label>
-                                            <input type="text" name="date"
+                                            <input type="date" name="date"
                                                 class="form-control @error('date') is-invalid @enderror" id="date"
                                                 value="{{ old('date') }}">
                                             @error('date')
@@ -137,7 +137,7 @@
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
-                                        @enderror 
+                                        @enderror
                                           </div>
                                     </div>
 
@@ -161,7 +161,7 @@
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
-                                        @enderror 
+                                        @enderror
                                           </div>
                                     </div>
 
@@ -185,7 +185,7 @@
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
-                                        @enderror 
+                                        @enderror
                                           </div>
                                     </div>
                                 </div>

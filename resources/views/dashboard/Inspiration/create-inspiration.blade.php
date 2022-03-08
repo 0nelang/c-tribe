@@ -48,7 +48,7 @@
                                     <div class="col-lg-6">
                                         <div class="mb-3">
                                             <label for="date" class="form-label is-invalid">Date</label>
-                                            <input type="text" name="date"
+                                            <input type="date" name="date"
                                                 class="form-control @error('date') is-invalid @enderror"
                                                 id="date" aria-describedby="our-people-date" value="{{ old('date') }}">
                                             @error('date')
