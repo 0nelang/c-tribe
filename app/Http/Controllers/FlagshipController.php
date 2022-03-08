@@ -184,12 +184,12 @@ class FlagshipController extends Controller
 
         if ($request->hasFile('mainImage')) {
             Storage::delete($flagship->mainImage);
-            $validated['mainImage'] =  $request->file('mainImage')->store('project-image', ['disk' => 'public']);
+            $validated['mainImage'] =  $request->file('mainImage')->store('flagship-image', ['disk' => 'public']);
         }
 
         if ($request->hasFile('detailImage')) {
             Storage::delete($flagship->detailImage);
-            $validated['detailImage'] =  $request->file('detailImage')->store('project-image', ['disk' => 'public']);
+            $validated['detailImage'] =  $request->file('detailImage')->store('flagship-image', ['disk' => 'public']);
         }
 
         if ($request->featured == true) {

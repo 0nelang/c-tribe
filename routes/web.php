@@ -13,6 +13,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FlagshipController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\InspirationController;
+use App\Http\Controllers\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,46 +45,50 @@ Route::get('login', function() {
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AuthController::class, 'visitor']);
     Route::get('/admin/general', [GeneralController::class, 'general']);
-Route::put('/admin/general/{general:id}', [GeneralController::class, 'update']);
+    Route::put('/admin/general/{general:id}', [GeneralController::class, 'update']);
 
-Route::resource('/admin/inspiration', InspirationController::class);
-Route::post('/admin/inspiration/position', [InspirationController::class, 'position']);
+    Route::get('admin/menu', [MenuController::class, 'index']);
+    Route::get('admin/menu/{menu:id}/edit', [MenuController::class, 'edit'])->name('menu.edit');
+    Route::get('admin/menu/update/{menu:id}', [MenuController::class, 'update'])->name('menu.update');
 
-
-Route::resource('/admin/project', ProjectController::class);
-Route::post('/admin/project/image/{id}', [ProjectController::class, 'imgdel']);
-Route::post('/admin/project/position', [ProjectController::class, 'position']);
-
+    Route::resource('/admin/inspiration', InspirationController::class);
+    Route::post('/admin/inspiration/position', [InspirationController::class, 'position']);
 
 
-Route::resource('/admin/flagship', FlagshipController::class);
-Route::post('/admin/flagship/image/{id}', [FlagshipController::class, 'imgdel']);
-Route::post('/admin/flagship/position', [FlagshipController::class, 'position']);
+    Route::resource('/admin/project', ProjectController::class);
+    Route::post('/admin/project/image/{id}', [ProjectController::class, 'imgdel']);
+    Route::post('/admin/project/position', [ProjectController::class, 'position']);
 
 
-Route::resource('/admin/service', ServiceController::class);
-Route::post('/admin/service/position', [ServiceController::class, 'position']);
+
+    Route::resource('/admin/flagship', FlagshipController::class);
+    Route::post('/admin/flagship/image/{id}', [FlagshipController::class, 'imgdel']);
+    Route::post('/admin/flagship/position', [FlagshipController::class, 'position']);
 
 
-Route::get('/admin/partners', [PartnerController::class, 'index'])->name('partner.index');
-Route::get('/admin/partners/create', [PartnerController::class, 'create'])->name('partners.create');
-Route::post('/admin/partners', [PartnerController::class, 'store'])->name('partners.store');
-Route::get('/admin/partners/{partner:id}', [PartnerController::class, 'edit'])->name('partner.edit');
-Route::put('/admin/partners/update/{partner:id}', [PartnerController::class, 'update'])->name('partner.update');
-Route::post('/admin/partners/delete/{partner:id}', [PartnerController::class, 'destroy'])->name('partner.delete');
-Route::post('/admin/partners/position', [PartnerController::class, 'position'])->name('partner.position');
-
-Route::resource('/admin/page', PageController::class);
-
-Route::resource('admin/people', PeopleController::class);
-Route::post('/admin/people/position', [PeopleController::class, 'position']);
+    Route::resource('/admin/service', ServiceController::class);
+    Route::post('/admin/service/position', [ServiceController::class, 'position']);
 
 
-Route::resource('/admin/partners', PartnerController::class);
+    Route::get('/admin/partners', [PartnerController::class, 'index'])->name('partner.index');
+    Route::get('/admin/partners/create', [PartnerController::class, 'create'])->name('partners.create');
+    Route::post('/admin/partners', [PartnerController::class, 'store'])->name('partners.store');
+    Route::get('/admin/partners/{partner:id}', [PartnerController::class, 'edit'])->name('partner.edit');
+    Route::put('/admin/partners/update/{partner:id}', [PartnerController::class, 'update'])->name('partner.update');
+    Route::post('/admin/partners/delete/{partner:id}', [PartnerController::class, 'destroy'])->name('partner.delete');
+    Route::post('/admin/partners/position', [PartnerController::class, 'position'])->name('partner.position');
 
-Route::get('/admin/setting',[AuthController::class,'index']);
-Route::put('/admin/reset',[AuthController::class,'password']);
-});
+    Route::resource('/admin/page', PageController::class);
+
+    Route::resource('admin/people', PeopleController::class);
+    Route::post('/admin/people/position', [PeopleController::class, 'position']);
+
+
+    Route::resource('/admin/partners', PartnerController::class);
+
+    Route::get('/admin/setting',[AuthController::class,'index']);
+    Route::put('/admin/reset',[AuthController::class,'password']);
+    });
 
 //frontend
 Route::get('/', [HomeController::class, 'landing']);
