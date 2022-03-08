@@ -25,6 +25,9 @@
         <section class="page-flagship__two" id="sec2">
             <div class="wrap">
                 @foreach ($flagship as $index => $p)
+                    @php
+
+                    @endphp
                     @if ($index == 0 && count($flagship) % 2 != 0)
                         @if ($p->mainImage != null)
                             <div class="item item--lg anim">
