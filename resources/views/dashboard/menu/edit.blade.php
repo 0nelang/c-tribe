@@ -20,7 +20,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('people.update', ['person' => $menu->id]) }}" method="POST"
+                            <form action="{{ route('menu.update', ['menu' => $menu->id]) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method("put")
@@ -37,29 +37,21 @@
                                     </div>
                                 </fieldset>
                                 <div class="form-check form-switch mb-3" onclick="hilzam()">
-                                    <input class="form-check-input" type="checkbox" id="custom">
-                                    <label class="form-check-label" for="flexSwitchCheckDefault" id="custom">Default switch checkbox input</label>
+                                    <input class="form-check-input" type="checkbox" id="custom" name="custom" @if ($menu->custom)
+                                    checked
+                                    @endif>
+                                    <label class="form-check-label" for="flexSwitchCheckDefault">use custom name & url</label>
                                 </div>
                                     <div class="mb-3 layout" style="display: {{ ($menu->custom == true)? 'block' : 'none'  }}">
-                                        <label for="name" class="form-label is-invalid">Default Name</label>
-                                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                                            value="{{ $menu->default_name }}" id="name" aria-describedby="our-people-name">
-                                        @error('name')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
+                                        <label for="Cname" class="form-label is-invalid">Custom Name</label>
+                                        <input type="text" name="custom_name" class="form-control"
+                                            value="{{ $menu->custom_name }}" id="name" aria-describedby="our-people-name">
                                     </div>
                                     <div class="mb-3 layout" style="display: {{ ($menu->custom == true)? 'block' : 'none'  }}">
-                                        <label for="title" class="form-label">Default URL</label>
-                                        <input type="text" name="title"
+                                        <label for="title" class="form-label">Custom URL</label>
+                                        <input type="text" name="custom_url"
                                             class="form-control @error('title') is-invalid @enderror"
-                                            value="{{ $menu->default_url }}" id="title">
-                                        @error('title')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
+                                            value="{{ $menu->custom_url }}" id="title">
                                     </div>
 
                                 <button type="submit" class="btn btn-primary">Update</button>

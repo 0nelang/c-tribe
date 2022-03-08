@@ -20,4 +20,16 @@ class MenuController extends Controller
             'page' => 'Menu'
         ]);
     }
+
+    public function update(Request $request, Menu $menu) {
+        if ($request->custom) {
+            $custom = true;
+            Menu::findOrFail($menu->id)->update([
+                'custom' => $custom,
+                'custom_name' => $request->custom_name,
+                'custom_url' => $request->custom_url,
+            ]);
+        }
+        return redirect(route('menu.index'));
+    }
 }

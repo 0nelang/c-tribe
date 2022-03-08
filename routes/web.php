@@ -47,9 +47,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/general', [GeneralController::class, 'general']);
     Route::put('/admin/general/{general:id}', [GeneralController::class, 'update']);
 
-    Route::get('admin/menu', [MenuController::class, 'index']);
+    Route::get('admin/menu', [MenuController::class, 'index'])->name('menu.index');
     Route::get('admin/menu/{menu:id}/edit', [MenuController::class, 'edit'])->name('menu.edit');
-    Route::get('admin/menu/update/{menu:id}', [MenuController::class, 'update'])->name('menu.update');
+    Route::put('admin/menu/update/{menu:id}', [MenuController::class, 'update'])->name('menu.update');
 
     Route::resource('/admin/inspiration', InspirationController::class);
     Route::post('/admin/inspiration/position', [InspirationController::class, 'position']);
