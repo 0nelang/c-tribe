@@ -51,7 +51,7 @@
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </button>
                                                 <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
-                                                    <li><a class="dropdown-item text-dark" href="{{ route('inspiration.edit', ['inspiration' => $pep->id]) }}">Show</a></li>
+                                                    <li><a class="dropdown-item text-dark" href="{{ route('inspiration.edit', ['inspiration' => $pep->id]) }}">Edit</a></li>
                                                     <li>
                                                         <form id="form-delete{{ $pep->id }}" action="{{ route('inspiration.destroy',['inspiration' => $pep->id]) }}" method="post" style="display: none">
                                                             @method('delete')
@@ -73,7 +73,7 @@
                                         <th>Name</th>
                                         <th>Image</th>
                                         <th>Featured</th>
-                                        <th>Office</th>
+                                        <th>Option</th>
                                     </tr>
                                 </tfoot>
                             </table>

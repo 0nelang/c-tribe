@@ -99,7 +99,6 @@ class ProjectController extends Controller
         $project::find($project->id)->update(['slug' => self::slugify(strip_tags($title . strval($project->id) ))]);
         if ($request->hasFile('otherImage')) {
             foreach ($request->otherImage as $value) {
-                # code...
                 $otherImage['otherImage'] = $value->store('project-image', ['disk' => 'public']);
                 $otherImage['project'] = $project->id;
                 ProjectImage::create($otherImage);
@@ -228,7 +227,7 @@ class ProjectController extends Controller
         storage::delete($project->mainImage);
         if ($project->detailImage != null) {
            storage::delete($project->detailImage);
-        }  
+        }
         Project::destroy($project->id);
         $notdel = Project::all();
         foreach ($notdel as $key => $value) {
