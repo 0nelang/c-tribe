@@ -11,17 +11,16 @@
             </ul>
         </div>
         <div class="logo">
-                    {{-- <a class="btn btn-primary" href="login.html">Logout</a> --}}
-
-                        <a class="btn btn-primary ms-5 " href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
+            <div class="ms-5">
+                <a class="dark" href="{{ route('logout') }}" onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
+                    {{ __('Logout') }} <i data-feather="log-out"></i>
+                </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
         </div>
     </nav>
 </div>

@@ -62,8 +62,8 @@
                                     </div>
 
                                     <div class="mb-3 col-lg-4">
-                                        <label for="date" class="form-label">Date</label>
-                                        <input type="text" name="date"
+                                        <label for="date" class="form-label">Date Of Project</label>
+                                        <input type="date" name="date"
                                             class="form-control @error('date') is-invalid @enderror" id="date"
                                             value="{{ $project->date }}">
                                         @error('date')
