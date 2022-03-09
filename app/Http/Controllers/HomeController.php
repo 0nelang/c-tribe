@@ -46,8 +46,8 @@ class HomeController extends Controller
 
         $featured[] = Project::where('type', 'person')->whereNotNull('featured')->first();
         if ($featured[3] != null){
-        $featured[3]->link = 'project';
-        $featured[3]->tag = 'PARTNERS';
+            $featured[3]->link = 'project';
+            $featured[3]->tag = 'PARTNERS';
         }
 
         return view('frontend.homepage',[
