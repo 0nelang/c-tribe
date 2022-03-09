@@ -1,4 +1,4 @@
-
+{{-- @dd($menu) --}}
 @extends('frontend.partial.main')
 <style>
     .cursor.hasimg {
