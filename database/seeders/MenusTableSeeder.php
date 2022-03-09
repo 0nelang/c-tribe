@@ -37,7 +37,7 @@ class MenusTableSeeder extends Seeder
                 'id' => 2,
                 'index' => 2,
                 'default_name' => 'PEOPLE',
-                'default_url' => 'people',
+                'default_url' => 'our-people',
                 'custom_name' => NULL,
                 'custom_url' => NULL,
                 'custom' => NULL,
