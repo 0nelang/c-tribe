@@ -98,7 +98,6 @@ Route::get('/flagship', [HomeController::class,'flagship']);
 Route::get('/landing', [HomeController::class,'homepage']);
 Route::get('/inspiration',[HomeController::class,'inspiration']);
 Route::get('/our-people', [HomeController::class,'our_people']);
-
 Route::get('/project', [HomeController::class,'project']);
 
 Route::get('/tribes',[HomeController::class,'tribes']);

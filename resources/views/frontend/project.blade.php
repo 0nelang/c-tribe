@@ -28,7 +28,11 @@
                 <div class="item__wrap">
                     <div class="item__title"><span class="text-uppercase">{{ $p->brand }}</span></div>
                     <div class="item__meta"><span>{{ $p->project }}</span></div>
-                    <div class="item__date"><span>{{ $p->date }}</span></div>
+                    <div class="item__date"><span><?php
+                    $time = strtotime($p->date);
+                    $newformat = date('Y',$time);
+                    echo $newformat;
+                    ?></span></div>
                 </div>
             </a>
           @endforeach

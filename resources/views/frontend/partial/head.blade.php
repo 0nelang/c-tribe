@@ -17,6 +17,7 @@
           <div class="bg-hover"></div><span></span>
         </div>
         <ul>
+        
           <li class="menu-item disabled"><a class="menu-link" href="/#" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="PROJECT">PROJECT</a></li>
           <li class="menu-item "><a class="menu-link" href="/our-people" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="PEOPLE">PEOPLE</a></li>
           <li class="menu-item disabled"><a class="menu-link" href="/#" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="TRIBES">TRIBES</a></li>

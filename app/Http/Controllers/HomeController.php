@@ -8,6 +8,7 @@ use App\Models\Project;
 use App\Models\Service;
 use App\Models\Flagship;
 use App\Models\Inspiration;
+use App\Models\Menu;
 use App\Models\Page;
 use App\Models\Partner;
 use Illuminate\Http\Request;
@@ -17,6 +18,7 @@ class HomeController extends Controller
     function __construct()
     {
         $this->general = General::all()->first();
+        $this->menu = Menu::orderBy('index', 'asc');
     }
 
     function homepage()
@@ -33,16 +35,16 @@ class HomeController extends Controller
              $featured[1]->link = 'inspiration';
             $featured[1]->tag = 'INSPIRATION';
         }
-       
+
         $featured[] = Project::where('type', 'project')->whereNotNull('featured')->first();
         if ($featured[2] != null) {
          $featured[2]->link = 'project';
         $featured[2]->tag = 'PROJECTS';
         }
-       
+
 
         $featured[] = Project::where('type', 'person')->whereNotNull('featured')->first();
-        if ($featured[3] != null){  
+        if ($featured[3] != null){
         $featured[3]->link = 'project';
         $featured[3]->tag = 'PARTNERS';
         }
@@ -171,6 +173,5 @@ class HomeController extends Controller
            "i" => $inspiration
        ]);
     }
-
 
 }

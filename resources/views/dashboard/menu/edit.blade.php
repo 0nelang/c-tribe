@@ -50,8 +50,13 @@
                                     <div class="mb-3 layout" style="display: {{ ($menu->custom == true)? 'block' : 'none'  }}">
                                         <label for="title" class="form-label">Custom URL</label>
                                         <input type="text" name="custom_url"
-                                            class="form-control @error('title') is-invalid @enderror"
+                                            class="form-control @error('custom_url') is-invalid @enderror"
                                             value="{{ $menu->custom_url }}" id="title">
+                                            @error('custom_url')
+                                            <div class="invalid-feedback">
+                                                Custom URL hass been selected.
+                                            </div>
+                                        @enderror
                                     </div>
 
                                 <button type="submit" class="btn btn-primary">Update</button>
