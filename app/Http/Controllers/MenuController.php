@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class MenuController extends Controller
 {
@@ -22,16 +23,24 @@ class MenuController extends Controller
     }
 
     public function update(Request $request, Menu $menu) {
+        if ($request->disabled) {
+            $disabled = true;
+        }else {
+            $disabled = false;
+        }
         if ($request->custom) {
             $custom = true;
             $request->validate([
-                "custom_url" => "unique:menus|not_in:project,our-people,tribes,flagship,shop,inspiration"
+                "custom_url" => [Rule::unique('menu')->ignore($this->menu->id, 'id'), 'not_in:project,our-people,tribes,flagship,shop,inspiration', 'regex:/^[\pL\s\-]+$/u']
             ]);
             Menu::findOrFail($menu->id)->update([
                 'custom' => $custom,
+                'disabled' => $disabled,
                 'custom_name' => $request->custom_name,
                 'custom_url' => $request->custom_url,
             ]);
+        }else{
+            Menu::findOrFail($menu->id)->update(['custom' => false, 'disabled' => $disabled,]);
         }
         return redirect(route('menu.index'));
     }
