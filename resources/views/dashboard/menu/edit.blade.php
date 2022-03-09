@@ -37,13 +37,13 @@
                                     </div>
                                 </fieldset>
                                 <div class="form-check form-switch mb-3" onclick="hilzam()">
+                                    <label class="form-check-label" for="custom">use custom name & url</label>
                                     <input class="form-check-input" type="checkbox" id="custom" name="custom" @if ($menu->custom)
                                     checked
                                     @endif>
-                                    <label class="form-check-label" for="flexSwitchCheckDefault">use custom name & url</label>
                                 </div>
                                     <div class="mb-3 layout" style="display: {{ ($menu->custom == true)? 'block' : 'none'  }}">
-                                        <label for="Cname" class="form-label is-invalid">Custom Name</label>
+                                        <label for="name" class="form-label is-invalid">Custom Name</label>
                                         <input type="text" name="custom_name" class="form-control"
                                             value="{{ $menu->custom_name }}" id="name" aria-describedby="our-people-name">
                                     </div>

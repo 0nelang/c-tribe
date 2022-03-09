@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
+use App\Models\Page;
 use App\Models\People;
 use App\Models\General;
+use App\Models\Partner;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Flagship;
 use App\Models\Inspiration;
+<<<<<<< HEAD
 use App\Models\Menu;
 use App\Models\Page;
 use App\Models\Partner;
+=======
+>>>>>>> f221e5f77cb81b8aab83b198e80be6a201fb03f3
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -20,6 +26,7 @@ class HomeController extends Controller
         $this->general = General::all()->first();
         $this->menu = Menu::orderBy('index', 'asc');
     }
+
 
     function homepage()
     {
@@ -32,21 +39,26 @@ class HomeController extends Controller
 
         $featured[] = Inspiration::whereNotNull('featured')->first();
         if ($featured[1] != null){
-             $featured[1]->link = 'inspiration';
+            $featured[1]->link = 'inspiration';
             $featured[1]->tag = 'INSPIRATION';
         }
 
         $featured[] = Project::where('type', 'project')->whereNotNull('featured')->first();
         if ($featured[2] != null) {
-         $featured[2]->link = 'project';
-        $featured[2]->tag = 'PROJECTS';
+            $featured[2]->link = 'project';
+            $featured[2]->tag = 'PROJECTS';
         }
 
 
         $featured[] = Project::where('type', 'person')->whereNotNull('featured')->first();
         if ($featured[3] != null){
+<<<<<<< HEAD
         $featured[3]->link = 'project';
         $featured[3]->tag = 'PARTNERS';
+=======
+            $featured[3]->link = 'project';
+            $featured[3]->tag = 'PARTNERS';
+>>>>>>> f221e5f77cb81b8aab83b198e80be6a201fb03f3
         }
 
         return view('frontend.homepage',[
@@ -57,7 +69,7 @@ class HomeController extends Controller
         ]);
     }
 
-    function flagship()
+    function flagship($url = 'flagship')
     {
         $flagship = Flagship::orderBy('index','asc')->get();
         $count = $flagship->count();
@@ -73,11 +85,12 @@ class HomeController extends Controller
         return view('frontend.flagship',[
             "general" => $this->general,
             "flagship" => $flagship,
-            "page" => "Flagship"
+            "page" => "Flagship",
+            "url" => $url
         ]);
     }
 
-    function inspiration()
+    function inspiration($url = "inspiration")
     {
         $Inspiration = Inspiration::orderBy('index','asc')->get();
         $count = $Inspiration->count();
@@ -92,7 +105,8 @@ class HomeController extends Controller
         return view('frontend.inspiration',[
             "general" => $this->general,
             "inspiration" => $Inspiration,
-            "page" => "Insipiration"
+            "page" => "Insipiration",
+            "url" => $url
         ]);
     }
 
@@ -119,59 +133,118 @@ class HomeController extends Controller
         ]);
     }
 
-    function project()
+    function project($url = 'project')
     {
         return view('frontend.project',[
             "general" => $this->general,
             "project" => Project::where('type' , 'project')->orderBy('index','asc')->get(),
+            "url" => $url,
             "page" => "Project"
         ]);
     }
 
-    function tribes()
+    function tribes($url = 'tribes')
     {
         return view('frontend.tribes',[
             "general" => $this->general,
             "service" => Service::orderBy('index', 'asc')->get(),
-            "page" => "Tribes"
+            "page" => "Tribes",
+            "url" => $url
         ]);
     }
 
-    function flagship_single(Flagship $flagship,$index)
+    function flagship_single($flagship,$index)
     {
-       return view('frontend.flagship-single',[
-           "general" => $this->general,
-           "page" => "Detail Flagship",
-           "f" => $flagship,
-           "index" => $index
-       ]);
+        $flagship = Flagship::where('slug', $flagship)->first();
+        return view('frontend.flagship-single',[
+            "general" => $this->general,
+            "page" => "Detail Flagship",
+            "f" => $flagship,
+            "index" => $index
+        ]);
     }
 
-    function tribe_single(Service $service)
+    function tribe_single($service)
     {
-       return view('frontend.tribes-single',[
-           "general" => $this->general,
-           "page" => "Detail Tribe",
-           "t" => $service
-       ]);
+        $service = Service::where('slug', $service)->first();
+        return view('frontend.tribes-single',[
+            "general" => $this->general,
+            "page" => "Detail Tribe",
+            "t" => $service
+        ]);
     }
 
-    function project_single(Project $project)
+    function project_single( $project)
     {
-       return view('frontend.project-single',[
-           "general" => $this->general,
-           "project" => $project,
-           "page" => "Detail Project"
-       ]);
+        $project = project::where('slug', $project)->first();
+        return view('frontend.project-single',[
+            "general" => $this->general,
+            "project" => $project,
+            "page" => "Detail Project"
+        ]);
     }
 
-    function inspiration_single(Inspiration $inspiration)
+    function inspiration_single($inspiration)
     {
-       return view('frontend.inspiration-single',[
-           "general" => $this->general,
-           "page" => "Detail Inspiration",
-           "i" => $inspiration
-       ]);
+        $inspiration = inspiration::where('slug', $inspiration)->first();
+        return view('frontend.inspiration-single',[
+            "general" => $this->general,
+            "page" => "Detail Inspiration",
+            "i" => $inspiration
+        ]);
     }
 
+<<<<<<< HEAD
+=======
+    function custom(Menu $menu,)
+    {
+        switch ($menu->id){
+            case 1:
+                return $this->project($menu->custom_url);
+                break;
+            case 2:
+                return $this->our_people();
+                break;
+            case 3:
+                return $this->tribes($menu->custom_url);
+                break;
+            case 4:
+                return $this->flagship($menu->custom_url);
+                break;
+            case 5:
+                return $this->shop();
+                break;
+            case 6:
+                return $this->inspiration($menu->custom_url);
+                break;
+        }
+    }
+
+    function custom_single(Menu $menu, $single, $index = null)
+    {
+        // dd($single);
+        switch ($menu->id){
+            case 1:
+                return $this->project_single($single);
+                break;
+            case 2:
+                return $this->our_people();
+                break;
+            case 3:
+
+                return $this->tribes_single($single);
+                break;
+            case 4:
+                return $this->flagship_single($single, $index);
+                break;
+            case 5:
+                return $this->shop();
+                break;
+            case 6:
+                return $this->inspiration_single($single);
+                break;
+        }
+    }
+
+>>>>>>> f221e5f77cb81b8aab83b198e80be6a201fb03f3
 }
