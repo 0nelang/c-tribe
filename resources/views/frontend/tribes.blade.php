@@ -7,7 +7,7 @@
   .page-ourpeople__four {
             background-image: url({{ asset('storage/' . $general->background_footer) }});
         }
-</style>   
+</style>
 @endsection
 @section('content')
     <main class="page-tribes header-1">
@@ -22,7 +22,7 @@
         <div class="wrap">
             @foreach ($service as $s)
 
-            <a class="item" href="/tribe/detail/{{ $s->slug }}">
+            <a class="item" href="/{{ $url }}/detail/{{ $s->slug }}">
             <div class="item__wrap">
               <div class="item__logo"><img src="{{ asset('storage/' . $s->logo) }}" alt="{{ $s->logo }}"/></div>
               <div class="item__title"><span>{{ $s->service }}</span></div>
