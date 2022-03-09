@@ -93,6 +93,7 @@ Route::middleware(['auth'])->group(function () {
 //frontend
 Route::get('/', [HomeController::class, 'landing']);
 
+
 Route::get('/flagship', [HomeController::class,'flagship']);
 
 Route::get('/landing', [HomeController::class,'homepage']);
@@ -107,10 +108,15 @@ Route::get('/storage/link', function ()
     Artisan::call('storage:link');
 
 });
+Route::get('/{menu:custom_url}', [HomeController::class, 'custom'])->name('lol');
 
 // single page
 Route::get('/tribe/detail/{service:slug}',[HomeController::class,'tribe_single']);
 Route::get('/project/detail/{project:slug}',[HomeController::class,'project_single']);
 Route::get('/inspiration/detail/{inspiration:slug}',[HomeController::class,'inspiration_single']);
 Route::get('/flagship/detail/{flagship:slug}/{index}',[HomeController::class,'flagship_single']);
+// with custom route
+Route::get('/{menu:custom_url}/detail/{single}',[HomeController::class,'custom_single'])->name('yup');
+Route::get('/{menu:custom_url}/detail/{single}/{index}',[HomeController::class,'custom_single'])->name('yup');
+
 // end single page
