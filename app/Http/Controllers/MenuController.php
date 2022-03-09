@@ -30,9 +30,13 @@ class MenuController extends Controller
         }
         if ($request->custom) {
             $custom = true;
+            $request->custom_url = str_replace(' ','-', $request->custom_url);
             $request->validate([
-                "custom_url" => [Rule::unique('menu')->ignore($this->menu->id, 'id'), 'not_in:project,our-people,tribes,flagship,shop,inspiration', 'regex:/^[\pL\s\-]+$/u']
+                "custom_url" => ['nullable','sometimes', Rule::unique('menus')->ignore($menu->id, 'id'), 'not_in:project,our-people,tribes,flagship,shop,inspiration', 'regex:/^[\pL\s\-]+$/u']
             ]);
+            // $request->validate([
+            //     "custom_url" => 'unique:table_name,column_name,'.$this->id.',id'
+            // ]);
             Menu::findOrFail($menu->id)->update([
                 'custom' => $custom,
                 'disabled' => $disabled,
