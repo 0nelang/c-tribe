@@ -19,7 +19,7 @@
 
         <ul>
             @foreach ($menu as $m)
-            <li class="menu-item @if ($m->disabled == true) disabled @endif"><a class="menu-link"
+            <li class="menu-item text-uppercase @if ($m->disabled == true) disabled @endif"><a class="menu-link"
                 @if ($m->custom == true)
                     @if ($m->custom_url != null)
                         href="{{ route('lol', ['menu' => $m->custom_url]) }}"

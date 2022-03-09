@@ -50,6 +50,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin/menu', [MenuController::class, 'index'])->name('menu.index');
     Route::get('admin/menu/{menu:id}/edit', [MenuController::class, 'edit'])->name('menu.edit');
     Route::put('admin/menu/update/{menu:id}', [MenuController::class, 'update'])->name('menu.update');
+    Route::post('/admin/menu/position', [MenuController::class, 'position']);
+    Route::get('/admin/menu/reset-potition', [MenuController::class, 'reset']);
+
 
     Route::resource('/admin/inspiration', InspirationController::class);
     Route::post('/admin/inspiration/position', [InspirationController::class, 'position']);

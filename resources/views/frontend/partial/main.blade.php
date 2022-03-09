@@ -15,6 +15,11 @@
     {{-- <style>
       .main-menu__bg { background: url("{{ asset('storage/' . $general->background_menu) }}") no-repeat center; }
     </style> --}}
+    <style>
+        .text-uppercase {
+            text-transform: uppercase;
+        }
+    </style>
     @yield('css')
   </head>
 </html>

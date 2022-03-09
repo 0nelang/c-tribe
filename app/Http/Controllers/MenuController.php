@@ -10,7 +10,7 @@ class MenuController extends Controller
 {
     public function index() {
         return view('dashboard.menu.index', [
-            'menu' => Menu::all(),
+            'menu' => Menu::orderBy('index', 'asc')->get(),
             'page' => 'Menu'
         ]);
     }
@@ -47,5 +47,25 @@ class MenuController extends Controller
             Menu::findOrFail($menu->id)->update(['custom' => false, 'disabled' => $disabled,]);
         }
         return redirect(route('menu.index'));
+    }
+
+    public function position(Request $request)
+    {
+        foreach ($request->id as $index => $id) {
+            Menu::find($id)->update(['index' => $index + 1]);
+        }
+
+        return response()->json('success');
+
+    }
+
+    public function reset()
+    {
+        $reset = Menu::all();
+        foreach ($reset as $menu) {
+            // dd($menu);
+            $menu->update(['index' => $menu->id]);
+        }
+        return redirect('/admin/menu');
     }
 }

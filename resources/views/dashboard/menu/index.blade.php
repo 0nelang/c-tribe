@@ -4,11 +4,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.bootstrap4.min.css" />
-
 @endsection
 
 @section('main')
-
     <div class="page-content">
         <div class="main-wrapper">
 
@@ -16,6 +14,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
+                            <a href="/admin/menu/reset-potition" class="btn btn-primary mb-3">Reset Position</a>
                             <table id="logo-table" class="display" width="100%">
                                 <thead>
                                     <tr>
@@ -28,7 +27,6 @@
                                 </thead>
                                 <tbody id="images">
                                     @foreach ($menu as $id => $part)
-
                                         <tr>
                                             <td>{{ $part->index }}</td>
                                             <td>{{ $part->id }}</td>
@@ -48,7 +46,6 @@
                                                 </div>
                                             </td>
                                         </tr>
-
                                     @endforeach
                                 </tbody>
                             </table>
@@ -57,7 +54,6 @@
                 </div>
             </div>
         </div>
-
     @endsection
 
     @section('js')
@@ -95,7 +91,7 @@
                     console.log(obj_id);
                     $.ajax({
                         type: "post",
-                        url: "{{ url('') }}/admin/service/position",
+                        url: "{{ url('') }}/admin/menu/position",
                         dataType: "json",
                         data: {
                             id: obj_id,

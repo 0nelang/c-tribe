@@ -1,5 +1,5 @@
  <!-- HEADER-->
- {{-- @dd($menu) --}}
+ 
  <header class="header" id="header">
     <div class="header__wrap">
       <div class="header__logo"><a href="/"><img class="logo-1" src="{{ asset('storage/' . $general->brand_navbar1) }}"/><img class="logo-2"/></a></div>
@@ -20,7 +20,7 @@
 
         <ul>
             @foreach ($menu as $m)
-            <li class="menu-item @if ($m->disabled == true) disabled @endif"><a class="menu-link"
+            <li class="menu-item text-uppercase @if ($m->disabled == true) disabled @endif"><a class="menu-link"
                 @if ($m->custom == true)
                     @if ($m->custom_url != null)
                         href="{{ route('lol', ['menu' => $m->custom_url]) }}"

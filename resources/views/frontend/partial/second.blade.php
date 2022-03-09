@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="{{ asset('/css/styles/main.css') }}" />
     <link rel="stylesheet" href="{{ asset('/css/styles/toni.css') }}"/>
     @yield('css')
+<style>
+    .text-uppercase {
+        text-transform: uppercase;
+    }
+</style>
     {{-- <style>
         .main-menu__bg {
             background: url("{{ asset('storage/' . $general->background_menu) }}") no-repeat center;
