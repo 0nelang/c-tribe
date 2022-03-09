@@ -18,7 +18,7 @@ class HomeController extends Controller
     function __construct()
     {
         $this->general = General::all()->first();
-        $this->menu = Menu::orderBy('index', 'asc');
+        $this->menu = Menu::orderBy('index', 'asc')->get();
     }
 
 

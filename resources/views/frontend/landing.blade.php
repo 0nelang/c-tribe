@@ -1,3 +1,4 @@
+{{-- @dd($menu) --}}
 @extends('frontend.partial.second')
 
 @section('unmute')
