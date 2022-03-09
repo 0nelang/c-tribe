@@ -18,7 +18,7 @@
         </div>
         <ul>
             @foreach ($menu as $m)
-            <li class="menu-item disabled"><a class="menu-link"
+            <li class="menu-item @if ($m->disabled == true) disabled @endif"><a class="menu-link"
                 @if ($m->custom == true)
                 href="{{ route('lol', ['menu' => $url]) }}" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="{{ $m->custom_name }}">{{ $m->custom_name }}</a></li>
                 @else
