@@ -42,6 +42,12 @@
                                     checked
                                     @endif>
                                 </div>
+                                <div class="form-check form-switch mb-3">
+                                    <label class="form-check-label" for="disabled">disabled</label>
+                                    <input class="form-check-input" type="checkbox" id="disabled" name="disabled" @if ($menu->disabled)
+                                    checked
+                                    @endif>
+                                </div>
                                     <div class="mb-3 layout" style="display: {{ ($menu->custom == true)? 'block' : 'none'  }}">
                                         <label for="name" class="form-label is-invalid">Custom Name</label>
                                         <input type="text" name="custom_name" class="form-control"
@@ -54,7 +60,7 @@
                                             value="{{ $menu->custom_url }}" id="title">
                                             @error('custom_url')
                                             <div class="invalid-feedback">
-                                                Custom URL hass been selected.
+                                              {{ $message }}
                                             </div>
                                         @enderror
                                     </div>

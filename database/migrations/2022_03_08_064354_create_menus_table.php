@@ -21,7 +21,7 @@ class CreateMenusTable extends Migration
             $table->string('custom_name')->nullable();
             $table->string('custom_url')->nullable();
             $table->boolean('custom')->nullable();
-            $table->boolean('active')->nullable();
+            $table->boolean('disabled')->nullable();
             $table->timestamps();
         });
     }
