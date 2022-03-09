@@ -14,12 +14,12 @@ class MenusTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('menus')->delete();
-        
+
         \DB::table('menus')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
                 'index' => 1,
@@ -28,10 +28,11 @@ class MenusTableSeeder extends Seeder
                 'custom_name' => NULL,
                 'custom_url' => NULL,
                 'custom' => NULL,
+                'disabled' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 2,
                 'index' => 2,
@@ -40,10 +41,11 @@ class MenusTableSeeder extends Seeder
                 'custom_name' => NULL,
                 'custom_url' => NULL,
                 'custom' => NULL,
+                'disabled' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 3,
                 'index' => 3,
@@ -52,10 +54,11 @@ class MenusTableSeeder extends Seeder
                 'custom_name' => NULL,
                 'custom_url' => NULL,
                 'custom' => NULL,
+                'disabled' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 4,
                 'index' => 4,
@@ -64,10 +67,11 @@ class MenusTableSeeder extends Seeder
                 'custom_name' => NULL,
                 'custom_url' => NULL,
                 'custom' => NULL,
+                'disabled' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 5,
                 'index' => 5,
@@ -76,10 +80,11 @@ class MenusTableSeeder extends Seeder
                 'custom_name' => NULL,
                 'custom_url' => NULL,
                 'custom' => NULL,
+                'disabled' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            5 => 
+            5 =>
             array (
                 'id' => 6,
                 'index' => 6,
@@ -88,11 +93,12 @@ class MenusTableSeeder extends Seeder
                 'custom_name' => NULL,
                 'custom_url' => NULL,
                 'custom' => NULL,
+                'disabled' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
         ));
-        
-        
+
+
     }
 }
