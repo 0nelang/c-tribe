@@ -18,16 +18,11 @@
         </div>
         <ul>
             @foreach ($menu as $m)
-            <li class="menu-item disabled"><a class="menu-link"
+            <li class="menu-item @if ($m->disabled == true) disabled @endif"><a class="menu-link"
                 @if ($m->custom == true)
-                href="{{ route('lol', ['menu' => $url]) }}"
+                href="{{ route('lol', ['menu' => $url]) }}" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="{{ $m->custom_name }}">{{ $m->custom_name }}</a></li>
                 @else
-                href="{{ $url }}"
-                @endif
-                @if ($m->custom == true)
-                data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="{{ $m->custom_name }}">{{ $m->custom_name }}</a></li>
-                @else
-                data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="{{ $m->default_name }}">{{ $m->default_name }}</a></li>
+                href="{{ $url }}" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="{{ $m->default_name }}">{{ $m->default_name }}</a></li>
                 @endif
                 @endforeach
         </ul>
