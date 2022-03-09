@@ -25,7 +25,7 @@ class MenuController extends Controller
         if ($request->custom) {
             $custom = true;
             $request->validate([
-                "custom_url" => "unique:menus|not_in:project,our-people,tribes,flagship,shop,inspiration"
+                "custom_url" => "nullable|sometimes|unique:menus|not_in:project,our-people,tribes,flagship,shop,inspiration"
             ]);
             Menu::findOrFail($menu->id)->update([
                 'custom' => $custom,

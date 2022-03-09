@@ -11,12 +11,6 @@ use App\Models\Project;
 use App\Models\Service;
 use App\Models\Flagship;
 use App\Models\Inspiration;
-<<<<<<< HEAD
-use App\Models\Menu;
-use App\Models\Page;
-use App\Models\Partner;
-=======
->>>>>>> f221e5f77cb81b8aab83b198e80be6a201fb03f3
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -52,20 +46,16 @@ class HomeController extends Controller
 
         $featured[] = Project::where('type', 'person')->whereNotNull('featured')->first();
         if ($featured[3] != null){
-<<<<<<< HEAD
         $featured[3]->link = 'project';
         $featured[3]->tag = 'PARTNERS';
-=======
-            $featured[3]->link = 'project';
-            $featured[3]->tag = 'PARTNERS';
->>>>>>> f221e5f77cb81b8aab83b198e80be6a201fb03f3
         }
 
         return view('frontend.homepage',[
             "general" => $this->general,
             "home1" => Page::where('page','Home 1')->first(),
             "page" => "Pelarian",
-            "featured" => $featured
+            "featured" => $featured,
+            "menu" => $this->menu,
         ]);
     }
 
@@ -86,7 +76,8 @@ class HomeController extends Controller
             "general" => $this->general,
             "flagship" => $flagship,
             "page" => "Flagship",
-            "url" => $url
+            "url" => $url,
+            "menu" => $this->menu,
         ]);
     }
 
@@ -106,7 +97,8 @@ class HomeController extends Controller
             "general" => $this->general,
             "inspiration" => $Inspiration,
             "page" => "Insipiration",
-            "url" => $url
+            "url" => $url,
+            "menu" => $this->menu,
         ]);
     }
 
@@ -117,7 +109,8 @@ class HomeController extends Controller
             "general" => $this->general,
             "landing1" => Page::where('page' , 'Landing 1')->first(),
             "landing2" => Page::where('page','Landing 2')->first(),
-            "page" => "Pelarian"
+            "page" => "Pelarian",
+            "menu" => $this->menu,
         ]);
     }
 
@@ -130,6 +123,7 @@ class HomeController extends Controller
             "page" => "Our People",
             "pege1" => Page::where('page', 'Our People 1')->first(),
             "pege2" => Page::where('page', 'Our People 2')->first(),
+            "menu" => $this->menu,
         ]);
     }
 
@@ -139,7 +133,8 @@ class HomeController extends Controller
             "general" => $this->general,
             "project" => Project::where('type' , 'project')->orderBy('index','asc')->get(),
             "url" => $url,
-            "page" => "Project"
+            "page" => "Project",
+            "menu" => $this->menu,
         ]);
     }
 
@@ -149,7 +144,8 @@ class HomeController extends Controller
             "general" => $this->general,
             "service" => Service::orderBy('index', 'asc')->get(),
             "page" => "Tribes",
-            "url" => $url
+            "url" => $url,
+            "menu" => $this->menu,
         ]);
     }
 
@@ -160,7 +156,8 @@ class HomeController extends Controller
             "general" => $this->general,
             "page" => "Detail Flagship",
             "f" => $flagship,
-            "index" => $index
+            "index" => $index,
+            "menu" => $this->menu,
         ]);
     }
 
@@ -170,7 +167,8 @@ class HomeController extends Controller
         return view('frontend.tribes-single',[
             "general" => $this->general,
             "page" => "Detail Tribe",
-            "t" => $service
+            "t" => $service,
+            "menu" => $this->menu,
         ]);
     }
 
@@ -180,7 +178,8 @@ class HomeController extends Controller
         return view('frontend.project-single',[
             "general" => $this->general,
             "project" => $project,
-            "page" => "Detail Project"
+            "page" => "Detail Project",
+            "menu" => $this->menu,
         ]);
     }
 
@@ -190,13 +189,12 @@ class HomeController extends Controller
         return view('frontend.inspiration-single',[
             "general" => $this->general,
             "page" => "Detail Inspiration",
-            "i" => $inspiration
+            "i" => $inspiration,
+            "menu" => $this->menu,
         ]);
     }
 
-<<<<<<< HEAD
-=======
-    function custom(Menu $menu,)
+    function custom(Menu $menu)
     {
         switch ($menu->id){
             case 1:
@@ -222,7 +220,6 @@ class HomeController extends Controller
 
     function custom_single(Menu $menu, $single, $index = null)
     {
-        // dd($single);
         switch ($menu->id){
             case 1:
                 return $this->project_single($single);
@@ -246,5 +243,4 @@ class HomeController extends Controller
         }
     }
 
->>>>>>> f221e5f77cb81b8aab83b198e80be6a201fb03f3
 }

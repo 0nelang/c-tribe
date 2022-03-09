@@ -17,18 +17,14 @@
           <div class="bg-hover"></div><span></span>
         </div>
         <ul>
-          <li class="menu-item disabled"><a class="menu-link" href="/#" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="PROJECT">PROJECT</a></li>
-          <li class="menu-item"><a class="menu-link" href="{{ route('lol', ['menu' => 'lol']) }}" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="PEOPLE">PEOPLE</a></li>
-          <li class="menu-item disabled"><a class="menu-link" href="/#" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="TRIBES">TRIBES</a></li>
-          <li class="menu-item disabled"><a class="menu-link" href="/#" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="FLAGSHIP">FLAGSHIP</a></li>
-          <li class="menu-item disabled"><a class="menu-link" href="#" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="SHOP">SHOP</a></li>
-          <li class="menu-item disabled"><a class="menu-link" href="/#" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="INSPIRATION">INSPIRATION</a></li>
-          {{-- <li class="menu-item "><a class="menu-link" href="/project" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="PROJECT">PROJECT</a></li>
-          <li class="menu-item"><a class="menu-link" href="/our-people" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="PEOPLE">PEOPLE</a></li>
-          <li class="menu-item "><a class="menu-link" href="/tribes" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="TRIBES">TRIBES</a></li>
-          <li class="menu-item "><a class="menu-link" href="/flagship" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="FLAGSHIP">FLAGSHIP</a></li>
-          <li class="menu-item "><a class="menu-link" href="#" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="SHOP">SHOP</a></li>
-          <li class="menu-item "><a class="menu-link" href="/inspiration" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="INSPIRATION">INSPIRATION</a></li> --}}
+            @foreach ($menu as $m)
+            <li class="menu-item disabled"><a class="menu-link"
+                @if ($m->custom == true)
+                href="{{ route('lol', ['menu' => $url]) }}" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="{{ $m->custom_name }}">{{ $m->custom_name }}</a></li>
+                @else
+                href="{{ $url }}" data-bg="{{ asset('storage/' . $general->hover_image) }}" data-text="{{ $m->default_name }}">{{ $m->default_name }}</a></li>
+                @endif
+                @endforeach
         </ul>
       </div>
     </div>
