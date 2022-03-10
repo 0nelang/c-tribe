@@ -12,8 +12,7 @@
         </div>
         <div class="headerNav">
             <div class="ms-5">
-                <a class="dark" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
+                <a class="dark" href="#" onclick="out()">
                     {{ __('Logout') }} <i data-feather="log-out"></i>
                 </a>
 
