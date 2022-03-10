@@ -101,18 +101,6 @@
                 }]
             });
 
-            // table.on('row-reorder', function(e, diff, edit) {
-            //     var result = 'Reorder started on row: ' + edit.triggerRow.data()[2] + '<br>';
-            //     var newIndex, oldIndex;
-            //     for (var i = 0, ien = diff.length; i < ien; i++) {
-            //         var rowData = table.row(diff[i].node).data();
-
-            //         newIndex = diff[i].newData;
-            //         oldIndex = diff[i].oldData;
-            //     }
-
-
-            // });
             table.on('row-reordered', function(e, diff, edit) {
                 setTimeout(() => {
                     var obj_id = table.column(1).data().toArray();

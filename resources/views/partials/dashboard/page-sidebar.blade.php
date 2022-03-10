@@ -14,8 +14,8 @@
             <a href="#"><i data-feather="tool"></i>Settings<i class="fas fa-chevron-right dropdown-icon"></i></a>
             <ul>
                 <li><a href="/admin/general" class="{{ ($page === 'General')? 'active' : ''  }}"><i class="far fa-circle"></i>General</a></li>
-                <li><a href="/admin/page" class="{{ ($page === 'Page')? 'active' : ''  }}"><i class="far fa-circle"></i>Page</a></li>
                 <li><a href="/admin/menu" class="{{ ($page === 'Menu')? 'active' : ''  }}"><i class="far fa-circle"></i>Menu</a></li>
+                <li><a href="/admin/page" class="{{ ($page === 'Page')? 'active' : ''  }}"><i class="far fa-circle"></i>Page</a></li>
                 <li><a href="/admin/setting" class="{{ ($page === 'Setting')? 'active' : ''  }}"><i class="far fa-circle"></i>Admin</a></li>
             </ul>
           </li>

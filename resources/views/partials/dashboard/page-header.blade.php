@@ -16,7 +16,6 @@
                                          document.getElementById('logout-form').submit();">
                     {{ __('Logout') }} <i data-feather="log-out"></i>
                 </a>
-
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>

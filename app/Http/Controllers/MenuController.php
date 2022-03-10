@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class MenuController extends Controller
 {
@@ -46,6 +47,7 @@ class MenuController extends Controller
         }else{
             Menu::findOrFail($menu->id)->update(['custom' => false, 'disabled' => $disabled,]);
         }
+        Alert::success('Success', 'Succesfully Update Data');
         return redirect(route('menu.index'));
     }
 
