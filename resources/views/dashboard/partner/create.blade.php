@@ -17,7 +17,7 @@
                                     <img id="output" class="mt-2"mb-2 style="max-height: 200px; max-width: 200px;">
                                     </div>
                                     </label>
-                                    <input class="form-control @error('logo') is-invalid @enderror" name="logo" type="file" id="filePhoto" accept="image/*">
+                                    <input class="form-control @error('logo') is-invalid @enderror" name="logo" type="file" id="filePhoto" >
                                     @error('logo')
                                     <div class="invalid-feedback">
                                         {{ $message }}
