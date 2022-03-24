@@ -224,6 +224,7 @@
                     },
                     dataType: "json",
                     success: function (response) {
+                        console.log('success, price: ' + response);
                         $('#totalPrice').val('$' + response);
                     }
                 });
