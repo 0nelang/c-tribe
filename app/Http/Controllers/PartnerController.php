@@ -27,6 +27,7 @@ class partnerController extends Controller
 
     public function store(Request $request)
     {
+        dd($request);
         $img = Image::make($request->file('logo'));
         $img->resize(null, 200,  function ($constraint)
         {

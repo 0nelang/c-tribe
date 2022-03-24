@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\General;
+use App\Models\Metadata;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
     use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class GeneralController extends Controller
@@ -108,5 +109,13 @@ class GeneralController extends Controller
         Alert::success('Success', 'Data Updated Successfully');
 
         return redirect('/admin/general');
+    }
+
+    public function metadata()
+    {
+        return view('dashboard.metadata', [
+            'metadata' => Metadata::all(),
+            'page' => 'lol'
+        ]);
     }
 }

@@ -41,6 +41,7 @@ Route::post('dash-ctribe', [LoginController::class, 'login'])->name('dash-ctribe
 Route::get('login', function() {
     return abort(404);
 });
+Route::get('/metadata', [GeneralController::class, 'metadata']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AuthController::class, 'visitor']);
