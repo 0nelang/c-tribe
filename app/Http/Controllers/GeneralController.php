@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Price;
 use App\Models\General;
 use App\Models\Metadata;
-use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -113,9 +114,31 @@ class GeneralController extends Controller
 
     public function metadata()
     {
+        $price = 0;
+        $metadata = Metadata::all();
+        foreach ($metadata as $value) {
+            $volume = floatval(str_replace(" cubic m","",$value->entity_volume));
+            $price = $price + $volume * $value->price;
+        }
+        Price::find(1)->update(['price' => $price]);
         return view('dashboard.metadata', [
-            'metadata' => Metadata::all(),
+            'metadata' => $metadata,
+            'price' => Price::find(1),
             'page' => 'lol'
         ]);
+    }
+
+    public function price(Request $request, $id)
+    {
+        Metadata::find($id)->update(['price' => $request->price]);
+        $price = 0;
+        $metadata = Metadata::all();
+        foreach ($metadata as $value) {
+            $volume = floatval(str_replace(" cubic m","",$value->entity_volume));
+            $price = $price + $volume * $value->price;
+        }
+        Price::find(1)->update(['price' => $price]);
+
+        return response()->json($price);
     }
 }
