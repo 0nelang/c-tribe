@@ -61,11 +61,11 @@
 
 <body>
     @include('sweetalert::alert')
-    {{-- <div class='loader'>
+    <div class='loader'>
         <div class='spinner-grow text-primary' role='status'>
             <span class='sr-only'>Loading...</span>
         </div>
-    </div> --}}
+    </div>
     <div class="page-container">
         @include('partials.dashboard.page-header')
 
@@ -97,7 +97,21 @@
                 }
             })
         }
-
+        function out() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Logout!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $('#logout-form').submit();
+                }
+            })
+        }
     </script>
 
     <!-- Javascripts -->

@@ -53,8 +53,8 @@
                                 <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
+                    {{-- <div class="row">
+                        <div class="col"> --}}
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Menu</h5>
@@ -197,8 +197,8 @@
                                                             <label for="videoFile" class="form-label">Video
                                                                 Background</label>
                                                                 <br>
-                                                                
-                                                            
+
+
                                                             <input
                                                                 class="form-control @error('video_background') is-invalid @enderror"
                                                                 name="video_background" type="file" id="videoFile"
@@ -214,7 +214,7 @@
                                                                     controls></video>
                                                     </div>
                                                     <div class="col-4">--}}
-                                                        <div class="mb-3"> 
+                                                        <div class="mb-3">
                                                             <label for="link" class="form-label">Link Youtube</label>
                                                             <input type="text" class="form-control" id="link"
                                                                 name="link" value="{{ $general->link }}">
