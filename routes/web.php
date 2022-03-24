@@ -42,6 +42,7 @@ Route::get('login', function() {
     return abort(404);
 });
 Route::get('/metadata', [GeneralController::class, 'metadata']);
+Route::put('/metadata/price/{id}', [GeneralController::class, 'price']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AuthController::class, 'visitor']);

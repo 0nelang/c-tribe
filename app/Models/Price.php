@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class metadata extends Model
+class Price extends Model
 {
     use HasFactory;
-    protected $table = 'metadata';
+    protected $table = 'metadata_price';
     protected $guarded = ['id'];
     public $timestamps = false;
 }

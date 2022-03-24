@@ -95,45 +95,51 @@
 
         <div class="page-sidebar">
             <ul class="list-unstyled accordion-menu">
-              <li class="sidebar-title">
-                Main
-              </li>
-              <li class="{{ ($page === 'Admin')? 'active-page' : ''  }}">
-                <a href="/admin"><i data-feather="home"></i>Dashboard</a>
-              </li>
+                <li class="sidebar-title">
+                    Main
+                </li>
+                <li class="{{ $page === 'Admin' ? 'active-page' : '' }}">
+                    <a href="/admin"><i data-feather="home"></i>Dashboard</a>
+                </li>
 
-              <li class="sidebar-title">
-                Apps
-              </li>
-              <li class="{{ ($page === 'Setting')? 'active-page' : ''  }} {{ ($page === 'General')? 'active-page' : ''  }} {{ ($page === 'Menu')? 'active-page' : ''  }} {{ ($page === 'Page')? 'active-page' : ''  }}">
-                <a href="#"><i data-feather="tool"></i>Settings<i class="fas fa-chevron-right dropdown-icon"></i></a>
-                <ul>
-                    <li><a href="/admin/general" class="{{ ($page === 'General')? 'active' : ''  }}"><i class="far fa-circle"></i>General</a></li>
-                    <li><a href="/admin/page" class="{{ ($page === 'Page')? 'active' : ''  }}"><i class="far fa-circle"></i>Page</a></li>
-                    <li><a href="/admin/menu" class="{{ ($page === 'Menu')? 'active' : ''  }}"><i class="far fa-circle"></i>Menu</a></li>
-                    <li><a href="/admin/setting" class="{{ ($page === 'Setting')? 'active' : ''  }}"><i class="far fa-circle"></i>Admin</a></li>
-                </ul>
-              </li>
-              <li class="{{ ($page === 'People')? 'active-page' : ''  }}">
-                <a href="/admin/people"><i data-feather="user"></i>Our People</a>
-              </li>
-              <li class="{{ ($page === 'Partners')? 'active-page' : ''  }}">
-                <a href="/admin/partners"><i data-feather="user-check"></i>Partners</a>
-              </li>
-              <li class="{{ ($page === 'Service')? 'active-page' : ''  }}">
-                <a href="/admin/service"><i data-feather="truck"></i>Service</a>
-              </li>
-              <li class="{{ ($page === 'Project')? 'active-page' : ''  }}">
-                <a href="/admin/project"><i data-feather="package"></i>Project</a>
-              </li>
-              <li class="{{ ($page === 'Inspiration')? 'active-page' : ''  }}">
-                <a href="/admin/inspiration"><i data-feather="sun"></i>Insipiration</a>
-              </li>
-              <li class="{{ ($page === 'Flagship')? 'active-page' : ''  }}">
-                <a href="/admin/flagship"><i data-feather="flag"></i>Flagship</a>
-              </li>
+                <li class="sidebar-title">
+                    Apps
+                </li>
+                <li
+                    class="{{ $page === 'Setting' ? 'active-page' : '' }} {{ $page === 'General' ? 'active-page' : '' }} {{ $page === 'Menu' ? 'active-page' : '' }} {{ $page === 'Page' ? 'active-page' : '' }}">
+                    <a href="#"><i data-feather="tool"></i>Settings<i
+                            class="fas fa-chevron-right dropdown-icon"></i></a>
+                    <ul>
+                        <li><a href="/admin/general" class="{{ $page === 'General' ? 'active' : '' }}"><i
+                                    class="far fa-circle"></i>General</a></li>
+                        <li><a href="/admin/page" class="{{ $page === 'Page' ? 'active' : '' }}"><i
+                                    class="far fa-circle"></i>Page</a></li>
+                        <li><a href="/admin/menu" class="{{ $page === 'Menu' ? 'active' : '' }}"><i
+                                    class="far fa-circle"></i>Menu</a></li>
+                        <li><a href="/admin/setting" class="{{ $page === 'Setting' ? 'active' : '' }}"><i
+                                    class="far fa-circle"></i>Admin</a></li>
+                    </ul>
+                </li>
+                <li class="{{ $page === 'People' ? 'active-page' : '' }}">
+                    <a href="/admin/people"><i data-feather="user"></i>Our People</a>
+                </li>
+                <li class="{{ $page === 'Partners' ? 'active-page' : '' }}">
+                    <a href="/admin/partners"><i data-feather="user-check"></i>Partners</a>
+                </li>
+                <li class="{{ $page === 'Service' ? 'active-page' : '' }}">
+                    <a href="/admin/service"><i data-feather="truck"></i>Service</a>
+                </li>
+                <li class="{{ $page === 'Project' ? 'active-page' : '' }}">
+                    <a href="/admin/project"><i data-feather="package"></i>Project</a>
+                </li>
+                <li class="{{ $page === 'Inspiration' ? 'active-page' : '' }}">
+                    <a href="/admin/inspiration"><i data-feather="sun"></i>Insipiration</a>
+                </li>
+                <li class="{{ $page === 'Flagship' ? 'active-page' : '' }}">
+                    <a href="/admin/flagship"><i data-feather="flag"></i>Flagship</a>
+                </li>
             </ul>
-    </div>
+        </div>
 
 
 
@@ -144,6 +150,10 @@
                     <div class="col">
                         <div class="card">
                             <div class="card-body">
+                                <div class="col-3">
+                                    <label for="totalPrice">Harga:</label>
+                                    <input class="form-control mb-3" type="text" id="totalPrice" value="${{ $price->price }}" disabled>
+                                </div>
                                 <table id="logo-table" class="display" width="100%">
                                     <thead>
                                         <tr>
@@ -151,18 +161,24 @@
                                             <th>Name</th>
                                             <th>Volume</th>
                                             <th>Material</th>
+                                            <th>Price</th>
                                         </tr>
                                     </thead>
                                     <tbody id="images">
                                         @foreach ($metadata as $index => $pep)
-
                                             <tr>
                                                 <td>{{ $index }}</td>
                                                 <td>{{ $pep->entity_name }}</td>
                                                 <td>{{ $pep->entity_volume }}</td>
                                                 <td>{{ $pep->material }}</td>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <input class="form-control @error('price') is-invalid @enderror" name="price"
+                                                        type="text" id="price{{ $pep->id }}" value="{{ $pep->price }}">
+                                                        <button type="" class="btn btn-warning ms-2" onclick="update({{ $pep->id }})">Submit</button>
+                                                    </div>
+                                                </td>
                                             </tr>
-
                                         @endforeach
                                     </tbody>
                                     <tfoot>
@@ -171,6 +187,7 @@
                                             <th>Name</th>
                                             <th>Volume</th>
                                             <th>Material</th>
+                                            <th>Price</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -185,82 +202,98 @@
 
 
 
+        </div>
     </div>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
-    <script type="text/javascript" src="{{ asset('js/reorder.js') }}"></script>
-    <script>
-        var table = $('#logo-table').DataTable({
-        });
-    </script>
-    <script>
-        function what(id) {
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $('#form-delete' + id).submit();
-                    Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                    )
-                }
-            })
-        }
-        function out() {
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Logout!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $('#logout-form').submit();
-                    // Swal.fire(
-                    //     'Deleted!',
-                    //     'Your file has been deleted.',
-                    //     'success'
-                    // )
-                }
-            })
-        }
-    </script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="{{ asset('js/reorder.js') }}"></script>
+        <script>
+            var table = $('#logo-table').DataTable({});
+        </script>
+        <script>
+            function update(id) {
+                var value = $('#price' + id).val();
+                $.ajax({
+                    type: "put",
+                    url: "{{ url('') }}/metadata/price/" + id,
+                    data: {
+                        price: value,
+                        _token: '{{ csrf_token() }}'
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        $('#totalPrice').val('$' + response);
+                    }
+                });
+            }
+            function what(id) {
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $('#form-delete' + id).submit();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    }
+                })
+            }
 
-    <!-- Javascripts -->
-    {{-- ck-editor --}}
-    @yield('ck-editor')
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
-    <script src="{{ asset('/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('/plugins/perfectscroll/perfect-scrollbar.min.js') }}"></script>
-    <script src="{{ asset('/plugins/apexcharts/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('/js/main.min.js') }}"></script>
-    <script src="{{ asset('/js/pages/dashboard.js') }}"></script>
-    <script src="{{ asset('/js/pages/datatables.js') }}"></script>
-    <script src="{{ asset('/plugins/DataTables/datatables.min.js') }}"></script>
-    @yield('js')
-    <script>
-        function image() {
-            const viewer = new Viewer(document.getElementById('images'), {
-                viewed() {
-                    viewer.zoomTo(1);
-                },
-            });
-        }
-    </script>
+            function out() {
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Logout!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $('#logout-form').submit();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    }
+                })
+            }
+        </script>
+
+        <!-- Javascripts -->
+        {{-- ck-editor --}}
+        @yield('ck-editor')
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+        <script src="{{ asset('/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('/plugins/perfectscroll/perfect-scrollbar.min.js') }}"></script>
+        <script src="{{ asset('/plugins/apexcharts/apexcharts.min.js') }}"></script>
+        <script src="{{ asset('/js/main.min.js') }}"></script>
+        <script src="{{ asset('/js/pages/dashboard.js') }}"></script>
+        <script src="{{ asset('/js/pages/datatables.js') }}"></script>
+        <script src="{{ asset('/plugins/DataTables/datatables.min.js') }}"></script>
+        @yield('js')
+        <script>
+            function image() {
+                const viewer = new Viewer(document.getElementById('images'), {
+                    viewed() {
+                        viewer.zoomTo(1);
+                    },
+                });
+            }
+        </script>
 </body>
 
 </html>
