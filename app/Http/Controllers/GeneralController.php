@@ -7,7 +7,9 @@ use App\Models\General;
 use App\Models\Metadata;
     use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use App\Imports\MetadataImport;
 use Illuminate\Support\Facades\File;
+use Maatwebsite\Excel\Facades\Excel;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class GeneralController extends Controller
@@ -112,6 +114,30 @@ class GeneralController extends Controller
         return redirect('/admin/general');
     }
 
+    public function import_metadata(Request $request)
+    {
+        $this->validate($request, [
+			'file' => 'required|mimes:csv,xls,xlsx'
+		]);
+
+		// menangkap file excel
+		$file = $request->file('file');
+
+		// membuat nama file unik
+		$nama_file = rand().$file->getClientOriginalName();
+
+		// upload ke folder file_siswa di dalam folder public
+		$file->move('file_metadata',$nama_file);
+
+		// import data
+		Excel::import(new MetadataImport, public_path('/file_metadata/'.$nama_file));
+
+		// notifikasi dengan session
+
+		// alihkan halaman kembali
+		return redirect('/metadata');
+    }
+
     public function metadata()
     {
         $price = 0;
@@ -128,15 +154,22 @@ class GeneralController extends Controller
         ]);
     }
 
-    public function price(Request $request, $id)
+    public function price(Request $request)
     {
-        Metadata::find($id)->update(['price' => $request->price]);
         $price = 0;
-        $metadata = Metadata::all();
-        foreach ($metadata as $value) {
-            $volume = floatval(str_replace(" cubic m","",$value->entity_volume));
-            $price = $price + $volume * $value->price;
+        foreach ($request->data as $data) {
+            // dd($data['id']);
+            $metadata = Metadata::find($data['id']);
+            $metadata->update(['price' => $data['value']]);
+            $volume = floatval(str_replace(" cubic m","",$metadata->entity_volume));
+            $price = $price + $volume * $data['value'];
         }
+
+        // $metadata = Metadata::all();
+        // foreach ($metadata as $value) {
+        //     $volume = floatval(str_replace(" cubic m","",$value->entity_volume));
+        //     $price = $price + $volume * $value->price;
+        // }
         Price::find(1)->update(['price' => $price]);
 
         return response()->json($price);
