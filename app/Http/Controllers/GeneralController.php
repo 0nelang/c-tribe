@@ -142,11 +142,11 @@ class GeneralController extends Controller
     {
         $price = 0;
         $metadata = Metadata::all();
-        foreach ($metadata as $value) {
-            $volume = floatval(str_replace(" cubic m","",$value->entity_volume));
-            $price = $price + $volume * $value->price;
-        }
-        Price::find(1)->update(['price' => $price]);
+        // foreach ($metadata as $value) {
+        //     $volume = floatval(str_replace(" cubic m","",$value->entity_volume));
+        //     $price = $price + $volume * floatval(preg_replace('/[^0-9]/', '', $value->price));
+        // }
+        // Price::find(1)->update(['price' => $price]);
         return view('dashboard.metadata', [
             'metadata' => $metadata,
             'price' => Price::find(1),
@@ -156,6 +156,7 @@ class GeneralController extends Controller
 
     public function price(Request $request)
     {
+        // dd($request);
         $price = 0;
         foreach ($request->data as $data) {
             $value = preg_replace('/[^0-9]/', '', $data['value']);

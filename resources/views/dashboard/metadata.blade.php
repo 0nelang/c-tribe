@@ -128,8 +128,25 @@
     <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
     <script>
+        var box = {};
+        var boxes = [];
         function onchange_comma(id, value) {
-            // console.log(value);
+            var boxId = id.replace("price-", "")
+            if ($('#checked-' + boxId).prop('checked') == true) {
+                boxes = boxes.filter(obj => {
+                    return obj.name != 'price-' + boxId;
+                })
+                box = {
+                    name: 'price-' + boxId,
+                    value: value
+                };
+                boxes.push(box);
+                console.log(boxes);
+            } else {
+                boxes = boxes.filter(obj => {
+                    return obj.name != 'price-' + boxId;
+                })
+            }
             var x = numeral(value).format('0,0');
             $("#" + id).val(x);
         }
@@ -137,33 +154,42 @@
             searching: false,
             info: false
         });
-        // var data = {};
-        // var datas = [];
-        // function checking(id) {
-        //     if ($('#checked-' + id).prop('checked') == true) {
-        //         var value = $('#price-' + id).val();
-        //         data = {
-        //             name: 'price-' + id,
-        //             value: value
-        //         };
-        //         datas.push(data);
-        //         console.log(datas);
-        //     } else {
-        //         alert('nah');
-        //     }
-        // }
+
+        //checking wether the checkbox is checked or not
+
+        function checking(id) {
+            if ($('#checked-' + id).prop('checked') == true) {
+                var value = $('#price-' + id).val();
+                box = {
+                    name: 'price-' + id,
+                    value: value
+                };
+                boxes.push(box);
+            } else {
+                boxes = boxes.filter(obj => {
+                    return obj.name != 'price-' + id;
+                })
+            }
+            console.log(boxes);
+        }
+
+        //sending to controller using ajax
         function price() {
             var data = {};
             var datas = [];
-            var data = table.$('input:checkbox').serializeArray();
-            data.forEach(check => {
-                var value = $('#price-' + check.name).val();
+            var harga = table.$('input:checkbox').serializeArray();
+            console.log(harga);
+            harga.forEach(check => {
+                var value = boxes.find(obj => {
+                    return obj.name == 'price-' + check.name
+                });
                 data = {
                     id: check.name,
-                    value: value
+                    value: value.value
                 };
                 datas.push(data);
             });
+            console.log(datas);
             $.ajax({
                 type: "post",
                 url: "/metadata/price",
