@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Price;
 use App\Models\General;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Metadata;
-    use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Imports\MetadataImport;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Maatwebsite\Excel\Facades\Excel;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -114,11 +116,13 @@ class GeneralController extends Controller
         return redirect('/admin/general');
     }
 
-    public function import_metadata(Request $request)
+    public function change_metadata(Request $request)
     {
         $this->validate($request, [
 			'file' => 'required|mimes:csv,xls,xlsx'
 		]);
+
+        Metadata::where('user_id', Auth::user()->id)->delete();
 
 		// menangkap file excel
 		$file = $request->file('file');
@@ -138,10 +142,57 @@ class GeneralController extends Controller
 		return redirect('/metadata');
     }
 
+    public function import_metadata(Request $request)
+    {
+        // dd($request);
+        if (User::where('email', $request->email)->first() == null) {
+            // return 'lol';
+            $user = $this->validate($request, [
+                'file' => 'required|mimes:csv,xls,xlsx',
+                'email' => 'required',
+                'phone' => 'nullable',
+            ]);
+            $user['role'] = 'user';
+            $user['name'] = $user['email'];
+            $user['password'] = bcrypt('password');
+            $user = User::create($user);
+            $credentials = ['email' => $user->email, 'password' => 'password'];
+        }else{
+            $user = User::where('email', $request->email)->first();
+            $credentials = ['email' => $user->email, 'password' => 'password'];
+        }
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+        }
+
+		// menangkap file excel
+		$file = $request->file('file');
+
+		// membuat nama file unik
+		$nama_file = rand().$file->getClientOriginalName();
+
+		// upload ke folder file_siswa di dalam folder public
+		$file->move('file_metadata',$nama_file);
+
+		// import data
+		Excel::import(new MetadataImport, public_path('/file_metadata/'.$nama_file));
+
+		// notifikasi dengan session
+
+		// alihkan halaman kembali
+		return redirect('/metadata/excel');
+    }
+
+    public function login_metadata()
+    {
+        return view('dashboard.upload');
+    }
+
     public function metadata()
     {
         $price = 0;
-        $metadata = Metadata::all();
+        $metadata = Auth::user()->metadata;
         // foreach ($metadata as $value) {
         //     $volume = floatval(str_replace(" cubic m","",$value->entity_volume));
         //     $price = $price + $volume * floatval(preg_replace('/[^0-9]/', '', $value->price));

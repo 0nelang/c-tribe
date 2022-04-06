@@ -11,4 +11,14 @@ class metadata extends Model
     protected $table = 'metadata';
     protected $guarded = ['id'];
     public $timestamps = false;
+
+    /**
+     * Get the user that owns the Metadata
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id', 'user_id');
+    }
 }

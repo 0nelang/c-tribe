@@ -151,7 +151,6 @@
             $("#" + id).val(x);
         }
         var table = $('#logo-table').DataTable({
-            searching: false,
             info: false
         });
 

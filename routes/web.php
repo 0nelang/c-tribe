@@ -41,7 +41,9 @@ Route::post('dash-ctribe', [LoginController::class, 'login'])->name('dash-ctribe
 Route::get('login', function() {
     return abort(404);
 });
-Route::get('/metadata', [GeneralController::class, 'metadata']);
+Route::get('/metadata', [GeneralController::class, 'login_metadata']);
+Route::get('/metadata/excel', [GeneralController::class, 'metadata']);
+Route::post('/metadata/change_metadata', [GeneralController::class, 'change_metadata']);
 Route::post('/metadata/import_metadata', [GeneralController::class, 'import_metadata']);
 Route::post('/metadata/price', [GeneralController::class, 'price']);
 
