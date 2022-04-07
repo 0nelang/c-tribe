@@ -47,6 +47,11 @@ class FlagshipController extends Controller
         $title = $request->title;
         $desc = $request->description;
         $body = $request->body;
+        if ($request->unpublished) {
+            $disabled = true;
+        }else {
+            $disabled = false;
+        }
 
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
@@ -59,12 +64,14 @@ class FlagshipController extends Controller
             'mainImage' => 'image|file',
             'detailImage' => 'image|file',
             'otherImage*' => 'image|file',
+            'unpublished' => $disabled,
             'detail1' => 'min:0',
             'detail2' => 'min:0',
             'detail3' => 'min:0',
             'insta1' => 'min:0|max:255',
             'insta2' => 'min:0|max:255',
             'insta3' => 'min:0|max:255',
+            'video' => 'mimetypes:video/avi,video/mp4',
         ]);
 
         $validated['title'] = $title;
@@ -77,6 +84,10 @@ class FlagshipController extends Controller
         // }else {
         //     return redirect()->back()->withInput($request->all());
         // }
+
+        if ($request->hasFile('video')) {
+            $validated['video'] = $request->file('video')->store('flagship-video', ['disk' => 'public']);
+        }
 
         if ($request->hasFile('mainImage'))
         {
@@ -149,13 +160,18 @@ class FlagshipController extends Controller
         $title = $request->title;
         $desc = $request->description;
         $body = $request->body;
-
+        if ($request->unpublished) {
+            $disabled = true;
+        }else {
+            $disabled = false;
+        }
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $request['body'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['body'])));
 
         $validated = $request->validate([
             'title' => 'required|min:1',
+            'unpublished' => $disabled,
             'description' => 'required|min:1',
             'body' => 'required|min:1',
             'date' => 'required|max:255',
@@ -165,6 +181,7 @@ class FlagshipController extends Controller
             'detail1' => 'min:0',
             'detail2' => 'min:0',
             'detail3' => 'min:0',
+            'video' => 'mimetypes:video/avi,video/mp4',
             'insta1' => 'min:0|max:255',
             'insta2' => 'min:0|max:255',
             'insta3' => 'min:0|max:255',
@@ -180,6 +197,11 @@ class FlagshipController extends Controller
                 $otherImage['flagship'] = $flagship->id;
                 FlagshipImage::create($otherImage);
             }
+        }
+
+        if ($request->hasFile('video')) {
+            Storage::delete($flagship->video);
+            $validated['video'] = $request->file('video')->store('flagship-video', ['disk' => 'public']);
         }
 
         if ($request->hasFile('mainImage')) {
@@ -222,6 +244,8 @@ class FlagshipController extends Controller
             }
         }
         storage::delete($flagship->mainImage);
+        storage::delete($flagship->video);
+        storage::delete($flagship->detailImage);
         Flagship::destroy($flagship->id);
         $notdel = Flagship::all();
         foreach ($notdel as $key => $value) {

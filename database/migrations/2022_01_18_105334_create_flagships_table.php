@@ -20,12 +20,13 @@ class CreateFlagshipsTable extends Migration
             $table->string('slug')->nullable();
             $table->text('subTitle')->nullable();
             $table->integer('featured')->nullable();
-            $table->boolean('unpublished')->nullable();
+            $table->integer('unpublished')->nullable();
             $table->string('date');
             $table->text('description');
             $table->text('body');
             $table->string('mainImage')->nullable();
             $table->string('detailImage')->nullable();
+            $table->string('video')->nullable();
             $table->text('detail1')->nullable();
             $table->text('detail2')->nullable();
             $table->text('detail3')->nullable();

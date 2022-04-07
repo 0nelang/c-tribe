@@ -47,6 +47,11 @@ class InspirationController extends Controller
     {
         $title = $request->title;
         $desc = $request->description;
+         if ($request->unpublished) {
+            $disabled = true;
+        }else {
+            $disabled = false;
+        }
 
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
@@ -54,6 +59,7 @@ class InspirationController extends Controller
             'title' => 'required|min:1',
             'description' => 'required|min:1',
             'mainImage' => 'image|file',
+            'unpublished' => $disabled,
             'video' => 'mimetypes:video/avi,video/mp4',
             'date' => 'required|max:255'
         ]);
@@ -121,6 +127,11 @@ class InspirationController extends Controller
     {
         $title = $request->title;
         $desc = $request->description;
+         if ($request->unpublished) {
+            $disabled = true;
+        }else {
+            $disabled = false;
+        }
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $validated = $request->validate([
@@ -128,7 +139,8 @@ class InspirationController extends Controller
             'description' => 'required|min:1',
             'mainImage' => 'image|file',
             'video' => 'mimetypes:video/avi,video/mp4',
-            'date' => 'required|max:255'
+            'date' => 'required|max:255',
+            'unpublished' => $disabled,
         ]);
         $validated['title'] = $title;
         $validated['description'] = $desc;

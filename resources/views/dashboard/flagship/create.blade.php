@@ -223,6 +223,19 @@
                                     @enderror
                                 </div>
 
+                                <div class="mb-3">
+                                    <label for="videoFile" class="form-label">Video</label>
+                                    <br>
+                                    <video id="vid-output" controls class="mb-2"
+                                        style="display: none;max-height: 300px; max-width:600px;"></video>
+                                    <input class="form-control @error('video') is-invalid @enderror" name="video"
+                                        type="file" id="videoFile" accept="video/*">
+                                    @error('video')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
 
                                 <div class="mb-3">
                                     <label for="otherImage" class="form-label">Other Image</label>
@@ -259,6 +272,15 @@
             $("#photo").change(function(event) {
                 var x = URL.createObjectURL(event.target.files[0]);
                 $("#out").attr("src", x);
+                console.log(event);
+            });
+        });
+
+        $(function() {
+            $("#videoFile").change(function(event) {
+                var x = URL.createObjectURL(event.target.files[0]);
+                $("#vid-output").show();
+                $("#vid-output").attr("src", x);
                 console.log(event);
             });
         });
