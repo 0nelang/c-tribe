@@ -18,6 +18,7 @@ class CreateServicesTable extends Migration
             $table->integer('index')->nullable();
             $table->string('logo');
             $table->string('service');
+            $table->boolean('unpublished')->nullable();
             $table->string('title')->nullable();
             $table->string('image')->nullable();
             $table->text('description');

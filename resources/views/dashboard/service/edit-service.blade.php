@@ -38,16 +38,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="mb-3">
-                                    <label for="service" class="form-label">Service</label>
-                                    <input class="form-control @error('service') is-invalid @enderror" name="service"
-                                        type="text" id="service" value="{{ $service->service }}">
-                                    @error('service')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
+
 
                                 <div class="mb-3">
                                     <label for="title" class="form-label">Title</label>
@@ -82,21 +73,52 @@
                                     @enderror
                                 </div>
 
-                                <div class="mb-3">
-                                    <label for="fileImage" class="form-label">Detail Image
-                                    <div class="mb-3">
-                                        <img id="output2" class="mt-3"
-                                            src="{{ asset('storage/' . $service->image) }}"
-                                            style="max-height: 200px; max-width: 200px;" alt="{{ $service->image }}">
-                                    </div></label>
-                                    <input class="form-control @error('image') is-invalid @enderror" name="image"
-                                        type="file" id="fileImage" accept="image/*">
-                                    @error('image')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label for="fileImage" class="form-label">Detail Image</label>
+                                                <input class="form-control @error('image') is-invalid @enderror" name="image"
+                                                type="file" id="fileImage" accept="image/*">
+                                                <div class="mb-3">
+                                                    <img id="output2" class="mt-3"
+                                                        src="{{ asset('storage/' . $service->image) }}"
+                                                        style="max-height: 200px; max-width: 200px;" alt="{{ $service->image }}">
+                                                </div>
+                                            @error('image')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
-                                    @enderror
-                                </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label for="service" class="form-label">Service</label>
+                                            <input class="form-control @error('service') is-invalid @enderror" name="service"
+                                                type="text" id="service" value="{{ $service->service }}">
+                                            @error('service')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label class="form-label">Unpublished</label>
+                                            <div class="form-check form-switch pt-2">
+                                                <input class="form-check-input" type="checkbox" id="unpublished" name="unpublished"
+                                                @if ($service->service)
+                                                checked
+                                                @endif>
+                                                <label class="form-check-label" for="unpublished">Unpublished</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+
+
+
 
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </form>

@@ -7,16 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/metadata/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/megin/fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="/metadata/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/megin/css/owl.carousel.min.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/metadata/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/megin/css/bootstrap.min.css">
 
     <!-- Style -->
-    <link rel="stylesheet" href="/metadata/css/style.css">
-    <link rel="stylesheet" href="/metadata/file-upload.scss">
+    <link rel="stylesheet" href="/megin/css/style.css">
+    <link rel="stylesheet" href="/megin/file-upload.scss">
 
     <title>Login #7</title>
 </head>
@@ -24,11 +24,12 @@
 <body>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
-body {
-  font-family: "Lato", sans-serif;
-}
 
-/* .container {
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        /* .container {
   position: absolute;
   top: 0;
   right: 0;
@@ -64,70 +65,75 @@ body {
   background-image: linear-gradient(to top right,#bf7a6b 0%, #e6d8a7 100%);
 } */
 
-.form {
-  width: 400px;
-}
+        .form {
+            width: 400px;
+        }
 
-.file-upload-wrapper {
-  background: #edf2f5;
-  position: relative;
-  width: 100%;
-  height: 60px;
-}
-.file-upload-wrapper:after {
-  content: attr(data-text);
-  font-size: 18px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #edf2f5;
-  padding: 10px 15px;
-  display: block;
-  width: calc(100% - 40px);
-  pointer-events: none;
-  z-index: 20;
-  height: 40px;
-  line-height: 40px;
-  color: #999;
-  border-radius: 5px 10px 10px 5px;
-  font-weight: 300;
-}
-.file-upload-wrapper:before {
-  content: "Upload";
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: inline-block;
-  height: 60px;
-  background: #4daf7c;
-  color: #edf2f5;
-  font-weight: 700;
-  z-index: 25;
-  font-size: 16px;
-  line-height: 60px;
-  padding: 0 15px;
-  text-transform: uppercase;
-  pointer-events: none;
-  border-radius: 0 5px 5px 0;
-}
-.file-upload-wrapper:hover:before {
-  background: #3d8c63;
-}
-.file-upload-wrapper input {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 99;
-  height: 40px;
-  margin: 0;
-  padding: 0;
-  display: block;
-  cursor: pointer;
-  width: 100%;
-}
+        .file-upload-wrapper {
+            background: #edf2f5;
+            position: relative;
+            width: 100%;
+            height: 60px;
+        }
+
+        .file-upload-wrapper:after {
+            content: attr(data-text);
+            font-size: 18px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #edf2f5;
+            padding: 10px 15px;
+            display: block;
+            width: calc(100% - 40px);
+            pointer-events: none;
+            z-index: 20;
+            height: 40px;
+            line-height: 40px;
+            color: #999;
+            border-radius: 5px 10px 10px 5px;
+            font-weight: 300;
+        }
+
+        .file-upload-wrapper:before {
+            content: "Upload";
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: inline-block;
+            height: 60px;
+            background: #4daf7c;
+            color: #edf2f5;
+            font-weight: 700;
+            z-index: 25;
+            font-size: 16px;
+            line-height: 60px;
+            padding: 0 15px;
+            text-transform: uppercase;
+            pointer-events: none;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .file-upload-wrapper:hover:before {
+            background: #3d8c63;
+        }
+
+        .file-upload-wrapper input {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 99;
+            height: 40px;
+            margin: 0;
+            padding: 0;
+            display: block;
+            cursor: pointer;
+            width: 100%;
+        }
+
     </style>
 
 
@@ -135,7 +141,7 @@ body {
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="/metadata/images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+                    <img src="/megin/images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
                 </div>
                 <div class="col-md-6 contents">
                     <div class="row justify-content-center">
@@ -145,8 +151,9 @@ body {
                                 <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos
                                     consectetur adipisicing.</p>
                             </div>
-                            <form action="metadata/import_metadata" method="post" enctype="multipart/form-data">
+                            <form action="/metadata/import_metadata" method="post" enctype="multipart/form-data">
                                 @csrf
+                                {{ csrf_field() }}
                                 <div class="form-group first">
                                     <label for="username">Email</label>
                                     <input type="email" class="form-control" name="email" id="username" required>
@@ -202,10 +209,10 @@ body {
     </div>
 
 
-    <script src="/metadata/js/jquery-3.3.1.min.js"></script>
-    <script src="/metadata/js/popper.min.js"></script>
-    <script src="/metadata/js/bootstrap.min.js"></script>
-    <script src="/metadata/js/main.js"></script>
+    <script src="/megin/js/jquery-3.3.1.min.js"></script>
+    <script src="/megin/js/popper.min.js"></script>
+    <script src="/megin/js/bootstrap.min.js"></script>
+    <script src="/megin/js/main.js"></script>
     <script>
         $("form").on("change", ".file-upload-field", function() {
             $(this).parent(".file-upload-wrapper").attr("data-text", $(this).val().replace(/.*(\/|\\)/, ''));

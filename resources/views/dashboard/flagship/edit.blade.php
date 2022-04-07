@@ -72,6 +72,15 @@
                                                 <label class="form-check-label" for="featured">featured</label>
                                             </div>
                                         </div>
+                                        <div class="mb-3 col-lg-2">
+                                            <label class="form-label">Unpublished</label>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="unpublished" name="unpublished" @if ($flagship->featured)
+                                                checked
+                                                @endif>
+                                                <label class="form-check-label" for="unpublished">Unpublished</label>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-check pt-2 mb-3 col-lg-3 layout"
                                         style="display: {{ $flagship->featured == true ? 'block' : 'none' }}">

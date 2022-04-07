@@ -21,6 +21,7 @@ class CreateProjectsTable extends Migration
             $table->text('slug')->nullable();
             $table->string('type');
             $table->integer('featured')->nullable();
+            $table->boolean('unpublished')->nullable();
             $table->string('project');
             $table->text('title');
             $table->string('date');

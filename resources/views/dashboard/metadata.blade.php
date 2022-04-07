@@ -130,6 +130,7 @@
     <script>
         var box = {};
         var boxes = [];
+
         function onchange_comma(id, value) {
             var boxId = id.replace("price-", "")
             if ($('#checked-' + boxId).prop('checked') == true) {

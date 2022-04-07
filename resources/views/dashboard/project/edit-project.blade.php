@@ -37,6 +37,17 @@
                                             </div>
                                         @enderror
                                     </div>
+                                    <div class="mb-3 ">
+                                        <label for="title" class="form-label">Title</label>
+                                        <textarea type="text" name="title"
+                                            class="form-control @error('title') is-invalid @enderror editable"
+                                            id="title">{{ $project->title }}</textarea>
+                                        @error('title')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
                                     <div class="mb-3 col-lg-4">
                                         <label for="brand" class="form-label is-invalid">Brand</label>
                                         <input type="text" name="brand"
@@ -73,53 +84,54 @@
                                         @enderror
                                     </div>
                                 </div>
-
                                 <div class="row">
-
-                                    <div class="mb-3 col-lg-8">
-                                        <label for="title" class="form-label">Title</label>
-                                        <textarea type="text" name="title"
-                                            class="form-control @error('title') is-invalid @enderror editable"
-                                            id="title">{{ $project->title }}</textarea>
-                                        @error('title')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-
-                                    <div class="mb-3 col-lg-2 ps-3">
-                                        <label class="form-label">Type</label>
-                                        <div class="d-flex pt-2 ">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="type" id="type1"
-                                                    value="project" {{ $project->type === 'project' ? 'checked' : '' }}>
-                                                <label class="form-check-label" for="type1">
-                                                    project
-                                                </label>
-                                            </div>
-                                            <div class="form-check ps-5">
-                                                <input class="form-check-input" type="radio" name="type" id="type2"
-                                                    value="person" {{ $project->type === 'person' ? 'checked' : '' }}>
-                                                <label class="form-check-label" for="type2">
-                                                    person
-                                                </label>
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label class="form-label">Type</label>
+                                            <div class="d-flex pt-2 ">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="type" id="type1"
+                                                        value="project" {{ $project->type === 'project' ? 'checked' : '' }}>
+                                                    <label class="form-check-label" for="type1">
+                                                        project
+                                                    </label>
+                                                </div>
+                                                <div class="form-check ps-5">
+                                                    <input class="form-check-input" type="radio" name="type" id="type2"
+                                                        value="person" {{ $project->type === 'person' ? 'checked' : '' }}>
+                                                    <label class="form-check-label" for="type2">
+                                                        person
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="mb-3 col-lg-2">
-                                        <label class="form-label">Featured</label>
-                                        <div class="form-check pt-2" onclick="hilzam()">
-                                            <input type="checkbox" class="form-check-input" id="featured" name="featured"
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label class="form-label">Featured</label>
+                                            <div class="form-check pt-2" onclick="hilzam()">
+                                                <input type="checkbox" class="form-check-input" id="featured" name="featured"
+                                                    @if ($project->featured)
+                                                checked
+                                                @endif>
+                                                <label class="form-check-label" for="featured">featured</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label class="form-label">Unpublished</label>
+                                            <div class="form-check form-switch pt-2">
+                                                <input class="form-check-input" type="checkbox" id="unpublished" name="unpublished"
                                                 @if ($project->featured)
-                                            checked
-                                            @endif>
-                                            <label class="form-check-label" for="featured">featured</label>
+                                                checked
+                                                @endif>
+                                                <label class="form-check-label" for="unpublished">Unpublished</label>
+                                            </div>
                                         </div>
                                     </div>
+                                  </div>
 
-                                </div>
 
                                 <div class="row">
                                     <div class="form-check pt-2 mb-3 col-lg-3 layout"

@@ -67,6 +67,13 @@
                                                 <label class="form-check-label" for="featured">featured</label>
                                             </div>
                                         </div>
+                                        <div class="mb-3 col-lg-2">
+                                            <label class="form-label">Unpublished</label>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="unpublished" name="unpublished">
+                                                <label class="form-check-label" for="unpublished">Unpublished</label>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-check pt-2 mb-3 col-lg-3 layout" style="display: none">
                                         <input type="radio" class="form-check-input" id="featured1" name="layout" value="1">
