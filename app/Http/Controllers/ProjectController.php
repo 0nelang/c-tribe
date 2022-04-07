@@ -47,11 +47,6 @@ class ProjectController extends Controller
         $title = $request->title;
         $desc = $request->description;
         $body = $request->body;
-         if ($request->unpublished) {
-            $disabled = true;
-        }else {
-            $disabled = false;
-        }
 
 
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
@@ -59,7 +54,6 @@ class ProjectController extends Controller
         $request['body'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['body'])));
         $validated = $request->validate([
             'type' => 'required',
-            'unpublished' => $disabled,
             'brand' => 'required|max:255',
             'project' => 'required|max:255',
             'date' => 'required|max:255',
@@ -79,6 +73,12 @@ class ProjectController extends Controller
         $validated['title'] = $title;
         $validated['description'] = $desc;
         $validated['body'] = $body;
+
+        if ($request->unpublished == 'on') {
+            $validated['unpublished'] = 1;
+        }else {
+            $validated['unpublished'] = 0;
+        }
 
         $validated['project']= Str::title($request->project);
 
@@ -154,11 +154,6 @@ class ProjectController extends Controller
         $title = $request->title;
         $desc = $request->description;
         $body = $request->body;
-         if ($request->unpublished) {
-            $disabled = true;
-        }else {
-            $disabled = false;
-        }
 
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
@@ -166,7 +161,6 @@ class ProjectController extends Controller
         $validated = $request->validate([
             'type' => 'required',
             'brand' => 'required|max:255',
-            'unpublished' => $disabled,
             'project' => 'required|max:255',
             'date' => 'required|max:255',
             'title' => 'required|min:1',
@@ -185,6 +179,12 @@ class ProjectController extends Controller
         $validated['title'] = $title;
         $validated['description'] = $desc;
         $validated['body'] = $body;
+
+        if ($request->unpublished == 'on') {
+            $validated['unpublished'] = 1;
+        }else {
+            $validated['unpublished'] = 0;
+        }
 
         $validated['project']= Str::title($request->project);
         $validated['slug'] = self::slugify(strip_tags($title . strval($project->id) ));

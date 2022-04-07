@@ -45,11 +45,6 @@ class ServiceController extends Controller
     {
         $title = $request->title;
         $desc = $request->description;
-        if ($request->unpublished) {
-            $disabled = true;
-        }else {
-            $disabled = false;
-        }
 
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
@@ -58,13 +53,18 @@ class ServiceController extends Controller
             'logo' => 'required|image|file',
             'service' => 'required|max:255',
             'title' => 'required|min:1',
-            'unpublished' => $disabled,
             'description' => 'required|min:1',
             'body' => 'required|min:1',
             'image' => 'required|image|file'
         ]);
         $validated['title'] = $title;
         $validated['description'] = $desc;
+
+        if ($request->unpublished == 'on') {
+            $validated['unpublished'] = 1;
+        }else {
+            $validated['unpublished'] = 0;
+        }
 
         $validated['logo'] = $request->file('logo')->store('service-image', ['disk' => 'public']);
         if ($request->hasFile('image')) {
@@ -115,11 +115,6 @@ class ServiceController extends Controller
     public function update(Request $request, Service $service)
     {
         $title = $request->title;
- if ($request->unpublished) {
-            $disabled = true;
-        }else {
-            $disabled = false;
-        }
         $desc = $request->description;
 
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
@@ -130,10 +125,15 @@ class ServiceController extends Controller
             'title' => 'required|min:1',
             'description' => 'required|min:1',
             'body' => 'required|min:1',
-            'unpublished' => $disabled,
         ]);
         $validated['title'] = $title;
         $validated['description'] = $desc;
+
+        if ($request->unpublished == 'on') {
+            $validated['unpublished'] = 1;
+        }else {
+            $validated['unpublished'] = 0;
+        }
 
         if ($request->hasFile('logo')) {
             $request->validate(['logo' => 'image|file']);

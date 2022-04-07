@@ -47,24 +47,23 @@ class InspirationController extends Controller
     {
         $title = $request->title;
         $desc = $request->description;
-         if ($request->unpublished) {
-            $disabled = true;
-        }else {
-            $disabled = false;
-        }
-
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $validated = $request->validate([
             'title' => 'required|min:1',
             'description' => 'required|min:1',
             'mainImage' => 'image|file',
-            'unpublished' => $disabled,
             'video' => 'mimetypes:video/avi,video/mp4',
             'date' => 'required|max:255'
         ]);
         $validated['title'] = $title;
         $validated['description'] = $desc;
+
+        if ($request->unpublished == 'on') {
+            $validated['unpublished'] = 1;
+        }else {
+            $validated['unpublished'] = 0;
+        }
 
         $validated['date'] = $request->date;
         if ($request->hasFile('mainImage')) {
@@ -127,11 +126,6 @@ class InspirationController extends Controller
     {
         $title = $request->title;
         $desc = $request->description;
-         if ($request->unpublished) {
-            $disabled = true;
-        }else {
-            $disabled = false;
-        }
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $validated = $request->validate([
@@ -140,11 +134,17 @@ class InspirationController extends Controller
             'mainImage' => 'image|file',
             'video' => 'mimetypes:video/avi,video/mp4',
             'date' => 'required|max:255',
-            'unpublished' => $disabled,
         ]);
         $validated['title'] = $title;
         $validated['description'] = $desc;
         $validated['date'] = $request->date;
+
+        if ($request->unpublished == 'on') {
+            $validated['unpublished'] = 1;
+        }else {
+            $validated['unpublished'] = 0;
+        }
+
         if ($request->hasFile('mainImage')) {
             Storage::disk('public')->delete($inspiration->mainImage);
             $validated['mainImage'] = $request->file('mainImage')->store('inspiration-images', ['disk' => 'public']);

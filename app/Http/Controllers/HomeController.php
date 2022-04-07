@@ -61,7 +61,7 @@ class HomeController extends Controller
 
     function flagship($url = 'flagship')
     {
-        $flagship = Flagship::orderBy('index','asc')->get();
+        $flagship = Flagship::where('unpublished', 0)->orderBy('index','asc')->get();
         $count = $flagship->count();
         for ($i=0; $i < $count; $i++) {
             if ($flagship[$i]->detailImage != null || $flagship[$i]->mainImage != null) {
@@ -83,7 +83,7 @@ class HomeController extends Controller
 
     function inspiration($url = "inspiration")
     {
-        $Inspiration = Inspiration::orderBy('index','asc')->get();
+        $Inspiration = Inspiration::where('unpublished', 0)->orderBy('index','asc')->get();
         $count = $Inspiration->count();
         for ($i=0; $i < $count; $i++) {
             if ($Inspiration[$i]->mainImage != null) {
@@ -118,8 +118,8 @@ class HomeController extends Controller
     {
         return view('frontend.our-people',[
             "general" => $this->general,
-            "people" => People::orderBy('index','asc')->get(),
-            "partner" => Partner::orderBy('index','asc')->get(),
+            "people" => People::where('unpublished', 0)->orderBy('index','asc')->get(),
+            "partner" => Partner::where('unpublished', 0)->orderBy('index','asc')->get(),
             "page" => "Our People",
             "pege1" => Page::where('page', 'Our People 1')->first(),
             "pege2" => Page::where('page', 'Our People 2')->first(),
@@ -131,7 +131,7 @@ class HomeController extends Controller
     {
         return view('frontend.project',[
             "general" => $this->general,
-            "project" => Project::where('type' , 'project')->orderBy('index','asc')->get(),
+            "project" => Project::where([['type' , 'project'],['unpublished', 0]])->orderBy('index','asc')->get(),
             "url" => $url,
             "page" => "Project",
             "menu" => $this->menu,
@@ -142,7 +142,7 @@ class HomeController extends Controller
     {
         return view('frontend.tribes',[
             "general" => $this->general,
-            "service" => Service::orderBy('index', 'asc')->get(),
+            "service" => Service::where('unpublished', 0)-> orderBy('index', 'asc')->get(),
             "page" => "Tribes",
             "url" => $url,
             "menu" => $this->menu,

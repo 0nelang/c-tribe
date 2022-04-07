@@ -47,11 +47,6 @@ class FlagshipController extends Controller
         $title = $request->title;
         $desc = $request->description;
         $body = $request->body;
-        if ($request->unpublished) {
-            $disabled = true;
-        }else {
-            $disabled = false;
-        }
 
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
@@ -64,7 +59,6 @@ class FlagshipController extends Controller
             'mainImage' => 'image|file',
             'detailImage' => 'image|file',
             'otherImage*' => 'image|file',
-            'unpublished' => $disabled,
             'detail1' => 'min:0',
             'detail2' => 'min:0',
             'detail3' => 'min:0',
@@ -77,13 +71,12 @@ class FlagshipController extends Controller
         $validated['title'] = $title;
         $validated['description'] = $desc;
         $validated['body'] = $body;
-        // if ($title != '' && $desc != '' && $body != '') {
-        //     $validated['title'] = $request->title;
-        //     $validated['description'] = $request->description;
-        //     $validated['body'] = $request->body;
-        // }else {
-        //     return redirect()->back()->withInput($request->all());
-        // }
+
+        if ($request->unpublished == 'on') {
+            $validated['unpublished'] = 1;
+        }else {
+            $validated['unpublished'] = 0;
+        }
 
         if ($request->hasFile('video')) {
             $validated['video'] = $request->file('video')->store('flagship-video', ['disk' => 'public']);
@@ -157,21 +150,16 @@ class FlagshipController extends Controller
      */
     public function update(Request $request, Flagship $flagship)
     {
+        // dd($request->insta3);
         $title = $request->title;
         $desc = $request->description;
         $body = $request->body;
-        if ($request->unpublished) {
-            $disabled = true;
-        }else {
-            $disabled = false;
-        }
         $request['title'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['title'])));
         $request['description'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['description'])));
         $request['body'] = str_replace(' ', '', str_replace('&nbsp;', '', strip_tags($request['body'])));
 
         $validated = $request->validate([
             'title' => 'required|min:1',
-            'unpublished' => $disabled,
             'description' => 'required|min:1',
             'body' => 'required|min:1',
             'date' => 'required|max:255',
@@ -186,6 +174,12 @@ class FlagshipController extends Controller
             'insta2' => 'min:0|max:255',
             'insta3' => 'min:0|max:255',
         ]);
+        // dd($validated);
+        if ($request->unpublished == 'on') {
+            $validated['unpublished'] = 1;
+        }else {
+            $validated['unpublished'] = 0;
+        }
 
         $validated['title'] = $title;
         $validated['description'] = $desc;
