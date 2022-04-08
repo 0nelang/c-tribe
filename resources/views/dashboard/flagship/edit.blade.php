@@ -7,10 +7,23 @@
             color: white;
         }
 
+        .select2-container--default .select2-selection--multiple {
+            background-color: #2b3b52;
+            border: 1px solid #202b3b;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice {
+            background-color: #2f3b4d;
+            border: 1px solid #202b3b;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+            border-right: 1px solid #202b3b;
+        }
+
     </style>
 @endsection
 @section('main')
-
     <div class="page-content">
         <div class="main-wrapper">
 
@@ -25,10 +38,11 @@
                                 <div class="row">
                                     <div class="mb-3">
                                         <label for="filePhoto" class="form-label">Cover Image
-                                        <br>
-                                        <img id="output" class="mb-2 mt-2"
-                                            src="{{ asset('storage/' . $flagship->mainImage) }}"
-                                            alt="{{ $flagship->mainImage }}" style="max-height: 200px; max-width: 300px"></label>
+                                            <br>
+                                            <img id="output" class="mb-2 mt-2"
+                                                src="{{ asset('storage/' . $flagship->mainImage) }}"
+                                                alt="{{ $flagship->mainImage }}"
+                                                style="max-height: 200px; max-width: 300px"></label>
                                         <input class="form-control @error('mainImage') is-invalid @enderror"
                                             name="mainImage" type="file" id="filePhoto" accept="image/*">
                                         @error('mainImage')
@@ -40,9 +54,8 @@
                                     <div class="col-8">
                                         <div class="mb-3">
                                             <label for="title" class="form-label is-invalid">Title</label>
-                                            <textarea type="text" name="title"
-                                                class="form-control @error('title') is-invalid @enderror editable"
-                                                id="titlef" aria-describedby="title">{{ $flagship->title }}</textarea>
+                                            <textarea type="text" name="title" class="form-control @error('title') is-invalid @enderror editable" id="titlef"
+                                                aria-describedby="title">{{ $flagship->title }}</textarea>
                                             @error('title')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -66,18 +79,15 @@
                                             <label class="form-label">Featured</label>
                                             <div class="form-check pt-2" onclick="hilzam()">
                                                 <input type="checkbox" class="form-check-input" id="featured"
-                                                    name="featured" @if ($flagship->featured)
-                                                checked
-                                                @endif>
+                                                    name="featured" @if ($flagship->featured) checked @endif>
                                                 <label class="form-check-label" for="featured">featured</label>
                                             </div>
                                         </div>
                                         <div class="mb-3 col-lg-2">
                                             <label class="form-label">Unpublished</label>
                                             <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="unpublished" name="unpublished" @if ($flagship->featured)
-                                                checked
-                                                @endif>
+                                                <input class="form-check-input" type="checkbox" id="unpublished"
+                                                    name="unpublished" @if ($flagship->featured) checked @endif>
                                                 <label class="form-check-label" for="unpublished">Unpublished</label>
                                             </div>
                                         </div>
@@ -117,8 +127,7 @@
                                 <div class="mb-3 layout"
                                     style="display:{{ $flagship->featured == true ? 'block' : 'none' }}">
                                     <label for="subTitle" class="form-label">Sub Title</label>
-                                    <textarea type="text" name="subTitle"
-                                        class="form-control @error('subTitle') is-invalid @enderror editable"
+                                    <textarea type="text" name="subTitle" class="form-control @error('subTitle') is-invalid @enderror editable"
                                         id="subTitle">{{ $flagship->subTitle }}</textarea>
                                     @error('subTitle')
                                         <div class="invalid-feedback">
@@ -129,8 +138,7 @@
 
                                 <div class="mb-3">
                                     <label for="description" class="form-label">Desc</label>
-                                    <textarea type="text" name="description"
-                                        class="text-dark form-control @error('description') is-invalid @enderror editable"
+                                    <textarea type="text" name="description" class="text-dark form-control @error('description') is-invalid @enderror editable"
                                         id="ck1">{{ $flagship->description }}</textarea>
                                     @error('description')
                                         <div class="invalid-feedback">
@@ -143,22 +151,9 @@
                                     <div class="mb-3 col-lg-4">
                                         <div class="mb-3">
                                             <label for="detail1" class="form-label">Detail 1</label>
-                                            <textarea type="text" name="detail1"
-                                                class="form-control @error('detail1') is-invalid @enderror editable"
+                                            <textarea type="text" name="detail1" class="form-control @error('detail1') is-invalid @enderror editable"
                                                 id="detail1">{{ $flagship->detail1 }}</textarea>
                                             @error('detail1')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                        <label for="insta1" class="form-label">Insta 1</label>
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1">@</span>
-                                            <input type="text" value="{{ $flagship->insta1 }}" name="insta1" id="insta1"
-                                                class="form-control @error('insta1') is-invalid @enderror"
-                                                placeholder="Username">
-                                            @error('insta1')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -169,22 +164,9 @@
                                     <div class="mb-3 col-lg-4">
                                         <div class="mb-3">
                                             <label for="detail2" class="form-label">Detail 2</label>
-                                            <textarea type="text" name="detail2"
-                                                class="form-control @error('detail2') is-invalid @enderror editable"
+                                            <textarea type="text" name="detail2" class="form-control @error('detail2') is-invalid @enderror editable"
                                                 id="detail2">{{ $flagship->detail2 }}</textarea>
                                             @error('detail2')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                        <label for="insta2" class="form-label">Insta 2</label>
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1">@</span>
-                                            <input type="text" name="insta2" value="{{ $flagship->insta2 }}" id="insta2"
-                                                class="form-control @error('insta2') is-invalid @enderror"
-                                                placeholder="Username">
-                                            @error('insta2')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -195,22 +177,9 @@
                                     <div class="mb-3 col-lg-4">
                                         <div class="mb-3">
                                             <label for="detail3" class="form-label">Detail 3</label>
-                                            <textarea type="text" name="detail3"
-                                                class="form-control @error('detail3') is-invalid @enderror editable"
+                                            <textarea type="text" name="detail3" class="form-control @error('detail3') is-invalid @enderror editable"
                                                 id="detail3">{{ $flagship->detail3 }}</textarea>
                                             @error('detail3')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                        <label for="insta3" class="form-label">Insta 3</label>
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1">@</span>
-                                            <input type="text" value="{{ $flagship->insta3 }}" name="insta3" id="insta3"
-                                                class="form-control @error('insta3') is-invalid @enderror"
-                                                placeholder="Username">
-                                            @error('insta3')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -220,9 +189,19 @@
                                 </div>
 
                                 <div class="mb-3">
+                                    <label for="tags" class="form-label">Tags</label>
+                                    <select name="tags[]" id="tag" class="form-select" multiple="multiple">
+                                        @foreach ($tags as $tag)
+                                            <option value="{{ $tag }}" selected>
+                                                {{ $tag }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
                                     <label for="body" class="form-label">Body</label>
-                                    <textarea type="text" name="body"
-                                        class="form-control  @error('body') is-invalid @enderror editable" id="ck2"
+                                    <textarea type="text" name="body" class="form-control  @error('body') is-invalid @enderror editable" id="ck2"
                                         rows="5">{{ $flagship->body }}</textarea>
                                     @error('body')
                                         <div class="invalid-feedback">
@@ -233,10 +212,11 @@
 
                                 <div class="mb-3">
                                     <label for="photo" class="form-label">Detail Image
-                                    <br>
-                                    <img id="out" class="mb-2 mt-2"
-                                        src="{{ asset('storage/' . $flagship->detailImage) }}"
-                                        style="max-height: 200px; max-width: 300px" alt="{{ $flagship->detailImage }}"></label>
+                                        <br>
+                                        <img id="out" class="mb-2 mt-2"
+                                            src="{{ asset('storage/' . $flagship->detailImage) }}"
+                                            style="max-height: 200px; max-width: 300px"
+                                            alt="{{ $flagship->detailImage }}"></label>
                                     <input class="form-control @error('detailImage') is-invalid @enderror"
                                         name="detailImage" type="file" id="photo" accept="image/*">
                                     @error('detailImage')
@@ -249,7 +229,8 @@
                                 <div class="mb-3">
                                     <label for="videoFile" class="form-label">Video</label>
                                     <br>
-                                        <video class="mb-2" id="vid-output" src="{{ asset('storage/' . $flagship->video) }}" controls
+                                    <video class="mb-2" id="vid-output"
+                                        src="{{ asset('storage/' . $flagship->video) }}" controls
                                         style="max-height: 300px; max-width:600px;"></video>
                                     <input class="form-control @error('video') is-invalid @enderror" name="video"
                                         type="file" id="videoFile" accept="video/*">
@@ -275,8 +256,8 @@
                                 </div>
                                 @foreach ($otherImage as $item)
                                     <a id="image{{ $item->id }}" href="#" onclick="what({{ $item->id }})">
-                                        <img src="{{ asset('storage/' . $item->otherImage) }}" alt="{{ $item->otherImage }}"
-                                            style="max-height: 100px; max-width: 100px;">
+                                        <img src="{{ asset('storage/' . $item->otherImage) }}"
+                                            alt="{{ $item->otherImage }}" style="max-height: 100px; max-width: 100px;">
                                     </a>
                                 @endforeach
                                 <br>
@@ -290,6 +271,15 @@
         </div>
 
         <script>
+            $(document).ready(function() {
+
+                $("#tag").select2({
+                    placeholder: "select tag",
+                    tags: true
+                });
+
+            });
+
             $(function() {
                 $("#filePhoto").change(function(event) {
                     var x = URL.createObjectURL(event.target.files[0]);

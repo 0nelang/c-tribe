@@ -152,10 +152,12 @@ class HomeController extends Controller
     function flagship_single($flagship,$index)
     {
         $flagship = Flagship::where('slug', $flagship)->first();
+        $tags = explode(',', $flagship->insta1);
         return view('frontend.flagship-single',[
             "general" => $this->general,
             "page" => "Detail Flagship",
             "f" => $flagship,
+            "tags" => $tags,
             "index" => $index,
             "menu" => $this->menu,
         ]);

@@ -50,7 +50,26 @@
                             {!! $f->detail3 !!}
                         </div>
                     @endif
-                    @if ($f->insta1 != null)
+                    @foreach ($tags as $index => $tag)
+                        @switch($index % 3)
+                            @case(0)
+                                <div class="col"><a target="_blank" href="https://www.instagram.com/{{ $tag }}"
+                                    class="text-uppercase">@<?= $tag ?>
+                                </a></div>
+                                @break
+                            @case(1)
+                                <div class="col tc"><a target="_blank" href="https://www.instagram.com/{{ $tag }}"
+                                    class="text-uppercase">@<?= $tag ?>
+                                </a></div>
+                                @break
+                            @case(2)
+                                <div class="col tr"><a target="_blank" href="https://www.instagram.com/{{ $tag }}"
+                                    class="text-uppercase">@<?= $tag ?>
+                                </a></div>
+                                @break
+                        @endswitch
+                    @endforeach
+                    {{-- @if ($f->insta1 != null)
                         <div class="col"><a target="_blank" href="https://www.instagram.com/{{ $f->insta1 }}"
                                 class="text-uppercase">@<?= $f->insta1 ?>
                             </a></div>
@@ -62,7 +81,7 @@
                     @if ($f->insta3 != null)
                         <div class="col tr"><a target="_blank" href="https://www.instagram.com/{{ $f->insta3 }}"
                                 class="text-uppercase">@<?= $f->insta3 ?></a></div>
-                    @endif
+                    @endif --}}
                 </div>
                 <article>
                     {!! $f->body !!}
