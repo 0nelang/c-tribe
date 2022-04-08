@@ -44,6 +44,9 @@ class FlagshipController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
+        // dd(implode(',', $request->tags));
+
         $title = $request->title;
         $desc = $request->description;
         $body = $request->body;
@@ -62,12 +65,10 @@ class FlagshipController extends Controller
             'detail1' => 'min:0',
             'detail2' => 'min:0',
             'detail3' => 'min:0',
-            'insta1' => 'min:0|max:255',
-            'insta2' => 'min:0|max:255',
-            'insta3' => 'min:0|max:255',
             'video' => 'mimetypes:video/avi,video/mp4',
         ]);
 
+        $validated['insta1'] = implode(',', $request->tags);
         $validated['title'] = $title;
         $validated['description'] = $desc;
         $validated['body'] = $body;
@@ -134,8 +135,10 @@ class FlagshipController extends Controller
     public function edit(Flagship $flagship)
     {
         // dd($flagship);
+        $tags = explode(',', $flagship->insta1);
         return view('dashboard.flagship.edit', [
             'page' => 'Flagship',
+            'tags' => $tags,
             'flagship' => $flagship,
             'otherImage' => FlagshipImage::where('flagship', $flagship->id)->get()
         ]);
@@ -170,9 +173,6 @@ class FlagshipController extends Controller
             'detail2' => 'min:0',
             'detail3' => 'min:0',
             'video' => 'mimetypes:video/avi,video/mp4',
-            'insta1' => 'min:0|max:255',
-            'insta2' => 'min:0|max:255',
-            'insta3' => 'min:0|max:255',
         ]);
         // dd($validated);
         if ($request->unpublished == 'on') {
@@ -181,6 +181,7 @@ class FlagshipController extends Controller
             $validated['unpublished'] = 0;
         }
 
+        $validated['insta1'] = implode(',', $request->tags);
         $validated['title'] = $title;
         $validated['description'] = $desc;
         $validated['body'] = $body;

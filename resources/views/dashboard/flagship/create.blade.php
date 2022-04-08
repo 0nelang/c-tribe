@@ -24,8 +24,9 @@
                                 <div class="row">
                                     <div class="mb-3">
                                         <label for="photo" class="form-label">Main Image
-                                        <br>
-                                        <img id="out" class="mb-2 mt-2" style="max-height: 200px; max-width: 300px"></label>
+                                            <br>
+                                            <img id="out" class="mb-2 mt-2"
+                                                style="max-height: 200px; max-width: 300px"></label>
                                         <input class="form-control @error('mainImage') is-invalid @enderror"
                                             name="mainImage" type="file" id="photo" accept="image/*">
                                         @error('mainImage')
@@ -37,9 +38,8 @@
                                     <div class="col-8">
                                         <div class="mb-3">
                                             <label for="title" class="form-label is-invalid">Title</label>
-                                            <textarea type="text" name="title"
-                                                class="form-control @error('title') is-invalid @enderror editable"
-                                                id="titlef" aria-describedby="title">{{ old('title') }}</textarea>
+                                            <textarea type="text" name="title" class="form-control @error('title') is-invalid @enderror editable" id="titlef"
+                                                aria-describedby="title">{{ old('title') }}</textarea>
                                             @error('title')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -70,7 +70,8 @@
                                         <div class="mb-3 col-lg-2">
                                             <label class="form-label">Unpublished</label>
                                             <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="unpublished" name="unpublished">
+                                                <input class="form-check-input" type="checkbox" id="unpublished"
+                                                    name="unpublished">
                                                 <label class="form-check-label" for="unpublished">Unpublished</label>
                                             </div>
                                         </div>
@@ -101,8 +102,7 @@
 
                                 <div class="mb-3 layout" style="display: none">
                                     <label for="subTitle" class="form-label">Sub Title</label>
-                                    <textarea type="text" name="subTitle"
-                                        class="form-control @error('subTitle') is-invalid @enderror editable"
+                                    <textarea type="text" name="subTitle" class="form-control @error('subTitle') is-invalid @enderror editable"
                                         id="subTitle">{{ old('subTitle') }}</textarea>
                                     @error('subTitle')
                                         <div class="invalid-feedback">
@@ -113,8 +113,7 @@
 
                                 <div class="mb-3">
                                     <label for="description" class="form-label">Desc</label>
-                                    <textarea type="text" name="description"
-                                        class="text-dark form-control @error('description') is-invalid @enderror editable"
+                                    <textarea type="text" name="description" class="text-dark form-control @error('description') is-invalid @enderror editable"
                                         id="ck2">{{ old('description') }}</textarea>
                                     @error('description')
                                         <div class="invalid-feedback">
@@ -127,8 +126,7 @@
                                     <div class="mb-3 col-lg-4">
                                         <div class="mb-3">
                                             <label for="detail1" class="form-label">Detail 1</label>
-                                            <textarea type="text" name="detail1"
-                                                class="form-control @error('detail1') is-invalid @enderror editable"
+                                            <textarea type="text" name="detail1" class="form-control @error('detail1') is-invalid @enderror editable"
                                                 id="detail1">{{ old('detail1') }}</textarea>
                                             @error('detail1')
                                                 <div class="invalid-feedback">
@@ -136,7 +134,7 @@
                                                 </div>
                                             @enderror
                                         </div>
-                                        <label for="insta1" class="form-label">Insta 1</label>
+                                        {{-- <label for="insta1" class="form-label">Insta 1</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">@</span>
                                             <input type="text" name="insta1" value="{{ old('insta1') }}" id="insta1" class="form-control @error('insta1') is-invalid @enderror" placeholder="Username">
@@ -145,14 +143,13 @@
                                                 {{ $message }}
                                             </div>
                                         @enderror
-                                          </div>
+                                          </div> --}}
                                     </div>
 
                                     <div class="mb-3 col-lg-4">
                                         <div class="mb-3">
                                             <label for="detail2" class="form-label">Detail 2</label>
-                                            <textarea type="text" name="detail2"
-                                                class="form-control @error('detail2') is-invalid @enderror editable"
+                                            <textarea type="text" name="detail2" class="form-control @error('detail2') is-invalid @enderror editable"
                                                 id="detail2">{{ old('detail2') }}</textarea>
                                             @error('detail2')
                                                 <div class="invalid-feedback">
@@ -160,7 +157,7 @@
                                                 </div>
                                             @enderror
                                         </div>
-                                        <label for="insta2" class="form-label">Insta 2</label>
+                                        {{-- <label for="insta2" class="form-label">Insta 2</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">@</span>
                                             <input type="text" name="insta2" value="{{ old('insta2') }}" id="insta2" class="form-control @error('insta2') is-invalid @enderror" placeholder="Username">
@@ -169,14 +166,13 @@
                                                 {{ $message }}
                                             </div>
                                         @enderror
-                                          </div>
+                                          </div> --}}
                                     </div>
 
                                     <div class="mb-3 col-lg-4">
                                         <div class="mb-3">
                                             <label for="detail3" class="form-label">Detail 3</label>
-                                            <textarea type="text" name="detail3"
-                                                class="form-control @error('detail3') is-invalid @enderror editable"
+                                            <textarea type="text" name="detail3" class="form-control @error('detail3') is-invalid @enderror editable"
                                                 id="detail3">{{ old('detail3') }}</textarea>
                                             @error('detail3')
                                                 <div class="invalid-feedback">
@@ -184,7 +180,7 @@
                                                 </div>
                                             @enderror
                                         </div>
-                                        <label for="insta3" class="form-label">Insta 3</label>
+                                        {{-- <label for="insta3" class="form-label">Insta 3</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">@</span>
                                             <input type="text" name="insta3" value="{{ old('insta3') }}" id="insta3" class="form-control @error('insta3') is-invalid @enderror" placeholder="Username">
@@ -193,14 +189,24 @@
                                                 {{ $message }}
                                             </div>
                                         @enderror
-                                          </div>
+                                          </div> --}}
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
+                                    <label for="tags" class="form-label">Tags</label>
+                                    <select name="tags[]" id="tag" class="form-select" multiple="multiple">
+                                        {{-- @foreach ($tags as $tag)
+                                            <option value="{{ $tag->tag }}"
+                                                @if (in_array($tag->tag, $oldTag)) selected @endif>{{ $tag->tag }}
+                                            </option>
+                                        @endforeach --}}
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
                                     <label for="body" class="form-label">Body</label>
-                                    <textarea type="text" name="body"
-                                        class="form-control  @error('body') is-invalid @enderror editable" id="ck3"
+                                    <textarea type="text" name="body" class="form-control  @error('body') is-invalid @enderror editable" id="ck3"
                                         rows="5">{{ old('body') }}</textarea>
                                     @error('body')
                                         <div class="invalid-feedback">
@@ -211,8 +217,9 @@
 
                                 <div class="mb-3">
                                     <label for="filePhoto" class="form-label">Detail Image
-                                    <br>
-                                    <img id="output" class="mb-2 mt-2" style="max-height: 200px; max-width: 300px"></label>
+                                        <br>
+                                        <img id="output" class="mb-2 mt-2"
+                                            style="max-height: 200px; max-width: 300px"></label>
                                     <input class="form-control @error('detailImage') is-invalid @enderror"
                                         name="detailImage" type="file" id="filePhoto" accept="image/*"
                                         value="{{ old('detailImage') }}">
@@ -241,8 +248,9 @@
                                     <label for="otherImage" class="form-label">Other Image</label>
                                     <br>
                                     <img id="output" class="mb-3">
-                                    <input class="form-control @error('otherImage') is-invalid @enderror" name="otherImage[]"
-                                        type="file" id="otherImage" accept="image/*" multiple="multiple">
+                                    <input class="form-control @error('otherImage') is-invalid @enderror"
+                                        name="otherImage[]" type="file" id="otherImage" accept="image/*"
+                                        multiple="multiple">
                                     @error('otherImage')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -260,6 +268,15 @@
     </div>
 
     <script>
+        $(document).ready(function() {
+
+            $("#tag").select2({
+                placeholder: "select tag",
+                tags: true
+            });
+
+        });
+
         $(function() {
             $("#filePhoto").change(function(event) {
                 var x = URL.createObjectURL(event.target.files[0]);
