@@ -118,8 +118,8 @@ class HomeController extends Controller
     {
         return view('frontend.our-people',[
             "general" => $this->general,
-            "people" => People::where('unpublished', 0)->orderBy('index','asc')->get(),
-            "partner" => Partner::where('unpublished', 0)->orderBy('index','asc')->get(),
+            "people" => People::orderBy('index','asc')->get(),
+            "partner" => Partner::orderBy('index','asc')->get(),
             "page" => "Our People",
             "pege1" => Page::where('page', 'Our People 1')->first(),
             "pege2" => Page::where('page', 'Our People 2')->first(),

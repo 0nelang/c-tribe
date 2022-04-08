@@ -223,7 +223,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="mb-3">
+                                {{-- <div class="mb-3">
                                     <label for="videoFile" class="form-label">Video</label>
                                     <br>
                                     <video id="vid-output" controls class="mb-2"
@@ -235,7 +235,7 @@
                                             {{ $message }}
                                         </div>
                                     @enderror
-                                </div>
+                                </div> --}}
 
                                 <div class="mb-3">
                                     <label for="otherImage" class="form-label">Other Image</label>

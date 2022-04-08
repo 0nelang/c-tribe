@@ -21,7 +21,6 @@
                 <div class="img">
                     @if ($f->mainImage == null && $f->detailImage != null)
                         <img src="{{ asset('storage/' . $f->detailImage) }}" alt="Image" />
-
                     @elseif($f->mainImage != null && $f->detailImage == null)
                         <img src="{{ asset('storage/' . $f->mainImage) }}" alt="Image" />
                     @elseif($f->mainImage != null && $f->detailImage != null)
@@ -69,6 +68,20 @@
                 </article>
             </div>
         </section>
+        {{-- videoo --}}
+        @if ($f->video)
+            <section class="page-inspiration-s__three">
+                <div class="wrap">
+                    <div class="video-wrap">
+                        <div class="btn-play"></div><video width="1920" height="1080" controls>
+                            <source src="{{ asset('storage/' . $f->video) }}" type="video/mp4">
+                            <Your>browser does not support the video tag.</Your>
+                        </video>
+                    </div>
+                </div>
+            </section>
+        @endif
+        {{-- videoo --}}
         @if ($f->otherImage)
             <section class="page-flagship-s__three">
                 <div class="wrap">

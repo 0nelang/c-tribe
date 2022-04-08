@@ -246,7 +246,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="mb-3">
+                                {{-- <div class="mb-3">
                                     <label for="videoFile" class="form-label">Video</label>
                                     <br>
                                         <video class="mb-2" id="vid-output" src="{{ asset('storage/' . $flagship->video) }}" controls
@@ -258,7 +258,7 @@
                                             {{ $message }}
                                         </div>
                                     @enderror
-                                </div>
+                                </div> --}}
 
                                 <div class="mb-3">
                                     <label for="otherImage" class="form-label">Other Image</label>
@@ -286,7 +286,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <script>
