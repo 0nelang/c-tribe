@@ -8,6 +8,24 @@
             color: white;
         }
 
+        .select2-container--default .select2-selection--multiple {
+            background-color: #2b3b52;
+            border: 1px solid #202b3b;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice {
+            background-color: #2f3b4d;
+            border: 1px solid #202b3b;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+            border-right: 1px solid #202b3b;
+        }
+
+        .select2-container--default .select2-results__option--selected {
+            background-color: #2b3b52;
+        }
+
     </style>
 @endsection
 

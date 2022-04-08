@@ -21,6 +21,10 @@
             border-right: 1px solid #202b3b;
         }
 
+        .select2-container--default .select2-results__option--selected {
+            background-color: #2b3b52;
+        }
+
     </style>
 @endsection
 @section('main')
