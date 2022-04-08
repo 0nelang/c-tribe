@@ -194,10 +194,10 @@ class FlagshipController extends Controller
             }
         }
 
-        if ($request->hasFile('video')) {
-            Storage::delete($flagship->video);
-            $validated['video'] = $request->file('video')->store('flagship-video', ['disk' => 'public']);
-        }
+        // if ($request->hasFile('video')) {
+        //     Storage::delete($flagship->video);
+        //     $validated['video'] = $request->file('video')->store('flagship-video', ['disk' => 'public']);
+        // }
 
         if ($request->hasFile('mainImage')) {
             Storage::delete($flagship->mainImage);

@@ -1,6 +1,16 @@
 @extends('layouts.dashboard-main')
 @section('css')
     <style>
+        .panjang {
+            width: 200px;
+        }
+
+        .wrapper {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
         .note-editable {
             background: #2B3B52;
             border-color: #2B3B52;
@@ -246,20 +256,50 @@
                                     <br>
                                     <img id="output" class="mb-3" style="max-height: 200px; max-width: 300px">
                                     <input class="form-control @error('otherImage') is-invalid @enderror"
-                                        name="otherImage[]" type="file" id="otherImage" accept="image/*"
-                                        multiple="multiple">
+                                        name="otherImage[]" type="file" id="otherImage" multiple="multiple">
                                     @error('otherImage')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
-                                @foreach ($otherImage as $item)
-                                    <a id="image{{ $item->id }}" href="#" onclick="what({{ $item->id }})">
-                                        <img src="{{ asset('storage/' . $item->otherImage) }}"
-                                            alt="{{ $item->otherImage }}" style="max-height: 100px; max-width: 100px;">
-                                    </a>
-                                @endforeach
+                                <div class="row">
+                                    @foreach ($otherImage as $item)
+                                        @if (pathinfo(asset('storage/' . $item->otherImage, PATHINFO_EXTENSION))['extension'] == 'mp4')
+                                            <div class="col wrapper mt-3">
+                                                <video class="" id="file{{ $item->id }}"
+                                                    src="{{ asset('storage/' . $item->otherImage) }}" controls
+                                                    style="height: 100px; width:200px; object-fit:cover"></video>
+                                                <div class="panjang">
+                                                    <a id="image{{ $item->id }}" href="#"
+                                                        onclick="what({{ $item->id }})"
+                                                        class="btn btn-danger hapus mt-2 mx-auto">hapus gambar</a>
+                                                </div>
+
+                                            </div>
+                                            {{-- <a id="image{{ $item->id }}" href="#" onclick="what({{ $item->id }})">
+                                            <video class="mb-2" id="vid-output"
+                                                src="{{ asset('storage/' . $item->otherImage) }}" controls
+                                                style="max-height: 100px; max-width: 100px;"></video>
+                                        </a> --}}
+                                        @else
+                                            <div class="col wrapper mt-3">
+                                                <img id="file{{ $item->id }}" src="{{ asset('storage/' . $item->otherImage) }}"
+                                                    style="height: 100px; width:200px; object-fit:cover" alt="">
+                                                <div class="panjang">
+                                                    <a id="image{{ $item->id }}" href="#"
+                                                        onclick="what({{ $item->id }})"
+                                                        class="btn btn-danger hapus mt-3 mx-auto">hapus gambar</a>
+                                                </div>
+
+                                            </div>
+                                            {{-- <a id="image{{ $item->id }}" href="#" onclick="what({{ $item->id }})">
+                                            <img src="{{ asset('storage/' . $item->otherImage) }}"
+                                                alt="{{ $item->otherImage }}" style="max-height: 100px; max-width: 100px;">
+                                        </a> --}}
+                                        @endif
+                                    @endforeach
+                                </div>
                                 <br>
                                 <button type="submit" class="btn btn-primary mt-3">Update</button>
                             </form>
@@ -329,6 +369,7 @@
                             dataType: "json",
                             success: function(response) {
                                 $('#image' + id).remove();
+                                $('#file' + id).remove();
                                 console.log(response);
                             }
                         });

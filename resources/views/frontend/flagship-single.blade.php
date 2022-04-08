@@ -53,19 +53,21 @@
                         @switch($index % 3)
                             @case(0)
                                 <div class="col"><a target="_blank" href="https://www.instagram.com/{{ $tag }}"
-                                    class="text-uppercase">@<?= $tag ?>
-                                </a></div>
-                                @break
+                                        class="text-uppercase">@<?= $tag ?>
+                                    </a></div>
+                            @break
+
                             @case(1)
                                 <div class="col tc"><a target="_blank" href="https://www.instagram.com/{{ $tag }}"
-                                    class="text-uppercase">@<?= $tag ?>
-                                </a></div>
-                                @break
+                                        class="text-uppercase">@<?= $tag ?>
+                                    </a></div>
+                            @break
+
                             @case(2)
                                 <div class="col tr"><a target="_blank" href="https://www.instagram.com/{{ $tag }}"
-                                    class="text-uppercase">@<?= $tag ?>
-                                </a></div>
-                                @break
+                                        class="text-uppercase">@<?= $tag ?>
+                                    </a></div>
+                            @break
                         @endswitch
                     @endforeach
                     {{-- @if ($f->insta1 != null)
@@ -88,7 +90,7 @@
             </div>
         </section>
         {{-- videoo --}}
-        @if ($f->video)
+        {{-- @if ($f->video)
             <section class="page-inspiration-s__three">
                 <div class="wrap">
                     <div class="video-wrap">
@@ -99,14 +101,24 @@
                     </div>
                 </div>
             </section>
-        @endif
+        @endif --}}
         {{-- videoo --}}
         @if ($f->otherImage)
             <section class="page-flagship-s__three">
                 <div class="wrap">
                     @foreach ($f->otherImage as $i)
+                    @if (pathinfo(asset('storage/' . $i->otherImage, PATHINFO_EXTENSION))['extension'] == 'mp4')
+                    <div class="video-wrap">
+                        <div class="btn-play"></div><video width="1920" height="1080" controls>
+                            <source src="{{ asset('storage/' . $i->otherImage) }}" type="video/mp4">
+                            <Your>browser does not support the video tag.</Your>
+                        </video>
+                    </div>
+                    @else
                         <img class="img-full" src="{{ asset('storage/' . $i->otherImage) }}"
                             alt="{{ $i->otherImage }}" />
+
+                    @endif
                     @endforeach
 
                 </div>
